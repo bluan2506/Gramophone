@@ -5,10 +5,12 @@ plugins {
 android {
     namespace = "org.nift4.audiofxstub2"
     compileSdk {
-        version = release(36)
+        version = release(36) {
+            minorApiLevel = 1
+        }
     }
     defaultConfig {
-        minSdk = 21
+        minSdk = 26
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21

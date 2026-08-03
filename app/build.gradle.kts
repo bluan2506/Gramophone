@@ -36,7 +36,11 @@ android {
     }
 
     namespace = "org.akanework.gramophone"
-    compileSdk = 37
+    compileSdk {
+        version = release(37) {
+            minorApiLevel = 1
+        }
+    }
 
     signingConfigs {
         create("release") {
@@ -106,8 +110,8 @@ android {
         // bottom sheet padding, ExoPlayer requiring multidex, vector drawables and poor SD support
         // That said, supporting Android 5.0 costs tolerable amounts of tech debt, and we plan to
         // keep support for it for a while.
-        minSdk = 21
-        targetSdk = 37
+        minSdk = 26
+        targetSdk = 36
         versionCode = 23
         versionName = "1.1.1"
         if (releaseType != "Release" || vnos != null) {

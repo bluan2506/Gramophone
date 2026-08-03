@@ -11,7 +11,11 @@ plugins {
 
 android {
 	namespace = "org.nift4.baselineprofile"
-	compileSdk = 36
+	compileSdk {
+		version = release(36) {
+			minorApiLevel = 1
+		}
+	}
 
 	compileOptions {
 		sourceCompatibility = JavaVersion.VERSION_21
@@ -30,8 +34,8 @@ android {
 	}
 
 	defaultConfig {
-		minSdk = 28
-		targetSdk = 35
+		minSdk = 26
+		targetSdk = 36
 
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 	}
