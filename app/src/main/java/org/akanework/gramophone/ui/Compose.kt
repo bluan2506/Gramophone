@@ -27,6 +27,7 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.stateIn
 import org.akanework.gramophone.logic.enableEdgeToEdgeProperly
 import org.akanework.gramophone.logic.getBooleanStrict
+import org.akanework.gramophone.logic.hideSystemNavigationBar
 
 abstract class BaseComposeActivity : AppCompatActivity() {
     private lateinit var prefs: SharedPreferences
@@ -51,6 +52,12 @@ abstract class BaseComposeActivity : AppCompatActivity() {
         prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         super.onCreate(savedInstanceState)
         enableEdgeToEdgeProperly()
+        hideSystemNavigationBar()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) hideSystemNavigationBar()
     }
 }
 

@@ -188,6 +188,13 @@ class PlayerBottomSheet private constructor(
                     bottomSheetBackCallback!!.isEnabled = false
                 }
             }
+            when (newState) {
+                BottomSheetBehavior.STATE_EXPANDED,
+                BottomSheetBehavior.STATE_HALF_EXPANDED -> updateBottomNavForOffset(1f)
+
+                BottomSheetBehavior.STATE_COLLAPSED,
+                BottomSheetBehavior.STATE_HIDDEN -> updateBottomNavForOffset(0f)
+            }
             dispatchBottomSheetInsets()
         }
 
@@ -195,6 +202,7 @@ class PlayerBottomSheet private constructor(
             bottomSheet: View,
             slideOffset: Float,
         ) {
+            updateBottomNavForOffset(slideOffset)
             if (slideOffset < 0) {
                 // hidden state
                 previewPlayer.alpha = 1 - (-1 * slideOffset)
@@ -304,6 +312,18 @@ class PlayerBottomSheet private constructor(
         onStop(lifecycleOwner)
     }
 
+    /**
+     * Slides the persistent bottom navigation out of the way as the player expands. [offset] is the
+     * bottom sheet slide offset: 0 = collapsed (nav fully shown), 1 = expanded (nav hidden below).
+     */
+    private fun updateBottomNavForOffset(offset: Float) {
+        val nav = activity.bottomNavigationView
+        val progress = offset.coerceIn(0f, 1f)
+        val height = nav.height.takeIf { it > 0 } ?: activity.bottomNavHeight
+        nav.translationY = height.toFloat() * progress
+        nav.alpha = 1f - progress
+    }
+
     private fun updatePeekHeight() {
         previewPlayer.measure(
             MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY),
@@ -342,7 +362,12 @@ class PlayerBottomSheet private constructor(
         // fullPlayer should extend into system bars AND display cutout. previewPlayer can't use
         // fitsSystemWindows because it doesn't want top padding from status bar.
         // We have to do it manually, duh.
-        previewPlayer.setPadding(myInsets.left, 0, myInsets.right, myInsets.bottom)
+        // Lift the collapsed mini player so it floats directly above the bottom navigation bar
+        // instead of overlapping it. bottomNavHeight already includes the system inset, and the
+        // nav bar draws on top of the empty strip left behind.
+        previewPlayer.setPadding(
+            myInsets.left, 0, myInsets.right, activity.bottomNavHeight
+        )
         // Let fullPlayer handle insets itself (and discard result as it's irrelevant to hierarchy)
         ViewCompat.dispatchApplyWindowInsets(fullPlayer, insets.clone())
         // Same for lyrics view

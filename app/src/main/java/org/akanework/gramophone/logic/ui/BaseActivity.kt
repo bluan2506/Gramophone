@@ -24,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import org.akanework.gramophone.R
 import org.akanework.gramophone.logic.getBooleanStrict
+import org.akanework.gramophone.logic.hideSystemNavigationBar
 
 open class BaseActivity : AppCompatActivity() {
     lateinit var prefs: SharedPreferences
@@ -45,6 +46,13 @@ open class BaseActivity : AppCompatActivity() {
         }
         prefs.registerOnSharedPreferenceChangeListener(listener)
         super.onCreate(savedInstanceState)
+        hideSystemNavigationBar()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        // Re-hide after regaining focus (transient show, returning from a dialog, etc.).
+        if (hasFocus) hideSystemNavigationBar()
     }
 
     override fun onDestroy() {

@@ -314,6 +314,15 @@ aboutLibraries {
 }
 
 dependencies {
+    implementation(files("libs/searchapi_all_cpp_lua-release_v23.07.2026_(MS-08).aar"))
+    implementation(files("libs/serverconfig_ms_opensource-release_28.10.2025.aar"))
+    implementation(files("libs/logeventlib_v16_150626.aar"))
+    implementation(files("libs/sun.misc.BASE64Decoder.jar"))
+
+    //logo classify
+    implementation(files("libs/logoclassifier-release.aar"))
+    implementation("com.google.ai.edge.litert:litert:1.4.1")
+
     implementation(project(":hificore"))
     implementation(project(":misc:alacdecoder"))
     val composeBom = platform("androidx.compose:compose-bom:2025.05.00")

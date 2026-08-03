@@ -39,8 +39,7 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
+import androidx.fragment.app.FragmentManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -55,7 +54,7 @@ import org.akanework.gramophone.logic.updateMargin
 import org.akanework.gramophone.logic.utils.SdScanner
 import org.akanework.gramophone.logic.setMediaItemsWithTitle
 import org.akanework.gramophone.ui.MainActivity
-import org.akanework.gramophone.ui.adapters.ViewPager2Adapter
+import org.akanework.gramophone.ui.adapters.MainPagerAdapter
 import org.akanework.gramophone.ui.components.PlayerBottomSheet
 import org.akanework.gramophone.ui.fragments.settings.MainSettingsActivity
 import org.nift4.mediastorecompat.MediaStoreCompat
@@ -72,7 +71,8 @@ class ViewPagerFragment : BaseFragment(true) {
         private set
     val recycledViewPool = RecyclerView.RecycledViewPool()
     private lateinit var viewPager2: ViewPager2
-    private lateinit var adapter: ViewPager2Adapter
+    private lateinit var adapter: MainPagerAdapter
+    private var pageChangeCallback: ViewPager2.OnPageChangeCallback? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -80,7 +80,6 @@ class ViewPagerFragment : BaseFragment(true) {
         savedInstanceState: Bundle?,
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_viewpager, container, false)
-        val tabLayout = rootView.findViewById<TabLayout>(R.id.tab_layout)
         val topAppBar = rootView.findViewById<MaterialToolbar>(R.id.topAppBar)
         viewPager2 = rootView.findViewById(R.id.fragment_viewpager)
 
@@ -211,62 +210,55 @@ class ViewPagerFragment : BaseFragment(true) {
             true
         }
 
-        // Connect ViewPager2.
+        // Connect ViewPager2 with the bottom navigation.
 
         viewPager2.offscreenPageLimit = 99999 // TODO is 99999 a good value?
-        adapter =
-            ViewPager2Adapter(
-                childFragmentManager,
-                viewLifecycleOwner.lifecycle,
-                requireContext(),
-                viewPager2
-            )
+        adapter = MainPagerAdapter(childFragmentManager, viewLifecycleOwner.lifecycle)
         viewPager2.adapter = adapter
+        viewPager2.isUserInputEnabled = true
 
-        TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
-            tab.text = getString(adapter.getLabelResId(position))
-            tab.view.post {
-                try {
-                    /*
-                     * Add margin to last and first tab.
-                     * There's no attribute to let you set margin
-                     * to the last tab.
-                     */
-                    val lp = tab.view.layoutParams as ViewGroup.MarginLayoutParams
-                    lp.marginStart = if (position == 0)
-                        resources.getDimension(R.dimen.tab_layout_content_padding).toInt() else 0
-                    lp.marginEnd = if (position == tabLayout.tabCount - 1)
-                        resources.getDimension(R.dimen.tab_layout_content_padding).toInt() else 0
-                    tab.view.layoutParams = lp
-                } catch (_: IllegalStateException) {
+        // The bottom navigation lives in the activity layout, which is inflated after this
+        // fragment (a FragmentContainerView child). Wire it up once the activity view tree is ready.
+        rootView.post {
+            if (view == null) return@post
+            val bottomNav = mainActivity.bottomNavigationView
+            bottomNav.setOnItemSelectedListener { item ->
+                val index = MainPagerAdapter.PAGES.indexOf(item.itemId)
+                if (index < 0) return@setOnItemSelectedListener false
+                // If the user drilled into a sub screen, return to the library first.
+                val fm = mainActivity.supportFragmentManager
+                if (fm.backStackEntryCount > 0)
+                    fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                viewPager2.setCurrentItem(index, false)
+                true
+            }
+            bottomNav.setOnItemReselectedListener { item ->
+                val index = MainPagerAdapter.PAGES.indexOf(item.itemId)
+                if (index < 0) return@setOnItemReselectedListener
+                (childFragmentManager.findFragmentByTag("f${adapter.getItemId(index)}")
+                        as? AdapterFragment)?.onTabReselected()
+            }
+            pageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    bottomNav.menu.getItem(position).isChecked = true
                 }
-            }
-        }.attach()
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(p0: TabLayout.Tab?) {
-                // do nothing
-            }
+            }.also { viewPager2.registerOnPageChangeCallback(it) }
 
-            override fun onTabUnselected(p0: TabLayout.Tab?) {
-                // do nothing
-            }
-
-            override fun onTabReselected(p0: TabLayout.Tab?) {
-                if (p0 != null)
-                    (childFragmentManager.findFragmentByTag("f${adapter.getItemId(p0.position)}")
-                            as AdapterFragment?)?.onTabReselected()
-            }
-        })
-
-        if (adapter.itemCount < 2) {
-            tabLayout.visibility = View.GONE
-            viewPager2.isUserInputEnabled = false
-        } else {
-            tabLayout.visibility = View.VISIBLE
-            viewPager2.isUserInputEnabled = true
+            // Reflect the restored/default page (Home) in the bottom navigation.
+            bottomNav.selectedItemId = adapter.getItemId(viewPager2.currentItem).toInt()
         }
 
         return rootView
+    }
+
+    override fun onDestroyView() {
+        pageChangeCallback?.let { viewPager2.unregisterOnPageChangeCallback(it) }
+        pageChangeCallback = null
+        (activity as? MainActivity)?.bottomNavigationView?.let {
+            it.setOnItemSelectedListener(null)
+            it.setOnItemReselectedListener(null)
+        }
+        super.onDestroyView()
     }
 
     fun maybeReportFullyDrawn(itemId: Int) {

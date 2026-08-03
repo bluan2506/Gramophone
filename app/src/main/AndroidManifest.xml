@@ -92,6 +92,19 @@
         </service>
 
         <activity
+            android:name=".ui.SplashActivity"
+            android:theme="@style/Theme.Gramophone"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.APP_MUSIC" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".ui.MainActivity"
             android:theme="@style/Theme.Splash"
             android:exported="true"
@@ -112,7 +125,6 @@
                 <!-- extras: query(str) -->
                 <action android:name="com.google.android.gms.actions.SEARCH_ACTION"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.APP_MUSIC" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

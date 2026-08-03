@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="home" type="id" />
     <item name="genres" type="id" />
     <item name="dates" type="id" />
     <item name="songs" type="id" />

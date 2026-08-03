@@ -572,10 +572,16 @@ fun View.enableEdgeToEdgePaddingListener(
                     WindowInsetsCompat.Type.displayCutout() or
                     if (ime) WindowInsetsCompat.Type.ime() else 0
             val i = insets.getInsets(mask)
-            val pbsp = (context as? MainActivity)?.playerBottomSheet?.getBottomPadding() ?: 0
+            val activity = context as? MainActivity
+            val pbsp = activity?.playerBottomSheet?.getBottomPadding() ?: 0
+            // In MainActivity, the persistent bottom navigation bar obstructs the bottom (its
+            // measured height already includes the system inset); the mini player, when visible,
+            // already reserves that height too. Elsewhere just clear the system inset.
+            val bottomInset = if (activity != null)
+                max(activity.bottomNavHeight, pbsp) else max(i.bottom, pbsp)
             v.setPadding(
                 pl + i.left, pt + (if (top) i.top else 0), pr + i.right,
-                pb + max(i.bottom, pbsp)
+                pb + bottomInset
             )
             extra?.invoke(i)
             return@setOnApplyWindowInsetsListener insets
@@ -610,6 +616,18 @@ fun View.updateMargin(
             newMargin.apply(this)
         }
     }
+}
+
+/**
+ * Hides the system navigation bar (3-button / gesture area) for an immersive layout while keeping
+ * the status bar. The bar reappears transiently on an edge swipe and then hides itself again.
+ * Call again from [android.app.Activity.onWindowFocusChanged] to re-hide after a transient show.
+ */
+fun ComponentActivity.hideSystemNavigationBar() {
+    val controller = WindowInsetsControllerCompat(window, window.decorView)
+    controller.systemBarsBehavior =
+        WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+    controller.hide(WindowInsetsCompat.Type.navigationBars())
 }
 
 // enableEdgeToEdge() without enforcing contrast, magic based on androidx EdgeToEdge.kt

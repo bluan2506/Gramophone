@@ -65,6 +65,10 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.util.Log
 import androidx.media3.session.DefaultMediaNotificationProvider
 import coil3.imageLoader
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
@@ -82,6 +86,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 import org.akanework.gramophone.BuildConfig
 import org.akanework.gramophone.R
+import org.akanework.gramophone.logic.clone
 import org.akanework.gramophone.logic.dpToPx
 import org.akanework.gramophone.logic.enableEdgeToEdgeProperly
 import org.akanework.gramophone.logic.getBooleanStrict
@@ -134,6 +139,18 @@ class MainActivity : BaseActivity() {
     private var ready = false
     lateinit var playerBottomSheet: PlayerBottomSheet
         private set
+    lateinit var bottomNavigationView: BottomNavigationView
+        private set
+
+    /**
+     * The full on-screen height of the bottom navigation bar, INCLUDING its own bottom system-inset
+     * padding. Content and the mini player reserve exactly this much space so they sit flush on top
+     * of the bar. Falls back to the intrinsic dimen before the bar has been laid out.
+     */
+    val bottomNavHeight: Int
+        get() = if (::bottomNavigationView.isInitialized && bottomNavigationView.height > 0)
+            bottomNavigationView.height
+        else resources.getDimensionPixelSize(R.dimen.bottom_nav_height)
     private lateinit var intentSenderDelete: ActivityResultLauncher<IntentSenderRequest>
     private lateinit var addToPlaylistIntentSender: ActivityResultLauncher<IntentSenderRequest>
     private lateinit var markIsFavoriteStatusIntentSender: ActivityResultLauncher<IntentSenderRequest>
@@ -222,6 +239,25 @@ class MainActivity : BaseActivity() {
         // Set content Views.
         setContentView(R.layout.activity_main)
         playerBottomSheet = findViewById(R.id.player_layout)
+        bottomNavigationView = findViewById(R.id.bottom_nav)
+        // Pad the bottom navigation above the system navigation bar / gesture area, but don't
+        // consume the insets so the content and the player bottom sheet still see them.
+        ViewCompat.setOnApplyWindowInsetsListener(bottomNavigationView) { v, insets ->
+            val bottom = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+            ).bottom
+            v.updatePadding(bottom = bottom)
+            insets
+        }
+        // When the bar's height changes (e.g. system inset appears/disappears), re-dispatch insets
+        // so the content and mini player re-reserve the correct amount of space above it.
+        bottomNavigationView.addOnLayoutChangeListener { _, _, top, _, bottom, _, oldTop, _, oldBottom ->
+            if (bottom - top != oldBottom - oldTop) {
+                ViewCompat.getRootWindowInsets(window.decorView)?.let {
+                    ViewCompat.dispatchApplyWindowInsets(window.decorView, it.clone())
+                }
+            }
+        }
 
         // Check all permissions.
         if (!hasAudioPermission()) {
