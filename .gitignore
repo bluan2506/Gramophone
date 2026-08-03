@@ -10,3 +10,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Local machine-specific Gradle JDK path
+gradle/config.properties

@@ -221,15 +221,6 @@ class MainActivity : BaseActivity() {
 
         // Set content Views.
         setContentView(R.layout.activity_main)
-        if (BuildConfig.DEBUG) {
-            @SuppressLint("SetTextI18n")
-            findViewById<ViewGroup>(R.id.rootView).addView(TextView(this).apply {
-                text = "DEBUG"
-                setTextColor(Color.RED)
-                translationZ = 9999999f
-                translationX = 50f
-            })
-        }
         playerBottomSheet = findViewById(R.id.player_layout)
 
         // Check all permissions.
