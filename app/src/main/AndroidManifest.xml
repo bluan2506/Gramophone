@@ -65,6 +65,7 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/Theme.Gramophone"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:windowSoftInputMode="adjustResize"
         tools:targetApi="upside_down_cake">
         <meta-data
@@ -303,6 +304,11 @@
 
         <service android:name=".ui.LyricWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <!-- Online music download engine (giga), bound by MainActivity -->
+        <service
+            android:name="us.shandian.giga.service.DownloadManagerService"
+            android:exported="false" />
 
         <activity
             android:name=".ui.fragments.settings.PlayerSettingsActivity"

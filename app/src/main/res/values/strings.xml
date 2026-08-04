@@ -25,6 +25,26 @@
     <!-- Tab on home screen showing a list of songs -->
     <string name="category_home">Home</string>
     <string name="home_search_hint">Search your music</string>
+    <string name="home_online_search">Search online</string>
+    <string name="home_online_search_subtitle">Find and stream millions of songs</string>
+    <string name="online_search_hint">Search songs online</string>
+    <string name="online_search_empty">No results. Type a song name and search.</string>
+    <string name="online_search_error">Something went wrong. Please try again.</string>
+    <string name="online_download">Download</string>
+    <string name="online_download_started">Download started</string>
+    <string name="online_loading">Loading…</string>
+    <!-- giga download engine -->
+    <string name="downloading">Downloading</string>
+    <string name="merging">Merging…</string>
+    <string name="download_successfully">Downloaded</string>
+    <string name="download_error">Download failed</string>
+    <string name="no_space_left_on_device">No space left on device</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="song_link_expired_download">Link expired, please try downloading again</string>
+    <string name="downloads_title">Downloads</string>
+    <string name="downloads_empty">No downloaded songs yet</string>
+    <string name="copyright_restrictions_title">Copyright restricted</string>
+    <string name="copyright_restrictions_message">This song can\'t be downloaded due to copyright restrictions.</string>
     <string name="home_songs_count">%1$d songs</string>
     <string name="home_downloaded">Downloaded</string>
     <string name="home_sleep_timer">Sleep timer</string>

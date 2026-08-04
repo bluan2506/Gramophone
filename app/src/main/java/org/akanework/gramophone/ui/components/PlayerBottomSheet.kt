@@ -27,6 +27,7 @@ import android.os.Looper
 import android.util.AttributeSet
 import android.view.View
 import android.view.WindowInsets
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.FrameLayout
 import androidx.activity.BackEventCompat
 import androidx.activity.OnBackPressedCallback
@@ -66,6 +67,7 @@ class PlayerBottomSheet private constructor(
 
     companion object {
         private const val TAG = "PlayerBottomSheet"
+        private const val SUB_SCREEN_ANIM_MS = 350L
     }
 
     private var standardBottomSheetBehavior: MyBottomSheetBehavior<FrameLayout>? = null
@@ -87,6 +89,14 @@ class PlayerBottomSheet private constructor(
     private val lyricsFrame: View by lazy { activity.findViewById(R.id.lyric_framelayout)!! }
     private var lastActuallyVisible: Boolean? = null
     private var lastMeasuredHeight: Int? = null
+
+    // Sub-screen state: on a non-main screen the nav and the collapsed mini-player slide down together
+    // (glued) by the nav's height, so the mini-player ends up flush at the very bottom (this app hides
+    // the system nav bar). Only translationY moves — no padding reflow.
+    private var subScreenAnimating = false
+    var subScreenNavHidden = false
+        private set
+
     var visible = false
         set(value) {
             if (field != value) {
@@ -317,11 +327,61 @@ class PlayerBottomSheet private constructor(
      * bottom sheet slide offset: 0 = collapsed (nav fully shown), 1 = expanded (nav hidden below).
      */
     private fun updateBottomNavForOffset(offset: Float) {
+        // While the sub-screen enter/exit animation runs, it owns the nav position — don't let a
+        // peek-triggered re-settle snap the nav to its end state and cut the animation short.
+        if (subScreenAnimating) return
         val nav = activity.bottomNavigationView
-        val progress = offset.coerceIn(0f, 1f)
+        // On a sub-screen the nav stays fully hidden regardless of the player slide.
+        val progress = maxOf(offset.coerceIn(0f, 1f), if (subScreenNavHidden) 1f else 0f)
         val height = nav.height.takeIf { it > 0 } ?: activity.bottomNavHeight
         nav.translationY = height.toFloat() * progress
         nav.alpha = 1f - progress
+    }
+
+    /**
+     * Called by MainActivity when the top container fragment changes. On a sub-screen the bottom nav
+     * slides down and the collapsed mini-player slides down flush to the very bottom; back on the main
+     * screen both slide back up. The nav and the mini-player animate together (same duration).
+     */
+    fun setSubScreenNavHidden(hidden: Boolean) {
+        if (subScreenNavHidden == hidden) return
+        subScreenNavHidden = hidden
+        subScreenAnimating = true
+
+        val nav = activity.bottomNavigationView
+        val navHeight = (nav.height.takeIf { it > 0 } ?: activity.bottomNavHeight).toFloat()
+
+        // Shrink/grow the collapsed peek to its target (flush on a sub-screen) + re-pad content. The
+        // mini-player content is vertically centred so this does NOT reflow it — it only removes the
+        // reserved strip so there's no grey block above the mini-player. subScreenAnimating blocks the
+        // nav-snap this re-settle would otherwise trigger.
+        val oldPeek = previewPlayer.measuredHeight
+        previewPlayer.setPadding(
+            previewPlayer.paddingLeft, 0, previewPlayer.paddingRight,
+            if (hidden) 0 else activity.bottomNavHeight
+        )
+        updatePeekHeight()
+        dispatchBottomSheetInsets()
+        val newPeek = previewPlayer.measuredHeight
+
+        // Slide the nav and the mini-player down/up together by the same amount (glued). The peek
+        // already snapped the mini-player to the new spot, so start it from the old spot and animate.
+        nav.animate().cancel()
+        nav.animate()
+            .translationY(if (hidden) navHeight else 0f)
+            .alpha(if (hidden) 0f else 1f)
+            .setInterpolator(AccelerateDecelerateInterpolator())
+            .setDuration(SUB_SCREEN_ANIM_MS)
+            .withEndAction { subScreenAnimating = false }
+            .start()
+
+        previewPlayer.animate().cancel()
+        previewPlayer.translationY = (newPeek - oldPeek).toFloat()
+        previewPlayer.animate()
+            .translationY(0f)
+            .setInterpolator(AccelerateDecelerateInterpolator())
+            .setDuration(SUB_SCREEN_ANIM_MS)
+            .start()
     }
 
     private fun updatePeekHeight() {
@@ -366,7 +426,8 @@ class PlayerBottomSheet private constructor(
         // instead of overlapping it. bottomNavHeight already includes the system inset, and the
         // nav bar draws on top of the empty strip left behind.
         previewPlayer.setPadding(
-            myInsets.left, 0, myInsets.right, activity.bottomNavHeight
+            myInsets.left, 0, myInsets.right,
+            if (subScreenNavHidden) 0 else activity.bottomNavHeight
         )
         // Let fullPlayer handle insets itself (and discard result as it's irrelevant to hierarchy)
         ViewCompat.dispatchApplyWindowInsets(fullPlayer, insets.clone())

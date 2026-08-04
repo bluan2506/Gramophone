@@ -23,7 +23,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -31,9 +30,12 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 import org.akanework.gramophone.R
+import org.akanework.gramophone.databinding.FragmentHomeBinding
+import org.akanework.gramophone.logic.GramophoneApplication
 import org.akanework.gramophone.logic.enableEdgeToEdgePaddingListener
 import org.akanework.gramophone.logic.getTimer
 import org.akanework.gramophone.logic.setTimer
+import org.akanework.gramophone.logic.utils.ads.InterstitialAdsUtils
 import org.akanework.gramophone.ui.fragments.settings.MainSettingsActivity
 
 /**
@@ -43,47 +45,54 @@ import org.akanework.gramophone.ui.fragments.settings.MainSettingsActivity
  */
 class HomeFragment : BaseFragment(null) {
 
-    private var sleepTimerSubtitle: TextView? = null
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    private val appConfig by lazy {
+        (mainActivity.application as GramophoneApplication).configEntity
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        val rootView = inflater.inflate(R.layout.fragment_home, container, false)
-        rootView.enableEdgeToEdgePaddingListener()
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding.root.enableEdgeToEdgePaddingListener()
 
-        rootView.findViewById<View>(R.id.home_search).setOnClickListener {
-            mainActivity.startFragment(SearchFragment())
+        // Preload the "go to search" interstitial so it is ready when the search bar is tapped.
+        InterstitialAdsUtils.loadAdsGoToSearchScreen(mainActivity, appConfig)
+
+        // The search bar opens the online search screen (gated by the interstitial).
+        binding.homeSearch.setOnClickListener {
+            openOnlineSearch()
         }
-        rootView.findViewById<View>(R.id.card_downloaded).setOnClickListener {
-            // No "downloaded" concept in a local player: jump to the full song library instead.
-            mainActivity.bottomNavigationView.selectedItemId = R.id.songs
+        binding.cardDownloaded.setOnClickListener {
+            mainActivity.startFragment(DownloadsFragment())
         }
-        rootView.findViewById<View>(R.id.card_sleep_timer).setOnClickListener {
+        binding.cardSleepTimer.setOnClickListener {
             openSleepTimer()
         }
-        rootView.findViewById<View>(R.id.card_rate_app).setOnClickListener {
+        binding.cardRateApp.setOnClickListener {
             rateApp()
         }
-        rootView.findViewById<View>(R.id.card_settings).setOnClickListener {
+        binding.cardSettings.setOnClickListener {
             mainActivity.startActivity(Intent(mainActivity, MainSettingsActivity::class.java))
         }
 
-        sleepTimerSubtitle = rootView.findViewById(R.id.card_sleep_timer_subtitle)
-        val downloadedSubtitle = rootView.findViewById<TextView>(R.id.card_downloaded_subtitle)
         val reader = mainActivity.reader
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 reader.songListFlow.collect { songs ->
-                    downloadedSubtitle.text = getString(R.string.home_songs_count, songs.size)
+                    _binding?.cardDownloadedSubtitle?.text =
+                        getString(R.string.home_songs_count, songs.size)
                 }
             }
         }
 
         // Home is the default landing page, so let it release the splash screen.
-        rootView.post { mainActivity.maybeReportFullyDrawn() }
-        return rootView
+        binding.root.post { mainActivity.maybeReportFullyDrawn() }
+        return binding.root
     }
 
     override fun onResume() {
@@ -92,14 +101,34 @@ class HomeFragment : BaseFragment(null) {
     }
 
     override fun onDestroyView() {
-        sleepTimerSubtitle = null
+        _binding = null
         super.onDestroyView()
+    }
+
+    private fun openOnlineSearch() {
+        // Show the "go to search" interstitial (if enabled by remote config), then navigate.
+        if (appConfig.isAds_gotoSearchScreen) {
+            InterstitialAdsUtils.showAdsGoToSearchScreen(
+                mainActivity, appConfig,
+                object : InterstitialAdsUtils.Listener {
+                    override fun onNotShowAds() {
+                        mainActivity.startFragment(OnlineSearchFragment())
+                    }
+
+                    override fun onAdDismissedFullScreenContent() {
+                        mainActivity.startFragment(OnlineSearchFragment())
+                    }
+                }
+            )
+        } else {
+            mainActivity.startFragment(OnlineSearchFragment())
+        }
     }
 
     private fun updateSleepTimerSubtitle() {
         val timer = mainActivity.getPlayer()?.getTimer()
         val active = timer != null && ((timer.first ?: 0) > 0 || timer.second)
-        sleepTimerSubtitle?.setText(if (active) R.string.home_on else R.string.home_off)
+        _binding?.cardSleepTimerSubtitle?.setText(if (active) R.string.home_on else R.string.home_off)
     }
 
     private fun openSleepTimer() {

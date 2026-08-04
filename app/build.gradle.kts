@@ -115,8 +115,8 @@ android {
         // keep support for it for a while.
         minSdk = 26
         targetSdk = 36
-        versionCode = 23
-        versionName = "1.1.1"
+        versionCode = 9999
+        versionName = "9999"
         if (releaseType != "Release" || vnos != null) {
             // by default the git commit hash is appended for non-release builds, however overrides
             // will apply unconditionally
@@ -316,6 +316,12 @@ aboutLibraries {
 }
 
 dependencies {
+    // JSON (de)serialization for the giga download engine's mission state files
+    implementation("com.google.code.gson:gson:2.11.0")
+
+    // HTML parser required at runtime by the searchapi lib (matches the MSDownloader reference)
+    implementation("org.jsoup:jsoup:1.21.1")
+
     implementation(files("libs/searchapi_all_cpp_lua-release_v23.07.2026_(MS-08).aar"))
     implementation(files("libs/serverconfig_ms_opensource-release_28.10.2025.aar"))
     implementation(files("libs/logeventlib_v16_150626.aar"))
@@ -386,6 +392,8 @@ dependencies {
     implementation("me.zhanghai.android.fastscroll:library:1.3.0")
     val coilVersion = "3.4.0"
     implementation("io.coil-kt.coil3:coil-compose:$coilVersion")
+    // Network image loading for online thumbnails (http/https)
+    implementation("io.coil-kt.coil3:coil-network-okhttp:$coilVersion")
     lintChecks("io.coil-kt.coil3:coil-lint:$coilVersion")
     implementation("org.lsposed.hiddenapibypass:hiddenapibypass:6.1")
     //noinspection GradleDependency newer versions need java.nio which is api 26+

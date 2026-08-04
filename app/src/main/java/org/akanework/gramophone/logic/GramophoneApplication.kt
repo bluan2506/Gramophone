@@ -56,6 +56,7 @@ import androidx.media3.common.util.Log
 import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.preference.PreferenceManager
 import coil3.ImageLoader
+import coil3.network.okhttp.OkHttpNetworkFetcherFactory
 import coil3.PlatformContext
 import coil3.SingletonImageLoader
 import coil3.map.AndroidUriMapper
@@ -95,7 +96,7 @@ class GramophoneApplication : Application(), SingletonImageLoader.Factory,
 
     private var currentActivity: Activity? = null
     private lateinit var appOpenAdManager: AppOpenAdManager
-    private val configEntity by lazy { ConfigUtils.configApp(this) }
+    val configEntity by lazy { ConfigUtils.configApp(this) }
 
     init {
         @SuppressLint("DefaultUncaughtExceptionDelegation")
@@ -159,7 +160,6 @@ class GramophoneApplication : Application(), SingletonImageLoader.Factory,
                         else it
                     }
                     .penaltyLog()
-                    .penaltyDialog()
                     .build()
             )
             StrictMode.setVmPolicy(
@@ -375,6 +375,8 @@ class GramophoneApplication : Application(), SingletonImageLoader.Factory,
                 add(CoilArtPipeline.ThumbnailFetcherFactory())
                 add(CoilArtPipeline.AlbumThumbnailFetcherFactory())
                 add(CoilArtPipeline.SongCoverFetcherFactory())
+                // Load online thumbnails (http/https URLs) for the online search screen.
+                add(OkHttpNetworkFetcherFactory())
             }
             .run {
                 if (!BuildConfig.DEBUG) this else

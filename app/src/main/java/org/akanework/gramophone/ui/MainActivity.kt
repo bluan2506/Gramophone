@@ -108,6 +108,7 @@ import uk.akane.libphonograph.dynamicitem.Favorite
 import uk.akane.libphonograph.manipulator.ItemManipulator
 import uk.akane.libphonograph.manipulator.PlaylistSerializer
 import uk.akane.libphonograph.manipulator.PlaylistSerializer.Entry
+import org.akanework.gramophone.logic.utils.online.DownloadController
 import java.io.File
 import kotlin.time.Duration.Companion.milliseconds
 
@@ -233,11 +234,14 @@ class MainActivity : BaseActivity() {
                 if (f is BaseFragment && f.wantsPlayer != null) {
                     playerBottomSheet.visible = f.wantsPlayer
                 }
+                updateBottomNavVisibility(f)
             }
         }, false)
 
         // Set content Views.
         setContentView(R.layout.activity_main)
+        // Bind the giga download service so online downloads can start from the search screen.
+        DownloadController.bind(this)
         playerBottomSheet = findViewById(R.id.player_layout)
         bottomNavigationView = findViewById(R.id.bottom_nav)
         // Pad the bottom navigation above the system navigation bar / gesture area, but don't
@@ -850,6 +854,15 @@ class MainActivity : BaseActivity() {
             addToBackStack(System.currentTimeMillis().toString())
             hide(supportFragmentManager.fragments.last())
             add(R.id.container, frag.apply { args?.let { arguments = Bundle().apply(it) } })
+        }
+    }
+
+    /** The bottom navigation belongs to the main screen only; sub-screens hide it (nav slides down). */
+    fun updateBottomNavVisibility(f: Fragment) {
+        // Only the fragments swapped into the main container drive this — ignore dialogs / pager pages.
+        if (f.id != R.id.container) return
+        if (::playerBottomSheet.isInitialized) {
+            playerBottomSheet.setSubScreenNavHidden(f !is ViewPagerFragment)
         }
     }
 

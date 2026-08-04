@@ -63,5 +63,7 @@ abstract class BaseFragment(val wantsPlayer: Boolean? = null) : Fragment() {
         if (wantsPlayer != null) {
             (activity as MainActivity?)?.playerBottomSheet?.visible = wantsPlayer
         }
+        // show()/hide() doesn't re-fire onFragmentStarted, so refresh the bottom nav here too
+        (activity as MainActivity?)?.updateBottomNavVisibility(this)
     }
 }
