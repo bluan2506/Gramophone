@@ -15,6 +15,8 @@ plugins {
     id("com.mikepenz.aboutlibraries.plugin.android") version aboutLibsVersion apply false
     id("com.osacky.doctor") version "0.12.1"
     id("pt.jcosta.resourceplaceholders") version "0.11.2" apply false
+    id("com.google.gms.google-services") version "4.4.4" apply false
+    id("com.google.firebase.crashlytics") version "3.0.6" apply false
 }
 
 doctor {

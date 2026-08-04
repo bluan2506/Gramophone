@@ -18,6 +18,8 @@ dependencyResolutionManagement {
                 includeGroup("com.github.philburk")
             }
         }
+        // TopOn / AnyThink ad SDK (com.thinkup.sdk, com.smartdigimkttech.sdk)
+        maven("https://jfrog.anythinktech.com/artifactory/overseas_sdk")
     }
 }
 

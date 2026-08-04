@@ -17,6 +17,8 @@ plugins {
     id("com.mikepenz.aboutlibraries.plugin")
     id("com.mikepenz.aboutlibraries.plugin.android")
     id("pt.jcosta.resourceplaceholders")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -69,6 +71,7 @@ android {
         buildConfig = true
         prefab = true
         compose = true
+        viewBinding = true
     }
 
     packaging {
@@ -105,7 +108,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = appIdOverride ?: "org.akanework.gramophone"
+        applicationId = "com.musicdownloader.musicfreeapp825v2"
         // Reasons to not support KK include me.zhanghai.android.fastscroll, WindowInsets for
         // bottom sheet padding, ExoPlayer requiring multidex, vector drawables and poor SD support
         // That said, supporting Android 5.0 costs tolerable amounts of tech debt, and we plan to
@@ -225,7 +228,6 @@ android {
         }
         debug {
             isPseudoLocalesEnabled = true
-            applicationIdSuffix = ".debug"
         }
         forEach {
             it.vcsInfo {
@@ -309,7 +311,7 @@ aboutLibraries {
     }
     license {
         strictMode = com.mikepenz.aboutlibraries.plugin.StrictMode.FAIL
-        allowedLicenses.addAll("Apache-2.0", "MIT", "BSD-2-Clause", "BSD-3-Clause")
+        allowedLicenses.addAll("Apache-2.0", "MIT", "BSD-2-Clause", "BSD-3-Clause", "ASDKL", "MPL-2.0")
     }
 }
 
@@ -322,6 +324,32 @@ dependencies {
     //logo classify
     implementation(files("libs/logoclassifier-release.aar"))
     implementation("com.google.ai.edge.litert:litert:1.4.1")
+
+    implementation("com.onesignal:OneSignal:4.8.10")
+
+    // Get link Luaj
+    implementation("org.mozilla:rhino:1.7.15")
+    implementation("com.android.installreferrer:installreferrer:2.2")
+    implementation("com.google.android.gms:play-services-appset:16.1.0")
+
+    // AdMob + TopOn ad mediation (core). Test AdMob APP ID is set in AndroidManifest.
+    // Add more mediation networks (Pangle/Vungle/Unity/IronSource/Chartboost/Appnext...) on top of
+    // this — each needs its own maven repo (settings.gradle.kts) and account credentials.
+    implementation("com.google.android.gms:play-services-ads:25.1.0")
+    implementation("androidx.browser:browser:1.8.0")
+    implementation("com.thinkup.sdk:core-tpn:6.5.52")
+    implementation("com.thinkup.sdk:adapter-tpn-sdm:6.5.56.1.1")
+    implementation("com.smartdigimkttech.sdk:smartdigimkttech-sdk:6.5.56")
+    implementation("com.thinkup.sdk:tramini-plugin-tpn:6.5.52")
+    implementation("com.thinkup.sdk:adapter-tpn-admob:25.0.0.1.0")
+
+    // App-wide lifecycle (ProcessLifecycleOwner) for app-open ads
+    implementation("androidx.lifecycle:lifecycle-process:2.9.4")
+
+    // Firebase (requires app/google-services.json from your Firebase project)
+    implementation(platform("com.google.firebase:firebase-bom:34.17.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
 
     implementation(project(":hificore"))
     implementation(project(":misc:alacdecoder"))

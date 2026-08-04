@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "238466329011",
+    "project_id": "gramophone-95633",
+    "storage_bucket": "gramophone-95633.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238466329011:android:e11172084290d7e95743c6",
+        "android_client_info": {
+          "package_name": "com.musicdownloader.musicfreeapp825v2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBod0HyV-S8CEXfwwdoIsw3K4oZXPq7sY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238466329011:android:ab38a501fb0f9a065743c6",
+        "android_client_info": {
+          "package_name": "org.akanework.gramophone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBod0HyV-S8CEXfwwdoIsw3K4oZXPq7sY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

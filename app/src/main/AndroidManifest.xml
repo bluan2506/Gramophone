@@ -38,10 +38,14 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
         android:minSdkVersion="34" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!-- Remove ExoPlayer permission as we don't network playback -->
-    <uses-permission
-        android:name="android.permission.ACCESS_NETWORK_STATE"
-        tools:node="remove" />
+    <!-- Network access for ads / ad mediation (AdMob + TopOn) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- Advertising ID, required by AdMob / mediation on Android 13+ -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <!-- Bluetooth device information -->
     <uses-permission android:name="android.permission.BLUETOOTH"
         android:maxSdkVersion="30" />
@@ -69,6 +73,14 @@
         <meta-data
             android:name="com.google.android.gms.car.application.theme"
             android:resource="@style/Theme.Gramophone"/>
+        <!-- AdMob App ID — Google's OFFICIAL TEST id. Replace with your real app id before release. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+        <!-- Legacy Apache HTTP, required by the serverconfig (com.aws.config) SDK on Android 9+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 <!-- TODO uncomment to enable Android Auto when library browsing is implemented
         <meta-data
             android:name="com.google.android.gms.car.application"

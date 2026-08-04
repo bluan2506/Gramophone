@@ -18,10 +18,29 @@
 package org.akanework.gramophone.logic
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.Application
 import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Bundle
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ProcessLifecycleOwner
+import com.applogevent.logeventlib.LogEventLibs
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.appopen.AppOpenAd
+import com.thinkup.core.api.TUSDK
+import org.akanework.gramophone.logic.utils.ads.InterstitialAdsUtils
+import org.akanework.gramophone.logic.utils.ads.KeyTopOn
+import org.akanework.gramophone.logic.utils.config.ConfigUtils
+import org.akanework.gramophone.logic.utils.firebase.FirebaseEventUtils
+import org.akanework.gramophone.ui.SplashActivity
+import java.util.Date
 import android.os.Build
 import android.os.Debug
 import android.os.Environment
@@ -55,6 +74,7 @@ import org.akanework.gramophone.BuildConfig
 import org.akanework.gramophone.R
 import org.akanework.gramophone.logic.ui.BugHandlerActivity
 import org.akanework.gramophone.logic.utils.CoilArtPipeline
+import org.akanework.gramophone.logic.utils.ads.KeyAdMob
 import org.akanework.gramophone.ui.LyricWidgetProvider
 import org.lsposed.hiddenapibypass.HiddenApiBypass
 import org.lsposed.hiddenapibypass.LSPass
@@ -66,11 +86,16 @@ import kotlin.system.exitProcess
 import kotlin.time.Duration.Companion.milliseconds
 
 class GramophoneApplication : Application(), SingletonImageLoader.Factory,
-    Thread.UncaughtExceptionHandler, SharedPreferences.OnSharedPreferenceChangeListener {
+    Thread.UncaughtExceptionHandler, SharedPreferences.OnSharedPreferenceChangeListener,
+    Application.ActivityLifecycleCallbacks, DefaultLifecycleObserver {
 
     companion object {
         private const val TAG = "GramophoneApplication"
     }
+
+    private var currentActivity: Activity? = null
+    private lateinit var appOpenAdManager: AppOpenAdManager
+    private val configEntity by lazy { ConfigUtils.configApp(this) }
 
     init {
         @SuppressLint("DefaultUncaughtExceptionDelegation")
@@ -113,7 +138,7 @@ class GramophoneApplication : Application(), SingletonImageLoader.Factory,
         private set
 
     override fun onCreate() {
-        super.onCreate()
+        super<Application>.onCreate()
         // disk read and write on first launch, but unavoidable as threads would race setDefaultNightMode
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         if (BuildConfig.DEBUG && !isColorOS()) {
@@ -258,6 +283,22 @@ class GramophoneApplication : Application(), SingletonImageLoader.Factory,
             "2" -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
+        }
+        // --- Ads / analytics / lifecycle (mirrors the sample app's Application) ---
+        registerActivityLifecycleCallbacks(this)
+        try {
+            val analyticsUrl = ConfigUtils.SERVER_URL_ANALYTICS
+            LogEventLibs.init(this, analyticsUrl)
+        } catch (e: Exception) {
+            FirebaseEventUtils.getInstances().recordException(e)
+        }
+        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
+        appOpenAdManager = AppOpenAdManager()
+        try {
+            Log.i(TAG, "TopOn SDK version: " + TUSDK.getSDKVersionName())
+            TUSDK.init(this, KeyTopOn.APP_ID, KeyTopOn.APP_KEY)
+        } catch (e: Exception) {
+            FirebaseEventUtils.getInstances().recordException(e)
         }
         // This is a separate thread to avoid disk read on main thread and improve startup time
         CoroutineScope(Dispatchers.Default).launch {
@@ -406,6 +447,120 @@ class GramophoneApplication : Application(), SingletonImageLoader.Factory,
         )
         return props.any {
             !getSystemProperty(it).isNullOrBlank()
+        }
+    }
+
+    // --- App-open ad on returning to foreground (mirrors the sample app) ---
+
+    override fun onStart(owner: LifecycleOwner) {
+        val activity = currentActivity ?: return
+        if (activity !is SplashActivity && !configEntity.isToponads
+            && !InterstitialAdsUtils.isShowAdsGoToSearchScreen
+        ) {
+            appOpenAdManager.showAdIfAvailable(activity)
+        }
+    }
+
+    override fun onActivityStarted(activity: Activity) {
+        if (!appOpenAdManager.isShowingAd) currentActivity = activity
+    }
+
+    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
+    override fun onActivityResumed(activity: Activity) {}
+    override fun onActivityPaused(activity: Activity) {}
+    override fun onActivityStopped(activity: Activity) {}
+    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
+    override fun onActivityDestroyed(activity: Activity) {}
+
+    interface OnShowAdCompleteListener {
+        fun onShowAdComplete()
+    }
+
+    /** AdMob App Open ad manager, adapted from the sample app (revenue logging omitted). */
+    private inner class AppOpenAdManager {
+        private var appOpenAd: AppOpenAd? = null
+        private var isLoadingAd = false
+        var isShowingAd = false
+        private var loadTime = 0L
+
+        fun loadAd(context: Context) {
+            if (isLoadingAd || isAdAvailable()) return
+            isLoadingAd = true
+            AppOpenAd.load(context, KeyAdMob.OPEN_APP, AdRequest.Builder().build(),
+                object : AppOpenAd.AppOpenAdLoadCallback() {
+                    override fun onAdLoaded(ad: AppOpenAd) {
+                        appOpenAd = ad
+                        isLoadingAd = false
+                        loadTime = Date().time
+                    }
+
+                    override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                        isLoadingAd = false
+                        Log.e(TAG, "app open onAdFailedToLoad: $loadAdError")
+                    }
+                })
+        }
+
+        /** App-open ads expire after four hours. */
+        private fun isAdAvailable() =
+            appOpenAd != null && Date().time - loadTime < 4 * 3600_000L
+
+        fun showAdIfAvailable(activity: Activity) {
+            showAdIfAvailable(activity, object : OnShowAdCompleteListener {
+                override fun onShowAdComplete() {
+                    // Empty because the user will go back to the activity that showed the ad.
+                }
+            })
+        }
+
+        fun showAdIfAvailable(
+            activity: Activity,
+            onShowAdCompleteListener: OnShowAdCompleteListener
+        ) {
+            // If the app open ad is already showing, do not show the ad again.
+            if (isShowingAd) {
+                Log.d(TAG, "The app open ad is already showing.")
+                return
+            }
+
+            // If the app open ad is not available yet, invoke the callback then load the ad.
+            if (!isAdAvailable()) {
+                Log.d(TAG, "The app open ad is not ready yet.")
+                onShowAdCompleteListener.onShowAdComplete()
+                loadAd(activity)
+                return
+            }
+
+            Log.d(TAG, "Will show ad.")
+
+            appOpenAd!!.fullScreenContentCallback = object : FullScreenContentCallback() {
+                override fun onAdDismissedFullScreenContent() {
+                    appOpenAd = null
+                    isShowingAd = false
+                    if (activity is SplashActivity) {
+                        activity.startMainActivity()
+                    } else {
+                        onShowAdCompleteListener.onShowAdComplete()
+                    }
+                    loadAd(activity)
+                }
+
+                override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                    appOpenAd = null
+                    isShowingAd = false
+                    Log.e(TAG, "app open onAdFailedToShow: $adError")
+                    onShowAdCompleteListener.onShowAdComplete()
+                    loadAd(activity)
+                }
+
+                override fun onAdShowedFullScreenContent() {
+                    if (activity is SplashActivity) {
+                        activity.alreadyShowAds = true
+                    }
+                }
+            }
+            isShowingAd = true
+            appOpenAd!!.show(activity)
         }
     }
 }
