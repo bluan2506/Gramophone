@@ -13,3 +13,11 @@ local.properties
 
 # Local machine-specific Gradle JDK path
 gradle/config.properties
+
+# Signing keystores / credentials (never commit these)
+*.jks
+*.keystore
+
+# Build outputs that may be exported outside module build dirs
+*.apk
+*.aab

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="gnt_rating_bar_light">
+        <item name="colorControlNormal">@color/gnt_primary_light</item>
+        <item name="colorControlActivated">@color/gnt_primary_light</item>
+    </style>
+
+    <style name="gnt_rating_bar_dark">
+        <item name="colorControlNormal">@color/gnt_primary_dark</item>
+        <item name="colorControlActivated">@color/gnt_primary_dark</item>
+    </style>
+
+    <style name="gnt_rounded_corner_4">
+        <item name="cornerSize">4dp</item>
+    </style>
+
+</resources>

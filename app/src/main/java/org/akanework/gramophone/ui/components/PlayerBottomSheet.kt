@@ -330,12 +330,13 @@ class PlayerBottomSheet private constructor(
         // While the sub-screen enter/exit animation runs, it owns the nav position — don't let a
         // peek-triggered re-settle snap the nav to its end state and cut the animation short.
         if (subScreenAnimating) return
-        val nav = activity.bottomNavigationView
-        // On a sub-screen the nav stays fully hidden regardless of the player slide.
+        // Slide the whole bottom bar (nav + home banner) so the banner hides with the nav.
+        val bar = activity.bottomBar
+        // On a sub-screen the bar stays fully hidden regardless of the player slide.
         val progress = maxOf(offset.coerceIn(0f, 1f), if (subScreenNavHidden) 1f else 0f)
-        val height = nav.height.takeIf { it > 0 } ?: activity.bottomNavHeight
-        nav.translationY = height.toFloat() * progress
-        nav.alpha = 1f - progress
+        val height = bar.height.takeIf { it > 0 } ?: activity.bottomNavHeight
+        bar.translationY = height.toFloat() * progress
+        bar.alpha = 1f - progress
     }
 
     /**
@@ -348,8 +349,9 @@ class PlayerBottomSheet private constructor(
         subScreenNavHidden = hidden
         subScreenAnimating = true
 
-        val nav = activity.bottomNavigationView
-        val navHeight = (nav.height.takeIf { it > 0 } ?: activity.bottomNavHeight).toFloat()
+        // Slide the whole bottom bar (nav + home banner) so the banner hides with the nav.
+        val bar = activity.bottomBar
+        val barHeight = (bar.height.takeIf { it > 0 } ?: activity.bottomNavHeight).toFloat()
 
         // Shrink/grow the collapsed peek to its target (flush on a sub-screen) + re-pad content. The
         // mini-player content is vertically centred so this does NOT reflow it — it only removes the
@@ -364,11 +366,11 @@ class PlayerBottomSheet private constructor(
         dispatchBottomSheetInsets()
         val newPeek = previewPlayer.measuredHeight
 
-        // Slide the nav and the mini-player down/up together by the same amount (glued). The peek
+        // Slide the bar and the mini-player down/up together by the same amount (glued). The peek
         // already snapped the mini-player to the new spot, so start it from the old spot and animate.
-        nav.animate().cancel()
-        nav.animate()
-            .translationY(if (hidden) navHeight else 0f)
+        bar.animate().cancel()
+        bar.animate()
+            .translationY(if (hidden) barHeight else 0f)
             .alpha(if (hidden) 0f else 1f)
             .setInterpolator(AccelerateDecelerateInterpolator())
             .setDuration(SUB_SCREEN_ANIM_MS)

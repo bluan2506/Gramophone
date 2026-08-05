@@ -18,24 +18,30 @@
 package org.akanework.gramophone.ui.fragments
 
 import android.content.ActivityNotFoundException
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.akanework.gramophone.R
 import org.akanework.gramophone.databinding.FragmentHomeBinding
 import org.akanework.gramophone.logic.GramophoneApplication
 import org.akanework.gramophone.logic.enableEdgeToEdgePaddingListener
 import org.akanework.gramophone.logic.getTimer
 import org.akanework.gramophone.logic.setTimer
+import org.akanework.gramophone.logic.utils.UpdateUtils
 import org.akanework.gramophone.logic.utils.ads.InterstitialAdsUtils
+import org.akanework.gramophone.logic.utils.online.DownloadStorage
 import org.akanework.gramophone.ui.fragments.settings.MainSettingsActivity
 
 /**
@@ -44,6 +50,11 @@ import org.akanework.gramophone.ui.fragments.settings.MainSettingsActivity
  * on top and a 2x2 grid of quick actions (Downloaded, Sleep timer, Rate app, Settings).
  */
 class HomeFragment : BaseFragment(null) {
+
+    companion object {
+        // Show the config-driven update dialog only once per app session.
+        private var updateDialogShown = false
+    }
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -68,7 +79,7 @@ class HomeFragment : BaseFragment(null) {
             openOnlineSearch()
         }
         binding.cardDownloaded.setOnClickListener {
-            mainActivity.startFragment(DownloadsFragment())
+            openDownloaded()
         }
         binding.cardSleepTimer.setOnClickListener {
             openSleepTimer()
@@ -77,17 +88,16 @@ class HomeFragment : BaseFragment(null) {
             rateApp()
         }
         binding.cardSettings.setOnClickListener {
-            mainActivity.startActivity(Intent(mainActivity, MainSettingsActivity::class.java))
+            openSettings()
         }
 
-        val reader = mainActivity.reader
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                reader.songListFlow.collect { songs ->
-                    _binding?.cardDownloadedSubtitle?.text =
-                        getString(R.string.home_songs_count, songs.size)
-                }
-            }
+        // Show how many songs are in the download folder (not the whole music library).
+        updateDownloadedCount()
+
+        // Prompt to update the app (config-driven), once per session on landing on home.
+        if (!updateDialogShown) {
+            updateDialogShown = true
+            UpdateUtils.showDialogUpdate(mainActivity)
         }
 
         // Home is the default landing page, so let it release the splash screen.
@@ -98,11 +108,47 @@ class HomeFragment : BaseFragment(null) {
     override fun onResume() {
         super.onResume()
         updateSleepTimerSubtitle()
+        updateDownloadedCount()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Refresh the downloaded count live when a download completes while home is visible.
+        context?.let {
+            ContextCompat.registerReceiver(
+                it, downloadUpdateReceiver, IntentFilter(DownloadsFragment.ACTION_UPDATE),
+                ContextCompat.RECEIVER_EXPORTED
+            )
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        runCatching { context?.unregisterReceiver(downloadUpdateReceiver) }
     }
 
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    private val downloadUpdateReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            updateDownloadedCount()
+        }
+    }
+
+    /** Counts audio files in the download folder off the main thread, then updates the subtitle. */
+    private fun updateDownloadedCount() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val count = withContext(Dispatchers.IO) {
+                DownloadStorage.getPathDownload().listFiles()?.count {
+                    it.isFile &&
+                        it.name.substringAfterLast('.', "").lowercase() in DownloadsFragment.AUDIO_EXTENSIONS
+                } ?: 0
+            }
+            _binding?.cardDownloadedSubtitle?.text = getString(R.string.home_songs_count, count)
+        }
     }
 
     private fun openOnlineSearch() {
@@ -122,6 +168,46 @@ class HomeFragment : BaseFragment(null) {
             )
         } else {
             mainActivity.startFragment(OnlineSearchFragment())
+        }
+    }
+
+    /** Home -> Downloaded, gated by the shared go-to-search interstitial (as in the sample). */
+    private fun openDownloaded() {
+        if (appConfig.isAds_gotoSearchScreen) {
+            InterstitialAdsUtils.showAdsGoToSearchScreen(
+                mainActivity, appConfig,
+                object : InterstitialAdsUtils.Listener {
+                    override fun onNotShowAds() {
+                        mainActivity.startFragment(DownloadsFragment())
+                    }
+
+                    override fun onAdDismissedFullScreenContent() {
+                        mainActivity.startFragment(DownloadsFragment())
+                    }
+                }
+            )
+        } else {
+            mainActivity.startFragment(DownloadsFragment())
+        }
+    }
+
+    /** Home -> Settings, gated by the go-to-setting interstitial (as in the sample). */
+    private fun openSettings() {
+        if (appConfig.isAds_gotoSettingScreen) {
+            InterstitialAdsUtils.showAdsGoToSearchScreen(
+                mainActivity, appConfig,
+                object : InterstitialAdsUtils.Listener {
+                    override fun onNotShowAds() {
+                        mainActivity.startActivity(Intent(mainActivity, MainSettingsActivity::class.java))
+                    }
+
+                    override fun onAdDismissedFullScreenContent() {
+                        mainActivity.startActivity(Intent(mainActivity, MainSettingsActivity::class.java))
+                    }
+                }
+            )
+        } else {
+            mainActivity.startActivity(Intent(mainActivity, MainSettingsActivity::class.java))
         }
     }
 

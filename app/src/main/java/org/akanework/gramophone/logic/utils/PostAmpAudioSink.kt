@@ -152,7 +152,7 @@ class PostAmpAudioSink(
                 addAction("android.media.STREAM_MUTE_CHANGED_ACTION")
             },
             @SuppressLint("WrongConstant") // why is this needed?
-            ContextCompat.RECEIVER_NOT_EXPORTED
+            ContextCompat.RECEIVER_EXPORTED
         )
         synchronized(rgAp) {
             rgAp.settingsChangedListener = {

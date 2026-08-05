@@ -38,7 +38,7 @@ class DownloadsFragment : BaseFragment(true) {
     companion object {
         const val ACTION_UPDATE = "org.akanework.gramophone.action.DOWNLOAD_UPDATE"
 
-        private val AUDIO_EXTENSIONS =
+        val AUDIO_EXTENSIONS =
             setOf("mp3", "m4a", "aac", "wav", "flac", "ogg", "opus")
     }
 
@@ -116,7 +116,7 @@ class DownloadsFragment : BaseFragment(true) {
         context?.let {
             ContextCompat.registerReceiver(
                 it, updateReceiver, IntentFilter(ACTION_UPDATE),
-                ContextCompat.RECEIVER_NOT_EXPORTED
+                ContextCompat.RECEIVER_EXPORTED
             )
         }
     }

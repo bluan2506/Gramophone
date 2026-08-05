@@ -2,7 +2,11 @@ package org.akanework.gramophone.logic.utils.ads
 
 import android.app.Activity
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.util.Log
+import android.view.Gravity
+import android.view.Window
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
@@ -35,7 +39,24 @@ object InterstitialAdsUtils {
 
     private const val TAG = "MyAppInterstitialAdsUtils"
 
-    private const val SHOW_PROGRESS_DIALOG_DELAY = 300L
+    private const val SHOW_PROGRESS_DIALOG_DELAY = 1200L
+
+    /**
+     * Builds the "Ads loading..." dialog centered on screen with a transparent window (so only the
+     * rounded box shows, floating in the middle) and no title bar. Non-cancelable.
+     */
+    private fun createLoadingDialog(activity: Activity): Dialog {
+        val dialog = Dialog(activity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        val dialogBinding = DialogLoadingBinding.inflate(activity.layoutInflater)
+        dialog.setContentView(dialogBinding.root)
+        dialog.setCancelable(false)
+        dialog.window?.apply {
+            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            setGravity(Gravity.CENTER)
+        }
+        return dialog
+    }
 
     private const val SHOW_INTERSTITIAL_ADS_INTERVAL = 40000
 
@@ -338,9 +359,7 @@ object InterstitialAdsUtils {
                     return@withContext
                 }
 
-                val progressDialog = Dialog(activity)
-                val dialogBinding = DialogLoadingBinding.inflate(activity.layoutInflater)
-                progressDialog.setContentView(dialogBinding.root)
+                val progressDialog = createLoadingDialog(activity)
                 progressDialog.show()
 
                 withContext(Dispatchers.IO) {
@@ -422,9 +441,7 @@ object InterstitialAdsUtils {
                     return@withContext
                 }
 
-                val progressDialog = Dialog(activity)
-                val dialogBinding = DialogLoadingBinding.inflate(activity.layoutInflater)
-                progressDialog.setContentView(dialogBinding.root)
+                val progressDialog = createLoadingDialog(activity)
                 progressDialog.show()
 
                 withContext(Dispatchers.IO) {

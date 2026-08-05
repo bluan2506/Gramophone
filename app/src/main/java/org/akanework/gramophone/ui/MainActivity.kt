@@ -23,10 +23,13 @@ import android.app.NotificationManager
 import android.app.SearchManager
 import android.app.assist.AssistContent
 import android.content.ActivityNotFoundException
+import android.content.BroadcastReceiver
 import android.content.ClipData
 import android.content.ContentResolver
 import android.content.ContentUris
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.graphics.Color
@@ -39,17 +42,23 @@ import android.os.StrictMode
 import android.provider.MediaStore
 import android.provider.Settings
 import android.view.Choreographer
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.SearchEvent
+import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.net.toUri
@@ -68,8 +77,29 @@ import coil3.imageLoader
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import com.google.android.ads.nativetemplates.NativeUtils
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdLoader
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.thinkup.banner.api.TUBannerListener
+import com.thinkup.banner.api.TUBannerView
+import com.thinkup.core.api.TUAdConst
+import com.thinkup.core.api.TUAdInfo
+import com.thinkup.nativead.api.TUNative
+import com.thinkup.nativead.api.TUNativeAdView
+import com.thinkup.nativead.api.TUNativeDislikeListener
+import com.thinkup.nativead.api.TUNativeEventListener
+import com.thinkup.nativead.api.TUNativeNetworkListener
+import com.thinkup.nativead.api.TUNativePrepareInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
@@ -86,6 +116,11 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 import org.akanework.gramophone.BuildConfig
 import org.akanework.gramophone.R
+import org.akanework.gramophone.databinding.LayoutBottomSheetBackBinding
+import org.akanework.gramophone.logic.utils.ads.KeyAdMob
+import org.akanework.gramophone.logic.utils.ads.KeyTopOn
+import org.akanework.gramophone.logic.utils.ads.SelfRenderViewUtil
+import org.akanework.gramophone.logic.utils.firebase.FirebaseEventUtils
 import org.akanework.gramophone.logic.clone
 import org.akanework.gramophone.logic.dpToPx
 import org.akanework.gramophone.logic.enableEdgeToEdgeProperly
@@ -99,7 +134,9 @@ import org.akanework.gramophone.logic.postAtFrontOfQueueAsync
 import org.akanework.gramophone.logic.ui.BaseActivity
 import org.akanework.gramophone.ui.adapters.PlaylistAdapter
 import org.akanework.gramophone.ui.components.PlayerBottomSheet
+import org.akanework.gramophone.logic.utils.ads.InterstitialAdsUtils
 import org.akanework.gramophone.ui.fragments.BaseFragment
+import org.akanework.gramophone.ui.fragments.DownloadsFragment
 import org.akanework.gramophone.ui.fragments.GeneralSubFragment
 import org.akanework.gramophone.ui.fragments.SearchFragment
 import org.akanework.gramophone.ui.fragments.ViewPagerFragment
@@ -143,14 +180,37 @@ class MainActivity : BaseActivity() {
     lateinit var bottomNavigationView: BottomNavigationView
         private set
 
+    // Shows the download interstitial when a download finishes (mirrors the sample's AbsBaseActivity).
+    // The giga service broadcasts DownloadsFragment.ACTION_UPDATE after the file is media-scanned.
+    private val downloadCompleteReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            val configEntity = gramophoneApplication.configEntity
+            if (configEntity.isAds_download) {
+                InterstitialAdsUtils.showAdsGoToSearchScreen(
+                    this@MainActivity, configEntity,
+                    object : InterstitialAdsUtils.Listener {
+                        override fun onNotShowAds() {}
+                        override fun onAdDismissedFullScreenContent() {}
+                    }
+                )
+            }
+        }
+    }
+
+    /** The bottom bar = navigation + home banner ad stacked vertically (banner under the nav). */
+    lateinit var bottomBar: View
+        private set
+    private var homeBannerAdView: AdView? = null
+    private var homeBannerView: TUBannerView? = null
+
     /**
-     * The full on-screen height of the bottom navigation bar, INCLUDING its own bottom system-inset
-     * padding. Content and the mini player reserve exactly this much space so they sit flush on top
-     * of the bar. Falls back to the intrinsic dimen before the bar has been laid out.
+     * The full on-screen height of the bottom bar (navigation + banner), INCLUDING its bottom
+     * system-inset padding. Content and the mini player reserve exactly this much space so they sit
+     * flush on top of the bar. Falls back to the intrinsic nav dimen before the bar has been laid out.
      */
     val bottomNavHeight: Int
-        get() = if (::bottomNavigationView.isInitialized && bottomNavigationView.height > 0)
-            bottomNavigationView.height
+        get() = if (::bottomBar.isInitialized && bottomBar.height > 0)
+            bottomBar.height
         else resources.getDimensionPixelSize(R.dimen.bottom_nav_height)
     private lateinit var intentSenderDelete: ActivityResultLauncher<IntentSenderRequest>
     private lateinit var addToPlaylistIntentSender: ActivityResultLauncher<IntentSenderRequest>
@@ -244,18 +304,35 @@ class MainActivity : BaseActivity() {
         DownloadController.bind(this)
         playerBottomSheet = findViewById(R.id.player_layout)
         bottomNavigationView = findViewById(R.id.bottom_nav)
-        // Pad the bottom navigation above the system navigation bar / gesture area, but don't
-        // consume the insets so the content and the player bottom sheet still see them.
-        ViewCompat.setOnApplyWindowInsetsListener(bottomNavigationView) { v, insets ->
+        bottomBar = findViewById(R.id.bottom_bar)
+        // Load the home banner ad into the bottom bar (mirrors the sample's home banner).
+        loadHomeBanner()
+        // Ask for confirmation before leaving the app (mirrors MSDownloader10's exit bottom sheet).
+        // Only active at the navigation root: while there is a sub-fragment on the back stack this
+        // callback is disabled so the FragmentManager pops it (keeping predictive back), and the
+        // player sheet's own callback still takes precedence when it is expanded.
+        val exitCallback = object : OnBackPressedCallback(supportFragmentManager.backStackEntryCount == 0) {
+            override fun handleOnBackPressed() {
+                showExit()
+            }
+        }
+        onBackPressedDispatcher.addCallback(this, exitCallback)
+        supportFragmentManager.addOnBackStackChangedListener {
+            exitCallback.isEnabled = supportFragmentManager.backStackEntryCount == 0
+        }
+        // Pad the whole bottom bar above the system navigation bar / gesture area (the banner is the
+        // lowest child, so the inset lives on the bar), but don't consume the insets so the content
+        // and the player bottom sheet still see them.
+        ViewCompat.setOnApplyWindowInsetsListener(bottomBar) { v, insets ->
             val bottom = insets.getInsets(
                 WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
             ).bottom
             v.updatePadding(bottom = bottom)
             insets
         }
-        // When the bar's height changes (e.g. system inset appears/disappears), re-dispatch insets
-        // so the content and mini player re-reserve the correct amount of space above it.
-        bottomNavigationView.addOnLayoutChangeListener { _, _, top, _, bottom, _, oldTop, _, oldBottom ->
+        // When the bar's height changes (system inset appears/disappears, or the banner loads/hides)
+        // re-dispatch insets so the content and mini player re-reserve the correct amount of space.
+        bottomBar.addOnLayoutChangeListener { _, _, top, _, bottom, _, oldTop, _, oldBottom ->
             if (bottom - top != oldBottom - oldTop) {
                 ViewCompat.getRootWindowInsets(window.decorView)?.let {
                     ViewCompat.dispatchApplyWindowInsets(window.decorView, it.clone())
@@ -842,6 +919,185 @@ class MainActivity : BaseActivity() {
     }
 
     /**
+     * Loads the home banner (AdMob adaptive / TopOn) into the bottom bar's ad container, shown only
+     * after an ad loads. Mirrors the sample's home banner (gated by remote config). The banner rides
+     * with the nav: it hides on sub-screens and when the player expands (the whole bar slides down).
+     */
+    private fun loadHomeBanner() {
+        val container = findViewById<FrameLayout>(R.id.container_ads_home)
+        val configEntity = gramophoneApplication.configEntity
+        if (!configEntity.isAds_bannerHome) {
+            container.visibility = View.GONE
+            return
+        }
+        if (configEntity.isToponads) {
+            val banner = TUBannerView(this)
+            banner.setPlacementId(KeyTopOn.BANNER)
+            banner.layoutParams = FrameLayout.LayoutParams(
+                resources.displayMetrics.widthPixels, ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            container.addView(banner)
+            banner.setBannerAdListener(object : TUBannerListener {
+                override fun onBannerLoaded() {
+                    container.visibility = View.VISIBLE
+                }
+
+                override fun onBannerFailed(adError: com.thinkup.core.api.AdError?) {
+                    Log.e("MainActivity", "home banner onBannerFailed: $adError")
+                }
+
+                override fun onBannerClicked(adInfo: TUAdInfo?) {}
+                override fun onBannerShow(adInfo: TUAdInfo?) {}
+                override fun onBannerClose(adInfo: TUAdInfo?) {}
+                override fun onBannerAutoRefreshed(adInfo: TUAdInfo?) {}
+                override fun onBannerAutoRefreshFail(adError: com.thinkup.core.api.AdError?) {}
+            })
+            banner.loadAd()
+            homeBannerView = banner
+        } else {
+            val av = AdView(this)
+            container.addView(av)
+            av.adUnitId = KeyAdMob.BANNER
+            av.setAdSize(adaptiveBannerSize())
+            av.adListener = object : AdListener() {
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    Log.e("MainActivity", "home banner onAdFailedToLoad: $adError")
+                }
+
+                override fun onAdLoaded() {
+                    container.visibility = View.VISIBLE
+                }
+            }
+            av.loadAd(AdRequest.Builder().build())
+            homeBannerAdView = av
+        }
+    }
+
+    /** Adaptive anchored banner size for the current width/orientation (as in the sample). */
+    private fun adaptiveBannerSize(): AdSize {
+        val metrics = resources.displayMetrics
+        val adWidth = (metrics.widthPixels / metrics.density).toInt()
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth)
+    }
+
+    /**
+     * showExit:
+     *   Confirm before leaving the app via a bottom sheet, ported from MSDownloader10.
+     * "Cancel" dismisses; "Exit" sends the task to the background (leaving playback running,
+     * same as the reference app's moveTaskToBack).
+     */
+    private fun showExit() {
+        val bottomSheet = BottomSheetDialog(this, R.style.ThemeOverlay_App_BottomSheetDialog)
+        val view = LayoutBottomSheetBackBinding.inflate(layoutInflater)
+        bottomSheet.setContentView(view.root)
+        view.buttonCancel.setOnClickListener {
+            bottomSheet.dismiss()
+        }
+        view.buttonOk.setOnClickListener {
+            moveTaskToBack(true)
+            bottomSheet.dismiss()
+        }
+        // Native exit ad, gated by remote config (mirrors the sample app's showExit()).
+        val configEntity = gramophoneApplication.configEntity
+        if (configEntity.isAds_nativeExitApp) {
+            if (configEntity.isToponads) {
+                var atNatives: TUNative? = null
+                atNatives = TUNative(
+                    this, KeyTopOn.NATIVE_EXIT,
+                    object : TUNativeNetworkListener {
+                        override fun onNativeAdLoaded() {
+                            try {
+                                setAdsNativeExit(atNatives!!, view)
+                            } catch (e: Exception) {
+                                FirebaseEventUtils.getInstances().recordException(e)
+                            }
+                        }
+
+                        override fun onNativeAdLoadFail(p0: com.thinkup.core.api.AdError?) {
+                            Log.e("MainActivity", "native exit onNativeAdLoadFail: $p0")
+                        }
+                    }
+                )
+                val padding = 10.dpToPx(this)
+                val adViewWidth = resources.displayMetrics.widthPixels - 2 * padding
+                val adViewHeight = 340.dpToPx(this) - 2 * padding
+                val localMap: MutableMap<String, Any> = HashMap()
+                localMap[TUAdConst.KEY.AD_WIDTH] = adViewWidth
+                localMap[TUAdConst.KEY.AD_HEIGHT] = adViewHeight
+                atNatives.setLocalExtra(localMap)
+                atNatives.makeAdRequest()
+            } else {
+                val adLoader = AdLoader.Builder(this, KeyAdMob.NATIVE_EXIT)
+                    .forNativeAd { ad: NativeAd ->
+                        val templateView = NativeUtils.getNativeAd(this, ad, isDarkTheme())
+                        view.cardContainer.removeAllViews()
+                        view.cardContainer.addView(templateView)
+                    }
+                    .withAdListener(object : AdListener() {
+                        override fun onAdFailedToLoad(adError: LoadAdError) {
+                            Log.e("MainActivity", "native exit onAdFailedToLoad: $adError")
+                        }
+                    })
+                    .withNativeAdOptions(NativeAdOptions.Builder().build())
+                    .build()
+                adLoader.loadAd(AdRequest.Builder().build())
+            }
+        } else {
+            view.cardContainer.visibility = View.GONE
+        }
+        bottomSheet.behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        bottomSheet.show()
+    }
+
+    /** Renders a TopOn native ad into the exit sheet (self-render), ported from the sample. */
+    private fun setAdsNativeExit(atNatives: TUNative, viewBinding: LayoutBottomSheetBackBinding) {
+        val context = this
+        val padding = 10.dpToPx(context)
+        val adViewWidth = context.resources.displayMetrics.widthPixels - 2 * padding
+        val anyThinkNativeAdView = TUNativeAdView(context)
+        val nativeAd = atNatives.nativeAd
+        anyThinkNativeAdView.removeAllViews()
+        if (anyThinkNativeAdView.parent == null) {
+            viewBinding.cardContainer.removeAllViews()
+            viewBinding.cardContainer.addView(
+                anyThinkNativeAdView,
+                FrameLayout.LayoutParams(
+                    adViewWidth,
+                    FrameLayout.LayoutParams.WRAP_CONTENT,
+                    Gravity.CENTER
+                )
+            )
+        }
+        nativeAd?.setNativeEventListener(object : TUNativeEventListener {
+            override fun onAdImpressed(tuNativeAdView: TUNativeAdView?, tuAdInfo: TUAdInfo?) {}
+            override fun onAdClicked(tuNativeAdView: TUNativeAdView?, tuAdInfo: TUAdInfo?) {}
+            override fun onAdVideoStart(tuNativeAdView: TUNativeAdView?) {}
+            override fun onAdVideoEnd(tuNativeAdView: TUNativeAdView?) {}
+            override fun onAdVideoProgress(tuNativeAdView: TUNativeAdView?, i: Int) {}
+        })
+        nativeAd?.setDislikeCallbackListener(object : TUNativeDislikeListener() {
+            override fun onAdCloseButtonClick(tuNativeAdView: TUNativeAdView?, tuAdInfo: TUAdInfo?) {
+                if (tuNativeAdView?.parent != null) {
+                    (tuNativeAdView.parent as ViewGroup).removeView(tuNativeAdView)
+                }
+            }
+        })
+        val nativePrepareInfo = TUNativePrepareInfo()
+        nativeAd?.renderAdContainer(anyThinkNativeAdView, null)
+        val selfRenderView = LayoutInflater.from(context)
+            .inflate(R.layout.layout_native_self, null, false)
+        SelfRenderViewUtil.bindSelfRenderView(
+            context, nativeAd?.adMaterial!!, selfRenderView, nativePrepareInfo, false
+        )
+        nativeAd.renderAdContainer(anyThinkNativeAdView, selfRenderView)
+        nativeAd.prepare(anyThinkNativeAdView, nativePrepareInfo)
+    }
+
+    private fun isDarkTheme(): Boolean =
+        (resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK) ==
+            android.content.res.Configuration.UI_MODE_NIGHT_YES
+
+    /**
      * startFragment:
      *   Used by child fragments / drawer to start
      * a fragment inside MainActivity's fragment
@@ -866,7 +1122,25 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        ContextCompat.registerReceiver(
+            this, downloadCompleteReceiver,
+            IntentFilter(DownloadsFragment.ACTION_UPDATE),
+            ContextCompat.RECEIVER_EXPORTED
+        )
+    }
+
+    override fun onStop() {
+        super.onStop()
+        runCatching { unregisterReceiver(downloadCompleteReceiver) }
+    }
+
     override fun onDestroy() {
+        homeBannerAdView?.destroy()
+        homeBannerAdView = null
+        homeBannerView?.destroy()
+        homeBannerView = null
         // https://github.com/androidx/media/issues/805
         if (needsMissingOnDestroyCallWorkarounds()
             && (getPlayer()?.playWhenReady != true || getPlayer()?.mediaItemCount == 0)

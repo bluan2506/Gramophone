@@ -5,8 +5,10 @@ import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.IBinder
+import com.ailib.classifier.LogoCheckResult
 import com.ailib.classifier.LogoClassifier
 import com.applogevent.logeventlib.LogEventLibs
+import com.aws.config.msserverconfig.Config_V1
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,18 +18,7 @@ import org.akanework.gramophone.logic.utils.firebase.Keys
 import us.shandian.giga.get.DownloadManager
 import us.shandian.giga.service.DownloadManagerService
 
-/**
- * Binds the giga [DownloadManagerService] and starts download missions.
- *
- * Ported from the MSDownloader reference's `AbsMusicServiceActivity.startMission`: before a YouTube
- * download it runs the TFLite [LogoClassifier] on the thumbnail and blocks (fail-open) if the logo
- * probability is high. Bound once from [MainActivity][org.akanework.gramophone.ui.MainActivity] with
- * the application context, so it lives for the whole app.
- */
 object DownloadController {
-
-    // Probability that the thumbnail contains a logo above which a download is blocked (80%).
-    private const val LOGO_BLOCK_THRESHOLD = 0.8f
 
     private var appContext: Context? = null
     private var binder: DownloadManagerService.DMBinder? = null
@@ -72,8 +63,13 @@ object DownloadController {
         if (mgr == null || bnd == null) return
 
         CoroutineScope(Dispatchers.IO).launch {
-            // Block the download if the thumbnail contains a logo with high probability (fail-open).
-            if (isLogoBlocked(id, source)) {
+            // Block the download if the thumbnail contains a copyrighted logo (fail-open on error).
+            val logoResult = isLogoBlocked(context, id, source)
+            if (logoResult.hasLogo) {
+                when (logoResult.reason) {
+                    LogoCheckResult.WARNER -> {} // Warner ("W") logo model
+                    LogoCheckResult.VEVO -> {}   // Vevo logo template match
+                }
                 withContext(Dispatchers.Main) {
                     CopyrightRestrictionsDialog.show(context)
                 }
@@ -98,16 +94,25 @@ object DownloadController {
             null
         }
 
-    // classify(videoId) hits the network (downloads the thumbnail) + runs TFLite -> MUST run off the
-    // main thread. Only checked when the search source is "un" (YouTube); any error => fail-open.
-    private suspend fun isLogoBlocked(videoId: String?, source: String?): Boolean {
-        if (source != "un") return false
-        if (videoId.isNullOrEmpty()) return false
-        val c = classifier() ?: return false
+    // check(videoId, configJson) downloads the thumbnail + runs TFLite/template matching -> MUST run
+    // off the main thread. Returns a [LogoCheckResult] (hasLogo + reason: WARNER/VEVO/NONE). Any error
+    // (no network, broken thumbnail, closed interpreter...) fails open so the download still proceeds.
+    private suspend fun isLogoBlocked(
+        context: Context,
+        videoId: String?,
+        source: String?,
+    ): LogoCheckResult {
+        // Only check the logo for the "un" search source; skip all other sources.
+        if (source != "un") return LogoCheckResult.NOT_FOUND
+        if (videoId.isNullOrEmpty()) return LogoCheckResult.NOT_FOUND
+        val c = classifier() ?: return LogoCheckResult.NOT_FOUND
         return try {
-            withContext(Dispatchers.IO) { c.classify(videoId) } >= LOGO_BLOCK_THRESHOLD
+            withContext(Dispatchers.IO) {
+                val configJson = Config_V1.getServerConfig(context).toString()
+                c.check(videoId, configJson)
+            }
         } catch (e: Exception) {
-            false // fail-open
+            LogoCheckResult.NOT_FOUND // fail-open
         }
     }
 }

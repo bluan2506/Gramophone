@@ -27,9 +27,11 @@ import androidx.media3.common.Player
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.applogevent.logeventlib.LogEventLibs
+import com.google.android.gms.ads.nativead.NativeAdView
 import com.google.android.material.appbar.AppBarLayout
 import com.music.searchapi.ApiServices
 import com.music.searchapi.`object`.VideoEntity
+import com.thinkup.nativead.api.TUNativeAdView
 import com.videoapps.lib.GetMusicLinkCallback
 import com.videoapps.lib.`object`.Stream
 import kotlinx.coroutines.CoroutineScope
@@ -37,6 +39,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.akanework.gramophone.R
+import org.akanework.gramophone.logic.GramophoneApplication
 import org.akanework.gramophone.databinding.DialogOnlineLoadingBinding
 import org.akanework.gramophone.databinding.FragmentOnlineSearchBinding
 import org.akanework.gramophone.logic.enableEdgeToEdgePaddingListener
@@ -45,6 +48,7 @@ import org.akanework.gramophone.logic.utils.firebase.FirebaseEventUtils
 import org.akanework.gramophone.logic.utils.firebase.Keys
 import org.akanework.gramophone.logic.utils.online.CopyrightRestrictionsDialog
 import org.akanework.gramophone.logic.utils.online.DownloadController
+import org.akanework.gramophone.logic.utils.online.VpnProxyDialog
 import org.akanework.gramophone.ui.MediaControllerViewModel
 import org.akanework.gramophone.ui.adapters.OnlineSongAdapter
 import org.akanework.gramophone.ui.adapters.SuggestAdapter
@@ -80,6 +84,13 @@ class OnlineSearchFragment : BaseFragment(true) {
     private lateinit var songAdapter: OnlineSongAdapter
     private lateinit var suggestAdapter: SuggestAdapter
 
+    private val appConfig by lazy {
+        (mainActivity.application as GramophoneApplication).configEntity
+    }
+
+    // A single reused native-ad placeholder so load-more re-emissions don't spawn a new ad each time.
+    private var nativeAdPlaceholder: Any? = null
+
     // When a download link expires, clear that videoId's cached stream_link so the next tap re-resolves.
     private val linkExpiredReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
@@ -100,6 +111,7 @@ class OnlineSearchFragment : BaseFragment(true) {
         appBarLayout.enableEdgeToEdgePaddingListener()
 
         songAdapter = OnlineSongAdapter(
+            activity = mainActivity,
             onClickItem = { onClickSongItem(it) },
             onClickDownload = { onClickDownload(it) },
         )
@@ -162,6 +174,10 @@ class OnlineSearchFragment : BaseFragment(true) {
             binding.recyclerViewResult.smoothScrollToPosition(0)
         }
 
+        // Auto-open the keyboard on entering the search screen, focused on the search box.
+        binding.searchView.requestFocus()
+        showKeyboard()
+
         // Drive the "now playing" equalizer from the media3 controller, like the offline song lists.
         controllerViewModel.addRecreationalPlayerListener(
             viewLifecycleOwner.lifecycle,
@@ -192,15 +208,18 @@ class OnlineSearchFragment : BaseFragment(true) {
                 }
                 launch {
                     viewModel.results.collect { list ->
-                        songAdapter.setData(list)
-                        if (viewModel.searched.value && !viewModel.loading.value) {
-                            binding.emptyView.visibility =
-                                if (list.isEmpty()) View.VISIBLE else View.GONE
-                        }
+                        songAdapter.setData(withNativeAd(list))
+                        updateEmptyState()
                     }
                 }
                 launch {
-                    viewModel.loading.collect { binding.progressLoading.visibility = if (it) View.VISIBLE else View.GONE }
+                    // Also drive the empty state from loading: an empty search resets results to
+                    // emptyList() up front, so the empty result never re-emits (StateFlow drops the
+                    // duplicate) — but loading always transitions true->false, so evaluate here too.
+                    viewModel.loading.collect {
+                        binding.progressLoading.visibility = if (it) View.VISIBLE else View.GONE
+                        updateEmptyState()
+                    }
                 }
                 launch {
                     viewModel.loadingMore.collect { binding.progressLoadMore.visibility = if (it) View.VISIBLE else View.GONE }
@@ -211,6 +230,41 @@ class OnlineSearchFragment : BaseFragment(true) {
 
     private fun currentResults(): List<VideoEntity> = viewModel.results.value
 
+    /**
+     * The "no results" text shows only after a finished search that returned nothing, and only while
+     * the results list (not the suggestion list) is on screen. It stays hidden while a search is
+     * loading and before any search has run.
+     */
+    private fun updateEmptyState() {
+        val b = _binding ?: return
+        val show = viewModel.searched.value &&
+            !viewModel.loading.value &&
+            viewModel.results.value.isEmpty() &&
+            b.recyclerViewResult.visibility == View.VISIBLE
+        b.emptyView.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    /**
+     * Interleaves one native-ad placeholder at index 2 when there are more than two results and the
+     * native-search ad is enabled (mirrors the sample's `SearchOnlineFragment`). AdMob vs TopOn is
+     * chosen by [ConfigEntity.isToponads]; the adapter dispatches the placeholder type to the right
+     * holder. The placeholder instance is cached so re-emissions (load-more) don't reload the ad.
+     */
+    private fun withNativeAd(list: List<VideoEntity>): List<Any> {
+        if (list.size <= 2 || !appConfig.isAds_nativeSearchScreen || context == null) return list
+        if (nativeAdPlaceholder == null) {
+            nativeAdPlaceholder = if (appConfig.isToponads) {
+                TUNativeAdView(requireContext())
+            } else {
+                NativeAdView(requireContext())
+            }
+        }
+        return buildList {
+            addAll(list)
+            add(2, nativeAdPlaceholder!!)
+        }
+    }
+
     /** Toggle between the suggestion list (typing) and the results list (after a search). */
     private fun showSuggestions(show: Boolean) {
         binding.recyclerViewSuggest.visibility = if (show) View.VISIBLE else View.GONE
@@ -218,6 +272,9 @@ class OnlineSearchFragment : BaseFragment(true) {
         if (show) {
             binding.emptyView.visibility = View.GONE
             binding.imgUp.visibility = View.GONE
+        } else {
+            // Back in results mode — re-evaluate whether the "no results" text should show.
+            updateEmptyState()
         }
     }
 
@@ -255,10 +312,7 @@ class OnlineSearchFragment : BaseFragment(true) {
                 return@launch
             }
 
-            if (entity.stream_link.isNullOrBlank()
-                && entity.allow_download
-                && entity.not_allow_download_reason.isNullOrBlank()
-            ) {
+            if (entity.stream_link.isNullOrBlank()) {
                 resolveLink(entity, id, source, loadingDialog, forDownload = false) { finalLink ->
                     playResolved(entity, finalLink, loadingDialog)
                 }
@@ -325,24 +379,34 @@ class OnlineSearchFragment : BaseFragment(true) {
                 return@launch
             }
 
-            // Copyright restricted -> don't download.
-            if (!entity.allow_download || !entity.not_allow_download_reason.isNullOrBlank()) {
-                LogEventLibs.logDownloadMusicRestricted(id, source, entity.videoTile)
-                context?.let { FirebaseEventUtils.getInstances().logEventDownloadMusicRestricted(it) }
-                withContext(Dispatchers.Main) {
-                    loadingDialog.dismissSafely()
-                    context?.let { CopyrightRestrictionsDialog.show(it) }
-                }
-                return@launch
-            }
-
             if (entity.stream_link.isNullOrBlank()) {
                 resolveLink(entity, id, source, loadingDialog, forDownload = true) { finalLink ->
-                    startDownload(entity, finalLink, loadingDialog)
+                    // Copyright restricted -> don't download.
+                    if (!entity.allow_download) {
+                        LogEventLibs.logDownloadMusicRestricted(id, source, entity.videoTile)
+                        context?.let { FirebaseEventUtils.getInstances().logEventDownloadMusicRestricted(it) }
+                        withContext(Dispatchers.Main) {
+                            loadingDialog.dismissSafely()
+                            context?.let { CopyrightRestrictionsDialog.show(it) }
+                        }
+                    } else {
+                        startDownload(entity, finalLink, loadingDialog)
+                    }
                 }
             } else {
                 withContext(Dispatchers.Main) {
-                    startDownload(entity, entity.stream_link ?: "", loadingDialog)
+                    // Copyright restricted -> don't download.
+                    if (!entity.allow_download) {
+                        LogEventLibs.logDownloadMusicRestricted(id, source, entity.videoTile)
+                        context?.let { FirebaseEventUtils.getInstances().logEventDownloadMusicRestricted(it) }
+                        withContext(Dispatchers.Main) {
+                            loadingDialog.dismissSafely()
+                            context?.let { CopyrightRestrictionsDialog.show(it) }
+                        }
+                    } else {
+                        startDownload(entity, entity.stream_link ?: "", loadingDialog)
+                    }
+
                 }
             }
         }
@@ -364,13 +428,12 @@ class OnlineSearchFragment : BaseFragment(true) {
             entity.videoType,
             entity.ccmixterReferrer,
         )
+        // The download interstitial is fired on download *completion* (ACTION_UPDATE broadcast),
+        // handled in MainActivity — mirroring the sample's AbsBaseActivity receiver.
     }
 
     // --- getLink resolution (ported from the reference) ---
     //
-    // Non-YouTube sources deliver the URL via onSuccess (first String); YouTube (videoType == "un")
-    // via onSuccess_V2 (JSON parsed by getBestLink). A 403 audio link falls back to stream.url.
-    // getLink must be invoked on the main thread; the 403 pre-check runs on IO.
     private fun resolveLink(
         entity: VideoEntity,
         id: String?,
@@ -453,6 +516,10 @@ class OnlineSearchFragment : BaseFragment(true) {
         activity?.runOnUiThread {
             if (isAdded) {
                 loadingDialog.dismissSafely()
+                val ctx = context
+                if (source == "un" && ctx != null && NetworkUtils.isVpnOrProxyActive(ctx)) {
+                    VpnProxyDialog.show(ctx)
+                }
                 toast(getString(R.string.online_search_error))
             }
         }
@@ -527,8 +594,16 @@ class OnlineSearchFragment : BaseFragment(true) {
         resources.configuration.locales[0].country
 
     private fun showKeyboard() {
-        val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.showSoftInput(binding.searchView, InputMethodManager.SHOW_IMPLICIT)
+        val editText = _binding?.searchView ?: return
+        editText.requestFocus()
+        // Post (with a small delay) so the IME reliably shows even right after the go-to-search
+        // interstitial dismisses — showSoftInput straight away is often swallowed while the window
+        // is still regaining focus from the ad activity.
+        editText.postDelayed({
+            if (!isAdded) return@postDelayed
+            val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+            imm?.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT)
+        }, 200)
     }
 
     private fun closeKeyboard() {
@@ -541,7 +616,7 @@ class OnlineSearchFragment : BaseFragment(true) {
         context?.let {
             ContextCompat.registerReceiver(
                 it, linkExpiredReceiver, IntentFilter(ACTION_LINK_EXPIRED),
-                ContextCompat.RECEIVER_NOT_EXPORTED
+                ContextCompat.RECEIVER_EXPORTED
             )
         }
     }

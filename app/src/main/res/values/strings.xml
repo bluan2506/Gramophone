@@ -28,8 +28,9 @@
     <string name="home_online_search">Search online</string>
     <string name="home_online_search_subtitle">Find and stream millions of songs</string>
     <string name="online_search_hint">Search songs online</string>
-    <string name="online_search_empty">No results. Type a song name and search.</string>
+    <string name="online_search_empty">No results found. Try a different keyword.</string>
     <string name="online_search_error">Something went wrong. Please try again.</string>
+    <string name="turn_off_vpn_proxy">You must turn off the VPN or Proxy for the app to work properly.</string>
     <string name="online_download">Download</string>
     <string name="online_download_started">Download started</string>
     <string name="online_loading">Loading…</string>
@@ -41,6 +42,7 @@
     <string name="no_space_left_on_device">No space left on device</string>
     <string name="no_internet">No internet connection</string>
     <string name="song_link_expired_download">Link expired, please try downloading again</string>
+    <string name="song_link_expired_play">Link expired, please try playing again</string>
     <string name="downloads_title">Downloads</string>
     <string name="downloads_empty">No downloaded songs yet</string>
     <string name="copyright_restrictions_title">Copyright restricted</string>
@@ -1324,4 +1326,9 @@ supporting local search. This string is displayed in the search bar when using G
     <string name="mq_pin_queue">Pin queue</string>
     <string name="shuffled">%s (shuffled)</string>
     <string name="loading_playlists">Loading playlists...</string>
+    <!-- Exit-app confirmation bottom sheet (shown on back press from the navigation root) -->
+    <string name="exit_app">Exit app</string>
+    <string name="are_you_sure_you_want_to_exit_app">Are you sure you want to exit app?</string>
+    <string name="exit">Exit</string>
+    <string name="action_cancel">Cancel</string>
 </resources>

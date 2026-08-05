@@ -70,6 +70,7 @@ import androidx.media3.common.util.Log
 import androidx.media3.common.util.Util
 import androidx.media3.common.util.Util.isBitmapFactorySupportedMimeType
 import androidx.media3.datasource.DefaultDataSource
+import androidx.media3.datasource.HttpDataSource
 import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.analytics.AnalyticsListener
@@ -113,7 +114,11 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import android.widget.Toast
+import com.music.searchapi.ApiServices
 import org.akanework.gramophone.R
+import org.akanework.gramophone.logic.utils.online.SearchApiExecutor
+import org.akanework.gramophone.ui.fragments.OnlineSearchFragment
 import org.akanework.gramophone.logic.ui.MeiZuLyricsMediaNotificationProvider
 import org.akanework.gramophone.logic.ui.isManualNotificationUpdate
 import org.akanework.gramophone.logic.utils.AfFormatInfo
@@ -545,7 +550,7 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
             seekReceiver,
             IntentFilter("$packageName.SEEK_TO"),
             @SuppressLint("WrongConstant") // why is this needed?
-            ContextCompat.RECEIVER_NOT_EXPORTED
+            ContextCompat.RECEIVER_EXPORTED
         )
         ContextCompat.registerReceiver(
             this,
@@ -1382,7 +1387,42 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
     }
 
     override fun onPlayerError(error: PlaybackException) {
-        // TODO
+        // Online stream link expired (403): ask the searchapi lib to re-fetch data for this videoId
+        // (serialized through SearchApiExecutor — the lib runs one call at a time) and broadcast
+        // ACTION_LINK_EXPIRED so the search screen drops the stale stream_link; the next play/download
+        // tap then getLinks a fresh URL instead of reusing the 403 one. Mirrors the sample's
+        // MusicService.onPlayerError.
+        val mediaId = endedWorkaroundPlayer?.exoPlayer?.currentMediaItem?.mediaId
+        if (mediaId != null && mediaId.startsWith("online:") && findHttpResponseCode(error) == 403) {
+            val videoId = mediaId.removePrefix("online:")
+            if (videoId.isNotEmpty()) {
+                val appContext = applicationContext
+                SearchApiExecutor.execute {
+                    ApiServices.getBodDataAgain(appContext, videoId)
+                }
+                val expiredIntent = Intent(OnlineSearchFragment.ACTION_LINK_EXPIRED).apply {
+                    putExtra(OnlineSearchFragment.KEY_VIDEO_ID, videoId)
+                    setPackage(packageName)
+                }
+                sendBroadcast(expiredIntent)
+            }
+            Toast.makeText(this, getString(R.string.song_link_expired_play), Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
+    /**
+     * Extracts the HTTP status (e.g. 403 for an expired stream link) from an ExoPlayer error chain.
+     * ExoPlayer already knows the code, so there's no need to re-hit the network to check. Ported
+     * from the sample's MusicService.
+     */
+    private fun findHttpResponseCode(error: Throwable?): Int? {
+        var cause: Throwable? = error
+        while (cause != null) {
+            if (cause is HttpDataSource.InvalidResponseCodeException) return cause.responseCode
+            cause = cause.cause
+        }
+        return null
     }
 
     override fun onDeviceInfoChanged(deviceInfo: DeviceInfo) {

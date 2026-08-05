@@ -65,6 +65,8 @@ android {
 
     androidResources {
         generateLocaleConfig = true
+        // The logo-classifier .tflite model must stay uncompressed so TFLite can mmap it.
+        noCompress += "tflite"
     }
 
     buildFeatures {
@@ -342,6 +344,7 @@ dependencies {
     // Add more mediation networks (Pangle/Vungle/Unity/IronSource/Chartboost/Appnext...) on top of
     // this — each needs its own maven repo (settings.gradle.kts) and account credentials.
     implementation("com.google.android.gms:play-services-ads:25.1.0")
+    implementation(project(":nativetemplates"))
     implementation("androidx.browser:browser:1.8.0")
     implementation("com.thinkup.sdk:core-tpn:6.5.52")
     implementation("com.thinkup.sdk:adapter-tpn-sdm:6.5.56.1.1")
