@@ -1,0 +1,62 @@
+dependencies {
+    // AdMob
+    implementation "com.google.android.gms:play-services-ads:25.1.0"
+
+    // 1. Facebook
+//    implementation "com.google.ads.mediation:facebook:6.21.0.1"
+
+    // 2. Pangle
+    implementation "com.google.ads.mediation:pangle:7.9.1.0.0"
+
+    // 3. Tapjoy (Deprecated trên trang Download SDK AdMob)
+//    implementation "com.google.ads.mediation:tapjoy:12.10.0.1"
+
+    // 4. Vungle
+    implementation "com.google.ads.mediation:vungle:7.6.1.0"
+
+    // 5. Unity
+    implementation "com.unity3d.ads:unity-ads:4.16.1"
+    implementation "com.google.ads.mediation:unity:4.16.1.0"
+
+    // 6. Adcolony (Deprecated trên trang Download SDK AdMob)
+//    implementation "com.google.ads.mediation:adcolony:4.8.0.2"
+
+    // 7. Inmobi
+//    implementation "com.google.ads.mediation:inmobi:11.1.1.0"
+
+    // 8. Ironsource
+    implementation "com.google.ads.mediation:ironsource:9.2.0.0"
+
+    // 9. Chartboost
+    implementation "com.google.ads.mediation:chartboost:9.11.0.1"
+
+    // 10. Imobile
+//    implementation "com.google.ads.mediation:imobile:2.3.2.1"
+
+    // 11. Verizonmedia (Deprecated trên trang Download SDK AdMob)
+//    implementation "com.google.ads.mediation:verizonmedia:1.14.0.1"
+//    implementation "com.google.ads.mediation:yahoo:1.4.1.1"
+
+    // 12. Fyber
+//    implementation "com.google.ads.mediation:fyber:8.4.2.1"
+
+    // 13. Mytarget
+//    implementation "com.google.ads.mediation:mytarget:5.27.1.1"
+
+    // StartApp mediation (Không thấy trên trang Download SDK AdMob nữa)
+//    implementation "com.startapp:inapp-sdk:5.0.2"
+//    implementation "com.startapp:admob-mediation:3.0.2"
+
+    // Appnext (Không thấy trên trang Download SDK AdMob nữa)
+    implementation "com.appnext.sdk.adapters:admob-ads:2.7.6.473"
+    implementation "com.appnext.sdk.adapters:admob-banners:2.7.6.473"
+
+    // Applovin
+//    implementation "com.google.ads.mediation:applovin:13.4.0.0"
+
+    // Maio
+//    implementation "com.google.ads.mediation:maio:2.0.6.0"
+
+    // Mintegral
+    implementation "com.google.ads.mediation:mintegral:16.9.91.1"
+}

@@ -7,9 +7,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import org.akanework.gramophone.R;
-import org.akanework.gramophone.logic.utils.firebase.FirebaseEventUtils;
-import org.akanework.gramophone.logic.utils.online.ToastUtils;
+import com.musicdownloader.musicfreeapp825v2.R;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.ToastUtils;
 
 import java.io.File;
 import java.io.IOException;

@@ -21,6 +21,9 @@ plugins {
     id("com.google.firebase.crashlytics")
 }
 
+apply(from = "admob.gradle")
+apply(from = "topon.gradle")
+
 android {
     val packageProperties = readProperties(file("../package.properties"))
     fun resolveProperties(property: String): String? {
@@ -37,7 +40,7 @@ android {
         throw IllegalArgumentException("releaseType must not contain \"")
     }
 
-    namespace = "org.akanework.gramophone"
+    namespace = "com.musicdownloader.musicfreeapp825v2"
     compileSdk {
         version = release(37) {
             minorApiLevel = 1
@@ -340,17 +343,14 @@ dependencies {
     implementation("com.android.installreferrer:installreferrer:2.2")
     implementation("com.google.android.gms:play-services-appset:16.1.0")
 
-    // AdMob + TopOn ad mediation (core). Test AdMob APP ID is set in AndroidManifest.
-    // Add more mediation networks (Pangle/Vungle/Unity/IronSource/Chartboost/Appnext...) on top of
-    // this — each needs its own maven repo (settings.gradle.kts) and account credentials.
-    implementation("com.google.android.gms:play-services-ads:25.1.0")
+    // Google Play In-App Review (rate app), matches the MSDownloader reference
+    implementation("com.google.android.play:review:2.0.2")
+
+    // AdMob + TopOn ad mediation. The dependencies live in admob.gradle / topon.gradle (applied at
+    // the top of this file), mirroring the reference app. Add mediation networks there — each needs
+    // its own maven repo (settings.gradle.kts) and account credentials. Test AdMob APP ID is in
+    // AndroidManifest. The native-ad template module stays here as a normal project dependency.
     implementation(project(":nativetemplates"))
-    implementation("androidx.browser:browser:1.8.0")
-    implementation("com.thinkup.sdk:core-tpn:6.5.52")
-    implementation("com.thinkup.sdk:adapter-tpn-sdm:6.5.56.1.1")
-    implementation("com.smartdigimkttech.sdk:smartdigimkttech-sdk:6.5.56")
-    implementation("com.thinkup.sdk:tramini-plugin-tpn:6.5.52")
-    implementation("com.thinkup.sdk:adapter-tpn-admob:25.0.0.1.0")
 
     // App-wide lifecycle (ProcessLifecycleOwner) for app-open ads
     implementation("androidx.lifecycle:lifecycle-process:2.9.4")

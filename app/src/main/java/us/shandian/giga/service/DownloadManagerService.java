@@ -19,16 +19,16 @@ import androidx.core.app.NotificationManagerCompat;
 import com.applogevent.logeventlib.LogEventLibs;
 import com.music.searchapi.ApiServices;
 
-import org.akanework.gramophone.BuildConfig;
-import org.akanework.gramophone.R;
-import org.akanework.gramophone.logic.utils.firebase.FirebaseEventUtils;
-import org.akanework.gramophone.logic.utils.firebase.Keys;
-import org.akanework.gramophone.logic.utils.online.AudioMuxer;
-import org.akanework.gramophone.logic.utils.online.DownloadStorage;
-import org.akanework.gramophone.logic.utils.online.SearchApiExecutor;
-import org.akanework.gramophone.logic.utils.online.ToastUtils;
-import org.akanework.gramophone.ui.fragments.DownloadsFragment;
-import org.akanework.gramophone.ui.fragments.OnlineSearchFragment;
+import com.musicdownloader.musicfreeapp825v2.BuildConfig;
+import com.musicdownloader.musicfreeapp825v2.R;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.Keys;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.AudioMuxer;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.DownloadStorage;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.SearchApiExecutor;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.ToastUtils;
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.DownloadsFragment;
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.OnlineSearchFragment;
 
 import java.io.File;
 import java.util.HashSet;

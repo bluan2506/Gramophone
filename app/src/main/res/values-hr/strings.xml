@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Music Downloader</string>
     <string name="home_menu_search">Pretraga</string>
     <string name="home_menu_settings">Postavke</string>
     <string name="home_menu_shuffle">Promiješaj sve</string>
@@ -52,7 +52,6 @@
     <string name="search">Pretraga</string>
     <string name="share">Dijeli</string>
     <string name="settings_app_name">Ime aplikacije</string>
-    <string name="settings_contributors">Doprinositelji</string>
     <string name="play_next">Reproduciraj sljedeću</string>
     <string name="go_to_album">Idi na album</string>
     <string name="go_to_artist">Idi na izvođača</string>
@@ -68,7 +67,6 @@
     <string name="dialog_artist">Izvođač</string>
     <string name="settings_category_behavior">Ponašanje</string>
     <string name="settings_mediastore_filter">Minimalna duljina pjesme (sekunde)</string>
-    <string name="settings_repository">Repozitorij</string>
     <string name="dialog_album">Album</string>
     <string name="dialog_genre">Žanr</string>
     <string name="dialog_album_artist">Izvođač albuma</string>
@@ -91,7 +89,6 @@
     <string name="settings_default_progress_bar_summary">Uključi traku napretka u „material“ stilu</string>
     <string name="opensource_info">Aplikacija otvorenog koda, licenca GPL-3.0\nAutorska prava %s</string>
     <string name="playlist_favourite">Favoriti</string>
-    <string name="settings_contributors_click">%s (klikni za više!)</string>
     <string name="now_playing">Sada se izvodi</string>
     <string name="settings_content_based_color_summary">Uključi generiranje boja na temelju albuma</string>
     <string name="settings_content_based_color">Boje na temelju sadržaja</string>
@@ -285,7 +282,7 @@
     <string name="device_type_line_digital">Digitalna linija</string>
     <string name="device_type_ble_speaker">Bluetooth LE zvučnik</string>
     <string name="device_type_ble_broadcast">Bluetooth LE emitiranje</string>
-    <string name="open_in_gramophone">Otvori u aplikaciji Gramophone</string>
+    <string name="open_in_gramophone">Otvori u aplikaciji Music Downloader</string>
     <string name="settings_trim_lyrics_summary">Razmaci prije prvog slova ili nakon kraja teksta pjesme mogu imati umjetničku vrijednost. Ako se ne slažeš, uključi ovu opciju za automatsko uklonjanje tih razmaka.</string>
     <string name="cannot_play_file">Ova se datoteka ne može raproducirati</string>
     <string name="settings_lyrics_no_animation">Isključi animacije</string>
@@ -293,7 +290,7 @@
     <string name="dialog_bitrate">Brzina prijenosa</string>
     <string name="bitrate_format">%1$d kbps</string>
     <string name="bitrate_unknown">Nepoznata brzina prijenosa</string>
-    <string name="package_type_explainer">Gramophone APK-ove može stvarati bilo tko, jer je Gramophone otvorenog koda. Kako bi se lakše zapamtilo odakle je APK došao, Gramophone navodi vrstu paketa.\n\nNajčešća vrsta je Release, koja je dostupna na stranicama F-Droid, Google Play, GitHub ili IzzyOnDroid.\nVrsta CI paketa se odnosi na automatizirane izgradnje napravljene za svaki commit na GitHubu. Te izgranje mogu biti nestabilne.\nZa druge vrste paketa bi ime trebalo dati razuman nagovještaj odakle APK dolazi.</string>
+    <string name="package_type_explainer">Music Downloader APK-ove može stvarati bilo tko, jer je Music Downloader otvorenog koda. Kako bi se lakše zapamtilo odakle je APK došao, Music Downloader navodi vrstu paketa.\n\nNajčešća vrsta je Release, koja je dostupna na stranicama F-Droid, Google Play, GitHub ili IzzyOnDroid.\nVrsta CI paketa se odnosi na automatizirane izgradnje napravljene za svaki commit na GitHubu. Te izgranje mogu biti nestabilne.\nZa druge vrste paketa bi ime trebalo dati razuman nagovještaj odakle APK dolazi.</string>
     <string name="settings_open_source_licenses">Licence otvorenog koda</string>
     <string name="oh_no">Oh ne!</string>
     <string name="gramophone_crashed_explainer2">Gramophone je prekinuo raditi :(\n\nPošalji mi prijavu greške kako bi se problemi poput onih koji su doveli do ove greške mogli popraviti!\n\nSvaka je situacija jedinstvena poput glazbe – bez tvoje pomoći se ova greška vjerojatno <b>NEĆE</b> popraviti!</string>
@@ -409,7 +406,7 @@
     <string name="refreshing_wait">Osvježavajnje i tijeku, pričekaj …</string>
     <string name="still_refreshing">Osvježavanje, korak %1$d/%2$d: %3$s</string>
     <string name="did_you_know">Je li znaš …</string>
-    <string name="refresh_did_you_know">Gramophone traži aktualiziran popis pjesama pri svakom pokretanju aplikacije, a dok Gramophone radi, automatski prepoznaje nove medije. Ovaj gumb „Osvježi“ neće ponovo učitati medij u Gramophone, već će tražiti od tvog sustava da ponovo pretraži sve datoteke sa svih priključenih uređaja za trajno spremanje (zbog toga to ponešto traje). To znači da, osim ako tvoj sustav ili druge aplikacije ne rade ispravno, nikada nećeš morati koristiti ovu funkciju.\n\nNedostaju ti neke pjesme? Provjeri Postavke &gt; Ponašanje za filtar minimalne duljine i mapu nepoželjnih i potvrdi da su te postavke postavljene na očekivanu vrijednost. Pronađi još mogućih razloga na našoj ČPP stranici.</string>
+    <string name="refresh_did_you_know">Music Downloader traži aktualiziran popis pjesama pri svakom pokretanju aplikacije, a dok Music Downloader radi, automatski prepoznaje nove medije. Ovaj gumb „Osvježi“ neće ponovo učitati medij u Music Downloader, već će tražiti od tvog sustava da ponovo pretraži sve datoteke sa svih priključenih uređaja za trajno spremanje (zbog toga to ponešto traje). To znači da, osim ako tvoj sustav ili druge aplikacije ne rade ispravno, nikada nećeš morati koristiti ovu funkciju.\n\nNedostaju ti neke pjesme? Provjeri Postavke &gt; Ponašanje za filtar minimalne duljine i mapu nepoželjnih i potvrdi da su te postavke postavljene na očekivanu vrijednost. Pronađi još mogućih razloga na našoj ČPP stranici.</string>
     <string name="rename_failed_playlist">Neuspjelo preimenovanje playliste: %s</string>
     <string name="playlist_name">Ime playliste</string>
     <string name="create_failed_playlist">Neuspjelo stvaranje playliste: %s</string>
@@ -417,22 +414,11 @@
     <string name="edit_playlist_failed">Uređivanje playliste nije uspjelo: %s</string>
     <string name="add_to_playlist">Dodaj u playlistu</string>
     <string name="no_app_found">Nije pronađena nijedna aplikacija koja to može uraditi</string>
-    <string name="contributors_nift4">Održavatelj / Glavni programer</string>
-    <string name="contributors_123duo3">Glavni dizajner</string>
-    <string name="contributors_akanetan">Izvorni autor, umirovljeni programer</string>
-    <string name="contributors_developer">Programer</string>
-    <string name="contributors_wstxda">dizajnirao je jednu varijaciju ikone aplikacije</string>
-    <string name="contributors_pxeemo">Pomoć i testiranje novih tekstova pjesama</string>
-    <string name="contributors_lambada10">pruža uzorke tekstova i SongSync</string>
-    <string name="contributors_code_contributions">Doprinosi kodu</string>
-    <string name="contributors_yuyuko1024">Valovita traka napretka</string>
-    <string name="contributors_ghhccghk">Traka stanja za tekstove pjesama i druga poboljšanja</string>
     <string name="home_menu_quick_refresh">Brzo osvježavanje</string>
     <string name="add_to_queue">Dodaj u red čekanja</string>
     <string name="disabled">Isključeno</string>
     <string name="offload_enabled_if_supported">Uvijek uključeno</string>
     <string name="offload_enabled_if_gapless">Uključeno, ako je bezprekidna reprodukcija moguća</string>
-    <string name="settings_telegram">Telegram</string>
     <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
     <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
     <string name="settings_cookie_summary">Stvori omot albuma u obliku kolačića</string>
@@ -463,7 +449,6 @@
     <string name="settings_audio_offload">Prebacivanje audio signala (štedi bateriju)</string>
     <string name="mix_port_flag_deep_buffer">Duboka/Velika predmemorija</string>
     <string name="d_db">%d dB</string>
-    <string name="contributors_saladnoober">Osiguranje kvalitete</string>
     <string name="settings_replaygain_no_rg_amp_desc">Smanji glasnoću za glasne pjesme koje nemaju oznake „Ujednačavanje glasnoće”</string>
     <string name="settings_replaygain_boost">Pojačanje glasnoće</string>
     <string name="settings_replaygain_preamp_desc">Povećaj ili smanji glasnoću pjesama s oznakom „Ujednačavanje glasnoće”. Veće vrijednosti mogu smanjiti dinamiku zvuka zbog sprečavanja odsjecanja (clipping).</string>

@@ -34,15 +34,15 @@ import androidx.media3.common.MediaMetadata
 import androidx.media3.common.util.Log
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.supervisorScope
-import org.akanework.gramophone.logic.GramophoneAlbumArtProvider
-import org.akanework.gramophone.logic.getFile
-import org.akanework.gramophone.logic.hasAudioPermission
-import org.akanework.gramophone.logic.hasImagePermission
-import org.akanework.gramophone.logic.hasImprovedMediaStore
-import org.akanework.gramophone.logic.hasScopedStorageV1
-import org.akanework.gramophone.logic.hasScopedStorageWithMediaTypes
-import org.akanework.gramophone.logic.requireMediaStoreId
-import org.akanework.gramophone.logic.utils.Flags
+import com.musicdownloader.musicfreeapp825v2.logic.MusicDownloaderAlbumArtProvider
+import com.musicdownloader.musicfreeapp825v2.logic.getFile
+import com.musicdownloader.musicfreeapp825v2.logic.hasAudioPermission
+import com.musicdownloader.musicfreeapp825v2.logic.hasImagePermission
+import com.musicdownloader.musicfreeapp825v2.logic.hasImprovedMediaStore
+import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageV1
+import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageWithMediaTypes
+import com.musicdownloader.musicfreeapp825v2.logic.requireMediaStoreId
+import com.musicdownloader.musicfreeapp825v2.logic.utils.Flags
 import org.nift4.mediastorecompat.MediaStoreCompat
 import org.nift4.mediastorecompat.StorageManagerCompat
 import org.nift4.mediastorecompat.StorageVolumeCompat
@@ -367,7 +367,7 @@ internal object Reader {
                 val dateTakenDay = if (hasImprovedMediaStore()) {
                     dateTakenParsed?.dayOfMonth
                 } else null
-                val imgUri = GramophoneAlbumArtProvider.buildSongUri(id, pathFile)
+                val imgUri = MusicDownloaderAlbumArtProvider.buildSongUri(id, pathFile)
                 if (cdTrackNumber != null && trackNumber == null) {
                     cdTrackNumber.toIntOrNull()?.let {
                         trackNumber = it
@@ -545,7 +545,7 @@ internal object Reader {
             coverCache?.get(it.id)?.let { p ->
                 // if this is false, folder contains >1 albums
                 if (p.second.albumId == it.id) {
-                    it.cover = GramophoneAlbumArtProvider.buildAlbumUri(p.second
+                    it.cover = MusicDownloaderAlbumArtProvider.buildAlbumUri(p.second
                         .songList.first().requireMediaStoreId(), p.second
                         .songList.first().getFile()!!)
                 }

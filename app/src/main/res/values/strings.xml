@@ -11,7 +11,7 @@
     <eat-comment />
 
     <!-- If your language uses a latin script: use "Gramophone", please do not translate. If your language uses a different script: translate "Gramophone" into your language. -->
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Music Downloader</string>
     <string name="ads_loading">Ads loading…</string>
     <string name="splash_tagline">Your offline music player</string>
     <!-- Menu item in home screen -->
@@ -129,7 +129,6 @@
     <!-- Displayed above app name -->
     <string name="settings_app_name">App name</string>
     <!-- Clicking will open the credits screen -->
-    <string name="settings_contributors">Contributors</string>
     <!-- Play this song next, context menu item -->
     <string name="play_next">Play next</string>
     <!-- Open the album this song is in, context menu item -->
@@ -169,7 +168,6 @@
     in the app, intended to filter out ringtones and other short audio files that aren't music. -->
     <string name="settings_mediastore_filter">Song minimum length (seconds)</string>
     <!-- Link to our GitHub repository -->
-    <string name="settings_repository">Repository</string>
     <!-- Shown next to song's album name in detail UI -->
     <string name="dialog_album">Album</string>
     <!-- Shown next to song's genre in detail UI -->
@@ -219,7 +217,6 @@
     <string name="playlist_favourite">Favourites</string>
     <!-- Shows a list of contributors' nicknames like "someDeveloperA, someDeveloperB,
     someDeveloperC (click for more!)" and clicking opens credits screen -->
-    <string name="settings_contributors_click">%s (click for more!)</string>
     <!-- Accessibility name for bars animation on a song in a list, showing this is the playling song -->
     <string name="now_playing">Now playing</string>
     <!-- In appearance settings, change between album based color and system wide color. Subtext -->
@@ -729,7 +726,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">Bluetooth LE Broadcast</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_gramophone">Open in Gramophone</string>
+    <string name="open_in_gramophone">Open in Music Downloader</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">Spaces before the first letter or after the end of a lyric line may have artistic value. If you disagree, you can turn on this toggle to remove these spaces automatically.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -745,7 +742,7 @@
     <!-- Showing the song's bit rate in detail UI if it can't be determined -->
     <string name="bitrate_unknown">Unknown bitrate</string>
     <!-- Explainer in dialog when user clicks "Package type" field in about screen -->
-    <string name="package_type_explainer">Gramophone APKs can be created by anyone, because Gramophone is open source. To help remembering where an APK came from, Gramophone provides the package type.\n\nThe most common type is Release, which is obtained from F-Droid, Google Play, GitHub or IzzyOnDroid.\nThe CI package type refers to automated builds made for every commit on GitHub. These builds may be unstable.\nFor other package types, the name should give a reasonable hint to where the APK is from.</string>
+    <string name="package_type_explainer">Music Downloader APKs can be created by anyone, because Music Downloader is open source. To help remembering where an APK came from, Music Downloader provides the package type.\n\nThe most common type is Release, which is obtained from F-Droid, Google Play, GitHub or IzzyOnDroid.\nThe CI package type refers to automated builds made for every commit on GitHub. These builds may be unstable.\nFor other package types, the name should give a reasonable hint to where the APK is from.</string>
     <!-- Row in about screen which will show open source licenses of Gramophone and other libraries when clicked -->
     <string name="settings_open_source_licenses">Open source licenses</string>
     <!-- Title of crash report screen -->
@@ -1079,7 +1076,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">Did you know…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Gramophone asks for an updated song list on every app start, and while Gramophone is running, it will detect new media automatically as well. This \"Refresh\" button will not reload the media in Gramophone, instead, it will ask your system to re-scan all files from all attached permanent storage devices (this is why it takes some time). This means, unless your system or other apps are malfunctioning, you will never need to use this feature.\n\nMissing some songs? Make sure to check "Settings > Behaviour" for the minimum length filter and folder blacklist, and confirm these settings are set to an expected value. For more possible reasons, please check our FAQ.</string>
+    <string name="refresh_did_you_know">Music Downloader asks for an updated song list on every app start, and while Music Downloader is running, it will detect new media automatically as well. This \"Refresh\" button will not reload the media in Music Downloader, instead, it will ask your system to re-scan all files from all attached permanent storage devices (this is why it takes some time). This means, unless your system or other apps are malfunctioning, you will never need to use this feature.\n\nMissing some songs? Make sure to check "Settings > Behaviour" for the minimum length filter and folder blacklist, and confirm these settings are set to an expected value. For more possible reasons, please check our FAQ.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">Failed to rename playlist: %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->
@@ -1098,27 +1095,16 @@
     <!-- Error if no internet browser is installed but user clicks a link -->
     <string name="no_app_found">No app found that can do this</string>
     <!-- Shown below the lead developer's nickname in about screen -->
-    <string name="contributors_nift4">Maintainer / Lead Developer</string>
     <!-- Shown below the lead designer's nickname in about screen -->
-    <string name="contributors_123duo3">Lead Designer</string>
     <!-- Shown below the original creator's nickname in about screen -->
-    <string name="contributors_akanetan">Original creator, retired developer</string>
     <!-- Shown below other developer's nickname in about screen -->
-    <string name="contributors_developer">Developer</string>
     <!-- Shown below a contributor's nickname in about screen -->
-    <string name="contributors_wstxda">designed one variation of app icon</string>
     <!-- Shown below a contributor's nickname in about screen -->
-    <string name="contributors_pxeemo">Help &amp; testing of new lyrics</string>
     <!-- Shown below a contributor's nickname in about screen. SongSync is an app name -->
-    <string name="contributors_lambada10">providing lyric samples &amp; SongSync</string>
     <!-- Shown below a contributor's nickname in about screen -->
-    <string name="contributors_code_contributions">Code contributions</string>
     <!-- Shown below a contributor's nickname in about screen. This is the feature they worked on -->
-    <string name="contributors_yuyuko1024">Squiggly progress bar</string>
     <!-- Shown below a contributor's nickname in about screen. This is the feature they worked on -->
-    <string name="contributors_ghhccghk">Status Bar lyrics &amp; other improvements</string>
     <!-- Shown below a contributor's nickname in about screen -->
-    <string name="contributors_saladnoober">Quality Assurance</string>
     <!-- Home menu item to refresh song list quickly -->
     <string name="home_menu_quick_refresh">Quick refresh</string>
     <!-- Context menu item to add song to currently playing queue (as opposed to playlist which is
@@ -1133,7 +1119,6 @@
     <!-- Dialog title for audio offload feature. Offload is a technical term -->
     <string name="settings_audio_offload">Audio offload (saves battery)</string>
     <!-- Shown above the link to our group in about screen -->
-    <string name="settings_telegram">Telegram</string>
     <!-- This is one of the possible audio formats supported by Android. It's used to display
     supported output formats by device and playback path of active playback. -->
     <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
@@ -1331,4 +1316,21 @@ supporting local search. This string is displayed in the search bar when using G
     <string name="are_you_sure_you_want_to_exit_app">Are you sure you want to exit app?</string>
     <string name="exit">Exit</string>
     <string name="action_cancel">Cancel</string>
+    <!-- Feedback screen (opened from Settings) -->
+    <string name="settings_feedback">Feedback</string>
+    <string name="settings_feedback_summary">Tell us the problems you encountered</string>
+    <string name="feedback_amp_help"><![CDATA[Feedback & Help]]></string>
+    <string name="tell_us_the_problem_you_encountered">Tell us the problem you encountered</string>
+    <string name="some_songs_are_not_displayed">Some songs are not displayed</string>
+    <string name="bugs">Bugs</string>
+    <string name="too_many_ads">Too many ads</string>
+    <string name="music_stop_playing">Music stop playing</string>
+    <string name="suggestion">Suggestion</string>
+    <string name="others">Others</string>
+    <string name="submit">Submit</string>
+    <string name="please_tell_us_more_details">Please tell us more details so that we can locate and solve your problem faster (at least 6 characters)</string>
+    <string name="you_have_not_filled_in_your_feedback_yet">You have not filled in your feedback yet</string>
+    <string name="thank_for_your_feedback">Thank you for your feedback!</string>
+    <string name="we_will_try_our_best_to_improve_it">We will try our best to improve it</string>
+    <string name="ok">OK</string>
 </resources>

@@ -12,7 +12,6 @@
     <string name="sort_by_size">الحجم</string>
     <string name="dialog_title">العنوان</string>
     <string name="settings_lyrics_configuration">تعديل الكلمات</string>
-    <string name="settings_repository">المستودع</string>
     <string name="settings_library_summary">إدارة مكتبة الوسائط</string>
     <string name="sort_by_artist">الفنّان</string>
     <string name="settings_mediastore_filter">الحد الأدنى لطول الأغنية (بالثواني)</string>
@@ -78,7 +77,6 @@
     <string name="home_menu_settings">الإعدادات</string>
     <string name="settings_category_links">الرَّوابِط</string>
     <string name="home_menu_refresh">إعادة التحميل</string>
-    <string name="settings_contributors">المُساهِمون</string>
     <string name="settings_category_appearance">المظهر</string>
     <string name="dialog_album">ألبوم</string>
     <string name="settings_color_accuracy">دِقَّة التلوين</string>
@@ -217,7 +215,6 @@
         <item quantity="other">%d ملفاً</item>
     </plurals>
     <string name="search_query">البحث: %s</string>
-    <string name="settings_contributors_click">%s (اضغط للمزيد!)</string>
     <string name="delete_failed_playlist">فشل حذف قائمة التشغيل: %s</string>
     <string name="delete_really">هل تريد حقاً أن تحذف \"%s\"؟ هذا الإجراء لا يمكن التراجع عنه.</string>
     <string name="delete_really_artist">هل تريد حقاً أن تحذف كل الأغاني بواسطة \"%s\"؟ هذا الإجراء لا يمكن التراجع عنه.</string>
@@ -260,7 +257,7 @@
     <string name="enter_msg_for_dev_here">أرسل رسالة إلى المطور هنا</string>
     <string name="spk_channel_out_low_frequency">منخفض التردد</string>
     <string name="still_refreshing">جارٍ التحميل، الخطوه %1$d/%2$d: %3$s</string>
-    <string name="refresh_did_you_know">يطلب Gramophone قائمة أغاني محدثة عند كل بدء تشغيل للتطبيق، وأثناء تشغيل Gramophone، سيكتشف الوسائط الجديدة تلقائيًا أيضًا. لن يؤدي زر \"تحديث\" هذا إلى إعادة تحميل الوسائط في Gramophone، بل سيطلب من نظامك إعادة فحص جميع الملفات من جميع أجهزة التخزين الدائمة المتصلة (ولهذا السبب يستغرق الأمر بعض الوقت). وهذا يعني، ما لم يكن نظامك أو تطبيقاتك الأخرى معطلة، فلن تحتاج أبدًا إلى استخدام هذه الميزة.\n\nهل تفتقد بعض الأغاني؟ تأكد من التحقق من الإعدادات &gt; السلوك لمعرفة مرشح الحد الأدنى للطول والقائمة السوداء للمجلدات، وتأكد من تعيين هذه الإعدادات على القيمة المتوقعة. لمعرفة المزيد من الأسباب المحتملة، يُرجى الاطلاع على الأسئلة الشائعة.</string>
+    <string name="refresh_did_you_know">يطلب Music Downloader قائمة أغاني محدثة عند كل بدء تشغيل للتطبيق، وأثناء تشغيل Music Downloader، سيكتشف الوسائط الجديدة تلقائيًا أيضًا. لن يؤدي زر \"تحديث\" هذا إلى إعادة تحميل الوسائط في Music Downloader، بل سيطلب من نظامك إعادة فحص جميع الملفات من جميع أجهزة التخزين الدائمة المتصلة (ولهذا السبب يستغرق الأمر بعض الوقت). وهذا يعني، ما لم يكن نظامك أو تطبيقاتك الأخرى معطلة، فلن تحتاج أبدًا إلى استخدام هذه الميزة.\n\nهل تفتقد بعض الأغاني؟ تأكد من التحقق من الإعدادات &gt; السلوك لمعرفة مرشح الحد الأدنى للطول والقائمة السوداء للمجلدات، وتأكد من تعيين هذه الإعدادات على القيمة المتوقعة. لمعرفة المزيد من الأسباب المحتملة، يُرجى الاطلاع على الأسئلة الشائعة.</string>
     <string name="seekbar">شريط التَّقدُّم</string>
     <string name="timer_expiry_end_of_this_song">سيُوقِف مؤقِّت النوم الموسيقى في نهاية هذه الأغنية</string>
     <string name="timer_expiry_eos">سيُوقِف مؤقِّت النوم الموسيقى عند انتهاء تشغيل الأغنية في %s</string>
@@ -308,13 +305,8 @@
     <string name="sort_by_album_year">سنة الألبوم</string>
     <string name="settings_replaygain_boost_desc" formatted="false">"سيؤدي \"التعزيز\" إلى إخراج كل من ReplayGain والموسيقى الأخرى بمستوى صوت أعلى مما هو محدد في جهازك. (إذا تم ضبط مستوى صوت جهازك بالقرب من 100 ٪، فلن يؤدي تعزيز الصوت إلى زيادة مستوى الصوت). مع التعزيز، يمكنك الاستمتاع بالموسيقى التي تتمتع بصوت عالٍ مماثل للتطبيقات الأخرى، مثل الألعاب. يرجى ملاحظة أن هذه الميزة تجريبية وقد تتداخل مع تطبيقات المعادل الخارجية. لا يعمل التعزيز مع سماعات الرأس التي تعمل بالبلوتوث. في حالة وجود أي مشاكل متعلقة بالحجم، يرجى تعطيل ميزة \"زيادة الدخل\" عن طريق تعيينها إلى 0 dB. "</string>
     <string name="scroll_to_playing">اسحب لتشغيل أغنية</string>
-    <string name="settings_telegram">تيليجرام</string>
     <string name="disabled">معطل</string>
     <string name="offload_enabled_if_supported">مفعل دائماً</string>
-    <string name="contributors_developer">مطور</string>
-    <string name="contributors_akanetan">المنشئ الأصلي، المطور متقاعد</string>
-    <string name="contributors_nift4">المشرف / المطور الرئيسي</string>
-    <string name="contributors_123duo3">المصمم الرئيسي</string>
     <string name="do_not_enter_email_enter_msg">أدخل رسالة، لا عنوان البريد الإلكتروني</string>
     <string name="device_type_wired_headphones">سمّاعات سلكية</string>
     <string name="device_type_wired_headset">سمَاعة رأس سلكية</string>
@@ -327,7 +319,7 @@
     <string name="device_type_ble_speaker">مكبّر صوت بلوتوث LE</string>
     <string name="device_type_ble_broadcast">بث بلوتوث LE</string>
     <string name="gramophone_crashed_explainer2">تعطل جراموفون :(\n\nمن فضلك أرسل لي تقريرًا عن الأخطاء حتى يمكن إصلاح مشكلات مثل ما يؤدي إلى هذا التعطل!\n\nكل موقف فريد من نوعه مثل الموسيقى، بدون مساعدتك، من المحتمل <b>ألا</b> يتم إصلاح هذا الخطأ!</string>
-    <string name="package_type_explainer">يمكن إنشاء Gramophone APKs من قبل أي شخص، لأن Gramophone مفتوح المصدر. للمساعدة في تذكر مصدر ملف APK، يوفر Gramophone نوع الحزمة.\n\nالنوع الأكثر شيوعًا هو الإصدار، والذي يتم الحصول عليه من F-Droid، Google Play، GitHub أو IzzyOnDroid.\nيشير نوع حزمة CI إلى الإصدارات الآلية التي يتم إجراؤها لكل التزام على GitHub. قد تكون هذه البنيات غير مستقرة.\nبالنسبة لأنواع العبوات الأخرى، يجب أن يعطي الاسم تلميحًا معقولاً إلى مصدر ملف APK.</string>
+    <string name="package_type_explainer">يمكن إنشاء Music Downloader APKs من قبل أي شخص، لأن Music Downloader مفتوح المصدر. للمساعدة في تذكر مصدر ملف APK، يوفر Music Downloader نوع الحزمة.\n\nالنوع الأكثر شيوعًا هو الإصدار، والذي يتم الحصول عليه من F-Droid، Google Play، GitHub أو IzzyOnDroid.\nيشير نوع حزمة CI إلى الإصدارات الآلية التي يتم إجراؤها لكل التزام على GitHub. قد تكون هذه البنيات غير مستقرة.\nبالنسبة لأنواع العبوات الأخرى، يجب أن يعطي الاسم تلميحًا معقولاً إلى مصدر ملف APK.</string>
     <string name="audio_signal_chain">سلسلة الإشارات الصوتية</string>
     <string name="failed_to_parse_lyric">فشل تحليل الكلمات</string>
     <string name="audio_not_initialized">لم يتم تهيئة نظام تشغيل الصوت. جرب التشغيل على شيء ما!</string>
@@ -352,12 +344,7 @@
     <string name="settings_audio_offload">إلغاء تحميل الصوت (يُحفظ البطّارية)</string>
     <string name="device_type_bluetooth_a2dp">بلوتوث A2DP</string>
     <string name="device_type_builtin_speaker">مكبّر صوت مُدمَج</string>
-    <string name="contributors_code_contributions">مساهمات للكود</string>
-    <string name="contributors_ghhccghk">كلمات شريط الحالة و تحسينات الأخرى</string>
-    <string name="contributors_saladnoober">ضمان الجودة</string>
     <string name="loading_playlists">جارٍ تحميل قوائم التشغيل...</string>
-    <string name="contributors_yuyuko1024">شريط التَّقدُّم المُتعرِّج</string>
-    <string name="contributors_pxeemo">المساعدة واختبار كلمات الجديدة</string>
     <string name="mix_port_flag_ultrasound">موجات فوق صوتية</string>
     <string name="spk_encoding_mp3">MP3</string>
     <string name="spk_encoding_aac_lc">AAC-LC</string>

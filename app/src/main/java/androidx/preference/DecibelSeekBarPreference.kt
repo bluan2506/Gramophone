@@ -20,7 +20,7 @@ package androidx.preference
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.TextView
-import org.akanework.gramophone.R
+import com.musicdownloader.musicfreeapp825v2.R
 
 open class DecibelSeekBarPreference(
     context: Context, attrs: AttributeSet?

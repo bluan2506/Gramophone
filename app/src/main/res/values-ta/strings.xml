@@ -52,7 +52,6 @@
     <string name="search">தேடல்</string>
     <string name="share">பங்கு</string>
     <string name="settings_app_name">பயன்பாட்டு பெயர்</string>
-    <string name="settings_contributors">பங்களிப்பாளர்கள்</string>
     <string name="play_next">அடுத்து விளையாடுங்கள்</string>
     <string name="go_to_album">ஆல்பத்திற்குச் செல்லுங்கள்</string>
     <string name="unknown_playlist">தெரியாத பிளேலிச்ட்</string>
@@ -64,7 +63,6 @@
     <string name="dialog_artist">கலைஞர்</string>
     <string name="settings_category_behavior">நடத்தை</string>
     <string name="settings_mediastore_filter">பாடல் குறைந்தபட்ச நீளம் (விநாடிகள்)</string>
-    <string name="settings_repository">களஞ்சியம்</string>
     <string name="dialog_album">தொகுப்பு</string>
     <string name="dialog_genre">வகை</string>
     <string name="dialog_album_artist">ஆல்பம் கலைஞர்</string>
@@ -177,7 +175,6 @@
     <string name="yes">ஆம்</string>
     <string name="no">இல்லை</string>
     <string name="sort_by_album_artist">ஆல்பம் கலைஞர் -&gt; தலைப்பு</string>
-    <string name="settings_contributors_click">%s (மேலும் சொடுக்கு செய்க!)</string>
     <string name="delete_failed_playlist">பிளேலிச்ட்டை நீக்குவதில் தோல்வி: %s</string>
     <string name="delete_really">நீங்கள் உண்மையில் \"%s\" நீக்க விரும்புகிறீர்களா? இந்த செயலை செயல்தவிர்க்க முடியாது.</string>
     <string name="sort_by_file_path">கோப்பு பாதை</string>
@@ -402,16 +399,6 @@
     <string name="edit_playlist_failed">பிளேலிச்ட்டைத் திருத்த முடியவில்லை: %s</string>
     <string name="add_to_playlist">பிளேலிச்ட்டில் சேர்க்கவும்</string>
     <string name="no_app_found">இதைச் செய்யக்கூடிய எந்த பயன்பாடும் கிடைக்கவில்லை</string>
-    <string name="contributors_nift4">பராமரிப்பாளர் / முன்னணி உருவாக்குபவர்</string>
-    <string name="contributors_123duo3">முன்னணி வடிவமைப்பாளர்</string>
-    <string name="contributors_akanetan">அசல் படைப்பாளி, ஓய்வு பெற்ற உருவாக்குபவர்</string>
-    <string name="contributors_developer">உருவாக்குநர்</string>
-    <string name="contributors_wstxda">பயன்பாட்டு ஐகானின் ஒரு மாறுபாடு வடிவமைக்கப்பட்டுள்ளது</string>
-    <string name="contributors_pxeemo">புதிய பாடல்களின் உதவி மற்றும் சோதனை</string>
-    <string name="contributors_lambada10">பாடல் மாதிரிகள் மற்றும் பாடல்கள்</string>
-    <string name="contributors_code_contributions">குறியீடு பங்களிப்புகள்</string>
-    <string name="contributors_yuyuko1024">மோசமான முன்னேற்றப் பட்டி</string>
-    <string name="contributors_ghhccghk">ச்டேட்டச் பார் பாடல் வரிகள் மற்றும் பிற மேம்பாடுகள்</string>
     <string name="app_name">கிராமபோன்</string>
     <plurals name="folders_plural">
         <item quantity="one">%d கோப்புறை</item>
@@ -425,14 +412,12 @@
     <string name="reset">மீட்டமை</string>
     <string name="timer_expiry_eos">%s இல் பாடல் ஒலிக்கும் போது ச்லீப் நேரங்குறிகருவி இசையை இடைநிறுத்தும்</string>
     <string name="timer_expiry_end_of_this_song">இந்த பாடலின் முடிவில் ச்லீப் நேரங்குறிகருவி இசையை இடைநிறுத்தும்</string>
-    <string name="contributors_saladnoober">தர பொறுப்பு</string>
     <string name="home_menu_quick_refresh">விரைவான புதுப்பிப்பு</string>
     <string name="add_to_queue">வரிசையில் சேர்க்கவும்</string>
     <string name="disabled">முடக்கப்பட்டது</string>
     <string name="offload_enabled_if_supported">எப்போதும் இயக்கப்பட்டிருக்கும்</string>
     <string name="offload_enabled_if_gapless">இடைவெளியில்லாமல் பிளேபேக் முடிந்தால் இயக்கப்படும்</string>
     <string name="settings_audio_offload">ஆடியோ ஆஃப்லோட் (பேட்டரியைச் சேமிக்கிறது)</string>
-    <string name="settings_telegram">தந்தி</string>
     <string name="spk_encoding_pcm_20bit">20-பிட் பிசிஎம்</string>
     <string name="spk_encoding_pcm_20bit_big_endian">20-பிட் பிசிஎம் (பெரிய எண்டியன்)</string>
     <string name="settings_cookie_summary">ஆல்பம் கவர் குக்கீ வடிவத்தை உருவாக்கவும்</string>

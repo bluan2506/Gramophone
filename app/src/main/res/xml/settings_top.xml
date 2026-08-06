@@ -70,6 +70,13 @@
         android:title="@string/settings_experimental_settings" />
 
     <Preference
+        android:icon="@drawable/ic_feedback_24"
+        android:key="feedback"
+        android:layout="@layout/preference_basic"
+        android:summary="@string/settings_feedback_summary"
+        android:title="@string/settings_feedback" />
+
+    <Preference
         android:icon="@drawable/ic_info"
         android:key="about"
         android:layout="@layout/preference_basic"

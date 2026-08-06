@@ -9,7 +9,6 @@
     <string name="settings_experimental_settings">Experimental</string>
     <string name="sort_by_size">Tamanho</string>
     <string name="dialog_title">Título</string>
-    <string name="settings_repository">Repositório</string>
     <string name="settings_library_summary">Gerenciar biblioteca de mídia</string>
     <string name="sort_by_artist">Artista</string>
     <string name="settings_mediastore_filter">Duração mínima da música (em segundos)</string>
@@ -59,7 +58,6 @@
     <string name="home_menu_settings">Configurações</string>
     <string name="settings_category_links">Links</string>
     <string name="home_menu_refresh">Atualizar</string>
-    <string name="settings_contributors">Colaboradores</string>
     <string name="settings_category_appearance">Aparência</string>
     <string name="dialog_album">Álbum</string>
     <string name="settings_color_accuracy">Precisão de cores dinâmicas</string>
@@ -202,7 +200,6 @@
     <string name="sort_by_album_artist">Artista do álbum -&gt; título</string>
     <string name="sort_by_file_path">Caminho do arquivo</string>
     <string name="spk_channel_out_quad">Quad</string>
-    <string name="settings_contributors_click">%s (clique para saber mais!)</string>
     <string name="spk_channel_out_7point1_surround">Surround (7.1)</string>
     <string name="spk_channel_out_5point1point4">5.1.4</string>
     <string name="spk_channel_out_9point1point4">9.1.4</string>
@@ -279,7 +276,7 @@
     <string name="audio_not_initialized">O sistema de reprodução de áudio não foi inicializado. Tente reproduzir algo!</string>
     <string name="mix_port_flag_voip_rx">VoIP RX</string>
     <string name="spk_encoding_aptx_adaptive_qlea">aptX Adaptive sobre LE Audio</string>
-    <string name="package_type_explainer">Os APKs do Gramophone podem ser criados por qualquer pessoa, pois o Gramophone é de código aberto. Para ajudar a lembrar de onde veio um APK, o Gramophone fornece o tipo de pacote.\n\nO tipo mais comum é Release, que é obtido no F-Droid, Google Play, GitHub ou IzzyOnDroid.\nO tipo de pacote CI refere-se a compilações automatizadas feitas para cada commit no GitHub. Essas compilações podem ser instáveis.\nPara outros tipos de pacote, o nome deve dar uma dica razoável sobre a origem do APK.</string>
+    <string name="package_type_explainer">Os APKs do Music Downloader podem ser criados por qualquer pessoa, pois o Music Downloader é de código aberto. Para ajudar a lembrar de onde veio um APK, o Music Downloader fornece o tipo de pacote.\n\nO tipo mais comum é Release, que é obtido no F-Droid, Google Play, GitHub ou IzzyOnDroid.\nO tipo de pacote CI refere-se a compilações automatizadas feitas para cada commit no GitHub. Essas compilações podem ser instáveis.\nPara outros tipos de pacote, o nome deve dar uma dica razoável sobre a origem do APK.</string>
     <string name="spk_encoding_aac">AAC</string>
     <string name="spk_encoding_amr_wb">AMR-WB</string>
     <string name="mix_port_flag_sync">Sincronizar</string>
@@ -311,7 +308,7 @@
     <string name="device_type_hearing_aid">Aparelho auditivo</string>
     <string name="device_type_dock_digital">Dock Digital</string>
     <string name="device_type_dock_analog">Dock Analógico</string>
-    <string name="open_in_gramophone">Abrir no Gramophone</string>
+    <string name="open_in_gramophone">Abrir no Music Downloader</string>
     <string name="settings_lyrics_no_animation_summary">Remover todas animações de transição de letras</string>
     <string name="oh_no">Oh não!</string>
     <string name="send_email">Enviar email</string>
@@ -319,7 +316,7 @@
     <string name="device_type_ble_headset">Headset Bluetooth LE</string>
     <string name="settings_open_source_licenses">Licenças de código aberto</string>
     <string name="send_email_manually">Por favor envie o registro para nift4dev@gmail.com - não é possível encontrar o aplicativo de e-mail</string>
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Music Downloader</string>
     <plurals name="folders_plural">
         <item quantity="one">%d Pasta</item>
         <item quantity="many">%d Pastas</item>
@@ -404,7 +401,7 @@
     <string name="refreshing_wait">Recarregando, por favor aguarde…</string>
     <string name="still_refreshing">Recarregando, passo %1$d/%2$d: %3$s</string>
     <string name="did_you_know">Você sabia…</string>
-    <string name="refresh_did_you_know">Gramophone pede por uma lista atualizadas de músicas toda vez que inicia o app, enquanto Gramophone estiver em execução ele irá detectar novas mídias automaticamente. Esse botão \"Refresh\" não irá recarregar a mídia no Gramophone, invés disso vai perguntar ao seu sistema para re-escanear todos os arquivos fixados do sistema (por esse motivo demora um tempo). Isso significa que, a menos que seu sistema ou outros aplicativos não estejam funcionando corretamente, você nunca precisará usar esse recurso.\n\nFaltando algumas músicas? Tenha certeza de checar Configurações &gt; Comportamento para o filtro de duração mínimo e a lista negra de pastas e confirme que essa opção está configurada para o valor esperado. Para outras possíveis razões, por favor confira nosso FAQ.</string>
+    <string name="refresh_did_you_know">Music Downloader pede por uma lista atualizadas de músicas toda vez que inicia o app, enquanto Music Downloader estiver em execução ele irá detectar novas mídias automaticamente. Esse botão \"Refresh\" não irá recarregar a mídia no Music Downloader, invés disso vai perguntar ao seu sistema para re-escanear todos os arquivos fixados do sistema (por esse motivo demora um tempo). Isso significa que, a menos que seu sistema ou outros aplicativos não estejam funcionando corretamente, você nunca precisará usar esse recurso.\n\nFaltando algumas músicas? Tenha certeza de checar Configurações &gt; Comportamento para o filtro de duração mínimo e a lista negra de pastas e confirme que essa opção está configurada para o valor esperado. Para outras possíveis razões, por favor confira nosso FAQ.</string>
     <string name="rename_failed_playlist">Falha em renomear playlist: %s</string>
     <string name="playlist_name">Nome da playlist</string>
     <string name="create_failed_playlist">Falha ao criar playlist: %s</string>
@@ -412,22 +409,12 @@
     <string name="edit_playlist_failed">Edição de playlist falhou: %s</string>
     <string name="add_to_playlist">Adicione a playlist</string>
     <string name="no_app_found">Nenhum aplicativo encontrado pode fazer isso</string>
-    <string name="contributors_nift4">Mantedor/ Desenvolvedor Líder</string>
-    <string name="contributors_123duo3">Líder de Design</string>
-    <string name="contributors_akanetan">Criador original, desenvolvedor aposentado</string>
-    <string name="contributors_developer">Desenvolvedor</string>
-    <string name="contributors_wstxda">Desenhado uma variação do ícone do aplicativo</string>
-    <string name="contributors_pxeemo">Ajuda &amp; teste de novas letras</string>
-    <string name="contributors_lambada10">Fornecendo letras &amp; sincronização de músicas</string>
-    <string name="contributors_code_contributions">Contribuições de código</string>
-    <string name="contributors_yuyuko1024">Barra de progresso ondulada</string>
     <string name="home_menu_quick_refresh">Atualização rápida</string>
     <string name="add_to_queue">Adicionar à fila</string>
     <string name="disabled">Desabilitado</string>
     <string name="offload_enabled_if_supported">Sempre ativado</string>
     <string name="offload_enabled_if_gapless">Ativado se a reprodução sem espaços for possível</string>
     <string name="settings_audio_offload">Audio offload (conserva bateria)</string>
-    <string name="settings_telegram">Telegram</string>
     <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
     <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
     <string name="settings_cookie_summary">Capa do álbum em formato de cookie</string>

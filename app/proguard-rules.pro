@@ -24,7 +24,7 @@
 -dontobfuscate
 
 # reflection by androidx via theme attr viewInflaterClass
--keep class org.akanework.gramophone.logic.ui.ViewCompatInflater { *; }
+-keep class com.musicdownloader.musicfreeapp825v2.logic.ui.ViewCompatInflater { *; }
 
 # reflection by lyric getter xposed
 -keep class androidx.media3.common.util.Util {

@@ -197,7 +197,6 @@
     <string name="unknown_playlist">เพลย์ลิสต์ที่ไม่รู้จัก</string>
     <string name="album_artist">ศิลปินอัลบั้ม</string>
     <string name="settings_category_behavior">พฤติกรรม</string>
-    <string name="settings_repository">ที่เก็บข้อมูล</string>
     <string name="repeat_mode">โหมดซ้ํา</string>
     <string name="dialog_genre">แนวเพลง</string>
     <string name="dialog_album_artist">ศิลปินอัลบั้ม</string>
@@ -211,7 +210,6 @@
     <plurals name="folders_plural">
         <item quantity="other">%d แฟ้ม</item>
     </plurals>
-    <string name="settings_contributors">ผู้มีส่วนร่วม</string>
     <string name="play_next">เล่นเพลงถัดไป</string>
     <string name="settings_mediastore_filter">ความยาวเพลงที่สั้นที่สุด (วินาที)</string>
     <string name="layout">แสดง</string>
@@ -221,7 +219,6 @@
     <string name="settings_default_progress_bar">แถบเวลาแบบค่าเริ่มต้น</string>
     <string name="settings_default_progress_bar_summary">แถบเวลาแบบ material</string>
     <string name="opensource_info">ซอฟต์แวร์แบบเปิด ภายใต้สัญญา GPL-3.0\nสงวนลิขสิทธิ์ %s</string>
-    <string name="settings_contributors_click">%s (ดูเพิ่มเติม)</string>
     <string name="settings_content_based_color_summary">เปิดใช้ธีมสีตามปกอัลบั้ม</string>
     <string name="settings_content_based_color">ธีมสีตามปกอัลบั้ม</string>
     <string name="settings_package_type">รูปแบบแพ็กเกจ</string>

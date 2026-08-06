@@ -41,7 +41,6 @@
     <string name="search">Buscar</string>
     <string name="share">Compartir</string>
     <string name="settings_app_name">Nome da app</string>
-    <string name="settings_contributors">Colaboradoras</string>
     <string name="play_next">Reproducir a seguir</string>
     <string name="go_to_album">Ir ao álbum</string>
     <string name="go_to_artist">Ir ao artista</string>
@@ -57,7 +56,6 @@
     <string name="dialog_artist">Artista</string>
     <string name="settings_category_behavior">Comportamento</string>
     <string name="settings_mediastore_filter">Lonxitude mínima da canción (s)</string>
-    <string name="settings_repository">Repositorio</string>
     <string name="dialog_album">Álbum</string>
     <string name="dialog_genre">Xénero</string>
     <string name="dialog_album_artist">Artista do álbum</string>
@@ -79,7 +77,6 @@
     <string name="settings_default_progress_bar_summary">Activar a barra de progreso co estilo de Material</string>
     <string name="opensource_info">Código Aberto baixo a GPL-3.0\nDereitos %s</string>
     <string name="playlist_favourite">Favoritas</string>
-    <string name="settings_contributors_click">%s (ler máis)</string>
     <string name="home_menu_settings">Axustes</string>
     <string name="dialog_year">Ano</string>
     <string name="now_playing">En reprodución</string>
@@ -264,7 +261,7 @@
     <string name="device_type_line_digital">Liña dixital</string>
     <string name="device_type_ble_speaker">Altofalante Bluetooth LE</string>
     <string name="device_type_ble_broadcast">Emisión Bluetooth LE</string>
-    <string name="open_in_gramophone">Abrir con Gramophone</string>
+    <string name="open_in_gramophone">Abrir con Music Downloader</string>
     <string name="settings_content_based_color_summary">Activar creación da cor en función do álbum</string>
     <string name="settings_content_based_color">Cores en función do contido</string>
     <string name="settings_package_type">Tipo de paquete</string>
@@ -287,7 +284,7 @@
     <string name="dialog_bitrate">Taxa de bits</string>
     <string name="bitrate_format">%1$d kbps</string>
     <string name="bitrate_unknown">Taxa de bits descoñecida</string>
-    <string name="package_type_explainer">Calquera pode crear APKs de Gramophone, porque Gramophone é código aberto. Para axudar a lembrar de onde procede o APK, Gramophone proporciona o tipo de paquete. \n\nO tipo máis común é Release, que se obtén directamente desde F-Droid, Google Play, GitHub ou IzzyOnDroid.\nO tipo de paquete CI refírese ás versións automatizadas que se crean tras cada commit en GitHub. Estas versións poderían ser inestables.\nPara outros tipos de paquete o nome debería abondar para dar unha idea de onde procede o APK.</string>
+    <string name="package_type_explainer">Calquera pode crear APKs de Music Downloader, porque Music Downloader é código aberto. Para axudar a lembrar de onde procede o APK, Music Downloader proporciona o tipo de paquete. \n\nO tipo máis común é Release, que se obtén directamente desde F-Droid, Google Play, GitHub ou IzzyOnDroid.\nO tipo de paquete CI refírese ás versións automatizadas que se crean tras cada commit en GitHub. Estas versións poderían ser inestables.\nPara outros tipos de paquete o nome debería abondar para dar unha idea de onde procede o APK.</string>
     <string name="settings_open_source_licenses">Licenzas de Código aberto</string>
     <string name="failed_to_parse_lyric">Fallou o procesado da letra</string>
     <string name="audio_signal_chain">Cadea do sinal de audio</string>
@@ -401,25 +398,14 @@
     <string name="rename_playlist">Cambiar nome da lista</string>
     <string name="create_failed_playlist">Fallou a creación da lista: %s</string>
     <string name="refreshing_wait">Actualizando, agarda…</string>
-    <string name="refresh_did_you_know">Gramophone mira se hai actualizacións nas listas cada vez que se inicia, e mentras está a funcionar, tamén detectará se hai novas cancións. Este botón «Actualizar» non volve a cargar o multimedia en Gramophone, se non que lle pide ao sistema volver a escanear todos os ficheiros das almacenaxes permanentes (por iso lle leva un pouco de tempo). Isto significa que, a non ser que o sistema ou outras apps non estean a funcionar correctamente, non precisarás usar nunca esta característica.\n\nFaltan algunhas cancións? Comproba o filtro de lonxitude mínima e os cartafoles ignorados en Axustes &gt; Comportamento, e confirma que teñen os valores agardados. Para outras posibles razóns mira as nósas PMF.</string>
+    <string name="refresh_did_you_know">Music Downloader mira se hai actualizacións nas listas cada vez que se inicia, e mentras está a funcionar, tamén detectará se hai novas cancións. Este botón «Actualizar» non volve a cargar o multimedia en Music Downloader, se non que lle pide ao sistema volver a escanear todos os ficheiros das almacenaxes permanentes (por iso lle leva un pouco de tempo). Isto significa que, a non ser que o sistema ou outras apps non estean a funcionar correctamente, non precisarás usar nunca esta característica.\n\nFaltan algunhas cancións? Comproba o filtro de lonxitude mínima e os cartafoles ignorados en Axustes &gt; Comportamento, e confirma que teñen os valores agardados. Para outras posibles razóns mira as nósas PMF.</string>
     <string name="no_app_found">Non atopamos unha app para iso</string>
-    <string name="contributors_nift4">Mantemento / Desenvolvedora principal</string>
-    <string name="contributors_123duo3">Deseñadora principal</string>
-    <string name="contributors_akanetan">Creadora orixinal, fóra do proxecto</string>
-    <string name="contributors_developer">Desenvolvedora</string>
-    <string name="contributors_wstxda">deseñou unha versión da icona da app</string>
-    <string name="contributors_pxeemo">Axuda e proba o novo formato das letras</string>
-    <string name="contributors_lambada10">proporciona exemplos de letra e SongSync</string>
-    <string name="contributors_code_contributions">Colaboración no código</string>
-    <string name="contributors_yuyuko1024">A barra de progreso con ondas</string>
-    <string name="contributors_ghhccghk">Letras na barra de estado e outras melloras</string>
     <string name="home_menu_quick_refresh">Actualización rápida</string>
     <string name="add_to_queue">Engadir á cola</string>
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Music Downloader</string>
     <string name="disabled">Desactivado</string>
     <string name="offload_enabled_if_supported">Sempre activado</string>
     <string name="offload_enabled_if_gapless">Activado se é posible reproducir sen pausas</string>
-    <string name="settings_telegram">Telegram</string>
     <string name="settings_audio_offload">Audio offload (para aforrar batería)</string>
     <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
     <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
@@ -465,7 +451,6 @@
     <string name="settings_replaygain_mode_desc">«Intelixente» conserva automáticamente a dinámica do álbum so cando se reproducen cancións de xeito consecutivo dun álbum.</string>
     <string name="sort_by_artist_year"><![CDATA[Artist -&gt; ano]]></string>
     <string name="clear_queue">Limpar cola</string>
-    <string name="contributors_saladnoober">Control da calidade</string>
     <string name="actions_query_shuffle_all_songs">barallar todas as cancións</string>
     <string name="actions_query_shuffle_everything">barallar todo</string>
     <string name="actions_query_play_random_songs">reproducir cancións ao chou</string>

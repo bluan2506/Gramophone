@@ -6,7 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.view.View;
 
-import org.akanework.gramophone.logic.utils.firebase.FirebaseEventUtils;
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils;
 
 import java.io.BufferedInputStream;
 import java.io.File;

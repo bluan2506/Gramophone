@@ -37,7 +37,6 @@
     <string name="sort_by_size">Ukuran</string>
     <string name="unknown_genre">Genre tidak diketahui</string>
     <string name="settings_app_name">Nama aplikasi</string>
-    <string name="settings_contributors">Kontributor</string>
     <string name="details">Detail</string>
     <string name="go_to_album">Buka album</string>
     <string name="play_next">Putar berikutnya</string>
@@ -55,7 +54,6 @@
     <string name="settings_mediastore_filter">Panjang minimum lagu (detik)</string>
     <string name="dialog_path">Jalur</string>
     <string name="recently_added">Baru ditambahkan</string>
-    <string name="settings_repository">Repositori</string>
     <string name="unknown_album">Album tidak diketahui</string>
     <string name="dialog_year">Tahun</string>
     <string name="settings_app_theme">Tema aplikasi</string>
@@ -185,7 +183,7 @@
     <string name="spk_encoding_aac_lc">AAC-LC</string>
     <string name="spk_encoding_aac_he_v1">HE-AAC v1</string>
     <string name="spk_encoding_aac_he_v2">HE-AAC v2</string>
-    <string name="open_in_gramophone">Buka di Gramophone</string>
+    <string name="open_in_gramophone">Buka di Music Downloader</string>
     <string name="device_type_usb_device">Perangkat USB</string>
     <string name="device_type_ble_headset">Headset Bluetooth LE</string>
     <string name="settings_trim_lyrics_summary">Spasi sebelum huruf pertama atau setelah akhir baris lirik mungkin memiliki nilai artistik. Jika Anda tidak setuju, Anda dapat mengaktifkan tombol ini untuk menghapus spasi tersebut secara otomatis.</string>
@@ -229,7 +227,6 @@
     <string name="spk_channel_out_front_wide_left">Depan Lebar Kiri</string>
     <string name="spk_channel_out_front_wide_right">Depan Lebar Kanan</string>
     <string name="spk_encoding_invalid">Tidak valid</string>
-    <string name="settings_contributors_click">%s (klik untuk info lebih lanjut!)</string>
     <string name="spk_channel_out_9point1point6">9.1.6</string>
     <string name="spk_channel_out_side_right">Sisi Kanan</string>
     <string name="spk_channel_out_top_center">Atas Tengah</string>
@@ -276,7 +273,7 @@
     <string name="send_email_manually">Harap kirim log ke [nift4dev@gmail.com](mailto:nift4dev@gmail.com) - tidak dapat menemukan aplikasi email</string>
     <string name="failed_to_parse_lyric">Gagal menguraikan lirik</string>
     <string name="settings_lyrics_no_animation_summary">Nonaktifkan semua animasi transisi baris lirik</string>
-    <string name="package_type_explainer">APK Gramophone dapat dibuat oleh siapa saja, karena Gramophone bersumber terbuka. Untuk membantu mengingat asal suatu APK, Gramophone menyediakan tipe paket.\n\nTipe yang paling umum adalah Rilis, yang diperoleh dari F-Droid, Google Play, GitHub, atau IzzyOnDroid.\nTipe paket CI mengacu pada build otomatis yang dibuat untuk setiap commit di GitHub. Build ini mungkin tidak stabil.\nUntuk tipe paket lainnya, namanya seharusnya memberikan petunjuk yang wajar tentang asal APK tersebut.</string>
+    <string name="package_type_explainer">APK Music Downloader dapat dibuat oleh siapa saja, karena Music Downloader bersumber terbuka. Untuk membantu mengingat asal suatu APK, Music Downloader menyediakan tipe paket.\n\nTipe yang paling umum adalah Rilis, yang diperoleh dari F-Droid, Google Play, GitHub, atau IzzyOnDroid.\nTipe paket CI mengacu pada build otomatis yang dibuat untuk setiap commit di GitHub. Build ini mungkin tidak stabil.\nUntuk tipe paket lainnya, namanya seharusnya memberikan petunjuk yang wajar tentang asal APK tersebut.</string>
     <string name="settings_open_source_licenses">Lisensi sumber terbuka</string>
     <string name="delete_failed_playlist">Penghapusan daftar putar gagal: %s</string>
     <plurals name="folders_plural">
@@ -284,7 +281,7 @@
     </plurals>
     <string name="timer_expiry_eos">Pengatur waktu tidur akan menjeda musik saat lagu yang diputar pada %s selesai</string>
     <string name="timer_expiry_end_of_this_song">Pengatur waktu tidur akan menjeda musik di akhir lagu ini</string>
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Music Downloader</string>
     <string name="playback_speed">Kecepatan pemutaran</string>
     <string name="tempo">Tempo</string>
     <string name="pitch">Nada</string>
@@ -403,7 +400,7 @@
     <string name="refreshing_wait">Menyegarkan, harap tunggu…</string>
     <string name="still_refreshing">Menyegarkan, langkah %1$d/%2$d: %3$s</string>
     <string name="did_you_know">Tahukah Anda…</string>
-    <string name="refresh_did_you_know">Gramophone meminta daftar lagu yang diperbarui setiap kali aplikasi dimulai, dan selama Gramophone berjalan, aplikasi ini juga akan mendeteksi media baru secara otomatis. Tombol \"Segarkan\" ini tidak akan memuat ulang media di Gramophone, melainkan akan meminta sistem Anda untuk memindai ulang semua berkas dari semua perangkat penyimpanan permanen yang terpasang (inilah mengapa prosesnya membutuhkan beberapa waktu). Artinya, kecuali sistem atau aplikasi lain Anda mengalami gangguan, Anda tidak perlu menggunakan fitur ini.\n\nAda lagu yang tidak muncul? Pastikan untuk memeriksa Pengaturan &gt; Perilaku untuk filter panjang minimum dan daftar hitam folder, serta konfirmasikan bahwa pengaturan ini sudah sesuai. Untuk kemungkinan alasan lainnya, silakan periksa FAQ kami.</string>
+    <string name="refresh_did_you_know">Music Downloader meminta daftar lagu yang diperbarui setiap kali aplikasi dimulai, dan selama Music Downloader berjalan, aplikasi ini juga akan mendeteksi media baru secara otomatis. Tombol \"Segarkan\" ini tidak akan memuat ulang media di Music Downloader, melainkan akan meminta sistem Anda untuk memindai ulang semua berkas dari semua perangkat penyimpanan permanen yang terpasang (inilah mengapa prosesnya membutuhkan beberapa waktu). Artinya, kecuali sistem atau aplikasi lain Anda mengalami gangguan, Anda tidak perlu menggunakan fitur ini.\n\nAda lagu yang tidak muncul? Pastikan untuk memeriksa Pengaturan &gt; Perilaku untuk filter panjang minimum dan daftar hitam folder, serta konfirmasikan bahwa pengaturan ini sudah sesuai. Untuk kemungkinan alasan lainnya, silakan periksa FAQ kami.</string>
     <string name="rename_failed_playlist">Gagal mengganti nama daftar putar: %s</string>
     <string name="playlist_name">Nama daftar putar</string>
     <string name="create_failed_playlist">Gagal membuat daftar putar: %s</string>
@@ -411,24 +408,12 @@
     <string name="edit_playlist_failed">Pengeditan daftar putar gagal: %s</string>
     <string name="add_to_playlist">Tambahkan ke daftar putar</string>
     <string name="no_app_found">Tidak ada aplikasi yang dapat melakukan ini</string>
-    <string name="contributors_nift4">Pemelihara / Pengembang Utama</string>
-    <string name="contributors_123duo3">Desainer Utama</string>
-    <string name="contributors_akanetan">Pencipta asli, pengembang yang telah pensiun</string>
-    <string name="contributors_developer">Pengembang</string>
-    <string name="contributors_wstxda">merancang salah satu variasi ikon aplikasi</string>
-    <string name="contributors_pxeemo">Bantuan &amp; pengujian lirik baru</string>
-    <string name="contributors_lambada10">menyediakan sampel lirik &amp; SongSync</string>
-    <string name="contributors_code_contributions">Kontribusi kode</string>
-    <string name="contributors_yuyuko1024">Bilah progres bergelombang</string>
-    <string name="contributors_ghhccghk">Lirik bilah status &amp; peningkatan lainnya</string>
-    <string name="contributors_saladnoober">Jaminan kualitas</string>
     <string name="home_menu_quick_refresh">Segarkan cepat</string>
     <string name="add_to_queue">Tambahkan ke antrean</string>
     <string name="disabled">Dinonaktifkan</string>
     <string name="offload_enabled_if_supported">Selalu diaktifkan</string>
     <string name="offload_enabled_if_gapless">Diaktifkan jika pemutaran tanpa jeda memungkinkan</string>
     <string name="settings_audio_offload">Offload audio (menghemat baterai)</string>
-    <string name="settings_telegram">Telegram</string>
     <string name="spk_encoding_pcm_20bit">PCM 20-bit</string>
     <string name="spk_encoding_pcm_20bit_big_endian">PCM 20-bit (big endian)</string>
     <string name="settings_cookie_summary">Jadikan sampul album berbentuk kue</string>

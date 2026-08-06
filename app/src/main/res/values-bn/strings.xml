@@ -16,7 +16,6 @@
         <item quantity="other">%d টি অ্যালবাম</item>
     </plurals>
     <string name="dialog_artist">শিল্পী</string>
-    <string name="settings_contributors">অবদানকারীগণ</string>
     <string name="settings_category_appearance">সাজসজ্জা</string>
     <string name="dialog_album">অ্যালবাম</string>
     <string name="album_artist">অ্যালবাম শিল্পী</string>
@@ -29,7 +28,6 @@
     <string name="unknown_album">অজানা অ্যালবাম</string>
     <string name="sort_by_size">আকার</string>
     <string name="dialog_title">শিরোনাম</string>
-    <string name="settings_repository">রিপোজিটরি</string>
     <string name="settings_mediastore_filter">গানের ন্যূনতম সময় (সেকেন্ড)</string>
     <string name="category_songs">গানগুলো</string>
     <string name="compact_list">সারি (কম্প্যাক্ট)</string>
@@ -125,7 +123,6 @@
     <string name="sort_by_album_artist">অ্যালবাম শিল্পী -&gt; শিরোনাম</string>
     <string name="details">বিবরণ</string>
     <string name="layout">ডিসপ্লে</string>
-    <string name="settings_contributors_click">%s (আরও জানতে ক্লিক করুন!)</string>
     <string name="app_name">গ্রামোফোন</string>
     <string name="settings_blacklist_folder">ব্ল্যাকলিস্টেড ফোল্ডার</string>
     <string name="settings_category_basic_info">বেসিক তথ্য</string>
@@ -169,7 +166,6 @@
     <string name="tab_order">ট্যাবের ক্রম সাজান</string>
     <string name="tab_order_summary">অ্যাপটি চালু হওয়ার সময় প্রথম ট্যাবটি দেখাবে। ডিভাইডারের পরের ট্যাবগুলো লুকানো থাকবে।</string>
     <string name="settings_audio_quality_info">অডিও কোয়ালিটি</string>
-    <string name="settings_telegram">টেলিগ্রাম</string>
     <string name="settings_lyrics_no_animation">অ্যানিমেশন বন্ধ করুন</string>
     <string name="settings_lyrics_no_animation_summary">লিরিকের সমস্ত লাইন ট্রানজিশন অ্যানিমেশন বন্ধ করুন</string>
     <string name="settings_translation_auto_word">স্বয়ংক্রিয় ট্রানজিশন অ্যানিমেশন</string>

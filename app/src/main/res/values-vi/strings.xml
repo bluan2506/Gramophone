@@ -5,7 +5,6 @@
     <string name="unknown_album">Album chưa biết</string>
     <string name="sort_by_size">Kích cỡ</string>
     <string name="dialog_title">Tên bài hát</string>
-    <string name="settings_repository">Mã nguồn</string>
     <string name="settings_mediastore_filter">Thời lượng tối thiểu của bài hát (giây)</string>
     <string name="category_songs">Bài hát</string>
     <string name="compact_list">Danh sách (gọn gàng)</string>
@@ -21,7 +20,6 @@
     <string name="playlist_favourite">Yêu thích</string>
     <string name="home_menu_settings">Cài đặt</string>
     <string name="home_menu_refresh">Làm mới</string>
-    <string name="settings_contributors">Người đóng góp</string>
     <string name="home_menu_equalizer">Bộ chỉnh âm</string>
     <string name="settings_version">Phiên bản</string>
     <string name="category_albums">Albums</string>
@@ -151,7 +149,7 @@
     <string name="bitrate_unknown">Tốc độ bit chưa biết</string>
     <string name="bitrate_format">%1$d kbps</string>
     <string name="device_type_unknown">Không biết</string>
-    <string name="open_in_gramophone">Mở bằng Gramophone</string>
+    <string name="open_in_gramophone">Mở bằng Music Downloader</string>
     <string name="settings_lyrics_no_animation">Tắt hoạt ảnh</string>
     <string name="settings_lyrics_no_animation_summary">Tắt toàn bộ hoạt ảnh chuyển động lời bài hát</string>
     <string name="settings_preference_category_home">Màn hình chính</string>
@@ -165,7 +163,6 @@
         <item quantity="other">%d Thư mục</item>
     </plurals>
     <string name="search_query">Tìm kiếm: %s</string>
-    <string name="settings_contributors_click">%s (nhấn vào để xem thêm!)</string>
     <string name="delete_failed_playlist">Lỗi xóa danh sách phát: %s</string>
     <string name="grant_audio"><![CDATA[Vui lòng cấp quyền \"Âm nhạc và âm thanh\"]]></string>
     <string name="playback_speed">Tốc độ phát</string>
@@ -249,7 +246,7 @@
     <string name="device_type_ble_speaker">Loa BLE</string>
     <string name="device_type_ble_broadcast">Auracast</string>
     <string name="settings_trim_lyrics_summary">Khoảng trước chữ cái đầu tiên hoặc sau cuối dòng lời bài hát có thể mang giá trị kiểu chữ. Nếu bạn không muốn, bạn có thể bật tùy chọn này để tự động loại bỏ các khoảng đó.</string>
-    <string name="package_type_explainer">Bất kỳ ai cũng có thể tạo ra tệp APK của Gramophone vì Gramophone là mã nguồn mở. Để nhớ nguồn gốc của Gramophone, chúng tôi cung cấp ứng dụng.\n\nLoại phổ biến nhất là Release, được lấy từ F-Droid, Google Play, GitHub hoặc IzzyOnDroid.\nLoại gói CI đề cập đến các bản dựng tự động được tạo cho mỗi lần commit trên GitHub. Các bản dựng này có thể không ổn định.\nĐối với các loại ứng dụng khác, tên ứng dụng sẽ cung cấp thông tin về nguồn gốc của tệp APK.</string>
+    <string name="package_type_explainer">Bất kỳ ai cũng có thể tạo ra tệp APK của Music Downloader vì Music Downloader là mã nguồn mở. Để nhớ nguồn gốc của Music Downloader, chúng tôi cung cấp ứng dụng.\n\nLoại phổ biến nhất là Release, được lấy từ F-Droid, Google Play, GitHub hoặc IzzyOnDroid.\nLoại gói CI đề cập đến các bản dựng tự động được tạo cho mỗi lần commit trên GitHub. Các bản dựng này có thể không ổn định.\nĐối với các loại ứng dụng khác, tên ứng dụng sẽ cung cấp thông tin về nguồn gốc của tệp APK.</string>
     <string name="settings_open_source_licenses">Giấy phép mã nguồn mở</string>
     <string name="oh_no">Ôi không!</string>
     <string name="gramophone_crashed_explainer2">Gramophone bị lỗi :(\n\nVui lòng gửi báo cáo lỗi cho chúng tôi để các vấn đề như này có thể được khắc phục!\n\nMỗi trường hợp đều độc đáo như âm nhạc, nếu không có sự giúp đỡ của bạn, lỗi này rất có thể sẽ <b>KHÔNG</b> được sửa chữa!</string>
@@ -291,7 +288,7 @@
     <string name="refreshing_wait">Đang làm mới, vui lòng chờ…</string>
     <string name="still_refreshing">Đang làm mới, bước %1$d/%2$d: %3$s</string>
     <string name="did_you_know">Bạn có biết…</string>
-    <string name="refresh_did_you_know">Gramophone yêu cầu cập nhật danh sách bài hát mỗi khi khởi động ứng dụng, và trong khi Gramophone đang chạy, nó cũng sẽ tự động phát hiện các tệp phương tiện mới. Nút \"Làm mới\" này sẽ không tải lại phương tiện trong Gramophone, thay vào đó, nó sẽ yêu cầu hệ thống của bạn quét lại tất cả các tệp từ tất cả các thiết bị lưu trữ cố định được kết nối (đó là lý do tại sao nó mất một chút thời gian). Điều này có nghĩa là, trừ khi hệ thống hoặc các ứng dụng khác của bạn gặp sự cố, bạn sẽ không bao giờ cần sử dụng tính năng này.\n\nThiếu một số bài hát? Hãy chắc chắn kiểm tra Cài đặt &gt; Hành vi để tìm bộ lọc độ dài tối thiểu và danh sách đen thư mục, và xác nhận rằng các cài đặt này được đặt thành giá trị mong muốn. Để biết thêm các lý do có thể xảy ra, vui lòng xem FAQ của chúng tôi.</string>
+    <string name="refresh_did_you_know">Music Downloader yêu cầu cập nhật danh sách bài hát mỗi khi khởi động ứng dụng, và trong khi Music Downloader đang chạy, nó cũng sẽ tự động phát hiện các tệp phương tiện mới. Nút \"Làm mới\" này sẽ không tải lại phương tiện trong Music Downloader, thay vào đó, nó sẽ yêu cầu hệ thống của bạn quét lại tất cả các tệp từ tất cả các thiết bị lưu trữ cố định được kết nối (đó là lý do tại sao nó mất một chút thời gian). Điều này có nghĩa là, trừ khi hệ thống hoặc các ứng dụng khác của bạn gặp sự cố, bạn sẽ không bao giờ cần sử dụng tính năng này.\n\nThiếu một số bài hát? Hãy chắc chắn kiểm tra Cài đặt &gt; Hành vi để tìm bộ lọc độ dài tối thiểu và danh sách đen thư mục, và xác nhận rằng các cài đặt này được đặt thành giá trị mong muốn. Để biết thêm các lý do có thể xảy ra, vui lòng xem FAQ của chúng tôi.</string>
     <string name="rename_failed_playlist">Không thể đổi tên danh sách phát: %s</string>
     <string name="playlist_name">Tên danh sách phát</string>
     <string name="create_failed_playlist">Không thể tạo danh sách phát: %s</string>
@@ -300,17 +297,6 @@
     <string name="edit_favorites_failed">Chỉnh sửa mục yêu thích thất bại: %s</string>
     <string name="add_to_playlist">Thêm vào danh sách phát</string>
     <string name="no_app_found">Không tìm thấy ứng dụng nào có thể thực thi</string>
-    <string name="contributors_nift4">Người bảo trì / Trưởng nhóm phát triển</string>
-    <string name="contributors_123duo3">Trưởng nhóm thiết kế</string>
-    <string name="contributors_akanetan">Người sáng lập ban đầu, nhà phát triển đã nghỉ hưu</string>
-    <string name="contributors_developer">Nhà phát triển</string>
-    <string name="contributors_wstxda">đã thiết kế một biến thể của biểu tượng ứng dụng</string>
-    <string name="contributors_pxeemo">Hỗ trợ và kiểm thử lời bài hát mới</string>
-    <string name="contributors_lambada10">Cung cấp các mẫu lời bài hát và SongSync</string>
-    <string name="contributors_code_contributions">Đóng góp mã nguồn</string>
-    <string name="contributors_yuyuko1024">Thanh tiến độ ngoằn ngoèo</string>
-    <string name="contributors_ghhccghk">Lời bài hát trên thanh trạng thái và các cải tiến khác</string>
-    <string name="contributors_saladnoober">Đảm bảo chất lượng</string>
     <string name="home_menu_quick_refresh">Làm mới nhanh</string>
     <string name="add_to_queue">Thêm vào hàng đợi</string>
     <string name="disabled">Vô hiệu hóa</string>
@@ -387,7 +373,7 @@
     </plurals>
     <string name="settings_mq_enabled">Nhiều hàng đợi</string>
     <string name="tempo_pitch_value">%s: %.2fx</string>
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Music Downloader</string>
     <string name="spk_channel_out_5point1">5.1</string>
     <string name="spk_channel_out_6point1">6.1</string>
     <string name="spk_channel_out_5point1point2">5.1.2</string>
@@ -499,7 +485,6 @@
     <string name="spk_encoding_mpegh_sub_lc_l4">MPEG-H Low Complexity L4</string>
     <string name="spk_encoding_pcm_16bit_offload">16-bit PCM Offload</string>
     <string name="spk_encoding_pcm_24bit_offload">24-bit (8.24) PCM offload</string>
-    <string name="settings_telegram">Telegram</string>
     <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
     <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
     <string name="settings_replaygain">ReplayGain</string>

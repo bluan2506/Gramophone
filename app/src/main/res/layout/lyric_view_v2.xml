@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <org.akanework.gramophone.ui.components.NewLyricsView
+    <com.musicdownloader.musicfreeapp825v2.ui.components.NewLyricsView
         android:id="@+id/lyric_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

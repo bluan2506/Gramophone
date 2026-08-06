@@ -36,51 +36,6 @@
             android:title="@string/settings_version"
             app:iconSpaceReserved="false" />
 
-        <Preference
-            android:key="package_type"
-            android:layout="@layout/preference_basic"
-            android:summary="@string/unknown_version"
-            android:title="@string/settings_package_type"
-            app:iconSpaceReserved="false" />
-
-        <Preference
-            android:key="contributors"
-            android:layout="@layout/preference_basic"
-            android:title="@string/settings_contributors"
-            app:iconSpaceReserved="false" />
-
-        <Preference
-            android:key="open_source_licenses"
-            android:layout="@layout/preference_basic"
-            android:title="@string/settings_open_source_licenses"
-            app:iconSpaceReserved="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:layout="@layout/preference_category_md"
-        android:title="@string/settings_category_links">
-
-        <org.akanework.gramophone.ui.components.NoAppFallbackPreference
-            android:layout="@layout/preference_basic"
-            android:summary="https://github.com/FoedusProgramme/Gramophone"
-            android:title="@string/settings_repository"
-            app:iconSpaceReserved="false">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://github.com/FoedusProgramme/Gramophone" />
-        </org.akanework.gramophone.ui.components.NoAppFallbackPreference>
-
-        <org.akanework.gramophone.ui.components.NoAppFallbackPreference
-            android:layout="@layout/preference_basic"
-            android:summary="@string/check_for_updates"
-            android:title="@string/settings_telegram"
-            app:iconSpaceReserved="false">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://t.me/FoedusProgramme" />
-        </org.akanework.gramophone.ui.components.NoAppFallbackPreference>
-
     </PreferenceCategory>
 
 </PreferenceScreen>

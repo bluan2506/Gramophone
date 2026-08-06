@@ -70,7 +70,6 @@
     <string name="refreshed_songs">Músicas %1$d atualizadas</string>
     <string name="search">Pesquisar</string>
     <string name="settings_app_name">Nome da app</string>
-    <string name="settings_contributors">Colaboradores</string>
     <string name="play_next">Reproduzir a seguir</string>
     <string name="go_to_album">Ir ao álbum</string>
     <string name="go_to_artist">Ir para o artista</string>
@@ -81,7 +80,6 @@
     <string name="dialog_artist">Artista</string>
     <string name="settings_category_behavior">Comportamento</string>
     <string name="settings_mediastore_filter">Duração mínima da música (segundos)</string>
-    <string name="settings_repository">Repositório</string>
     <string name="dialog_album">Álbum</string>
     <string name="dialog_genre">Gênero</string>
     <string name="dialog_album_artist">Álbum do artista</string>
@@ -182,7 +180,7 @@
     <string name="device_type_unknown">Desconhecido</string>
     <string name="device_type_dock_digital">Dock Digital</string>
     <string name="bitrate_unknown">Bitrate desconhecido</string>
-    <string name="package_type_explainer">Os APKs do Gramophone podem ser criados por qualquer pessoa, pois o Gramophone é de código aberto. Para ajudar a lembrar de onde veio um APK, o Gramophone fornece o tipo de pacote.\n\nO tipo mais comum é Release, que é obtido no F-Droid, Google Play, GitHub ou IzzyOnDroid.\nO tipo de pacote CI refere-se a compilações automatizadas feitas para cada commit no GitHub. Estas compilações podem ser instáveis.\nPara outros tipos de pacote, o nome deve dar uma dica razoável sobre a origem do APK.</string>
+    <string name="package_type_explainer">Os APKs do Music Downloader podem ser criados por qualquer pessoa, pois o Music Downloader é de código aberto. Para ajudar a lembrar de onde veio um APK, o Music Downloader fornece o tipo de pacote.\n\nO tipo mais comum é Release, que é obtido no F-Droid, Google Play, GitHub ou IzzyOnDroid.\nO tipo de pacote CI refere-se a compilações automatizadas feitas para cada commit no GitHub. Estas compilações podem ser instáveis.\nPara outros tipos de pacote, o nome deve dar uma dica razoável sobre a origem do APK.</string>
     <string name="mix_port_flag_spatializer">Espacializador</string>
     <string name="mix_port_flag_gapless_offload">Descarga sem intervalos</string>
     <string name="mix_port_flag_mmap_noirq">MMAP (sem irq)</string>
@@ -245,7 +243,7 @@
     <string name="device_type_usb_device">Dispositivo USB</string>
     <string name="device_type_dock_analog">Dock Analógico</string>
     <string name="device_type_aux_line">Entrada auxiliar</string>
-    <string name="open_in_gramophone">Abrir no Gramophone</string>
+    <string name="open_in_gramophone">Abrir no Music Downloader</string>
     <string name="settings_trim_lyrics_summary">Os espaços antes da primeira letra ou depois do fim de uma linha da letra podem ter valor artístico. Se discorda, pode ativar esta opção para remover estes espaços automaticamente.</string>
     <string name="gramophone_crashed_explainer2">O Gramophone crashou :(\n\nEnvie-me um relatório de erro para que problemas como o que levou a este crash possam ser corrigidos!\n\nCada situação é tão única quanto música e, sem a sua ajuda, é provável que este bug <b>NÃO</b> seja corrigido!</string>
     <string name="crash_report">Relatório de crash</string>
@@ -295,7 +293,6 @@
     <string name="mix_port_flag_direct_pcm">PCM Direto</string>
     <string name="mix_port_flag_iec958_nonaudio">IEC 958 (sem audio)</string>
     <string name="failed_to_parse_lyric">Falha ao analisar a letra da música</string>
-    <string name="settings_contributors_click">%s (clique para saber mais!)</string>
     <string name="settings_preference_category_home">Ecrã inicial</string>
     <string name="skip_next">Pular para o próximo</string>
     <string name="spk_encoding_e_ac3">E-AC-3</string>
@@ -304,7 +301,7 @@
     <string name="settings_lyrics_no_animation">Remover animações</string>
     <string name="settings_lyrics_no_animation_summary">Remover todas animações de transição de letras</string>
     <string name="bitrate_format">%1$d kbps</string>
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Music Downloader</string>
     <plurals name="folders_plural">
         <item quantity="one">%d Pasta</item>
         <item quantity="many">%d Pastas</item>
@@ -406,7 +403,7 @@
     <string name="refreshing_wait">A recarregar, por favor aguarde…</string>
     <string name="still_refreshing">A recarregar, passo %1$d/%2$d: %3$s</string>
     <string name="did_you_know">Sabia…</string>
-    <string name="refresh_did_you_know">Gramophone pede por uma lista atualizadas de músicas toda vez que inicia a app, enquanto Gramophone estiver em execução ele irá detetar novas médias automaticamente. Este botão \"Refresh\" não irá recarregar a média no Gramophone, invés disso vai perguntar ao seu sistema para re-escanear todos os ficheiros fixados do sistema (por este motivo demora um tempo). Isto significa que, a menos que o seu sistema ou outras apps não estejam a funcionar corretamente, nunca precisará usar este recurso.\n\nFaltam algumas músicas? Tenha certeza de verificar Configurações &gt; Comportamento para o filtro de duração mínimo e a lista negra de pastas e confirme que esta opção está configurada para o valor esperado. Para outras possíveis razões, por favor confira nosso FAQ.</string>
+    <string name="refresh_did_you_know">Music Downloader pede por uma lista atualizadas de músicas toda vez que inicia a app, enquanto Music Downloader estiver em execução ele irá detetar novas médias automaticamente. Este botão \"Refresh\" não irá recarregar a média no Music Downloader, invés disso vai perguntar ao seu sistema para re-escanear todos os ficheiros fixados do sistema (por este motivo demora um tempo). Isto significa que, a menos que o seu sistema ou outras apps não estejam a funcionar corretamente, nunca precisará usar este recurso.\n\nFaltam algumas músicas? Tenha certeza de verificar Configurações &gt; Comportamento para o filtro de duração mínimo e a lista negra de pastas e confirme que esta opção está configurada para o valor esperado. Para outras possíveis razões, por favor confira nosso FAQ.</string>
     <string name="rename_failed_playlist">Falha em renomear playlist: %s</string>
     <string name="playlist_name">Nome da playlist</string>
     <string name="create_failed_playlist">Falha ao criar playlist: %s</string>
@@ -414,23 +411,12 @@
     <string name="edit_playlist_failed">Edição de playlist falhou: %s</string>
     <string name="add_to_playlist">Adicione a playlist</string>
     <string name="no_app_found">Nenhuma app encontrada pode fazer isto</string>
-    <string name="contributors_nift4">Mantedor/ Programador Líder</string>
-    <string name="contributors_123duo3">Líder de Design</string>
-    <string name="contributors_akanetan">Criador original, programador reformado</string>
-    <string name="contributors_developer">Programador</string>
-    <string name="contributors_wstxda">Desenhado uma variação do ícone da app</string>
-    <string name="contributors_pxeemo">Ajuda &amp; teste de novas letras</string>
-    <string name="contributors_lambada10">a fornecer letras &amp; sincronização de músicas</string>
-    <string name="contributors_code_contributions">Contribuições de código</string>
-    <string name="contributors_yuyuko1024">Barra de progresso ondulada</string>
-    <string name="contributors_saladnoober">Garantia de qualidade</string>
     <string name="home_menu_quick_refresh">Atualização rápida</string>
     <string name="add_to_queue">Adicionar à fila</string>
     <string name="disabled">Desativado</string>
     <string name="offload_enabled_if_supported">Sempre ativado</string>
     <string name="offload_enabled_if_gapless">Ativado se a reprodução sem espaços for possível</string>
     <string name="settings_audio_offload">Audio offload (conserva pilha)</string>
-    <string name="settings_telegram">Telegram</string>
     <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
     <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
     <string name="settings_cookie_summary">Capa do álbum em formato de cookie</string>

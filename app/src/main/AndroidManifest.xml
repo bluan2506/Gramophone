@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.akanework.gramophone">
+    package="com.musicdownloader.musicfreeapp825v2">
 
     <uses-feature android:name="android.hardware.audio.output" android:required="false"/>
     <uses-feature android:name="android.hardware.audio.pro" android:required="false"/>
@@ -52,7 +52,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name=".logic.GramophoneApplication"
+        android:name=".logic.MusicDownloaderApplication"
         android:allowBackup="true"
         android:appCategory="audio"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -90,10 +90,10 @@
         <activity
             android:name=".logic.ui.BugHandlerActivity"
             android:exported="false"
-            android:taskAffinity="org.akanework.gramophone.crashLog" />
+            android:taskAffinity="com.musicdownloader.musicfreeapp825v2.crashLog" />
 
         <service
-            android:name=".logic.GramophonePlaybackService"
+            android:name=".logic.MusicDownloaderPlaybackService"
             android:exported="true"
             android:foregroundServiceType="mediaPlayback"
             tools:ignore="ExportedService">
@@ -134,7 +134,7 @@
                 <!-- extras: https://developer.android.com/guide/components/intents-common#PlaySearch -->
                 <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
                 <!-- extras: item_name(str) -->
-                <action android:name="org.akanework.gramophone.action.SHUFFLE" />
+                <action android:name="com.musicdownloader.musicfreeapp825v2.action.SHUFFLE" />
                 <!-- extras: query(str) -->
                 <action android:name="com.google.android.gms.actions.SEARCH_ACTION"/>
 
@@ -277,7 +277,7 @@
             MediaSession queue).
         -->
         <provider
-            android:name=".logic.GramophoneAlbumArtProvider"
+            android:name=".logic.MusicDownloaderAlbumArtProvider"
             android:authorities="${applicationId}.albumart"
             android:exported="true"
             android:grantUriPermissions="true"
@@ -347,7 +347,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".ui.fragments.settings.ContributorsSettingsActivity"
+            android:name=".ui.fragments.settings.FeedbackActivity"
             android:exported="false" />
 
         <activity

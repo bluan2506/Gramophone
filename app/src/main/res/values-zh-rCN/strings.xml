@@ -23,7 +23,6 @@
     <string name="refreshed_songs">已刷新 %1$d 首歌曲</string>
     <string name="search">搜索</string>
     <string name="settings_app_name">应用名称</string>
-    <string name="settings_contributors">贡献者</string>
     <string name="play_next">下一首播放</string>
     <string name="go_to_album">转到专辑</string>
     <string name="go_to_artist">转到音乐人</string>
@@ -39,7 +38,6 @@
     <string name="dialog_artist">音乐人</string>
     <string name="settings_category_behavior">行为</string>
     <string name="settings_mediastore_filter">歌曲最短时长（秒）</string>
-    <string name="settings_repository">仓库</string>
     <string name="dialog_album">专辑</string>
     <string name="dialog_genre">流派</string>
     <string name="dialog_album_artist">专辑音乐人</string>
@@ -176,7 +174,6 @@
     <string name="sort_by_file_path">文件路径</string>
     <string name="sort_by_album_artist">专辑音乐人 -&gt; 标题</string>
     <string name="delete_really">确定要删除“%s”吗？此操作无法撤销。</string>
-    <string name="settings_contributors_click">%s（点击查看更多！）</string>
     <string name="spk_channel_out_9point1point6">9.1.6 声道</string>
     <string name="spk_channel_out_front_left">前置左声道</string>
     <string name="spk_channel_out_front_right">前置右声道</string>
@@ -227,7 +224,7 @@
     <string name="spk_channel_invalid">无效</string>
     <string name="spk_channel_out_bottom_front_left">底部前置左声道</string>
     <string name="mix_port_flag_none">无</string>
-    <string name="open_in_gramophone">在 Gramophone 打开</string>
+    <string name="open_in_gramophone">在 Music Downloader 打开</string>
     <string name="gramophone_crashed_explainer2">Gramophone 崩溃了 :(\n\n请给我们发送错误报告以便解决导致此崩溃的问题！\n\n每个情况因音乐而异，没有您的帮助这几乎永远<b>无法</b>修复！</string>
     <string name="email_clipboard">已复制邮件地址以及文本到剪贴板</string>
     <string name="audio_signal_chain">音频信号链</string>
@@ -235,7 +232,7 @@
     <string name="settings_trim_lyrics_summary">歌词行首或行尾的空格可能具有艺术效果，若不需要可开启此开关自动移除。</string>
     <string name="failed_to_parse_lyric">无法解析歌词</string>
     <string name="audio_not_initialized">音频播放系统尚未初始化。试着播放些什么吧！</string>
-    <string name="package_type_explainer">Gramophone 的安装包可以被任何人创建，因为 Gramophone 是开源的。为了帮助记忆每个安装包来自哪里，Gramophone 提供了软件包类型。\n\n最常见的版本是 Release ，由 F-Droid、Google Play、GitHub 或 IzzyOnDroid 分发。\nCI（持续集成） 包类型指的是 GitHub 上每次提交时进行的自动构建。这些构建可能不稳定。\n对于其他软件包类型，这个名字会合理地提示软件包的来源。</string>
+    <string name="package_type_explainer">Music Downloader 的安装包可以被任何人创建，因为 Music Downloader 是开源的。为了帮助记忆每个安装包来自哪里，Music Downloader 提供了软件包类型。\n\n最常见的版本是 Release ，由 F-Droid、Google Play、GitHub 或 IzzyOnDroid 分发。\nCI（持续集成） 包类型指的是 GitHub 上每次提交时进行的自动构建。这些构建可能不稳定。\n对于其他软件包类型，这个名字会合理地提示软件包的来源。</string>
     <string name="what_were_you_doing">崩溃发生时，您正在使用 Gramophone 做什么？请尽可能详细地提供详细信息，以便我更有效地修复问题。\n\n请注意，错误报告最好使用英语，但如果您使用其他语言提交错误报告，我会尝试使用机器翻译。</string>
     <string name="settings_lyrics_no_animation">禁用动画</string>
     <string name="settings_lyrics_no_animation_summary">禁用所有歌词行过渡动画</string>
@@ -265,16 +262,6 @@
     <string name="device_type_ble_headset">BLE 耳麦</string>
     <string name="rename">重命名</string>
     <string name="cannot_find_file">找不到该文件</string>
-    <string name="contributors_nift4">维护者/首席开发者</string>
-    <string name="contributors_123duo3">首席设计师</string>
-    <string name="contributors_akanetan">原作者、已退休开发者</string>
-    <string name="contributors_developer">开发者</string>
-    <string name="contributors_wstxda">设计了一个应用图标变体</string>
-    <string name="contributors_pxeemo">新歌词帮助与测试</string>
-    <string name="contributors_lambada10">提供歌词样本与歌曲同步</string>
-    <string name="contributors_code_contributions">代码贡献</string>
-    <string name="contributors_yuyuko1024">波浪进度条</string>
-    <string name="contributors_ghhccghk">状态栏歌词及其他改进</string>
     <string name="no_app_found">找不到可以执行此操作的应用</string>
     <string name="spk_encoding_mp3">MP3</string>
     <string name="spk_encoding_aac_lc">AAC-LC</string>
@@ -330,7 +317,7 @@
     <string name="spk_encoding_pcm_24bit_offload">24-bit (8.24) PCM offload</string>
     <string name="mix_port_flag_unknown">未知</string>
     <string name="spk_encoding_pcm_8_24bit">24-bit (8.24) PCM</string>
-    <string name="refresh_did_you_know">Gramophone 在每次应用启动时都会要求更新歌曲列表，并且也会在运行时自动检测新媒体。此“刷新”按钮不会重新加载 Gramophone 中的媒体，而是会要求您的系统重新扫描所有已连接的永久存储设备中的所有文件（这就是需要一些时间的原因）。这意味着，除非您的系统或其他应用出现故障，否则您永远不需要使用此功能。\n\n缺少某些歌曲？请务必检查“设置”&gt;“行为”中的最短时长过滤器和文件夹黑名单，并确认这些设置已设为预期值。如需了解更多可能的原因，请查看我们的常见问题解答。</string>
+    <string name="refresh_did_you_know">Music Downloader 在每次应用启动时都会要求更新歌曲列表，并且也会在运行时自动检测新媒体。此“刷新”按钮不会重新加载 Music Downloader 中的媒体，而是会要求您的系统重新扫描所有已连接的永久存储设备中的所有文件（这就是需要一些时间的原因）。这意味着，除非您的系统或其他应用出现故障，否则您永远不需要使用此功能。\n\n缺少某些歌曲？请务必检查“设置”&gt;“行为”中的最短时长过滤器和文件夹黑名单，并确认这些设置已设为预期值。如需了解更多可能的原因，请查看我们的常见问题解答。</string>
     <string name="spk_encoding_unknown">未知格式 %s</string>
     <string name="spk_encoding_unknown_d">未知格式 %d</string>
     <string name="crash_report">崩溃报告</string>
@@ -431,7 +418,6 @@
     <string name="spk_encoding_pcm_16bit_offload">16-bit PCM Offload</string>
     <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
     <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
-    <string name="settings_telegram">Telegram</string>
     <string name="translators">译者</string>
     <string name="settings_cookie_summary">将专辑封面设为饼干形状</string>
     <string name="settings_cookie_info">饼干样式封面</string>
@@ -460,7 +446,6 @@
     <string name="settings_replaygain_mode_desc">“智能”仅在连续播放同一专辑中的歌曲时才会自动保留专辑动态范围。</string>
     <string name="sort_by_artist_year"><![CDATA[音乐人 -&gt; 年份]]></string>
     <string name="clear_queue">清除队列</string>
-    <string name="contributors_saladnoober">质量保证</string>
     <string name="actions_query_shuffle_all_songs">随机播放所有歌曲</string>
     <string name="actions_query_shuffle_everything">随机播放所有内容</string>
     <string name="actions_query_play_random_songs">播放随机歌曲</string>

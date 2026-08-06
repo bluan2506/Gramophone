@@ -8,7 +8,6 @@
     <string name="settings_title_center">Název na střed</string>
     <string name="settings_color_accuracy">Přesnost barev</string>
     <string name="settings_content_based_color">Barvy podle skladby</string>
-    <string name="settings_contributors">Přispěvatelé</string>
     <string name="settings_crash_application">Shodit aplikaci</string>
     <string name="settings_crash_application_summary">Shazovač 3000</string>
     <string name="category_dates">Roky</string>
@@ -188,7 +187,7 @@
     <string name="device_type_dock">Dock</string>
     <string name="device_type_hdmi_arc">Zpětný kanál zvuku HDMI</string>
     <string name="device_type_line_digital">Digitální vstup</string>
-    <string name="open_in_gramophone">Otevřít v Gramophone</string>
+    <string name="open_in_gramophone">Otevřít v Music Downloader</string>
     <string name="cannot_play_file">Tento soubor nelze přehrát</string>
     <string name="settings_status_bar_lyrics_title">Texty na stavovém řádku</string>
     <string name="settings_lyrics_no_animation">Zakázat animace</string>
@@ -239,7 +238,6 @@
     <string name="repeat_mode">Opakování</string>
     <string name="unknown_playlist">Neznámý playlist</string>
     <string name="settings_version">Verze</string>
-    <string name="settings_repository">Repozitář</string>
     <string name="dialog_track_number">Číslo skladby</string>
     <string name="dialog_path">Cesta</string>
     <string name="unknown_album">Neznámé album</string>
@@ -281,7 +279,7 @@
     <string name="spk_encoding_pcm_32bit">32bitový (int) PCM</string>
     <string name="spk_channel_out_9point1point4">9.1.4</string>
     <string name="spk_channel_invalid">Neplatné</string>
-    <string name="app_name">Gramophone</string>
+    <string name="app_name">Music Downloader</string>
     <string name="timer_expiry_end_of_this_song">Časovač spánku zastaví hudbu na konci této skladby</string>
     <string name="settings_open_source_licenses">Open source licence</string>
     <string name="oh_no">Ach ne!</string>
@@ -363,7 +361,6 @@
     <string name="cannot_find_file">Tento soubor nelze najít</string>
     <string name="enter_msg_for_dev_here">Zde zadejte zprávu pro vývojáře</string>
     <string name="do_not_enter_email_enter_msg">Zadejte zprávu, ne e-mailovou adresu</string>
-    <string name="settings_contributors_click">%s (Klikněte pro více!)</string>
     <string name="delete_failed_playlist">Odstranění seznamu skladeb se nezdařilo: %s</string>
     <string name="timer_expiry_eos">Časovač spánku pozastaví přehrávání hudby, když skončí skladba přehrávaná v %s</string>
     <string name="send_email">Poslat email</string>

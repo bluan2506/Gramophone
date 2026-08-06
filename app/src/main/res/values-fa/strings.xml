@@ -26,7 +26,6 @@
     <string name="sort_by_name">نام</string>
     <string name="sort_by_size">اندازه</string>
     <string name="unknown_genre">سبک ناشناخته</string>
-    <string name="settings_contributors">دست‌اندرکاران</string>
     <string name="go_to_album">رفتن به آلبوم</string>
     <string name="go_to_artist">رفتن به هنرمند</string>
     <string name="play_next">پخش پسین</string>
@@ -44,7 +43,6 @@
     <string name="settings_mediastore_filter">کمینۀ طول آهنگ (ثانیه)</string>
     <string name="dialog_path">مسیر</string>
     <string name="recently_added">به تازگی افزوده شده</string>
-    <string name="settings_repository">مخزن</string>
     <string name="unknown_album">آلبوم ناشناخته</string>
     <string name="natural_order">چینش طبیعی</string>
     <string name="layout">نمایش</string>
@@ -277,7 +275,6 @@
     <string name="oh_no">وای نه!</string>
     <string name="send_email">فرستادن ایمیل</string>
     <string name="send_email_manually">لطفا گزارش را بفرستید به nift4dev@gmail.com - نمی‌توان برنامۀ ایمیل پیدا کرد</string>
-    <string name="settings_contributors_click">%s (برای بیشتر کلیک کنید!)</string>
     <string name="settings_trim_lyrics_summary">فاصله‌های پیش از اولین واج یا پس از انتهای یک خط ترانه ممکن است ارزش هنری داشته باشد. اگر موافق نیستید، می‌توانید این مورد را تغییر دهید تا این فاصله‌ها به‌طور خودکار برداشته شوند.</string>
     <string name="package_type_explainer">‏APKهای گرامون می‌تواند توسط هر کسی ساخته شود، چون گرامافون منبع-باز است. برای یادآوری این‌که یک APK از کجا آمده، گرامافون نوع بسته را ارائه می‌دهد.\n\nمرسوم‌ترین نوع انتشار (Release) است، که از اف-دروید، گوگل پلی، گیت‌هاب یا IzzyOnDroid قابل دریافت است.\nنوع بسته CI به ساخت‌های خودکار که در هر commit ساخته می‌شود اشاره می‌کند. این ساخت‌ها ممکن از ناپایدار باشند.\nبرای نوع بسته‌ها، نام باید راهنمای معقولی از این‌که APK از کجا آمده بدهد.</string>
     <string name="mix_port_flag_none">هیچ</string>
@@ -403,16 +400,6 @@
     <string name="delete_failed_playlist">پاک کردن فهرست پخش شکست خورد: %s</string>
     <string name="rename">تغییر نام</string>
     <string name="no_app_found">هیچ برنامه‌ای پیدا نشد که بتواند این کار را انجام دهد</string>
-    <string name="contributors_nift4">نگه‌دارنده / توسعه‌دهندۀ راهبر</string>
-    <string name="contributors_123duo3">طراح راهبر</string>
-    <string name="contributors_akanetan">سازندۀ اصلی، توسعه‌دهندۀ بازنشسته</string>
-    <string name="contributors_developer">توسعه‌دهنده</string>
-    <string name="contributors_wstxda">طراحی یک نگارش از آیکون برنامه</string>
-    <string name="contributors_pxeemo">کمک و آزمایش ترانه‌های جدید</string>
-    <string name="contributors_lambada10">ارائۀ نمونه‌های ترانه و SongSync</string>
-    <string name="contributors_code_contributions">مشارکت در کدها</string>
-    <string name="contributors_yuyuko1024">نوار پیشرفت مواج</string>
-    <string name="contributors_ghhccghk">ترانه‌های نوار وضعیت و بهبودهای دیگر</string>
     <string name="home_menu_quick_refresh">بازخوانی سریع</string>
     <string name="add_to_queue">افزودن به صف</string>
     <string name="app_name">گرامافون</string>
@@ -420,7 +407,6 @@
     <string name="offload_enabled_if_supported">همیشه فعال</string>
     <string name="offload_enabled_if_gapless">فعال در صورت امکان پخش بی‌وقفه</string>
     <string name="settings_audio_offload">تخلیۀ صدا (باتری را ذخیره می‌کند)</string>
-    <string name="settings_telegram">تلگرام</string>
     <plurals name="folders_plural">
         <item quantity="one">%d پوشه</item>
         <item quantity="other">%d پوشه</item>
@@ -451,7 +437,6 @@
     <string name="reset">بازنشانی</string>
     <string name="delete_really_artist">مطمئنید که می‌خواهید همۀ آوازهای توسط «%s» را حذف کنید؟ این کار غیرقابل بازگشت است.</string>
     <string name="edit_favorites_failed">ویرایش پسندیده‌ها شکست خورد: %s</string>
-    <string name="contributors_saladnoober">تضمین کیفیت</string>
     <string name="track_gain">بلندی برابر همۀ قطعه‌ها</string>
     <string name="tempo">تمپو</string>
     <string name="pitch">پیچ</string>
