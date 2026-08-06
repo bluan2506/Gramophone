@@ -178,8 +178,7 @@
     <!-- In player UI settings, change between wavy(Music Downloader's default) and default/modern
     (Google's default) slider. Subtext -->
     <string name="settings_default_progress_bar_summary">Enable material styled progress bar</string>
-    <!-- Used in about screen's dialog -->
-    <string name="opensource_info">Open-sourced under GPL-3.0\nCopyright %s</string>
+
     <!-- The name of the playlist used for showing every song where the heart was clicked -->
     <string name="playlist_favourite">Favourites</string>
     <!-- Shows a list of contributors' nicknames like "someDeveloperA, someDeveloperB,
