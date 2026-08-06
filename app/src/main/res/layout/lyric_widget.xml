@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
     android:orientation="vertical"
-    android:theme="@style/Theme.Gramophone">
+    android:theme="@style/Theme.MusicDownloader">
 
     <ListView
         android:id="@+id/list_view"

@@ -29,9 +29,9 @@ import android.provider.BaseColumns
 import android.provider.MediaStore
 import androidx.media3.common.HeartRating
 import androidx.media3.common.MediaItem
+import com.musicdownloader.musicfreeapp825v2.R
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import com.musicdownloader.musicfreeapp825v2.R
 
 class SearchSuggestionsProvider : ContentProvider() {
     override fun delete(
@@ -92,7 +92,7 @@ class SearchSuggestionsProvider : ContentProvider() {
 
     private suspend fun searchForMediaItem(text: String): List<MediaItem> {
         val text = text.trim()
-        val list = context!!.gramophoneApplication.reader.songListFlow.first()
+        val list = context!!.musicDownloaderApplication.reader.songListFlow.first()
         // TODO support focus and sub queries (see MainActivity)
         return if (text == "") list else list.filter {
             // TODO sort results by match quality? (using raw=natural order)
@@ -109,7 +109,7 @@ class SearchSuggestionsProvider : ContentProvider() {
     }
 
     private fun queryCachedShortcut(id: Long): Cursor {
-        val idMap = runBlocking { context!!.gramophoneApplication.reader.idMapFlow.first() }
+        val idMap = runBlocking { context!!.musicDownloaderApplication.reader.idMapFlow.first() }
         return songsToCursor(idMap[id]?.let { listOf(it) } ?: emptyList())
     }
 

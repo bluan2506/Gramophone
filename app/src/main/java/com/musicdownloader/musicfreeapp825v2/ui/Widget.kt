@@ -197,7 +197,7 @@ private class LyricRemoteViewsFactory(private val context: Context, private val 
         return service?.lyrics?.unsyncedText?.size ?: 0
     }
 
-    private val themeContext = ContextThemeWrapper(context, R.style.Theme_Gramophone)
+    private val themeContext = ContextThemeWrapper(context, R.style.Theme_MusicDownloader)
     private val span =
         ForegroundColorSpan(ContextCompat.getColor(themeContext, R.color.sl_lyric_active))
 

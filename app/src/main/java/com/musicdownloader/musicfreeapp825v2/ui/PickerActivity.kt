@@ -33,7 +33,7 @@ import kotlinx.coroutines.launch
 import com.musicdownloader.musicfreeapp825v2.R
 import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgePaddingListener
 import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgeProperly
-import com.musicdownloader.musicfreeapp825v2.logic.gramophoneApplication
+import com.musicdownloader.musicfreeapp825v2.logic.musicDownloaderApplication
 import com.musicdownloader.musicfreeapp825v2.logic.hasAudioPermission
 import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageV2
 import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageWithMediaTypes
@@ -91,9 +91,9 @@ abstract class PickerActivity<T : Any> : BaseActivity() {
             )
         } else {
             // If all permissions are granted, we can update library now.
-            if (!gramophoneApplication.reader.hadFirstRefresh) {
+            if (!musicDownloaderApplication.reader.hadFirstRefresh) {
                 CoroutineScope(Dispatchers.Default).launch {
-                    gramophoneApplication.reader.refresh()
+                    musicDownloaderApplication.reader.refresh()
                 }
             }
         }
@@ -118,7 +118,7 @@ abstract class PickerActivity<T : Any> : BaseActivity() {
                 grantResults[0] == PackageManager.PERMISSION_GRANTED
             ) {
                 CoroutineScope(Dispatchers.Default).launch {
-                    gramophoneApplication.reader.refresh()
+                    musicDownloaderApplication.reader.refresh()
                 }
             } else {
                 Toast.makeText(this, getString(R.string.grant_audio), Toast.LENGTH_LONG).show()

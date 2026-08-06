@@ -18,7 +18,6 @@
 package com.musicdownloader.musicfreeapp825v2.ui.adapters
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.SharedPreferences
 import android.view.View
 import android.view.ViewGroup
@@ -28,17 +27,15 @@ import androidx.core.content.edit
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.checkbox.MaterialCheckBox
+import com.musicdownloader.musicfreeapp825v2.R
+import com.musicdownloader.musicfreeapp825v2.logic.musicDownloaderApplication
+import com.musicdownloader.musicfreeapp825v2.logic.ui.MyRecyclerView
+import com.musicdownloader.musicfreeapp825v2.logic.utils.flows.repeatPausingWithLifecycle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.withContext
-import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.logic.gramophoneApplication
-import com.musicdownloader.musicfreeapp825v2.logic.ui.MyRecyclerView
-import com.musicdownloader.musicfreeapp825v2.logic.utils.flows.repeatPausingWithLifecycle
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.settings.BlacklistSettingsActivity
-import java.io.File
 
 @SuppressLint("NotifyDataSetChanged")
 class BlacklistFolderAdapter(
@@ -51,9 +48,9 @@ class BlacklistFolderAdapter(
 
     init {
         repeatPausingWithLifecycle(activity, Dispatchers.Default) {
-            (if (isWhitelist) activity.gramophoneApplication.reader.foldersForWhitelistFlow else
-                activity.gramophoneApplication.reader.foldersFlow).combine(if (isWhitelist)
-                activity.gramophoneApplication.whiteListSetFlow else activity.gramophoneApplication
+            (if (isWhitelist) activity.musicDownloaderApplication.reader.foldersForWhitelistFlow else
+                activity.musicDownloaderApplication.reader.foldersFlow).combine(if (isWhitelist)
+                activity.musicDownloaderApplication.whiteListSetFlow else activity.musicDownloaderApplication
                     .blackListSetFlow) { newFolderArray, newFolderFilter ->
                 val sortedFolderArray = newFolderArray.sorted()
                 val oldFolderArray = folderArray?.toList()

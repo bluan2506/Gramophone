@@ -17,8 +17,6 @@
 
 package com.musicdownloader.musicfreeapp825v2.ui
 
-import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.app.NotificationManager
 import android.app.SearchManager
 import android.app.assist.AssistContent
@@ -32,7 +30,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.IntentSender
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -49,7 +46,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
@@ -64,6 +60,9 @@ import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.net.toUri
 import androidx.core.os.BundleCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentManager.FragmentLifecycleCallbacks
@@ -74,9 +73,6 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.util.Log
 import androidx.media3.session.DefaultMediaNotificationProvider
 import coil3.imageLoader
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updatePadding
 import com.google.android.ads.nativetemplates.NativeUtils
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
@@ -90,6 +86,34 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.musicdownloader.musicfreeapp825v2.R
+import com.musicdownloader.musicfreeapp825v2.databinding.LayoutBottomSheetBackBinding
+import com.musicdownloader.musicfreeapp825v2.logic.clone
+import com.musicdownloader.musicfreeapp825v2.logic.dpToPx
+import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgeProperly
+import com.musicdownloader.musicfreeapp825v2.logic.getBooleanStrict
+import com.musicdownloader.musicfreeapp825v2.logic.hasAudioPermission
+import com.musicdownloader.musicfreeapp825v2.logic.hasNotificationPermission
+import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageV2
+import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageWithMediaTypes
+import com.musicdownloader.musicfreeapp825v2.logic.musicDownloaderApplication
+import com.musicdownloader.musicfreeapp825v2.logic.needsMissingOnDestroyCallWorkarounds
+import com.musicdownloader.musicfreeapp825v2.logic.postAtFrontOfQueueAsync
+import com.musicdownloader.musicfreeapp825v2.logic.supportsNotificationPermission
+import com.musicdownloader.musicfreeapp825v2.logic.ui.BaseActivity
+import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.InterstitialAdsUtils
+import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyAdMob
+import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyTopOn
+import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.SelfRenderViewUtil
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.DownloadController
+import com.musicdownloader.musicfreeapp825v2.ui.adapters.PlaylistAdapter
+import com.musicdownloader.musicfreeapp825v2.ui.components.PlayerBottomSheet
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.BaseFragment
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.DownloadsFragment
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.GeneralSubFragment
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.SearchFragment
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.ViewPagerFragment
 import com.thinkup.banner.api.TUBannerListener
 import com.thinkup.banner.api.TUBannerView
 import com.thinkup.core.api.TUAdConst
@@ -111,43 +135,13 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
-import com.musicdownloader.musicfreeapp825v2.BuildConfig
-import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.databinding.LayoutBottomSheetBackBinding
-import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyAdMob
-import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyTopOn
-import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.SelfRenderViewUtil
-import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
-import com.musicdownloader.musicfreeapp825v2.logic.clone
-import com.musicdownloader.musicfreeapp825v2.logic.dpToPx
-import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgeProperly
-import com.musicdownloader.musicfreeapp825v2.logic.getBooleanStrict
-import com.musicdownloader.musicfreeapp825v2.logic.gramophoneApplication
-import com.musicdownloader.musicfreeapp825v2.logic.hasAudioPermission
-import com.musicdownloader.musicfreeapp825v2.logic.hasNotificationPermission
-import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageV2
-import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageWithMediaTypes
-import com.musicdownloader.musicfreeapp825v2.logic.supportsNotificationPermission
-import com.musicdownloader.musicfreeapp825v2.logic.needsMissingOnDestroyCallWorkarounds
-import com.musicdownloader.musicfreeapp825v2.logic.postAtFrontOfQueueAsync
-import com.musicdownloader.musicfreeapp825v2.logic.ui.BaseActivity
-import com.musicdownloader.musicfreeapp825v2.ui.adapters.PlaylistAdapter
-import com.musicdownloader.musicfreeapp825v2.ui.components.PlayerBottomSheet
-import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.InterstitialAdsUtils
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.BaseFragment
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.DownloadsFragment
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.GeneralSubFragment
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.SearchFragment
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.ViewPagerFragment
 import org.nift4.mediastorecompat.MediaStoreCompat
 import uk.akane.libphonograph.dynamicitem.Favorite
 import uk.akane.libphonograph.manipulator.ItemManipulator
 import uk.akane.libphonograph.manipulator.PlaylistSerializer
 import uk.akane.libphonograph.manipulator.PlaylistSerializer.Entry
-import com.musicdownloader.musicfreeapp825v2.logic.utils.online.DownloadController
 import java.io.File
 import kotlin.time.Duration.Companion.milliseconds
 
@@ -187,7 +181,7 @@ class MainActivity : BaseActivity() {
     // The giga service broadcasts DownloadsFragment.ACTION_UPDATE after the file is media-scanned.
     private val downloadCompleteReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
-            val configEntity = gramophoneApplication.configEntity
+            val configEntity = musicDownloaderApplication.configEntity
             if (configEntity.isAds_download) {
                 InterstitialAdsUtils.showAdsGoToSearchScreen(
                     this@MainActivity, configEntity,
@@ -228,8 +222,8 @@ class MainActivity : BaseActivity() {
         if (!ready) handler.postDelayed(reportFullyDrawnRunnable, 2000)
         CoroutineScope(Dispatchers.Default).launch {
             if (smartScanFirst)
-                MediaStoreCompat.smartScan(this@MainActivity.gramophoneApplication)
-            this@MainActivity.gramophoneApplication.reader.refresh()
+                MediaStoreCompat.smartScan(this@MainActivity.musicDownloaderApplication)
+            this@MainActivity.musicDownloaderApplication.reader.refresh()
             withContext(Dispatchers.Main) {
                 onLibraryLoaded()
                 then?.let { it() }
@@ -485,7 +479,7 @@ class MainActivity : BaseActivity() {
 
     fun markIsFavoriteStatus(songs: List<Entry>, favorite: Boolean) {
         CoroutineScope(Dispatchers.Default).launch {
-            val uri = gramophoneApplication.reader.playlistListFlow.map { it.find { p -> p is
+            val uri = musicDownloaderApplication.reader.playlistListFlow.map { it.find { p -> p is
                     Favorite } }.first()?.id?.let {
                     ContentUris.withAppendedId(@Suppress("deprecation")
                     MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI, it)
@@ -942,7 +936,7 @@ class MainActivity : BaseActivity() {
      */
     private fun loadHomeBanner() {
         val container = findViewById<FrameLayout>(R.id.container_ads_home)
-        val configEntity = gramophoneApplication.configEntity
+        val configEntity = musicDownloaderApplication.configEntity
         if (!configEntity.isAds_bannerHome) {
             container.visibility = View.GONE
             return
@@ -1015,7 +1009,7 @@ class MainActivity : BaseActivity() {
             bottomSheet.dismiss()
         }
         // Native exit ad, gated by remote config (mirrors the sample app's showExit()).
-        val configEntity = gramophoneApplication.configEntity
+        val configEntity = musicDownloaderApplication.configEntity
         if (configEntity.isAds_nativeExitApp) {
             if (configEntity.isToponads) {
                 var atNatives: TUNative? = null
@@ -1178,5 +1172,5 @@ class MainActivity : BaseActivity() {
     fun getPlayer() = controllerViewModel.get()
 
     inline val reader
-        get() = gramophoneApplication.reader
+        get() = musicDownloaderApplication.reader
 }

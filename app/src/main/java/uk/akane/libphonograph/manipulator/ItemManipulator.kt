@@ -28,19 +28,19 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.media3.common.util.Log
 import androidx.media3.common.util.Util
+import com.musicdownloader.musicfreeapp825v2.R
+import com.musicdownloader.musicfreeapp825v2.logic.getFile
+import com.musicdownloader.musicfreeapp825v2.logic.hasImprovedMediaStore
+import com.musicdownloader.musicfreeapp825v2.logic.musicDownloaderApplication
+import com.musicdownloader.musicfreeapp825v2.logic.queryWithPending
+import com.musicdownloader.musicfreeapp825v2.logic.utils.Flags
+import com.musicdownloader.musicfreeapp825v2.ui.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.logic.getFile
-import com.musicdownloader.musicfreeapp825v2.logic.gramophoneApplication
-import com.musicdownloader.musicfreeapp825v2.logic.hasImprovedMediaStore
-import com.musicdownloader.musicfreeapp825v2.logic.queryWithPending
-import com.musicdownloader.musicfreeapp825v2.logic.utils.Flags
-import com.musicdownloader.musicfreeapp825v2.ui.MainActivity
 import org.nift4.mediastorecompat.MediaStoreCompat
 import org.nift4.mediastorecompat.StorageManagerCompat
 import uk.akane.libphonograph.dynamicitem.Favorite
@@ -52,11 +52,11 @@ import java.io.File
 
 object ItemManipulator {
     private const val TAG = "ItemManipulator"
-    const val FAVORITES = "gramophone_favourite"
+    const val FAVORITES = "music_downloader_favourite"
     const val DEFAULT_FORMAT = "m3u"
 
     suspend fun deleteSongs(context: MainActivity, list: List<Pair<File, Long>>): (() -> Unit)? {
-        val faves = context.gramophoneApplication.reader.playlistListFlow.map { it.find { p ->
+        val faves = context.musicDownloaderApplication.reader.playlistListFlow.map { it.find { p ->
             p is Favorite } }.first()
         val songsToUnfave = faves?.let { _ -> list.filter { faves.songList.find { song ->
             song.getFile() == it.first } != null }.map { it.first.toUriCompat() } }
@@ -219,7 +219,7 @@ object ItemManipulator {
     }
 
     suspend fun readbackPlaylist(context: Context, uri: Uri): PlaylistSerializer.Playlist {
-        val pathMap = context.gramophoneApplication.reader.pathMapFlow.first()
+        val pathMap = context.musicDownloaderApplication.reader.pathMapFlow.first()
         return Reader.readPlaylist(context, uri).let {
             it.copy(entries = it.entries.map {
                 it.updateFromMediaItem(pathMap)

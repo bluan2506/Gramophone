@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Gramophone" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+    <style name="Base.Theme.MusicDownloader" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
         <item name="viewInflaterClass">com.musicdownloader.musicfreeapp825v2.logic.ui.ViewCompatInflater</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.App.BodyLarge</item>
@@ -13,7 +13,7 @@
         <item name="previewPlayerElevation">1dp</item>
     </style>
 
-    <style name="PreV31.Theme.Gramophone" parent="Base.Theme.Gramophone">
+    <style name="PreV31.Theme.MusicDownloader" parent="Base.Theme.MusicDownloader">
         <!-- Material theme -->
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
@@ -63,9 +63,9 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
     </style>
 
-    <style name="Theme.Gramophone" parent="PreV31.Theme.Gramophone" />
+    <style name="Theme.MusicDownloader" parent="PreV31.Theme.MusicDownloader" />
 
-    <style name="Theme.Gramophone.PureDark" parent="Theme.Gramophone">
+    <style name="Theme.MusicDownloader.PureDark" parent="Theme.MusicDownloader">
         <item name="android:colorBackground">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -137,7 +137,7 @@
 
     <style name="Base.Night.Theme.Splash" parent="Theme.SplashScreen">
         <item name="viewInflaterClass">com.musicdownloader.musicfreeapp825v2.logic.ui.ViewCompatInflater</item>
-        <item name="postSplashScreenTheme">@style/Theme.Gramophone</item>
+        <item name="postSplashScreenTheme">@style/Theme.MusicDownloader</item>
     </style>
 
     <style name="Base.Day.Theme.Splash" parent="Base.Night.Theme.Splash" />
@@ -162,7 +162,7 @@
 
     <style name="Theme.Splash" parent="Day.Theme.Splash" />
 
-    <style name="Theme.AudioPreviewDialogTheme" parent="Theme.Gramophone">
+    <style name="Theme.AudioPreviewDialogTheme" parent="Theme.MusicDownloader">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowBackground">@null</item>

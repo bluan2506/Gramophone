@@ -64,16 +64,16 @@
         android:resizeableActivity="true"
         android:supportsRtl="true"
         android:largeHeap="true"
-        android:theme="@style/Theme.Gramophone"
+        android:theme="@style/Theme.MusicDownloader"
         android:networkSecurityConfig="@xml/network_security_config"
         android:windowSoftInputMode="adjustResize"
         tools:targetApi="upside_down_cake">
         <meta-data
             android:name="androidx.car.app.TintableAttributionIcon"
-            android:resource="@drawable/ic_gramophone_monochrome" />
+            android:resource="@drawable/ic_music_downloader_monochrome" />
         <meta-data
             android:name="com.google.android.gms.car.application.theme"
-            android:resource="@style/Theme.Gramophone"/>
+            android:resource="@style/Theme.MusicDownloader"/>
         <!-- AdMob App ID — Google's OFFICIAL TEST id. Replace with your real app id before release. -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -106,7 +106,7 @@
 
         <activity
             android:name=".ui.SplashActivity"
-            android:theme="@style/Theme.Gramophone"
+            android:theme="@style/Theme.MusicDownloader"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

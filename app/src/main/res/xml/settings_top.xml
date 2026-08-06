@@ -80,7 +80,7 @@
         android:icon="@drawable/ic_info"
         android:key="about"
         android:layout="@layout/preference_basic"
-        android:summary="@string/settings_about_gramophone"
+        android:summary="@string/settings_about_music_downloader"
         android:title="@string/settings_about_app" />
 
 </PreferenceScreen>

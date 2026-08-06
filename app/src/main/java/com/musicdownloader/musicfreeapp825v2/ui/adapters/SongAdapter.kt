@@ -30,17 +30,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import com.musicdownloader.musicfreeapp825v2.R
 import com.musicdownloader.musicfreeapp825v2.logic.getBooleanStrict
 import com.musicdownloader.musicfreeapp825v2.logic.getFile
-import com.musicdownloader.musicfreeapp825v2.logic.gramophoneApplication
+import com.musicdownloader.musicfreeapp825v2.logic.musicDownloaderApplication
 import com.musicdownloader.musicfreeapp825v2.logic.requireMediaStoreId
 import com.musicdownloader.musicfreeapp825v2.logic.setMediaItemsSeamlessly
 import com.musicdownloader.musicfreeapp825v2.logic.ui.MyRecyclerView
@@ -50,6 +43,13 @@ import com.musicdownloader.musicfreeapp825v2.ui.components.NowPlayingDrawable
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.ArtistSubFragment
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.DetailDialogFragment
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.GeneralSubFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import uk.akane.libphonograph.items.addDate
 import uk.akane.libphonograph.items.albumId
 import uk.akane.libphonograph.items.albumYear
@@ -66,7 +66,7 @@ class SongAdapter(
     fragment: Fragment?,
     val queueTitle: Flow<String>?,
     songList: Flow<List<MediaItem>?> = (fragment?.requireContext() ?: fallbackContext!!)
-        .gramophoneApplication.reader.songListFlow,
+        .musicDownloaderApplication.reader.songListFlow,
     helper: Sorter.NaturalOrderHelper<MediaItem>? = null,
     isSubFragment: Int? = null,
     allowDiffUtils: Boolean = false,

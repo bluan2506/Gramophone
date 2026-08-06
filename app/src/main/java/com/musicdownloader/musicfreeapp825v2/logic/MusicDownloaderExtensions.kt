@@ -674,7 +674,7 @@ fun Context.supportsWideScreen() : Boolean {
     return config.screenWidthDp >= 780
 }
 
-val Context.gramophoneApplication
+val Context.musicDownloaderApplication
     get() = this.applicationContext as MusicDownloaderApplication
 
 /*

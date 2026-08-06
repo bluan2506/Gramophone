@@ -104,7 +104,7 @@ class BugHandlerActivity : BaseActivity() {
         val gramophoneVersion = BuildConfig.MY_VERSION_NAME
 
         log = StringBuilder()
-            .append(getString(R.string.crash_gramophone_version))
+            .append(getString(R.string.crash_music_downloader_version))
             .append(':')
             .append(' ')
             .append(gramophoneVersion)

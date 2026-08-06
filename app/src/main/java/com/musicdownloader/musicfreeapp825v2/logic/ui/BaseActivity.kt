@@ -42,7 +42,7 @@ open class BaseActivity : AppCompatActivity() {
             (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) ==
             Configuration.UI_MODE_NIGHT_YES
         ) {
-            setTheme(R.style.Theme_Gramophone_PureDark)
+            setTheme(R.style.Theme_MusicDownloader_PureDark)
         }
         prefs.registerOnSharedPreferenceChangeListener(listener)
         super.onCreate(savedInstanceState)

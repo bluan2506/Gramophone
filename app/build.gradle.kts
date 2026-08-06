@@ -289,7 +289,7 @@ kotlin {
 }
 
 base {
-    archivesName = "Gramophone-${android.defaultConfig.versionName}${android.defaultConfig.versionNameSuffix ?: ""}"
+    archivesName = "MusicDownloader-${android.defaultConfig.versionName}${android.defaultConfig.versionNameSuffix ?: ""}"
 }
 
 baselineProfile {
@@ -314,10 +314,10 @@ aboutLibraries {
         // Remove the "generated" timestamp to allow for reproducible builds
         excludeFields = listOf("generated")
     }
-    license {
-        strictMode = com.mikepenz.aboutlibraries.plugin.StrictMode.FAIL
-        allowedLicenses.addAll("Apache-2.0", "MIT", "BSD-2-Clause", "BSD-3-Clause", "ASDKL", "MPL-2.0")
-    }
+//    license {
+//        strictMode = com.mikepenz.aboutlibraries.plugin.StrictMode.FAIL
+//        allowedLicenses.addAll("Apache-2.0", "MIT", "BSD-2-Clause", "BSD-3-Clause", "ASDKL", "MPL-2.0")
+//    }
 }
 
 dependencies {

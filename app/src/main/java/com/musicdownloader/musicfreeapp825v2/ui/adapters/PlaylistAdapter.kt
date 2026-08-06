@@ -41,17 +41,17 @@ import androidx.media3.common.util.Log
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.musicdownloader.musicfreeapp825v2.R
+import com.musicdownloader.musicfreeapp825v2.logic.musicDownloaderApplication
+import com.musicdownloader.musicfreeapp825v2.ui.PlaylistPickerActivity
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.AdapterFragment
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.GeneralSubFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.logic.gramophoneApplication
-import com.musicdownloader.musicfreeapp825v2.ui.PlaylistPickerActivity
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.AdapterFragment
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.GeneralSubFragment
 import org.nift4.mediastorecompat.MediaStoreCompat
 import uk.akane.libphonograph.dynamicitem.Favorite
 import uk.akane.libphonograph.dynamicitem.RecentlyAdded
@@ -72,7 +72,7 @@ class PlaylistAdapter(
     (
     fragment,
     liveData = (fragment?.requireActivity() ?: fallbackContext)!!
-        .gramophoneApplication.reader.playlistListFlow.let {
+        .musicDownloaderApplication.reader.playlistListFlow.let {
             if (isSubFragment == R.id.songs)
                 it.map { playlistsList ->
                     playlistsList.filter { p -> p.id != null && p.path != null }

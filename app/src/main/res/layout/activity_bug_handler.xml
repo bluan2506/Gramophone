@@ -23,7 +23,7 @@
             app:expandedTitleTextAppearance="?textAppearanceHeadlineLarge"
             app:expandedTitleTextColor="?attr/colorOnSurface"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:title="@string/gramophone_crashed"
+            app:title="@string/music_downloader_crashed"
             app:titleCollapseMode="scale">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -93,7 +93,7 @@
                         android:id="@+id/crashExplainer"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/gramophone_crashed_explainer2"
+                        android:text="@string/music_downloader_crashed_explainer2"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

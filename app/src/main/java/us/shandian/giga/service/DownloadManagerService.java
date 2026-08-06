@@ -137,7 +137,7 @@ public class DownloadManagerService extends Service implements DownloadMission.M
                     .setContentTitle(downloadMission.name)
                     .setContentText(contentText)
                     .setProgress(100, (int) progress, false)
-                    .setSmallIcon(R.drawable.ic_gramophone_monochrome);
+                    .setSmallIcon(R.drawable.ic_music_downloader_monochrome);
 
                 try {
                     notificationManager.notify(notificationId, progressNotificationBuilder.build());
@@ -187,7 +187,7 @@ public class DownloadManagerService extends Service implements DownloadMission.M
                 NotificationCompat.Builder progressNotificationBuilder = createProgressNotificationBuilder()
                     .setContentTitle(downloadMission.name)
                     .setContentText(getString(R.string.download_successfully))
-                    .setSmallIcon(R.drawable.ic_gramophone_monochrome);
+                    .setSmallIcon(R.drawable.ic_music_downloader_monochrome);
                 notificationManager.cancel(notificationId);
                 try {
                     notificationManager.notify(notificationId, progressNotificationBuilder.build());

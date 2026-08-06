@@ -668,7 +668,7 @@ object PlaylistSerializer {
                     doc.startTag(null, "meta")
                     doc.attribute(null, "name", "Generator")
                     doc.attribute(
-                        null, "content", "Gramophone " +
+                        null, "content", "Music Downloader" +
                                 "${BuildConfig.MY_VERSION_NAME}/${BuildConfig.RELEASE_TYPE}"
                     )
                     doc.endTag(null, "meta")

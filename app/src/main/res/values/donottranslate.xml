@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="default_time" translatable="false">0:00</string>
+    <string name="upper_folder" translatable="false">..</string>
+    <string name="artist_time" translatable="false">%s • %s</string>
+
+</resources>

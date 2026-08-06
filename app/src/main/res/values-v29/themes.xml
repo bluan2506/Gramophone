@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="V29.Theme.Gramophone" parent="V27.Theme.Gramophone">
+    <style name="V29.Theme.MusicDownloader" parent="V27.Theme.MusicDownloader">
         <!-- fixes some UI issues on MIUI devices -->
         <item name="android:forceDarkAllowed">false</item>
     </style>
 
-    <style name="Theme.Gramophone" parent="V29.Theme.Gramophone" />
+    <style name="Theme.MusicDownloader" parent="V29.Theme.MusicDownloader" />
 </resources>

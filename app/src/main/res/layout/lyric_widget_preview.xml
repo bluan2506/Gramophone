@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
     android:orientation="vertical"
-    android:theme="@style/Theme.Gramophone"
+    android:theme="@style/Theme.MusicDownloader"
     android:padding="16dp"
     tools:ignore="HardcodedText,UnusedAttribute">
 
@@ -17,7 +17,7 @@
         android:textColor="@color/sl_lyric_text"
         android:textFontWeight="500"
         android:textSize="@dimen/lyric_widget_nn"
-        android:theme="@style/Theme.Gramophone"
+        android:theme="@style/Theme.MusicDownloader"
         android:text="My face above the water" />
 
     <TextView
@@ -27,7 +27,7 @@
         android:textColor="@color/sl_lyric_active"
         android:textFontWeight="500"
         android:textSize="@dimen/lyric_widget_nn"
-        android:theme="@style/Theme.Gramophone"
+        android:theme="@style/Theme.MusicDownloader"
         android:text="My feet can't touch the ground" />
 
     <TextView
@@ -37,7 +37,7 @@
         android:textColor="@color/sl_lyric_text"
         android:textFontWeight="500"
         android:textSize="@dimen/lyric_widget_nn"
-        android:theme="@style/Theme.Gramophone"
+        android:theme="@style/Theme.MusicDownloader"
         android:text="Touch the ground, and it feels like" />
 
     <TextView
@@ -47,7 +47,7 @@
         android:textColor="@color/sl_lyric_text"
         android:textFontWeight="500"
         android:textSize="@dimen/lyric_widget_nn"
-        android:theme="@style/Theme.Gramophone"
+        android:theme="@style/Theme.MusicDownloader"
         android:text="I can see the sands on the horizon" />
 
     <TextView
@@ -57,6 +57,6 @@
         android:textColor="@color/sl_lyric_text"
         android:textFontWeight="500"
         android:textSize="@dimen/lyric_widget_nn"
-        android:theme="@style/Theme.Gramophone"
+        android:theme="@style/Theme.MusicDownloader"
         android:text="Every time you are not around" />
 </LinearLayout>

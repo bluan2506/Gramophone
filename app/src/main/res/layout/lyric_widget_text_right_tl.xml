@@ -8,5 +8,5 @@
     android:textColor="@color/sl_lyric_text"
     android:textFontWeight="500"
     android:textSize="@dimen/lyric_widget_tl"
-    android:theme="@style/Theme.Gramophone"
+    android:theme="@style/Theme.MusicDownloader"
     tools:ignore="UnusedAttribute" />

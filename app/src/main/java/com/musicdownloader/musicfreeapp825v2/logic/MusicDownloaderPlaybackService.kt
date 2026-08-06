@@ -40,6 +40,7 @@ import android.os.Looper
 import android.os.Process
 import android.os.SystemClock
 import android.provider.MediaStore
+import android.widget.Toast
 import androidx.concurrent.futures.CallbackToFutureAdapter
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
@@ -49,7 +50,6 @@ import androidx.core.content.IntentCompat
 import androidx.core.content.edit
 import androidx.lifecycle.lifecycleScope
 import androidx.media3.common.AudioAttributes
-import androidx.media3.common.BundleListRetriever
 import androidx.media3.common.C
 import androidx.media3.common.DeviceInfo
 import androidx.media3.common.Format
@@ -98,27 +98,12 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import com.google.common.collect.ImmutableList
-import com.google.common.util.concurrent.AsyncFunction
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
 import com.google.common.util.concurrent.SettableFuture
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.CompletableDeferred
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.NonCancellable
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
-import android.widget.Toast
 import com.music.searchapi.ApiServices
 import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.logic.utils.online.SearchApiExecutor
-import com.musicdownloader.musicfreeapp825v2.ui.fragments.OnlineSearchFragment
 import com.musicdownloader.musicfreeapp825v2.logic.ui.MeiZuLyricsMediaNotificationProvider
 import com.musicdownloader.musicfreeapp825v2.logic.ui.isManualNotificationUpdate
 import com.musicdownloader.musicfreeapp825v2.logic.utils.AfFormatInfo
@@ -139,9 +124,21 @@ import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.EndedWorkarou
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderExtractorsFactory
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderMediaSourceFactory
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderRenderFactory
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.SearchApiExecutor
 import com.musicdownloader.musicfreeapp825v2.ui.AudioPreviewActivity
 import com.musicdownloader.musicfreeapp825v2.ui.LyricWidgetProvider
 import com.musicdownloader.musicfreeapp825v2.ui.MainActivity
+import com.musicdownloader.musicfreeapp825v2.ui.fragments.OnlineSearchFragment
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.nift4.mediastorecompat.MediaStoreCompat
 import uk.akane.libphonograph.dynamicitem.Favorite
 import uk.akane.libphonograph.items.albumId
@@ -149,7 +146,6 @@ import uk.akane.libphonograph.manipulator.ItemManipulator
 import uk.akane.libphonograph.manipulator.PlaylistSerializer
 import uk.akane.libphonograph.manipulator.PlaylistSerializer.Entry
 import java.util.concurrent.Executor
-import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
 
@@ -623,7 +619,7 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
             }
         }
         scope.launch(Dispatchers.Default) {
-            gramophoneApplication.reader.playlistListFlow.map { it.find { p -> p is Favorite } }
+            musicDownloaderApplication.reader.playlistListFlow.map { it.find { p -> p is Favorite } }
                 .collect { list ->
                     val ids = list?.songList?.map { it.mediaId } ?: emptyList()
                     withContext(Dispatchers.Main + NonCancellable) {
@@ -676,7 +672,7 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
         }
         val completion = SettableFuture.create<SessionResult>()
         lifecycleScope.launch(Dispatchers.Default) {
-            val item = gramophoneApplication.reader.songListFlow.map {
+            val item = musicDownloaderApplication.reader.songListFlow.map {
                 it.find { s -> s.mediaId == mediaId } }.first()
             if (item == null) {
                 completion.set(SessionResult(SessionResult.RESULT_ERROR_BAD_VALUE))
@@ -687,7 +683,7 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
                 completion.set(SessionResult(SessionResult.RESULT_ERROR_BAD_VALUE))
                 return@launch
             }
-            val uriIn = gramophoneApplication.reader.playlistListFlow.map { it.find { p ->
+            val uriIn = musicDownloaderApplication.reader.playlistListFlow.map { it.find { p ->
                 p is Favorite } }.first()?.id?.let {
                 ContentUris.withAppendedId(@Suppress("deprecation")
                 MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI, it)
@@ -1518,7 +1514,7 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
                     if (it.localConfiguration != null)
                         listOf(it)
                     else if (it.mediaId != MediaItem.DEFAULT_MEDIA_ID)
-                        gramophoneApplication.reader.songListFlow.first()
+                        musicDownloaderApplication.reader.songListFlow.first()
                             .filter { m -> m.mediaId == it.mediaId }
                     else if (it.requestMetadata.searchQuery != null)
                         searchForMediaItem(it)
@@ -1534,7 +1530,7 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
     }
 
     private suspend fun mapMediaItemsForFavorites(mediaItems: List<MediaItem>): List<MediaItem> {
-        val favorites = gramophoneApplication.reader.playlistListFlow.map { it.find { p ->
+        val favorites = musicDownloaderApplication.reader.playlistListFlow.map { it.find { p ->
             p is Favorite } }.first()?.songList?.map { it.mediaId } ?: emptyList()
         return mediaItems.map { item ->
             val isHeart = (item.mediaMetadata.userRating as? HeartRating)
@@ -1550,7 +1546,7 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
 
     private suspend fun searchForMediaItem(item: MediaItem): List<MediaItem> {
         val text = item.requestMetadata.searchQuery?.trim() ?: ""
-        val list = gramophoneApplication.reader.songListFlow.first()
+        val list = musicDownloaderApplication.reader.songListFlow.first()
         // TODO support focus and sub queries (see MainActivity)
         return if (text == "") list else list.filter {
             // TODO sort results by match quality? (using raw=natural order)
