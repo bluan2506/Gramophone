@@ -707,10 +707,7 @@
     <string name="bitrate_format">%1$d kbps</string>
     <!-- Showing the song's bit rate in detail UI if it can't be determined -->
     <string name="bitrate_unknown">Unknown bitrate</string>
-    <!-- Explainer in dialog when user clicks "Package type" field in about screen -->
-    <string name="package_type_explainer">Music Downloader APKs can be created by anyone, because Music Downloader is open source. To help remembering where an APK came from, Music Downloader provides the package type.\n\nThe most common type is Release, which is obtained from F-Droid, Google Play, GitHub or IzzyOnDroid.\nThe CI package type refers to automated builds made for every commit on GitHub. These builds may be unstable.\nFor other package types, the name should give a reasonable hint to where the APK is from.</string>
-    <!-- Row in about screen which will show open source licenses of Music Downloader and other libraries when clicked -->
-    <string name="settings_open_source_licenses">Open source licenses</string>
+
     <!-- Title of crash report screen -->
     <string name="oh_no">Oh no!</string>
     <!-- Explainer of crash report screen -->
