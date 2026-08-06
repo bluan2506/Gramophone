@@ -52,6 +52,12 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.musicdownloader.musicfreeapp825v2.BuildConfig
+import com.musicdownloader.musicfreeapp825v2.R
+import com.musicdownloader.musicfreeapp825v2.logic.allowDiskAccessInStrictMode
+import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgePaddingListener
+import com.musicdownloader.musicfreeapp825v2.logic.hasOsClipboardDialog
+import com.musicdownloader.musicfreeapp825v2.logic.updateMargin
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.TimeoutCancellationException
@@ -59,12 +65,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
-import com.musicdownloader.musicfreeapp825v2.BuildConfig
-import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.logic.allowDiskAccessInStrictMode
-import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgePaddingListener
-import com.musicdownloader.musicfreeapp825v2.logic.hasOsClipboardDialog
-import com.musicdownloader.musicfreeapp825v2.logic.updateMargin
 import java.io.File
 import java.nio.charset.Charset
 import java.text.SimpleDateFormat
@@ -101,13 +101,13 @@ class BugHandlerActivity : BaseActivity() {
         val currentDateTime = Calendar.getInstance().time
         val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
         val formattedDateTime = formatter.format(currentDateTime)
-        val gramophoneVersion = BuildConfig.MY_VERSION_NAME
+        val musicDownloaderVersion = BuildConfig.MY_VERSION_NAME
 
         log = StringBuilder()
             .append(getString(R.string.crash_music_downloader_version))
             .append(':')
             .append(' ')
-            .append(gramophoneVersion)
+            .append(musicDownloaderVersion)
             .append(" (")
             .append(packageName)
             .append(')')
@@ -172,7 +172,7 @@ class BugHandlerActivity : BaseActivity() {
         actionShare.setOnClickListener {
             val sendIntent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TITLE, "Gramophone Logs")
+                putExtra(Intent.EXTRA_TITLE, "Music Downloader Logs")
                 putExtra(Intent.EXTRA_TEXT, bugText.text)
                 type = "text/plain"
             }
@@ -201,13 +201,13 @@ class BugHandlerActivity : BaseActivity() {
     }
 
     private fun sendEmail() {
-        Log.w("Gramophone", "Exporting logs due to crash...")
+        Log.w("Music Downloader", "Exporting logs due to crash...")
         val policy = StrictMode.allowThreadDiskWrites()
         val crashLogDir: File
         val f: File
         try {
             crashLogDir = File(cacheDir, "CrashLog")
-            f = File(crashLogDir, "GramophoneLog${System.currentTimeMillis()}.txt")
+            f = File(crashLogDir, "MusicDownloaderLog${System.currentTimeMillis()}.txt")
         } finally {
             StrictMode.setThreadPolicy(policy)
         }
@@ -221,7 +221,7 @@ class BugHandlerActivity : BaseActivity() {
                     R.id.editText
                 ) as TextInputEditText
                 val desc = et.editableText.toString().takeIf { it.isNotBlank() }
-                val mailText = "Hi Nick,\n\nGramophone crashed!\nI was doing:\n\n" +
+                val mailText = "Hi Nick,\n\nMusicDownloader crashed!\nI was doing:\n\n" +
                         "${desc ?: "--INSERT DESCRIPTION HERE--"}\n\nIt crashed with this" +
                         " log:\n\n\n$log"
                 triedToSendEmail = true
@@ -256,7 +256,7 @@ class BugHandlerActivity : BaseActivity() {
                                 putExtra(Intent.EXTRA_EMAIL, arrayOf(""))
                                 putExtra(
                                     Intent.EXTRA_SUBJECT,
-                                    "Gramophone ${BuildConfig.MY_VERSION_NAME} crashed"
+                                    "Music Downloader ${BuildConfig.MY_VERSION_NAME} crashed"
                                 )
                                 putExtra(Intent.EXTRA_TEXT, mailText)
                                 putExtra(
