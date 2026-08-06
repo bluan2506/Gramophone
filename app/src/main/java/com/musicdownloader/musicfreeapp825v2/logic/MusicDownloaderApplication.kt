@@ -40,6 +40,8 @@ import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyTopOn
 import com.musicdownloader.musicfreeapp825v2.logic.utils.config.ConfigUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
 import com.musicdownloader.musicfreeapp825v2.ui.SplashActivity
+import com.musicdownloader.musicfreeapp825v2.ui.components.RateAppBottomSheet
+import com.musicdownloader.musicfreeapp825v2.ui.components.SatisfiedBottomSheet
 import java.util.Date
 import android.os.Build
 import android.os.Debug
@@ -458,6 +460,8 @@ class MusicDownloaderApplication : Application(), SingletonImageLoader.Factory,
         val activity = currentActivity ?: return
         if (activity !is SplashActivity && !configEntity.isToponads
             && !InterstitialAdsUtils.isShowAdsGoToSearchScreen
+            && !RateAppBottomSheet.isShowingDialog
+            && !SatisfiedBottomSheet.isShowingDialog
         ) {
             appOpenAdManager.showAdIfAvailable(activity)
         }

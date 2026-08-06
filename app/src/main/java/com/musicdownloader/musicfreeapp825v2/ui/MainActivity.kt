@@ -105,10 +105,13 @@ import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.InterstitialAdsUtil
 import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyAdMob
 import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyTopOn
 import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.SelfRenderViewUtil
+import com.musicdownloader.musicfreeapp825v2.logic.utils.RateAppUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.DownloadController
 import com.musicdownloader.musicfreeapp825v2.ui.adapters.PlaylistAdapter
 import com.musicdownloader.musicfreeapp825v2.ui.components.PlayerBottomSheet
+import com.musicdownloader.musicfreeapp825v2.ui.components.RateAppBottomSheet
+import com.musicdownloader.musicfreeapp825v2.ui.components.SatisfiedBottomSheet
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.BaseFragment
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.DownloadsFragment
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.GeneralSubFragment
@@ -186,12 +189,33 @@ class MainActivity : BaseActivity() {
                 InterstitialAdsUtils.showAdsGoToSearchScreen(
                     this@MainActivity, configEntity,
                     object : InterstitialAdsUtils.Listener {
-                        override fun onNotShowAds() {}
+                        override fun onNotShowAds() { maybeShowRateApp() }
                         override fun onAdDismissedFullScreenContent() {}
                     }
                 )
+            } else {
+                maybeShowRateApp()
             }
         }
+    }
+
+    /**
+     * After a download completes (and no interstitial took its place), offer the rate prompt.
+     * [RateAppUtils] handles all the count/interval/already-rated gating internally.
+     */
+    private fun maybeShowRateApp() {
+        RateAppUtils.updateShowRateAppCount(this, object : RateAppUtils.Listener {
+            override fun showRateAppFirstTime() {
+                if (isFinishing || supportFragmentManager.isStateSaved) return
+                SatisfiedBottomSheet().show(supportFragmentManager, SatisfiedBottomSheet.TAG)
+            }
+
+            override fun showRateApp() {
+                if (isFinishing || supportFragmentManager.isStateSaved) return
+                RateAppBottomSheet.newInstance(true)
+                    .show(supportFragmentManager, RateAppBottomSheet.TAG)
+            }
+        })
     }
 
     /** The bottom bar = navigation + home banner ad stacked vertically (banner under the nav). */
