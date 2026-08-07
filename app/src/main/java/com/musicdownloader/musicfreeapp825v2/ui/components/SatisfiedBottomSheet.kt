@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.musicdownloader.musicfreeapp825v2.databinding.BottomSheetSatisfiedBinding
+import com.musicdownloader.musicfreeapp825v2.logic.padOutOfSystemBars
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.settings.FeedbackActivity
 
 /**
@@ -39,6 +40,7 @@ class SatisfiedBottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isCancelable = false
+        view.padOutOfSystemBars()
 
         binding.tvGood.setOnClickListener {
             RateAppBottomSheet.newInstance(false)

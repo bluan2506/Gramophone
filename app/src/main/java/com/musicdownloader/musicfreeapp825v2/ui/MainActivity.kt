@@ -87,7 +87,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.databinding.LayoutBottomSheetBackBinding
+import com.musicdownloader.musicfreeapp825v2.databinding.BottomSheetBackBinding
 import com.musicdownloader.musicfreeapp825v2.logic.clone
 import com.musicdownloader.musicfreeapp825v2.logic.dpToPx
 import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgeProperly
@@ -98,6 +98,7 @@ import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageV2
 import com.musicdownloader.musicfreeapp825v2.logic.hasScopedStorageWithMediaTypes
 import com.musicdownloader.musicfreeapp825v2.logic.musicDownloaderApplication
 import com.musicdownloader.musicfreeapp825v2.logic.needsMissingOnDestroyCallWorkarounds
+import com.musicdownloader.musicfreeapp825v2.logic.padOutOfSystemBars
 import com.musicdownloader.musicfreeapp825v2.logic.postAtFrontOfQueueAsync
 import com.musicdownloader.musicfreeapp825v2.logic.supportsNotificationPermission
 import com.musicdownloader.musicfreeapp825v2.logic.ui.BaseActivity
@@ -1023,8 +1024,9 @@ class MainActivity : BaseActivity() {
      */
     private fun showExit() {
         val bottomSheet = BottomSheetDialog(this, R.style.ThemeOverlay_App_BottomSheetDialog)
-        val view = LayoutBottomSheetBackBinding.inflate(layoutInflater)
+        val view = BottomSheetBackBinding.inflate(layoutInflater)
         bottomSheet.setContentView(view.root)
+        view.root.padOutOfSystemBars()
         view.buttonCancel.setOnClickListener {
             bottomSheet.dismiss()
         }
@@ -1085,7 +1087,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** Renders a TopOn native ad into the exit sheet (self-render), ported from the sample. */
-    private fun setAdsNativeExit(atNatives: TUNative, viewBinding: LayoutBottomSheetBackBinding) {
+    private fun setAdsNativeExit(atNatives: TUNative, viewBinding: BottomSheetBackBinding) {
         val context = this
         val padding = 10.dpToPx(context)
         val adViewWidth = context.resources.displayMetrics.widthPixels - 2 * padding

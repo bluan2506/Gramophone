@@ -14,6 +14,7 @@ import com.google.android.material.color.MaterialColors
 import com.google.android.play.core.review.ReviewManagerFactory
 import com.musicdownloader.musicfreeapp825v2.R
 import com.musicdownloader.musicfreeapp825v2.databinding.BottomSheetRateAppBinding
+import com.musicdownloader.musicfreeapp825v2.logic.padOutOfSystemBars
 import com.musicdownloader.musicfreeapp825v2.logic.utils.RateAppUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.settings.FeedbackActivity
@@ -58,6 +59,7 @@ class RateAppBottomSheet : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.padOutOfSystemBars()
         handleListener()
     }
 

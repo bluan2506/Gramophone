@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.musicdownloader.musicfreeapp825v2.databinding.BottomSheetFeedbackSuccessBinding
+import com.musicdownloader.musicfreeapp825v2.logic.padOutOfSystemBars
 
 /**
  * "Thank you for your feedback" confirmation sheet shown after submitting feedback.
@@ -28,6 +29,7 @@ class BottomSheetFeedbackSuccess(private val dismissClick: () -> Unit) : BottomS
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.padOutOfSystemBars()
         binding.btnOK.setOnClickListener {
             dismiss()
             dismissClick()

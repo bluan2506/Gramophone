@@ -62,6 +62,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.children
 import androidx.core.view.updateLayoutParams
 import androidx.core.view.updateMargins
+import androidx.core.view.updatePadding
 import androidx.media3.common.C
 import androidx.media3.common.Format
 import androidx.media3.common.MediaItem
@@ -639,6 +640,31 @@ fun ComponentActivity.enableEdgeToEdgeProperly() {
     } else {
         val darkScrim = Color.argb(0x80, 0x1b, 0x1b, 0x1b)
         enableEdgeToEdge(navigationBarStyle = SystemBarStyle.light(Color.TRANSPARENT, darkScrim))
+    }
+}
+
+/**
+ * Insets a bottom sheet's content out from under the system bars. A [BottomSheetDialog] lays out
+ * edge-to-edge, so without this the bottom-most content (in practice the action button) sits
+ * underneath the navigation bar on Android 15+, where the app can no longer opt out of it.
+ *
+ * Whatever padding the layout already declares is kept, and because the inset is re-applied on
+ * every dispatch this stays correct across rotation and navigation-mode changes.
+ */
+fun View.padOutOfSystemBars() {
+    val initialLeft = paddingLeft
+    val initialRight = paddingRight
+    val initialBottom = paddingBottom
+    ViewCompat.setOnApplyWindowInsetsListener(this) { v, insets ->
+        val bars = insets.getInsets(
+            WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+        )
+        v.updatePadding(
+            left = initialLeft + bars.left,
+            right = initialRight + bars.right,
+            bottom = initialBottom + bars.bottom
+        )
+        insets
     }
 }
 
