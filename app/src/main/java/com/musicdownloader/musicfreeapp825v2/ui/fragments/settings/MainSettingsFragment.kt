@@ -17,9 +17,12 @@
 
 package com.musicdownloader.musicfreeapp825v2.ui.fragments.settings
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.core.net.toUri
 import androidx.preference.Preference
 import com.musicdownloader.musicfreeapp825v2.R
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.BasePreferenceFragment
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.BaseSettingsActivity
 
@@ -28,6 +31,11 @@ class MainSettingsActivity : BaseSettingsActivity(
     { MainSettingsFragment() })
 
 class MainSettingsFragment : BasePreferenceFragment() {
+
+    companion object {
+        private const val PRIVACY_POLICY_URL = "https://www.google.com/"
+    }
+
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings_top, rootKey)
     }
@@ -56,6 +64,17 @@ class MainSettingsFragment : BasePreferenceFragment() {
 
             "experimental" -> {
                 startActivity(ExperimentalSettingsActivity::class.java)
+            }
+
+            "privacy" -> {
+                val intent = Intent(Intent.ACTION_VIEW, PRIVACY_POLICY_URL.toUri()).apply {
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }
+                try {
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    FirebaseEventUtils.getInstances().recordException(e)
+                }
             }
 
             "feedback" -> {

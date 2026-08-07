@@ -1301,4 +1301,8 @@ supporting local search. This string is displayed in the search bar when using M
     <string name="rate_app_title">We are working hard for a better user experience.\nWe would greatly appreciate if you can rate us.</string>
     <string name="rate_app_title_1">Oh, no!\nPlease leave us some feedback.</string>
     <string name="rate_app_title_4">We like you too!\nThanks for your feedback.</string>
+
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="privacy_policy_summary">How we collect and use your data</string>
+
 </resources>

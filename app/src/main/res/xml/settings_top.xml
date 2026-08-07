@@ -77,6 +77,13 @@
         android:title="@string/settings_feedback" />
 
     <Preference
+        android:icon="@drawable/ic_feedback_24"
+        android:key="privacy"
+        android:layout="@layout/preference_basic"
+        android:summary="@string/privacy_policy_summary"
+        android:title="@string/privacy_policy" />
+
+    <Preference
         android:icon="@drawable/ic_info"
         android:key="about"
         android:layout="@layout/preference_basic"
