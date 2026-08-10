@@ -1,5 +1,6 @@
 package com.musicdownloader.musicfreeapp825v2.ui.components
 
+import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
@@ -112,8 +113,9 @@ class RateAppBottomSheet : BottomSheetDialogFragment() {
         if (canInteractRateAppCount) {
             RateAppUtils.interactRateApp(requireContext())
         }
-        launchInAppReview()
+        val host = requireActivity()
         dismiss()
+        launchInAppReview(host)
     }
 
     private fun showFeedback() {
@@ -125,26 +127,25 @@ class RateAppBottomSheet : BottomSheetDialogFragment() {
     }
 
     // Mirrors HomeFragment.rateApp(): request + launch the In-App Review flow, then open the store.
-    private fun launchInAppReview() {
-        val activity = activity ?: return
-        FirebaseEventUtils.getInstances().logEventUserClickRateApp(activity)
-        val manager = ReviewManagerFactory.create(activity)
+    private fun launchInAppReview(host: Activity) {
+        FirebaseEventUtils.getInstances().logEventUserClickRateApp(host)
+        val manager = ReviewManagerFactory.create(host)
         manager.requestReviewFlow().addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                manager.launchReviewFlow(activity, task.result).addOnCompleteListener { openPlayStore() }
+                manager.launchReviewFlow(host, task.result).addOnCompleteListener { openPlayStore(host) }
             } else {
-                openPlayStore()
+                openPlayStore(host)
             }
         }
     }
 
-    private fun openPlayStore() {
-        val activity = activity ?: return
-        val pkg = activity.packageName
+    private fun openPlayStore(host: Activity) {
+        if (host.isFinishing || host.isDestroyed) return
+        val pkg = host.packageName
         try {
-            activity.startActivity(Intent(Intent.ACTION_VIEW, "market://details?id=$pkg".toUri()))
+            host.startActivity(Intent(Intent.ACTION_VIEW, "market://details?id=$pkg".toUri()))
         } catch (_: ActivityNotFoundException) {
-            activity.startActivity(
+            host.startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
                     "https://play.google.com/store/apps/details?id=$pkg".toUri()
