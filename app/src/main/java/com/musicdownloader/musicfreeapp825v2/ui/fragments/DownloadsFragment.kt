@@ -10,9 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
+import androidx.media3.common.Player
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.coroutines.Dispatchers
@@ -22,6 +24,7 @@ import com.musicdownloader.musicfreeapp825v2.R
 import com.musicdownloader.musicfreeapp825v2.databinding.FragmentDownloadsBinding
 import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgePaddingListener
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.DownloadStorage
+import com.musicdownloader.musicfreeapp825v2.ui.MediaControllerViewModel
 import com.musicdownloader.musicfreeapp825v2.ui.adapters.DownloadAdapter
 import com.musicdownloader.musicfreeapp825v2.ui.adapters.DownloadAdapter.DownloadItem
 import us.shandian.giga.util.Utility
@@ -44,6 +47,8 @@ class DownloadsFragment : BaseFragment(true) {
 
     private var _binding: FragmentDownloadsBinding? = null
     private val binding get() = _binding!!
+
+    private val controllerViewModel: MediaControllerViewModel by activityViewModels()
 
     private lateinit var adapter: DownloadAdapter
 
@@ -70,7 +75,26 @@ class DownloadsFragment : BaseFragment(true) {
         binding.returnButton.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
+
+        // Drive the "now playing" equalizer from the media3 controller, like the other song lists.
+        controllerViewModel.addRecreationalPlayerListener(
+            viewLifecycleOwner.lifecycle,
+            object : Player.Listener {
+                override fun onMediaItemTransition(mediaItem: MediaItem?, reason: Int) = updatePlayingState()
+                override fun onPlayWhenReadyChanged(playWhenReady: Boolean, reason: Int) = updatePlayingState()
+                override fun onPlaybackStateChanged(playbackState: Int) = updatePlayingState()
+            }
+        ) { updatePlayingState() }
+
         return binding.root
+    }
+
+    private fun updatePlayingState() {
+        val c = controllerViewModel.get()
+        val mediaId = c?.currentMediaItem?.mediaId
+        val playing = c != null && c.playWhenReady &&
+            c.playbackState != Player.STATE_ENDED && c.playbackState != Player.STATE_IDLE
+        if (::adapter.isInitialized) adapter.updateCurrentPlaying(mediaId, playing)
     }
 
     // Enumerating the download folder + reading file sizes is disk I/O -> run it off the main thread
@@ -97,7 +121,7 @@ class DownloadsFragment : BaseFragment(true) {
         val controller = mainActivity.getPlayer() ?: return
         val item = MediaItem.Builder()
             .setUri(file.toUri())
-            .setMediaId("download:${file.absolutePath}")
+            .setMediaId(DownloadAdapter.MEDIA_ID_PREFIX + file.absolutePath)
             .setMediaMetadata(
                 MediaMetadata.Builder()
                     .setTitle(file.nameWithoutExtension)

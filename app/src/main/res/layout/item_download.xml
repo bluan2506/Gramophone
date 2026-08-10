@@ -13,20 +13,22 @@
     android:paddingHorizontal="16dp"
     android:paddingVertical="10dp">
 
+    <!-- Same cover cell as the offline song list (adapter_list_card.xml): filled card at
+         list_round_corner_size with the shared ic_default_cover placeholder. -->
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="0dp">
+        style="?materialCardViewFilledStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardCornerRadius="@dimen/list_round_corner_size">
 
         <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_gravity="center"
-            android:contentDescription="@null"
-            android:src="@drawable/ic_nav_songs"
-            app:tint="?attr/colorOnSurfaceVariant" />
+            android:id="@+id/cover"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?attr/colorSurfaceContainer"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_default_cover" />
     </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
@@ -57,5 +59,18 @@
             android:textColor="?attr/colorOnSurfaceVariant"
             tools:text="3.2 MB" />
     </LinearLayout>
+
+    <!-- Trailing "now playing" equalizer, same placement/tint as the offline song lists
+         (adapter_list_card.xml) so the indicator reads identically across screens. -->
+    <ImageView
+        android:id="@+id/now_playing"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/now_playing"
+        android:padding="12dp"
+        android:visibility="gone"
+        app:tint="?attr/colorOnSurface"
+        tools:src="@drawable/ic_play_arrow_filled"
+        tools:visibility="visible" />
 
 </LinearLayout>
