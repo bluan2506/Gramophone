@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
+    <string name="app_name">Music Downloader</string>
+    <string name="ads_loading">Загрузка рекламы…</string>
+    <string name="splash_tagline">Ваш офлайн-плеер</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_search">Поиск</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_settings">Настройки</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_shuffle">Перемешать все</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_refresh">Обновить</string>
+    <!-- Tab on home screen showing a list of songs -->
+    <string name="category_home">Главная</string>
+    <string name="home_search_hint">Поиск по вашей музыке</string>
+    <string name="home_online_search">Поиск в интернете</string>
+    <string name="home_online_search_subtitle">Найдите и слушайте миллионы треков</string>
+    <string name="online_search_hint">Искать треки в интернете</string>
+    <string name="online_search_empty">Ничего не найдено. Попробуйте другой запрос.</string>
+    <string name="online_search_error">Что-то пошло не так. Попробуйте ещё раз.</string>
+    <string name="turn_off_vpn_proxy">Отключите VPN или прокси, чтобы приложение работало правильно.</string>
+    <string name="online_download">Скачать</string>
+    <string name="online_download_started">Загрузка началась</string>
+    <string name="online_loading">Загрузка…</string>
+    <!-- giga download engine -->
+    <string name="downloading">Скачивание</string>
+    <string name="merging">Объединение…</string>
+    <string name="download_successfully">Скачано</string>
+    <string name="download_error">Не удалось скачать</string>
+    <string name="no_space_left_on_device">На устройстве нет свободного места</string>
+    <string name="no_internet">Нет подключения к интернету</string>
+    <string name="song_link_expired_download">Срок действия ссылки истёк, попробуйте скачать ещё раз</string>
+    <string name="song_link_expired_play">Срок действия ссылки истёк, попробуйте воспроизвести ещё раз</string>
+    <string name="downloads_title">Загрузки</string>
+    <string name="downloads_empty">Пока нет скачанных треков</string>
+    <string name="copyright_restrictions_title">Ограничено авторским правом</string>
+    <string name="copyright_restrictions_message">Этот трек нельзя скачать из-за ограничений авторского права.</string>
+    <string name="home_songs_count">%1$d треков</string>
+    <string name="home_downloaded">Скачано</string>
+    <string name="home_sleep_timer">Таймер сна</string>
+    <string name="home_on">Вкл.</string>
+    <string name="home_off">Выкл.</string>
+    <string name="home_minutes">%1$d мин.</string>
+    <string name="home_end_of_song">Конец текущего трека</string>
+    <string name="home_rate_app">Оценить приложение</string>
+    <string name="home_rate_app_subtitle">Нравится приложение?</string>
+    <string name="home_settings">Настройки</string>
+    <string name="home_settings_subtitle">Поддержите нас</string>
+    <string name="category_songs">Треки</string>
+    <!-- Tab on home screen showing a list of albums -->
+    <string name="category_albums">Альбомы</string>
+    <!-- Tab on home screen showing a list of artists -->
+    <string name="category_artists">Исполнители</string>
+    <!-- Tab on home screen showing a list of genres -->
+    <string name="category_genres">Жанры</string>
+    <!-- Tab on home screen showing a list of playlists -->
+    <string name="category_playlists">Плейлисты</string>
+    <!-- Used in place of the artist name if the artist can't be found unexpectedly -->
+    <string name="unknown_artist">Неизвестный исполнитель</string>
+    <!-- Tab on home screen showing a list of years (2002, 2003, etc.) -->
+    <string name="category_dates">Годы</string>
+
+    <!-- Color theme option: use dark/light setting of system -->
+    <string name="follow_system">Как в системе</string>
+    <!-- Color theme option: use dark colors -->
+    <string name="dark">Тёмная</string>
+    <!-- Color theme option: use light colors -->
+    <string name="light">Светлая</string>
+    <!-- Sort albums/playlists/etc by size (how many songs are in there) -->
+    <string name="sort_by_size">Размер</string>
+    <!-- Sort songs/albums/etc by name (A-Z) -->
+    <string name="sort_by_name">Название</string>
+    <!-- Sort songs/albums/etc by artist (A-Z) -->
+    <string name="sort_by_artist">Исполнитель</string>
+    <!-- Sort songs by album's name (A-Z) -->
+    <string name="sort_by_album">Альбом</string>
+    <!-- Sort songs by album artist's name (A-Z), then song's name (A-Z) -->
+    <string name="sort_by_album_artist">Исполнитель альбома -> название</string>
+    <!-- Make message (snackbar / dialog) go away -->
+    <string name="dismiss">Закрыть</string>
+    <!-- Used in place of the genre name if the genre can't be found unexpectedly -->
+    <string name="unknown_genre">Неизвестный жанр</string>
+    <!-- Used in place of the year if the year can't be found unexpectedly -->
+    <string name="unknown_year">Неизвестный год</string>
+    <!-- Used in snack bar after song list was reloaded on user request -->
+    <string name="refreshed_songs">Обновлено треков: %1$d</string>
+    <!-- Hint of text field for search -->
+    <string name="search">Поиск</string>
+    <!-- Used to name the list of songs resulting from a search -->
+    <string name="search_query">Поиск: %s</string>
+    <!-- Share a song's file with some other app -->
+    <string name="share">Поделиться</string>
+    <!-- Displayed above app name -->
+    <string name="settings_app_name">Название приложения</string>
+    <!-- Clicking will open the credits screen -->
+    <!-- Play this song next, context menu item -->
+    <string name="play_next">Воспроизвести следующим</string>
+    <!-- Open the album this song is in, context menu item -->
+    <string name="go_to_album">Перейти к альбому</string>
+    <!-- Open the artist this song is in, context menu item -->
+    <string name="go_to_artist">Перейти к исполнителю</string>
+    <!-- Open details of this song, context menu item -->
+    <string name="details">Сведения</string>
+    <!-- Tooltip of shuffle clickable toggle button -->
+    <string name="shuffle">Перемешивание</string>
+    <!-- Tooltip of repeat mode 3-state clickable toggle button -->
+    <string name="repeat_mode">Режим повтора</string>
+    <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
+    <string name="unknown_playlist">Неизвестный плейлист</string>
+    <string name="music_downloader_crashed">Журнал сбоя</string>
+    <string name="crash_music_downloader_version">Версия Music Downloader</string>
+    <string name="crash_phone_model">Модель</string>
+    <string name="crash_phone_brand">Бренд</string>
+    <string name="crash_sdk_level">Уровень SDK</string>
+    <string name="crash_time">Время</string>
+    <string name="crash_rtype">Тип сборки</string>
+    <!-- Settings category about color scheme and other visual settings. Title -->
+    <string name="settings_category_appearance">Внешний вид</string>
+    <!-- Used in multiple places such as sort context menu and details UI -->
+    <string name="album_artist">Исполнитель альбома</string>
+    <!-- Fallback if app's version isn't known -->
+    <string name="unknown_version">Неизвестная версия</string>
+    <!-- Displayed above the app version in about screen -->
+    <string name="settings_version">Версия</string>
+    <!-- Shown next to song's name in detail UI -->
+    <string name="dialog_title">Название</string>
+    <!-- Shown next to song's artist's name in detail UI -->
+    <string name="dialog_artist">Исполнитель</string>
+    <!-- Settings category about song filter, playing and other app behavior settings. Title -->
+    <string name="settings_category_behavior">Поведение</string>
+    <!-- Seconds slider in behavior settings to specify which length of songs is required to show up
+    in the app, intended to filter out ringtones and other short audio files that aren't music. -->
+    <string name="settings_mediastore_filter">Минимальная длительность трека (секунды)</string>
+    <!-- Link to our GitHub repository -->
+    <!-- Shown next to song's album name in detail UI -->
+    <string name="dialog_album">Альбом</string>
+    <!-- Shown next to song's genre in detail UI -->
+    <string name="dialog_genre">Жанр</string>
+    <!-- Shown next to song's album artist name in detail UI -->
+    <string name="dialog_album_artist">Исполнитель альбома</string>
+    <!-- Shown next to song's track number in detail UI -->
+    <string name="dialog_track_number">Номер трека</string>
+    <!-- Shown next to song's release year in detail UI -->
+    <string name="dialog_year">Год</string>
+    <!-- Shown next to song's file path in detail UI -->
+    <string name="dialog_path">Путь</string>
+    <!-- Used in place of the album name if the album can't be found unexpectedly -->
+    <string name="unknown_album">Неизвестный альбом</string>
+    <!-- A playlist that has songs that were recently added to this device -->
+    <string name="recently_added">Недавно добавленные</string>
+    <!-- Tab on home screen showing a flat folder list -->
+    <string name="folders">Папки</string>
+    <!-- Color theme in appearance settings: light/dark/follow system -->
+    <string name="settings_app_theme">Тема приложения</string>
+    <!-- The sort mode if something has inherent proper order (playlist order for playlist, CD order
+    for album, etc) -->
+    <string name="natural_order">Естественный порядок</string>
+    <!-- Display style where songs/albums/etc are displayed as grid instead of list -->
+    <string name="grid">Сетка</string>
+    <!-- Display style where songs/albums/etc are displayed as list instead of grid -->
+    <string name="list">Список</string>
+    <!-- Context menu item submenu title for changing between list and grid display style -->
+    <string name="layout">Отображение</string>
+    <!-- Menu item to open external equalizer app -->
+    <string name="home_menu_equalizer">Эквалайзер</string>
+    <!-- Error if the external equalizer app isn't installed -->
+    <string name="equalizer_not_found">Эквалайзер не найден!</string>
+    <!-- Display style where songs/albums/etc are displayed as list, but smaller -->
+    <string name="compact_list">Список (компактный)</string>
+    <!-- In about screen, link to our Telegram channel -->
+    <string name="check_for_updates">Загляните в наш канал за обновлениями!</string>
+    <!-- In player UI settings, change between wavy(Music Downloader's default) and default/modern
+    (Google's default) slider. Title -->
+    <string name="settings_default_progress_bar">Стандартный индикатор прогресса</string>
+    <!-- In player UI settings, change between wavy(Music Downloader's default) and default/modern
+    (Google's default) slider. Subtext -->
+    <string name="settings_default_progress_bar_summary">Включить индикатор прогресса в стиле Material</string>
+
+    <!-- The name of the playlist used for showing every song where the heart was clicked -->
+    <string name="playlist_favourite">Избранное</string>
+    <!-- Shows a list of contributors' nicknames like "someDeveloperA, someDeveloperB,
+    someDeveloperC (click for more!)" and clicking opens credits screen -->
+    <!-- Accessibility name for bars animation on a song in a list, showing this is the playling song -->
+    <string name="now_playing">Сейчас играет</string>
+    <!-- In appearance settings, change between album based color and system wide color. Subtext -->
+    <string name="settings_content_based_color_summary">Включить подбор цвета по обложке альбома</string>
+    <!-- In appearance settings, change between album based color and system wide color. Title -->
+    <string name="settings_content_based_color">Цвета по содержимому</string>
+    <!-- In about screen, explain where the app APK is from (Google Play, GitHub, etc) -->
+    <string name="settings_package_type">Тип пакета</string>
+    <!-- Shown if user clicks on lyrics icon but the song doesn't contain any lyrics in metadata -->
+    <string name="no_lyric_found">Текст песни не найден</string>
+    <!-- Shown next to song's CD number in detail UI -->
+    <string name="dialog_disc_number">Номер диска</string>
+    <!-- Used in place of the song name if the song name can't be found unexpectedly -->
+    <string name="unknown_title">Неизвестное название</string>
+    <!-- Tab on home screen showing a hierarchical folder list -->
+    <string name="filesystem">Файловая система</string>
+    <!-- Shown next to song's MIME type (like "audio/mpeg") in detail UI -->
+    <string name="dialog_mime">Тип MIME</string>
+    <!-- Shown next to song's duration (like "5:37") in detail UI -->
+    <string name="dialog_duration">Длительность</string>
+    <!-- In player UI settings, change between centered title and left-aligned title. Title -->
+    <string name="settings_title_center">Название по центру</string>
+    <!-- In player UI settings, change between centered title and left-aligned title. Subtext -->
+    <string name="settings_title_center_summary">Выравнивать название по центру в полном плеере</string>
+    <!-- Appearance settings for the full player which shows what's playing in fullscreen. Title -->
+    <string name="settings_player_ui">Интерфейс плеера</string>
+    <!-- Appearance settings for the full player which shows what's playing in fullscreen. Subtext -->
+    <string name="settings_player_ui_summary">Интерфейс полного плеера, текст песни</string>
+    <!-- Settings category about color scheme and other visual settings. Subtext -->
+    <string name="settings_appearance_summary">Внешний вид приложения, режимы темы</string>
+    <!-- Settings category for app credits and version. Title -->
+    <string name="settings_about_app">О приложении</string>
+    <!-- Settings category for app credits and version. Subtext -->
+    <string name="settings_about_music_downloader">Сведения о приложении</string>
+    <!-- Settings category about song filter, playing and other app behavior settings. Subtext -->
+    <string name="settings_behavior_summary">Фильтры, поведение при запуске</string>
+    <!-- Shown as category header in about app screen above GitHub and Telegram links -->
+    <string name="settings_category_links">Ссылки</string>
+    <!-- Settings category about songs (currently disabled). Title -->
+    <string name="settings_library">Медиатека</string>
+    <!-- Settings category about songs (currently disabled). Subtext -->
+    <string name="settings_library_summary">Управление медиатекой</string>
+    <!-- Settings category about audio playback. Title -->
+    <string name="settings_player_options">Аудио</string>
+    <!-- Settings category about audio playback. Subtext -->
+    <string name="settings_player_options_summary">Качество вывода, поведение воспроизведения</string>
+    <!-- Settings category about customizing UI (currently disabled). Title -->
+    <string name="settings_customization">Персонализация</string>
+    <!-- Settings category about customizing UI (currently disabled). Subtext -->
+    <string name="settings_customization_summary">Управление параметрами персонализации</string>
+    <!-- Pixel slider in behavior settings to specify how round album cover's corner should be. -->
+    <string name="settings_album_round_corner">Скругление углов обложки</string>
+    <!-- Toggle in player UI settings to make song name bold. Title -->
+    <string name="settings_title_bold">Жирное название</string>
+    <!-- Toggle in player UI settings to make song name bold. Subtext -->
+    <string name="settings_title_bold_summary">Использовать жирное название в полном плеере</string>
+    <!-- Settings category about experimental features. Title -->
+    <string name="settings_experimental_settings">Экспериментальные</string>
+    <!-- Settings category about experimental features. Subtext -->
+    <string name="settings_experimental_settings_summary">Тестовые функции, разное</string>
+    <!-- Toggle which makes color detection for album cover based color use more CPU to detect the
+    color, which improves accuracy but causes some lags on old devices. Subtext -->
+    <string name="settings_color_accuracy_summary">Повысить точность подбора цвета</string>
+    <!-- Toggle which makes color detection for album cover based color use more CPU to detect the
+    color, which improves accuracy but causes some lags on old devices. Title -->
+    <string name="settings_color_accuracy">Точность цвета</string>
+    <!-- Sort songs by date created (of file) -->
+    <string name="sort_by_add_date">Дата добавления</string>
+    <!-- Sort songs by date modified (of file) -->
+    <string name="sort_by_modified_date">Дата изменения</string>
+    <!-- Window title of settings subcategory in player UI settings about the lyrics feature -->
+    <string name="settings_lyric">Текст песни</string>
+    <!-- Settings subcategory in player UI settings about the lyrics feature. Title -->
+    <string name="settings_lyrics_configuration">Настройка текста песни</string>
+    <!-- Settings subcategory in player UI settings about the lyrics feature. Subtext -->
+    <string name="settings_lyrics_configuration_summary">Настроить отображение текста песни</string>
+    <!-- Toggle in lyrics settings to make all lyrics bold. Title -->
+    <string name="settings_lyrics_bold">Жирный текст песни</string>
+    <!-- Toggle in lyrics settings to make all lyrics bold. Subtext -->
+    <string name="settings_lyrics_bold_summary">Использовать более жирное начертание для текста песни</string>
+    <!-- Toggle in lyrics settings to make all lyrics display in center instead of left. Title -->
+    <string name="settings_lyrics_center">Выравнивание по центру</string>
+    <!-- Toggle in lyrics settings to make all lyrics display in center instead of left. Subtitle -->
+    <string name="settings_lyrics_center_summary">Выравнивать текст песни по центру</string>
+    <!-- Toggle in behavior settings to make app start playing music when opening it. Title -->
+    <string name="settings_play_on_launch">Воспроизведение при запуске</string>
+    <!-- Toggle in behavior settings to make app start playing music when opening it. Subtitle -->
+    <string name="settings_play_on_launch_summary">Начинать воспроизведение при запуске приложения</string>
+    <!-- Window title of submenu in behavior settings to exclude songs that are in specific folders -->
+    <string name="settings_blacklist">Чёрный список</string>
+    <!-- Toggle in behavior settings to exclude songs that are in specific folders. Subtext -->
+    <string name="settings_blacklist_folder_summary">Исключать треки из определённых папок</string>
+    <!-- Toggle in behavior settings to exclude songs that are in specific folders. Title -->
+    <string name="settings_blacklist_folder">Папки в чёрном списке</string>
+    <!-- Used in about screen to show basic info about app (version, APK source, etc) -->
+    <string name="settings_category_basic_info">Основные сведения</string>
+    <!-- Settings category label for misc -->
+    <string name="settings_category_misc">Разное</string>
+    <!-- Settings category label for filtering songs (blacklist and minimum length) -->
+    <string name="settings_category_filters">Фильтры</string>
+    <!-- Settings category label for appearance settings that apply to whole app -->
+    <string name="settings_preference_category_application">Приложение</string>
+    <!-- Settings category label for player UI settings that apply to full player (display current song) -->
+    <string name="settings_category_full_player">Полный плеер</string>
+    <!-- Only used for debugging, not generally user visible -->
+    <string name="settings_crash_application">Вызвать сбой приложения</string>
+    <!-- Only used for debugging, not generally user visible -->
+    <string name="settings_crash_application_summary">Crash-O-Matic 3000</string>
+    <!-- Shown next to song's album cover in detail UI -->
+    <string name="album_cover">Обложка альбома</string>
+    <!-- Context menu item to edit song metadata (currently disabled) -->
+    <string name="dialog_edit_metadata">Изменить</string>
+    <!-- Accessibility tooltip for lyrics button in full player -->
+    <string name="dialog_lyrics">Текст песни</string>
+    <!-- Error message when deleting song upon user request failed unexpectedly -->
+    <string name="delete_failed">Не удалось удалить трек: %s</string>
+    <!-- Error message when deleting playlist upon user request failed unexpectedly -->
+    <string name="delete_failed_playlist">Не удалось удалить плейлист: %s</string>
+    <!-- Settings toggle to use photos permission to read jpg files as album cover. Title -->
+    <string name="album_covers_enhance">Улучшенная загрузка обложек</string>
+    <!-- Settings toggle to use photos permission to read jpg files as album cover. Subtext -->
+    <string name="album_covers_enhance_desc">Показывать обложки треков в высоком качестве и разрешить разные обложки для альбома и трека (требуется доступ к фото)</string>
+    <!-- Ask the user to deny this permission in system settings -->
+    <string name="deny_images"><![CDATA[Отклоните разрешение \"Фото и видео\"]]></string>
+    <!-- Ask the user to grant this permission in system settings -->
+    <string name="grant_images"><![CDATA[Предоставьте разрешение \"Фото и видео\"]]></string>
+    <!-- Ask the user to grant this permission in system settings -->
+    <string name="grant_audio"><![CDATA[Предоставьте разрешение \"Музыка и аудио\"]]></string>
+    <!-- When app crashes, this is shown as toast to notify user that crash logs are copied -->
+    <string name="crash_clipboard">Журнал сбоя скопирован в буфер обмена</string>
+    <string name="crash_thread">Поток</string>
+    <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Title -->
+    <string name="settings_trim_lyrics">Удалять пробелы вокруг текста песни</string>
+    <!-- Tooltip and dialog title for sleep timer in full player -->
+    <string name="timer">Таймер сна</string>
+    <!-- Tooltip and dialog title for playback speed in full player -->
+    <string name="playback_speed">Скорость воспроизведения</string>
+    <!-- Used in playback speed dialog to control speed / tempo, next to slider -->
+    <string name="tempo">Темп</string>
+    <!-- Used in playback speed dialog to control pitch, next to slider -->
+    <string name="pitch">Тон</string>
+    <!-- Ex: "Tempo: 2.00" for double speed -->
+    <string name="tempo_pitch_value">%s: %.2fx</string>
+    <!-- Used in playback speed dialog to ensure tempo and pitch stay the same, check box label -->
+    <string name="lock_tempo_pitch">Связать темп и тон</string>
+    <!-- Used in playback speed to restore default tempo and pitch -->
+    <string name="reset">Сбросить</string>
+    <!-- Accessibility tooltip for queue button showing which songs are playing next and before -->
+    <string name="current_playlist">Текущий плейлист</string>
+    <!-- Error notification when app is closed but user wants to play music and system denied it. Title -->
+    <string name="fgs_failed_title">Не удалось возобновить воспроизведение</string>
+    <!-- Error notification when app is closed but user wants to play music and system denied it. Subtext -->
+    <string name="fgs_failed_text">Нажмите здесь, чтобы открыть приложение и продолжить воспроизведение</string>
+    <!-- Notification channel name for error notifications -->
+    <string name="fgs_failed_channel">Не удалось возобновить воспроизведение</string>
+    <!-- Sort songs/albums/etc by release date -->
+    <string name="sort_by_release_date">Дата выхода</string>
+    <!-- Ex: "Sleep timer will pause music at 10:00 PM", shown to user in dialog and as tooltip -->
+    <string name="timer_expiry">Таймер сна поставит музыку на паузу в %s</string>
+    <!-- Ex: "Sleep timer will pause music when song playing at 10:00 PM ends", that is, it will
+    first wait until it's 10:00 PM, and then it will check which song is playing. Once the song is
+    over, music will be paused. Shown to user as tooltip only -->
+    <string name="timer_expiry_eos">Таймер сна поставит музыку на паузу, когда закончится трек, играющий в %s</string>
+    <!-- Shown to user in dialog and as tooltip -->
+    <string name="timer_expiry_end_of_this_song">Таймер сна поставит музыку на паузу в конце этого трека</string>
+    <!-- Settings category label for appearance settings that apply to home screen with tabs -->
+    <string name="settings_preference_category_home">Главный экран</string>
+    <!-- Choose order of tabs in appearance settings. Title -->
+    <string name="tab_order">Настроить порядок вкладок</string>
+    <!-- Choose order of tabs in appearance settings. Subtext -->
+    <string name="tab_order_summary">При запуске приложение откроет первую вкладку. Вкладки после разделителя будут скрыты.</string>
+    <!-- Accessibility label for seek bar in settings -->
+    <string name="seekbar">Полоса перемотки</string>
+    <!-- Accessibility label for divider which is semantically important in tab order dialog -->
+    <string name="divider">Разделитель</string>
+    <!-- Tooltip for back button -->
+    <string name="back">Назад</string>
+    <!-- Tooltip for button which plays every song in the list -->
+    <string name="play_all">Воспроизвести все</string>
+    <!-- Tooltip for button which plays every song in the list in random order -->
+    <string name="shuffle_all">Перемешать все</string>
+    <!-- Tooltip for sort option button in song list -->
+    <string name="sort">Сортировка</string>
+    <!-- Tooltip for scroll button in artist page, which has both albums and songs -->
+    <string name="scroll_to_albums">Перейти к альбомам</string>
+    <!-- Tooltip for scroll button in artist page, which has both albums and songs -->
+    <string name="scroll_to_songs">Перейти к трекам</string>
+    <!-- Tooltip for play button in full player -->
+    <string name="play">Воспроизвести</string>
+    <!-- Tooltip for three dots button opening context menu -->
+    <string name="more">Ещё</string>
+    <!-- Tooltip for x button removing song from queue/playlist -->
+    <string name="remove">Убрать</string>
+    <!-- Tooltip for skip to next button in full player -->
+    <string name="skip_next">Следующий трек</string>
+    <!-- Tooltip for button to close full player and return to song list -->
+    <string name="expand_less">Закрыть</string>
+    <!-- Tooltip for skip to previous button in full player -->
+    <string name="skip_previous">Предыдущий трек</string>
+    <!-- Accessibility label for seek bar to control song position -->
+    <string name="position_slider">Ползунок позиции</string>
+    <!-- Settings toggle to enable newer lyrics rendering code. Title -->
+    <string name="settings_lyrics_ui">Включить новый интерфейс текста песни</string>
+    <!-- Settings toggle to enable newer lyrics rendering code. Subtext -->
+    <string name="settings_lyrics_ui_summary">Экспериментальный интерфейс для показа текста по словам с расширенными возможностями</string>
+    <!-- Settings toggle to enable showing lyrics in status bar (requires meizu phone). Title -->
+    <string name="settings_status_bar_lyrics_title">Текст песни в строке состояния</string>
+    <!-- Settings toggle to enable showing lyrics in status bar (requires meizu phone). Subtext -->
+    <string name="settings_status_bar_lyrics_summary">Включить метод MeiZu для показа текста песни в строке состояния (доступно только на некоторых устройствах)</string>
+    <!-- Description shown about lyric widget in Android launcher / home screen's widget selector on Android 12+ -->
+    <string name="lyric_widget_description">Виджет с текстом песни, которая играет сейчас</string>
+    <!-- Context menu item to delete song/album/playlist -->
+    <string name="delete">Удалить</string>
+    <!-- Dialog text to confirm user wants to delete a specific song or playlist with user defined name -->
+    <string name="delete_really">Действительно удалить \"%s\"? Это действие нельзя отменить.</string>
+    <!-- Dialog text to confirm user wants to delete all songs by an artist -->
+    <string name="delete_really_artist">Действительно удалить все треки исполнителя \"%s\"? Это действие нельзя отменить.</string>
+    <!-- Used in dialog as positive action -->
+    <string name="yes">Да</string>
+    <!-- Used in dialog as negative action -->
+    <string name="no">Нет</string>
+    <!-- Sort songs/albums/etc by file path (used when user added numbering to file names) -->
+    <string name="sort_by_file_path">Путь к файлу</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_mono">Моно</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_stereo">Стерео</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_quad">Квадро</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_surround">Объёмный (4.0)</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1_surround">Surround (7.1)</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1">5.1</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_6point1">6.1</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1point2">5.1.2</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1point4">5.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1point2">7.1.2</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1point4">7.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_9point1point4">9.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_9point1point6">9.1.6</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_left">Фронтальный левый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_right">Фронтальный правый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_center">Фронтальный центральный</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_low_frequency">Низкие частоты</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_left">Тыловой левый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_right">Тыловой правый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_left_of_center">Фронтальный слева от центра</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_right_of_center">Фронтальный справа от центра</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_center">Тыловой центральный</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_side_left">Боковой левый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_side_right">Боковой правый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_center">Верхний центральный</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_left">Верхний фронтальный левый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_center">Верхний фронтальный центральный</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_right">Верхний фронтальный правый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_invalid">Недопустимо</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_left">Верхний тыловой левый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_center">Верхний тыловой центральный</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_right">Верхний тыловой правый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_side_left">Верхний боковой левый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_side_right">Верхний боковой правый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_left">Нижний фронтальный левый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_center">Нижний фронтальный центральный</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_right">Нижний фронтальный правый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_low_frequency_2">Низкие частоты 2</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_wide_left">Фронтальный широкий левый</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_wide_right">Фронтальный широкий правый</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_invalid">Недопустимо</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_8bit">8-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit">16-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit_big_endian">16-bit PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit">24-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit_big_endian">24-bit PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_32bit">32-bit (int) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_32bit_big_endian">32-bit (int) PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_float">32-bit (float) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mp3">MP3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_lc">AAC-LC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_he_v1">HE-AAC v1</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_he_v2">HE-AAC v2</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_xhe">xHE-AAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_eld">AAC-ELD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_er_bsac">AAC ER BSAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ac3">AC-3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_e_ac3">E-AC-3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_e_ac3_joc">E-AC-3-JOC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ac4">AC-4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts">DTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_hd">DTS-HD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dolby_truehd">Dolby TrueHD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_opus">Opus</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_uhd_p2">DTS-X</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_bluetooth_a2dp">Bluetooth A2DP</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_builtin_speaker">Встроенный динамик</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_wired_headset">Проводная гарнитура</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_wired_headphones">Проводные наушники</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi">HDMI</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_device">USB-устройство</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_accessory">USB-аксессуар</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock">Док-станция</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_headset">USB-гарнитура</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hearing_aid">Слуховой аппарат</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_headset">Гарнитура Bluetooth LE</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi_arc">Обратный аудиоканал HDMI</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi_earc">Улучшенный обратный аудиоканал HDMI</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_unknown">Неизвестно</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock_digital">Цифровая док-станция</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock_analog">Аналоговая док-станция</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_aux_line">Линия AUX</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_line_analog">Аналоговая линия</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_line_digital">Цифровая линия</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_speaker">Динамик Bluetooth LE</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_broadcast">Трансляция Bluetooth LE</string>
+    <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
+    <string name="open_in_music_downloader">Открыть в Music Downloader</string>
+    <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
+    <string name="settings_trim_lyrics_summary">Пробелы перед первой буквой или в конце строки текста песни могут иметь художественную ценность. Если вы не согласны, включите этот параметр, чтобы удалять их автоматически.</string>
+    <!-- Error message if file can't be played for any reason -->
+    <string name="cannot_play_file">Не удаётся воспроизвести этот файл</string>
+    <!-- Settings toggle in lyrics UI to disable animations in lyrics. Title -->
+    <string name="settings_lyrics_no_animation">Отключить анимации</string>
+    <!-- Settings toggle in lyrics UI to disable animations in lyrics. Subtext -->
+    <string name="settings_lyrics_no_animation_summary">Отключить все анимации перехода между строками текста песни</string>
+    <!-- Shown next to song's bit rate (like "128 kbps") in detail UI -->
+    <string name="dialog_bitrate">Битрейт</string>
+    <!-- Showing the song's bit rate (like "128 kbps") in detail UI -->
+    <string name="bitrate_format">%1$d кбит/с</string>
+    <!-- Showing the song's bit rate in detail UI if it can't be determined -->
+    <string name="bitrate_unknown">Битрейт неизвестен</string>
+
+    <!-- Title of crash report screen -->
+    <string name="oh_no">О нет!</string>
+    <!-- Explainer of crash report screen -->
+    <string name="music_downloader_crashed_explainer2">Music Downloader аварийно завершился :(\n\nПожалуйста, отправьте мне отчёт об ошибке, чтобы такие проблемы можно было исправить!\n\nКаждая ситуация уникальна, как и музыка, — без вашей помощи эта ошибка, скорее всего, <b>НЕ</b> будет исправлена!</string>
+    <!-- Positive action button in crash report screen -->
+    <string name="send_email">Отправить письмо</string>
+    <!-- Error message if sending crash report failed -->
+    <string name="send_email_manually">Отправьте журнал на nift4dev@gmail.com — почтовое приложение не найдено</string>
+    <!-- Error message if lyrics were found but are corrupted or in unsupported format -->
+    <string name="failed_to_parse_lyric">Не удалось разобрать текст песни</string>
+    <!-- Title of dialog which shows playback path (formats, sample rates, devices, changes in those). -->
+    <string name="audio_signal_chain">Аудиотракт</string>
+    <!-- Error message of dialog which shows playback path if no data is available -->
+    <string name="audio_not_initialized">Система воспроизведения звука не инициализирована. Попробуйте что-нибудь включить!</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_none">Нет</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_bit_perfect">Bit perfect</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_ultrasound">Ультразвук</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_spatializer">Spatializer</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_gapless_offload">Gapless offload</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_incall_music">Музыка во время звонка</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_voip_rx">VoIP RX</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_mmap_noirq">MMAP (без IRQ)</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_direct_pcm">Прямой PCM</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_iec958_nonaudio">IEC 958 (не аудио)</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_sync">Sync</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_raw">Raw</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_tts">TTS</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_hw_av_sync">Аппаратная синхронизация A/V</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_non_blocking">Неблокирующий</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_compress_offload">Compressed offload</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_deep_buffer">Deep buffer</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_fast">Fast</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_primary">Основной выход</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_direct">Direct</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_unknown">Неизвестно</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_8_24bit">24-bit (8.24) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_wb">AMR-WB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac">AAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_vorbis">Vorbis</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_iec61937">IEC 61937</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_wb_plus">AMR-WB+</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_nb">AMR-NB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrc">EVRC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcb">EVRC-B</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcwb">EVRC WB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcnw">EVRC NW</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adif">AAC ADIF</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_wma">WMA</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_wma_pro">WMA Pro</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mp2">MPEG-2</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_qcelp">QCELP</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dsd">Direct Stream Digital</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_flac">FLAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_alac">ALAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ape">Monkey\'s Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts">AAC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_sbc">SBC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx">aptX</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_hd">aptX HD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ldac">LDAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat">Dolby MAT</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm">AAC in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_celt">CELT</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive">aptX Adaptive</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lhdc">LHDC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lhdc_ll">LLAC (LHDC-LL)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_twsp">aptX TWS+</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lc3">LC3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh">MPEG-H</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_iec60958">IEC 60958</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_uhd">DTS-UHD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dra">DRA</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive_qlea">aptX Adaptive over LE Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive_r4">aptX Adaptive R4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_hd_ma">DTS-HD Master Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_main">AAC Main</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ssr">AAC-SSR</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ltp">AAC-LTP</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_scalable">AAC Scalable</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_erlc">AAC ERLC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ld">AAC-LD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_main">AAC Main in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_lc">AAC-LC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ssr">AAC-SSR in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ltp">AAC-LTP in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_he_v1">HE-AAC v1 in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_he_v2">HE-AAC v2 in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_xhe">xHE-AAC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ld">AAC-LD in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_scalable">AAC Scalable in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_erlc">AAC-ERLC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_eld">AAC-ELD in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_lc">AAC-LC in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_he_v1">HE-AAC v1 in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_he_v2">HE-AAC v2 in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_1_0">Dolby MAT 1.0</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_2_0">Dolby MAT 2.0</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_2_1">Dolby MAT 2.1</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_bl_l3">MPEG-H Baseline Profile L3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_bl_l4">MPEG-H Baseline Profile L4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_lc_l3">MPEG-H Low Complexity L3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_lc_l4">MPEG-H Low Complexity L4</string>
+    <!-- This is used if Android uses an audio format we don't know. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_unknown">Неизвестный формат %s</string>
+    <!-- This is used if Android uses an audio format we don't know. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_unknown_d">Неизвестный формат %d</string>
+    <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
+    <string name="crash_report">Отчёт о сбое</string>
+    <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
+    <string name="what_were_you_doing">Что вы делали в Music Downloader, когда произошёл сбой? Добавьте как можно больше подробностей, чтобы повысить шансы на исправление проблемы.\n\nОбратите внимание: для отчётов об ошибках предпочтителен английский, но я постараюсь воспользоваться машинным переводом, если вы отправите отчёт на другом языке.</string>
+    <!-- Used if no email program is installed -->
+    <string name="email_clipboard">Адрес эл. почты и текст скопированы в буфер обмена</string>
+    <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
+    <string name="settings_export_logs">Экспорт журналов приложения</string>
+    <!-- Toggle in player UI settings to show sample rate, bit depth, etc in full player. Title -->
+    <string name="settings_audio_quality_info">Сведения о качестве звука</string>
+    <!-- Toggle in player UI settings to show sample rate, bit depth, etc in full player. Subtext -->
+    <string name="settings_audio_quality_info_summary">Показывать сведения о качестве и формате звука на экране плеера</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit_offload">16-bit PCM Offload</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit_offload">24-bit (8.24) PCM offload</string>
+    <!-- Toggle in lyrics settings to draw gradient animation if parent foreign-language line has
+    gradient animation but we don't have timing data for the translated line. Title -->
+    <string name="settings_translation_auto_word">Анимировать переводы автоматически</string>
+    <!-- Toggle in lyrics settings to draw gradient animation if parent foreign-language line has
+    gradient animation but we don't have timing data for the translated line. Subtext -->
+    <string name="settings_translation_auto_word_summary">Применять линейный градиент к строкам перевода при пословной синхронизации текста, если у перевода нет данных пословной синхронизации</string>
+    <!-- Error message when playing a file but it doesn't exist anymore -->
+    <string name="cannot_find_file">Не удаётся найти этот файл</string>
+    <!-- Used in crash report screen to explain what text field is about -->
+    <string name="enter_msg_for_dev_here">Введите здесь сообщение для разработчика</string>
+    <!-- Error text if user enters an email address into the field meant for message to developer in crash report screen -->
+    <string name="do_not_enter_email_enter_msg">Введите сообщение, а не адрес эл. почты</string>
+    <!-- Error text if user enters app logs into the field meant for message to developer in crash report screen -->
+    <string name="log_will_auto_send">Журналы отправятся автоматически, лучше опишите проблему</string>
+    <!-- Used in crash report screen to explain the user doesn't need to worry about sending logs -->
+    <string name="log_attachment">Журналы будут автоматически отправлены во вложении</string>
+    <!-- Tooltip of plus button in playlist list to create a new playlist. Also used in playlist
+     selection dialog after user pressed "Add to playlist" on a song. -->
+    <string name="create_playlist">Создать плейлист…</string>
+    <!-- Context menu item to rename a playlist -->
+    <string name="rename">Переименовать</string>
+    <!-- Loading message if user asked to refresh songs -->
+    <string name="refreshing_wait">Обновление, подождите…</string>
+    <!-- Loading message if user asked to refresh songs and we can show a percentage.
+    Ex: "Refreshing, step 2/3: 80%" -->
+    <string name="still_refreshing">Обновление, шаг %1$d/%2$d: %3$s</string>
+    <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
+    <string name="did_you_know">А вы знали…</string>
+    <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
+    <string name="refresh_did_you_know">Music Downloader запрашивает обновлённый список треков при каждом запуске, а во время работы также автоматически обнаруживает новые медиафайлы. Кнопка \"Обновить\" не перезагружает медиафайлы в Music Downloader, а просит систему заново просканировать все файлы на всех подключённых постоянных накопителях (поэтому это занимает некоторое время). Это значит, что, если система и другие приложения работают исправно, эта функция вам никогда не понадобится.\n\nНе хватает треков? Обязательно проверьте в разделе "Настройки > Поведение" фильтр минимальной длительности и чёрный список папок и убедитесь, что эти параметры имеют ожидаемые значения. О других возможных причинах читайте в нашем FAQ.</string>
+    <!-- Error message when renaming playlist upon user request failed unexpectedly -->
+    <string name="rename_failed_playlist">Не удалось переименовать плейлист: %s</string>
+    <!-- Text field hint used for dialog where playlist is renamed or created -->
+    <string name="playlist_name">Название плейлиста</string>
+    <!-- Error message when creating playlist upon user request failed unexpectedly -->
+    <string name="create_failed_playlist">Не удалось создать плейлист: %s</string>
+    <!-- Dialog title for entering name when renaming playlist -->
+    <string name="rename_playlist">Переименовать плейлист</string>
+    <!-- Error message when changing songs in the playlist upon user request failed unexpectedly -->
+    <string name="edit_playlist_failed">Не удалось изменить плейлист: %s</string>
+    <!-- Error message when changing songs in the special "Favourites" playlist upon user request
+    failed unexpectedly -->
+    <string name="edit_favorites_failed">Не удалось изменить избранное: %s</string>
+    <!-- Context menu item to add song to playlist -->
+    <string name="add_to_playlist">Добавить в плейлист</string>
+    <!-- Error if no internet browser is installed but user clicks a link -->
+    <string name="no_app_found">Не найдено приложение, которое может это сделать</string>
+    <!-- Shown below the lead developer's nickname in about screen -->
+    <!-- Shown below the lead designer's nickname in about screen -->
+    <!-- Shown below the original creator's nickname in about screen -->
+    <!-- Shown below other developer's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen. SongSync is an app name -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen. This is the feature they worked on -->
+    <!-- Shown below a contributor's nickname in about screen. This is the feature they worked on -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Home menu item to refresh song list quickly -->
+    <string name="home_menu_quick_refresh">Быстрое обновление</string>
+    <!-- Context menu item to add song to currently playing queue (as opposed to playlist which is
+    .m3u file) -->
+    <string name="add_to_queue">Добавить в очередь</string>
+    <!-- Three-state dialog toggle if a feature is disabled -->
+    <string name="disabled">Отключено</string>
+    <!-- Three-state dialog toggle if a feature is enabled -->
+    <string name="offload_enabled_if_supported">Всегда включено</string>
+    <!-- Three-state dialog toggle if a feature is conditionally enabled -->
+    <string name="offload_enabled_if_gapless">Включено, если возможно воспроизведение без пауз</string>
+    <!-- Dialog title for audio offload feature. Offload is a technical term -->
+    <string name="settings_audio_offload">Аудиоразгрузка (экономит батарею)</string>
+    <!-- Shown above the link to our group in about screen -->
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
+    <!-- Player UI toggle to enable animated shape similar to a cookie for album cover. Subtext -->
+    <string name="settings_cookie_summary">Придать обложке альбома форму печенья</string>
+    <!-- Player UI toggle to enable animated shape similar to a cookie for album cover. Title -->
+    <string name="settings_cookie_info">Обложка-печенье</string>
+    <!-- Appearance toggle to replace gray color with black in app UI. Title -->
+    <string name="settings_pure_dark">Чисто тёмная тема</string>
+    <!-- Appearance toggle to replace gray color with black in app UI. Subtext -->
+    <string name="settings_pure_dark_summary">Тема, в которой все поверхности приложения полностью чёрные (может вызывать провал в чёрном на OLED-экранах)</string>
+    <!-- Behavior toggle to stop playing music when closing the app in "Recent apps" of Android system. Title -->
+    <string name="settings_stop_on_dismiss">Останавливать при закрытии</string>
+    <!-- Behavior toggle to stop playing music when closing the app in "Recent apps" of Android system. Subtext -->
+    <string name="settings_stop_on_dismiss_summary">Останавливать воспроизведение, когда приложение убирают из недавних</string>
+    <!-- Display style where songs/albums/etc are displayed as grid, but smaller -->
+    <string name="compact_grid">Сетка (компактная)</string>
+    <!-- Sort songs/albums/etc by the album's release year -->
+    <string name="sort_by_album_year">Год альбома</string>
+    <!-- Sort songs by the album artist, and then the album's release year -->
+    <string name="sort_by_album_artist_year"><![CDATA[Исполнитель альбома -> год]]></string>
+    <!-- Error in renaming playlist dialog when an letter is used which isn't supported by FAT32 -->
+    <string name="forbidden_symbol_error">Недопустимый символ в названии</string>
+    <!-- Used in about screen to credit every translator with their Weblate display name -->
+    <string name="translators">Переводчики</string>
+    <!-- Used in audio settings, this is a technical/"brand" name for an interoperable audio
+    loudness normalization feature established since 2002 -->
+    <string name="settings_replaygain">ReplayGain</string>
+    <!-- Change the ReplayGain (this is a technical/"brand" name for an interoperable audio loudness
+    normalization feature established since 2002) mode between off, Preserve album dynamics, All
+    tracks equal loudness and Smart -->
+    <string name="settings_replaygain_mode">Режим</string>
+    <!-- Change the pre-amplification (to amplify: to increase the strength of a sound; make louder)
+    of music which has ReplayGain tags. Title. Also explained more below -->
+    <string name="settings_replaygain_preamp">Предусиление</string>
+    <!-- Change the pre-attenuation (to attenuate: to make something less or weaker) of music which
+    has no ReplayGain tags. Title. Also explained more below -->
+    <string name="settings_replaygain_no_rg_amp">Ослабление (без RG)</string>
+    <!-- Title for Boost feature in Audio menu which is explained more below -->
+    <string name="settings_replaygain_boost">Boost</string>
+    <!-- Title for DRC feature in ReplayGain menu which is explained more below -->
+    <string name="settings_replaygain_drc">Включить DRC</string>
+    <!-- Explanation for DRC feature in ReplayGain menu. DRC is a technical term -->
+    <string name="settings_replaygain_drc_desc">Использовать \"сжатие динамического диапазона\" как защиту от клиппинга (рекомендуется). Если отключить, вместо этого будет снижена громкость (громкость перестанет быть одинаковой, что сведёт нормализацию на нет).</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="track_gain">Одинаковая громкость всех треков</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="album_gain">Сохранять динамику альбома</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="smart">Умный</string>
+    <!-- Tooltip of button in queue menu which will automatically scroll to playing song -->
+    <string name="scroll_to_playing">Перейти к играющему треку</string>
+    <!-- Text in queue which shows how much time is remaning. Ex "01:20:00 remaining, 02:00:00 total"
+    for a two-hour-long queue after 40 minutes already passed. -->
+    <string name="duration_queue">Осталось %s, всего %s</string>
+    <!-- Unit decibels for loudness, used in audio and ReplayGain settings -->
+    <string name="d_db">%d дБ</string>
+    <!-- Detailed explanation for Boost feature in Audio settings -->
+    <string name="settings_replaygain_boost_desc" formatted="false">"\"Boost\" будет выводить и ReplayGain, и остальную музыку громче, чем задано на устройстве. (Если громкость устройства близка к 100%, Boost её не увеличит.) С Boost музыка звучит примерно так же громко, как в других приложениях, например в играх. Учтите, что функция экспериментальная и может конфликтовать с внешними эквалайзерами. Boost не работает с Bluetooth-наушниками. При любых проблемах с громкостью отключите Boost, установив 0 дБ. "</string>
+    <!-- Detailed explanation for "Attenuation (no RG)" feature in ReplayGain settings -->
+    <string name="settings_replaygain_no_rg_amp_desc">Снижать громкость громких треков без тегов ReplayGain</string>
+    <!-- Detailed explanation for "Pre amp" feature in ReplayGain settings -->
+    <string name="settings_replaygain_preamp_desc">Увеличивать или уменьшать громкость треков с тегами ReplayGain. Высокие значения могут привести к потере динамики из-за защиты от клиппинга.</string>
+    <!-- Detailed explanation for "Smart" mode in ReplayGain settings -->
+    <string name="settings_replaygain_mode_desc">Режим \"Умный\" сохраняет динамику альбома автоматически, только когда треки одного альбома играют подряд.</string>
+    <!-- Sort songs by the artist, and then the song's release year -->
+    <string name="sort_by_artist_year"><![CDATA[Исполнитель -> год]]></string>
+    <!-- Empty the queue and stop playing music. Next to trash can swipe icon -->
+    <string name="clear_queue">Очистить очередь</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_shuffle_all_songs">перемешать все треки</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_shuffle_everything">перемешать всё</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_random_songs">включить случайные треки</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_random_stuff">включить что-нибудь случайное</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_randomly">включить в случайном порядке</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_start_random_music">запустить случайную музыку</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_start_random_songs">запустить случайные треки</string>
+    <!-- Google Assistant / voice assistant phrase with song name placeholder -->
+    <string name="actions_query_shuffle_specific">перемешать $item_name</string>
+    <!-- Tooltip for heart button -->
+    <string name="favorite">Избранное</string>
+    <!-- Error notification when user tries to change favourite status of song while the app is in
+    background but we must ask for permission to write the special playlist file. Title -->
+    <string name="favorite_failed_title">Не удалось изменить статус избранного для трека</string>
+    <!-- Error notification when user tries to change favourite status of song while the app is in
+    background but we must ask for permission to write the special playlist file. Subtext -->
+    <string name="favorite_failed_text">Нажмите здесь, чтобы применить изменения, предоставив доступ к файлу плейлиста избранного</string>
+    <!-- Notification channel for errors while the app is closed -->
+    <string name="error_in_bg">Ошибки в фоновом режиме</string>
+    <!-- Tab in blacklist menu in behavior settings for configuring whitelist -->
+    <string name="settings_whitelist">Белый список</string>
+    <!-- Explaining how whitelist and blacklist interact as info box to the user -->
+    <string name="whitelist_and_blacklist">Если в белом списке не выбрана ни одна папка, разрешены все папки.\n\nБелый и чёрный списки применяются вместе, приоритет у чёрного списка. Например, вы можете разрешить папку в белом списке и при этом исключить одну из её подпапок в чёрном списке.</string>
+    <!-- Ask the user if they really want to delete the changes they made in the playlist editor and
+    restore playlist to state before they started editing. Dialog title -->
+    <string name="discard_changes_title">Отменить изменения?</string>
+    <!-- Dialog action if changes are NOT discarded, but saved -->
+    <string name="save">Сохранить</string>
+    <!-- Dialog action if changes are discarded, and NOT saved -->
+    <string name="discard">Отменить</string>
+    <!-- Ask the user if they really want to delete the changes they made in the playlist editor and
+    restore playlist to state before they started editing. Dialog text -->
+    <string name="discard_changes_msg">Действительно отменить изменения в плейлисте \"%s\"?</string>
+    <!-- Tooltip for apply/save button in playlist editor -->
+    <string name="apply">Применить</string>
+    <!-- Ask the user if they want to restore the changes they made in the playlist editor but
+    didn't quit properly (maybe the app crashed, phone battery died, etc). If not restoring, the
+    editor will contain current state of playlist. Dialog title -->
+    <string name="restore_edits">Восстановить изменения?</string>
+    <!-- Ask the user if they want to restore the changes they made in the playlist editor but
+    didn't quit properly (maybe the app crashed, phone battery died, etc). If not restoring, the
+    editor will contain current state of playlist. Dialog text -->
+    <string name="restore_edits_msg">Для плейлиста \"%s\" есть несохранённые изменения. Восстановить их или отменить и начать заново с текущей версией плейлиста?</string>
+    <!-- Dialog action if changes are restored in playlist editor -->
+    <string name="restore">Восстановить</string>
+    <!-- On old Android devices that don't have internal storage, it may happen that there is no
+    storage at all. Storage is required to edit playlists, so ask user to insert SD card. -->
+    <string name="mount_storage">Вставьте SD-карту, чтобы использовать эту функцию</string>
+    <!-- Error message when changes unexpectedly failed to restore -->
+    <string name="failed_to_restore">Не удалось восстановить изменения: %s</string>
+    <!-- Dialog title when user opens playlist editor but playlist is empty, because playlist editor
+    isn't used to add new songs but only to move or delete them. Hint user at proper way. -->
+    <string name="playlist_empty">Плейлист пуст</string>
+    <!-- Dialog text when user opens playlist editor but playlist is empty, because playlist editor
+    isn't used to add new songs but only to move or delete them. Hint user at proper way. -->
+    <string name="playlist_empty_msg">Добавьте треки, нажав \"Добавить в плейлист\" в меню из трёх точек у трека.</string>
+    <!-- In system settings of old Android versions, you can check Music Downloader in the list of apps
+    supporting local search. This string explains what can be searched when doing so -->
+    <string name="search_desc">Исполнители, альбомы и треки</string>
+    <!-- In system settings of old Android versions, you can check Music Downloader in the list of apps
+supporting local search. This string is displayed in the search bar when using Music Downloader as search -->
+    <string name="search_hint">Поиск треков и исполнителей</string>
+    <!-- Shown in system's file upload dialog, used by browsers or similar, to allow user to choose
+     a song using the familiar Music Downloader user interface. App icon is next to it -->
+    <string name="picker_activity">Выберите музыкальный трек</string>
+    <!-- Shown in system's file upload dialog, used by browsers or similar, to allow user to choose
+     a playlist using the familiar Music Downloader user interface. App icon is next to it -->
+    <string name="playlist_picker_activity">Выберите плейлист</string>
+    <!-- Settings category in appearance settings relating to specific tabs on home page -->
+    <string name="settings_preference_category_folders_filesystem"><![CDATA[Вкладки папок и файловой системы]]></string>
+    <!-- Toggle in the "folder & filesystem tabs" category in appearance settings. Title -->
+    <string name="show_file_names">Показывать имена файлов</string>
+    <!-- Toggle in the "folder & filesystem tabs" category in appearance settings. Subtext -->
+    <string name="show_file_names_summary">Показывать имена файлов вместо названий треков на вкладках папок и файловой системы</string>
+    <!-- Error if trying to rename/create playlist but the name is already used by some other playlist -->
+    <string name="another_with_name">Такое название уже используется</string>
+    <!-- Slider in lyric settings to change font size for lyrics -->
+    <string name="settings_font_size">Размер шрифта</string>
+    <!-- Positive dialog action in sleep timer dialog to store the settings -->
+    <string name="set">Установить</string>
+    <!-- Check box in sleep timer dialog to only pause at end of song -->
+    <string name="timer_eos">Дождаться конца трека</string>
+    <!-- Option in sleep timer dialog to pause music when current song ends -->
+    <string name="timer_end_of_this_song">Конец этого трека</string>
+    <!-- Option in sleep timer dialog to pause music after custom amount of minutes instead of one
+    of the presets -->
+    <string name="other">Свой вариант</string>
+    <!-- Negative dialog action in sleep timer dialog if there's already a sleep timer set, and the
+    dialog shows the current settings. User can click OK to keep them or Unset to disable sleep timer. -->
+    <string name="unset">Отключить</string>
+    <!-- Hint in number input field when using custom minutes amount in sleep timer dialog -->
+    <string name="timer_hint">Через сколько минут поставить на паузу…</string>
+
+    <!-- Settings toggle in experimental to enable advanced workflow across the app, allowing to
+    have multiple queues -->
+    <string name="settings_mq_enabled">Несколько очередей</string>
+    <!-- Unpin this queue and allow it to be removed after some period of time -->
+    <string name="mq_unpin_queue">Открепить очередь</string>
+    <!-- Pin this queue so it does not get automatically removed after some period of time -->
+    <string name="mq_pin_queue">Закрепить очередь</string>
+    <string name="shuffled">%s (перемешано)</string>
+    <string name="loading_playlists">Загрузка плейлистов...</string>
+    <!-- Exit-app confirmation bottom sheet (shown on back press from the navigation root) -->
+    <string name="exit_app">Выйти из приложения</string>
+    <string name="are_you_sure_you_want_to_exit_app">Действительно выйти из приложения?</string>
+    <string name="exit">Выйти</string>
+    <string name="action_cancel">Отмена</string>
+    <!-- Feedback screen (opened from Settings) -->
+    <string name="settings_feedback">Обратная связь</string>
+    <string name="settings_feedback_summary">Расскажите нам о возникших проблемах</string>
+    <string name="feedback_amp_help"><![CDATA[Обратная связь и помощь]]></string>
+    <string name="tell_us_the_problem_you_encountered">Расскажите нам о возникшей проблеме</string>
+    <string name="some_songs_are_not_displayed">Некоторые треки не отображаются</string>
+    <string name="bugs">Ошибки</string>
+    <string name="too_many_ads">Слишком много рекламы</string>
+    <string name="music_stop_playing">Музыка перестаёт играть</string>
+    <string name="suggestion">Предложение</string>
+    <string name="others">Другое</string>
+    <string name="submit">Отправить</string>
+    <string name="please_tell_us_more_details">Опишите подробнее, чтобы мы быстрее нашли и решили вашу проблему (не менее 6 символов)</string>
+    <string name="you_have_not_filled_in_your_feedback_yet">Вы ещё не заполнили отзыв</string>
+    <string name="thank_for_your_feedback">Спасибо за ваш отзыв!</string>
+    <string name="we_will_try_our_best_to_improve_it">Мы приложим все усилия, чтобы стать лучше</string>
+    <string name="ok">ОК</string>
+    <!-- Rate app bottom sheet flow -->
+    <string name="image">Изображение</string>
+    <string name="satisfied">Вам нравится это приложение?</string>
+    <string name="good">Хорошо</string>
+    <string name="not_really">Не очень</string>
+    <string name="rate">Оценить</string>
+    <string name="rate_app_title">Мы усердно работаем над тем, чтобы вам было удобнее.\nБудем очень признательны за вашу оценку.</string>
+    <string name="rate_app_title_1">О нет!\nПожалуйста, оставьте нам отзыв.</string>
+    <string name="rate_app_title_4">Вы нам тоже нравитесь!\nСпасибо за ваш отзыв.</string>
+
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="privacy_policy_summary">Как мы собираем и используем ваши данные</string>
+
+</resources>

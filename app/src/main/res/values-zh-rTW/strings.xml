@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
+    <string name="app_name">Music Downloader</string>
+    <string name="ads_loading">正在載入廣告…</string>
+    <string name="splash_tagline">你的離線音樂播放器</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_search">搜尋</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_settings">設定</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_shuffle">隨機播放全部</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_refresh">重新整理</string>
+    <!-- Tab on home screen showing a list of songs -->
+    <string name="category_home">首頁</string>
+    <string name="home_search_hint">搜尋你的音樂</string>
+    <string name="home_online_search">線上搜尋</string>
+    <string name="home_online_search_subtitle">探索並聆聽數百萬首歌曲</string>
+    <string name="online_search_hint">線上搜尋歌曲</string>
+    <string name="online_search_empty">找不到結果。請換個關鍵字試試。</string>
+    <string name="online_search_error">發生錯誤，請再試一次。</string>
+    <string name="turn_off_vpn_proxy">請關閉 VPN 或 Proxy，應用程式才能正常運作。</string>
+    <string name="online_download">下載</string>
+    <string name="online_download_started">已開始下載</string>
+    <string name="online_loading">正在載入…</string>
+    <!-- giga download engine -->
+    <string name="downloading">正在下載</string>
+    <string name="merging">正在合併…</string>
+    <string name="download_successfully">已下載</string>
+    <string name="download_error">下載失敗</string>
+    <string name="no_space_left_on_device">裝置儲存空間不足</string>
+    <string name="no_internet">沒有網際網路連線</string>
+    <string name="song_link_expired_download">連結已過期，請重新嘗試下載</string>
+    <string name="song_link_expired_play">連結已過期，請重新嘗試播放</string>
+    <string name="downloads_title">下載</string>
+    <string name="downloads_empty">尚未下載任何歌曲</string>
+    <string name="copyright_restrictions_title">受版權限制</string>
+    <string name="copyright_restrictions_message">由於版權限制，無法下載這首歌曲。</string>
+    <string name="home_songs_count">%1$d 首歌曲</string>
+    <string name="home_downloaded">已下載</string>
+    <string name="home_sleep_timer">睡眠計時器</string>
+    <string name="home_on">已開啟</string>
+    <string name="home_off">已關閉</string>
+    <string name="home_minutes">%1$d 分鐘</string>
+    <string name="home_end_of_song">目前歌曲結束時</string>
+    <string name="home_rate_app">為應用程式評分</string>
+    <string name="home_rate_app_subtitle">喜歡這個應用程式嗎？</string>
+    <string name="home_settings">設定</string>
+    <string name="home_settings_subtitle">支持我們</string>
+    <string name="category_songs">歌曲</string>
+    <!-- Tab on home screen showing a list of albums -->
+    <string name="category_albums">專輯</string>
+    <!-- Tab on home screen showing a list of artists -->
+    <string name="category_artists">演出者</string>
+    <!-- Tab on home screen showing a list of genres -->
+    <string name="category_genres">類型</string>
+    <!-- Tab on home screen showing a list of playlists -->
+    <string name="category_playlists">播放清單</string>
+    <!-- Used in place of the artist name if the artist can't be found unexpectedly -->
+    <string name="unknown_artist">不明的演出者</string>
+    <!-- Tab on home screen showing a list of years (2002, 2003, etc.) -->
+    <string name="category_dates">年份</string>
+
+    <!-- Color theme option: use dark/light setting of system -->
+    <string name="follow_system">跟隨系統</string>
+    <!-- Color theme option: use dark colors -->
+    <string name="dark">深色</string>
+    <!-- Color theme option: use light colors -->
+    <string name="light">淺色</string>
+    <!-- Sort albums/playlists/etc by size (how many songs are in there) -->
+    <string name="sort_by_size">數量</string>
+    <!-- Sort songs/albums/etc by name (A-Z) -->
+    <string name="sort_by_name">名稱</string>
+    <!-- Sort songs/albums/etc by artist (A-Z) -->
+    <string name="sort_by_artist">演出者</string>
+    <!-- Sort songs by album's name (A-Z) -->
+    <string name="sort_by_album">專輯</string>
+    <!-- Sort songs by album artist's name (A-Z), then song's name (A-Z) -->
+    <string name="sort_by_album_artist">專輯演出者 -> 標題</string>
+    <!-- Make message (snackbar / dialog) go away -->
+    <string name="dismiss">關閉</string>
+    <!-- Used in place of the genre name if the genre can't be found unexpectedly -->
+    <string name="unknown_genre">不明的類型</string>
+    <!-- Used in place of the year if the year can't be found unexpectedly -->
+    <string name="unknown_year">不明的年份</string>
+    <!-- Used in snack bar after song list was reloaded on user request -->
+    <string name="refreshed_songs">已重新整理 %1$d 首歌曲</string>
+    <!-- Hint of text field for search -->
+    <string name="search">搜尋</string>
+    <!-- Used to name the list of songs resulting from a search -->
+    <string name="search_query">搜尋：%s</string>
+    <!-- Share a song's file with some other app -->
+    <string name="share">分享</string>
+    <!-- Displayed above app name -->
+    <string name="settings_app_name">應用程式名稱</string>
+    <!-- Clicking will open the credits screen -->
+    <!-- Play this song next, context menu item -->
+    <string name="play_next">下一首播放</string>
+    <!-- Open the album this song is in, context menu item -->
+    <string name="go_to_album">前往專輯</string>
+    <!-- Open the artist this song is in, context menu item -->
+    <string name="go_to_artist">前往演出者</string>
+    <!-- Open details of this song, context menu item -->
+    <string name="details">詳細資料</string>
+    <!-- Tooltip of shuffle clickable toggle button -->
+    <string name="shuffle">隨機播放</string>
+    <!-- Tooltip of repeat mode 3-state clickable toggle button -->
+    <string name="repeat_mode">重複模式</string>
+    <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
+    <string name="unknown_playlist">不明的播放清單</string>
+    <string name="music_downloader_crashed">當機記錄</string>
+    <string name="crash_music_downloader_version">Music Downloader 版本</string>
+    <string name="crash_phone_model">型號</string>
+    <string name="crash_phone_brand">品牌</string>
+    <string name="crash_sdk_level">SDK 級別</string>
+    <string name="crash_time">時間</string>
+    <string name="crash_rtype">發布類型</string>
+    <!-- Settings category about color scheme and other visual settings. Title -->
+    <string name="settings_category_appearance">外觀</string>
+    <!-- Used in multiple places such as sort context menu and details UI -->
+    <string name="album_artist">專輯演出者</string>
+    <!-- Fallback if app's version isn't known -->
+    <string name="unknown_version">不明的版本</string>
+    <!-- Displayed above the app version in about screen -->
+    <string name="settings_version">版本</string>
+    <!-- Shown next to song's name in detail UI -->
+    <string name="dialog_title">標題</string>
+    <!-- Shown next to song's artist's name in detail UI -->
+    <string name="dialog_artist">演出者</string>
+    <!-- Settings category about song filter, playing and other app behavior settings. Title -->
+    <string name="settings_category_behavior">行為</string>
+    <!-- Seconds slider in behavior settings to specify which length of songs is required to show up
+    in the app, intended to filter out ringtones and other short audio files that aren't music. -->
+    <string name="settings_mediastore_filter">歌曲最短長度（秒）</string>
+    <!-- Link to our GitHub repository -->
+    <!-- Shown next to song's album name in detail UI -->
+    <string name="dialog_album">專輯</string>
+    <!-- Shown next to song's genre in detail UI -->
+    <string name="dialog_genre">類型</string>
+    <!-- Shown next to song's album artist name in detail UI -->
+    <string name="dialog_album_artist">專輯演出者</string>
+    <!-- Shown next to song's track number in detail UI -->
+    <string name="dialog_track_number">音軌編號</string>
+    <!-- Shown next to song's release year in detail UI -->
+    <string name="dialog_year">年份</string>
+    <!-- Shown next to song's file path in detail UI -->
+    <string name="dialog_path">路徑</string>
+    <!-- Used in place of the album name if the album can't be found unexpectedly -->
+    <string name="unknown_album">不明的專輯</string>
+    <!-- A playlist that has songs that were recently added to this device -->
+    <string name="recently_added">最近加入</string>
+    <!-- Tab on home screen showing a flat folder list -->
+    <string name="folders">資料夾</string>
+    <!-- Color theme in appearance settings: light/dark/follow system -->
+    <string name="settings_app_theme">應用程式主題</string>
+    <!-- The sort mode if something has inherent proper order (playlist order for playlist, CD order
+    for album, etc) -->
+    <string name="natural_order">原始順序</string>
+    <!-- Display style where songs/albums/etc are displayed as grid instead of list -->
+    <string name="grid">格狀</string>
+    <!-- Display style where songs/albums/etc are displayed as list instead of grid -->
+    <string name="list">清單</string>
+    <!-- Context menu item submenu title for changing between list and grid display style -->
+    <string name="layout">顯示方式</string>
+    <!-- Menu item to open external equalizer app -->
+    <string name="home_menu_equalizer">等化器</string>
+    <!-- Error if the external equalizer app isn't installed -->
+    <string name="equalizer_not_found">找不到等化器！</string>
+    <!-- Display style where songs/albums/etc are displayed as list, but smaller -->
+    <string name="compact_list">清單（精簡）</string>
+    <!-- In about screen, link to our Telegram channel -->
+    <string name="check_for_updates">追蹤我們的頻道以取得更新！</string>
+    <!-- In player UI settings, change between wavy(Music Downloader's default) and default/modern
+    (Google's default) slider. Title -->
+    <string name="settings_default_progress_bar">預設進度列</string>
+    <!-- In player UI settings, change between wavy(Music Downloader's default) and default/modern
+    (Google's default) slider. Subtext -->
+    <string name="settings_default_progress_bar_summary">啟用 Material 樣式的進度列</string>
+
+    <!-- The name of the playlist used for showing every song where the heart was clicked -->
+    <string name="playlist_favourite">我的最愛</string>
+    <!-- Shows a list of contributors' nicknames like "someDeveloperA, someDeveloperB,
+    someDeveloperC (click for more!)" and clicking opens credits screen -->
+    <!-- Accessibility name for bars animation on a song in a list, showing this is the playling song -->
+    <string name="now_playing">正在播放</string>
+    <!-- In appearance settings, change between album based color and system wide color. Subtext -->
+    <string name="settings_content_based_color_summary">啟用依專輯封面產生色彩</string>
+    <!-- In appearance settings, change between album based color and system wide color. Title -->
+    <string name="settings_content_based_color">依內容產生的色彩</string>
+    <!-- In about screen, explain where the app APK is from (Google Play, GitHub, etc) -->
+    <string name="settings_package_type">套件類型</string>
+    <!-- Shown if user clicks on lyrics icon but the song doesn't contain any lyrics in metadata -->
+    <string name="no_lyric_found">找不到歌詞</string>
+    <!-- Shown next to song's CD number in detail UI -->
+    <string name="dialog_disc_number">光碟編號</string>
+    <!-- Used in place of the song name if the song name can't be found unexpectedly -->
+    <string name="unknown_title">不明的標題</string>
+    <!-- Tab on home screen showing a hierarchical folder list -->
+    <string name="filesystem">檔案系統</string>
+    <!-- Shown next to song's MIME type (like "audio/mpeg") in detail UI -->
+    <string name="dialog_mime">MIME 類型</string>
+    <!-- Shown next to song's duration (like "5:37") in detail UI -->
+    <string name="dialog_duration">長度</string>
+    <!-- In player UI settings, change between centered title and left-aligned title. Title -->
+    <string name="settings_title_center">標題置中</string>
+    <!-- In player UI settings, change between centered title and left-aligned title. Subtext -->
+    <string name="settings_title_center_summary">在全螢幕播放器中將標題置中</string>
+    <!-- Appearance settings for the full player which shows what's playing in fullscreen. Title -->
+    <string name="settings_player_ui">播放器介面</string>
+    <!-- Appearance settings for the full player which shows what's playing in fullscreen. Subtext -->
+    <string name="settings_player_ui_summary">全螢幕播放器介面、歌詞</string>
+    <!-- Settings category about color scheme and other visual settings. Subtext -->
+    <string name="settings_appearance_summary">應用程式外觀、主題模式</string>
+    <!-- Settings category for app credits and version. Title -->
+    <string name="settings_about_app">關於</string>
+    <!-- Settings category for app credits and version. Subtext -->
+    <string name="settings_about_music_downloader">關於應用程式</string>
+    <!-- Settings category about song filter, playing and other app behavior settings. Subtext -->
+    <string name="settings_behavior_summary">篩選、啟動行為</string>
+    <!-- Shown as category header in about app screen above GitHub and Telegram links -->
+    <string name="settings_category_links">連結</string>
+    <!-- Settings category about songs (currently disabled). Title -->
+    <string name="settings_library">媒體庫</string>
+    <!-- Settings category about songs (currently disabled). Subtext -->
+    <string name="settings_library_summary">管理媒體庫</string>
+    <!-- Settings category about audio playback. Title -->
+    <string name="settings_player_options">音訊</string>
+    <!-- Settings category about audio playback. Subtext -->
+    <string name="settings_player_options_summary">輸出品質、播放行為</string>
+    <!-- Settings category about customizing UI (currently disabled). Title -->
+    <string name="settings_customization">自訂</string>
+    <!-- Settings category about customizing UI (currently disabled). Subtext -->
+    <string name="settings_customization_summary">管理自訂選項</string>
+    <!-- Pixel slider in behavior settings to specify how round album cover's corner should be. -->
+    <string name="settings_album_round_corner">專輯封面圓角</string>
+    <!-- Toggle in player UI settings to make song name bold. Title -->
+    <string name="settings_title_bold">標題粗體</string>
+    <!-- Toggle in player UI settings to make song name bold. Subtext -->
+    <string name="settings_title_bold_summary">在全螢幕播放器中使用粗體標題</string>
+    <!-- Settings category about experimental features. Title -->
+    <string name="settings_experimental_settings">實驗性</string>
+    <!-- Settings category about experimental features. Subtext -->
+    <string name="settings_experimental_settings_summary">測試功能、其他</string>
+    <!-- Toggle which makes color detection for album cover based color use more CPU to detect the
+    color, which improves accuracy but causes some lags on old devices. Subtext -->
+    <string name="settings_color_accuracy_summary">讓色彩產生更精準</string>
+    <!-- Toggle which makes color detection for album cover based color use more CPU to detect the
+    color, which improves accuracy but causes some lags on old devices. Title -->
+    <string name="settings_color_accuracy">色彩精準度</string>
+    <!-- Sort songs by date created (of file) -->
+    <string name="sort_by_add_date">加入日期</string>
+    <!-- Sort songs by date modified (of file) -->
+    <string name="sort_by_modified_date">修改日期</string>
+    <!-- Window title of settings subcategory in player UI settings about the lyrics feature -->
+    <string name="settings_lyric">歌詞</string>
+    <!-- Settings subcategory in player UI settings about the lyrics feature. Title -->
+    <string name="settings_lyrics_configuration">歌詞設定</string>
+    <!-- Settings subcategory in player UI settings about the lyrics feature. Subtext -->
+    <string name="settings_lyrics_configuration_summary">設定歌詞外觀</string>
+    <!-- Toggle in lyrics settings to make all lyrics bold. Title -->
+    <string name="settings_lyrics_bold">歌詞粗體</string>
+    <!-- Toggle in lyrics settings to make all lyrics bold. Subtext -->
+    <string name="settings_lyrics_bold_summary">為歌詞使用較粗的字重</string>
+    <!-- Toggle in lyrics settings to make all lyrics display in center instead of left. Title -->
+    <string name="settings_lyrics_center">置中對齊</string>
+    <!-- Toggle in lyrics settings to make all lyrics display in center instead of left. Subtitle -->
+    <string name="settings_lyrics_center_summary">歌詞置中對齊</string>
+    <!-- Toggle in behavior settings to make app start playing music when opening it. Title -->
+    <string name="settings_play_on_launch">啟動時播放</string>
+    <!-- Toggle in behavior settings to make app start playing music when opening it. Subtitle -->
+    <string name="settings_play_on_launch_summary">開啟應用程式時開始播放音樂</string>
+    <!-- Window title of submenu in behavior settings to exclude songs that are in specific folders -->
+    <string name="settings_blacklist">黑名單</string>
+    <!-- Toggle in behavior settings to exclude songs that are in specific folders. Subtext -->
+    <string name="settings_blacklist_folder_summary">篩除特定資料夾中的歌曲</string>
+    <!-- Toggle in behavior settings to exclude songs that are in specific folders. Title -->
+    <string name="settings_blacklist_folder">黑名單資料夾</string>
+    <!-- Used in about screen to show basic info about app (version, APK source, etc) -->
+    <string name="settings_category_basic_info">基本資訊</string>
+    <!-- Settings category label for misc -->
+    <string name="settings_category_misc">其他</string>
+    <!-- Settings category label for filtering songs (blacklist and minimum length) -->
+    <string name="settings_category_filters">篩選</string>
+    <!-- Settings category label for appearance settings that apply to whole app -->
+    <string name="settings_preference_category_application">應用程式</string>
+    <!-- Settings category label for player UI settings that apply to full player (display current song) -->
+    <string name="settings_category_full_player">全螢幕播放器</string>
+    <!-- Only used for debugging, not generally user visible -->
+    <string name="settings_crash_application">讓應用程式當機</string>
+    <!-- Only used for debugging, not generally user visible -->
+    <string name="settings_crash_application_summary">Crash-O-Matic 3000</string>
+    <!-- Shown next to song's album cover in detail UI -->
+    <string name="album_cover">專輯封面</string>
+    <!-- Context menu item to edit song metadata (currently disabled) -->
+    <string name="dialog_edit_metadata">編輯</string>
+    <!-- Accessibility tooltip for lyrics button in full player -->
+    <string name="dialog_lyrics">歌詞</string>
+    <!-- Error message when deleting song upon user request failed unexpectedly -->
+    <string name="delete_failed">刪除歌曲失敗：%s</string>
+    <!-- Error message when deleting playlist upon user request failed unexpectedly -->
+    <string name="delete_failed_playlist">刪除播放清單失敗：%s</string>
+    <!-- Settings toggle to use photos permission to read jpg files as album cover. Title -->
+    <string name="album_covers_enhance">強化的專輯封面載入</string>
+    <!-- Settings toggle to use photos permission to read jpg files as album cover. Subtext -->
+    <string name="album_covers_enhance_desc">顯示高品質的歌曲封面，並允許專輯封面與歌曲封面不同（需要相片存取權）</string>
+    <!-- Ask the user to deny this permission in system settings -->
+    <string name="deny_images"><![CDATA[請拒絕\"相片和影片\"權限]]></string>
+    <!-- Ask the user to grant this permission in system settings -->
+    <string name="grant_images"><![CDATA[請授予\"相片和影片\"權限]]></string>
+    <!-- Ask the user to grant this permission in system settings -->
+    <string name="grant_audio"><![CDATA[請授予\"音樂和音訊\"權限]]></string>
+    <!-- When app crashes, this is shown as toast to notify user that crash logs are copied -->
+    <string name="crash_clipboard">已將當機記錄複製到剪貼簿</string>
+    <string name="crash_thread">執行緒</string>
+    <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Title -->
+    <string name="settings_trim_lyrics">移除歌詞兩端的空格</string>
+    <!-- Tooltip and dialog title for sleep timer in full player -->
+    <string name="timer">睡眠計時器</string>
+    <!-- Tooltip and dialog title for playback speed in full player -->
+    <string name="playback_speed">播放速度</string>
+    <!-- Used in playback speed dialog to control speed / tempo, next to slider -->
+    <string name="tempo">速度</string>
+    <!-- Used in playback speed dialog to control pitch, next to slider -->
+    <string name="pitch">音高</string>
+    <!-- Ex: "Tempo: 2.00" for double speed -->
+    <string name="tempo_pitch_value">%s：%.2fx</string>
+    <!-- Used in playback speed dialog to ensure tempo and pitch stay the same, check box label -->
+    <string name="lock_tempo_pitch">鎖定速度與音高</string>
+    <!-- Used in playback speed to restore default tempo and pitch -->
+    <string name="reset">重設</string>
+    <!-- Accessibility tooltip for queue button showing which songs are playing next and before -->
+    <string name="current_playlist">目前的播放清單</string>
+    <!-- Error notification when app is closed but user wants to play music and system denied it. Title -->
+    <string name="fgs_failed_title">無法繼續播放音樂</string>
+    <!-- Error notification when app is closed but user wants to play music and system denied it. Subtext -->
+    <string name="fgs_failed_text">輕觸這裡開啟應用程式並繼續播放</string>
+    <!-- Notification channel name for error notifications -->
+    <string name="fgs_failed_channel">無法繼續播放</string>
+    <!-- Sort songs/albums/etc by release date -->
+    <string name="sort_by_release_date">發行日期</string>
+    <!-- Ex: "Sleep timer will pause music at 10:00 PM", shown to user in dialog and as tooltip -->
+    <string name="timer_expiry">睡眠計時器將於 %s 暫停音樂</string>
+    <!-- Ex: "Sleep timer will pause music when song playing at 10:00 PM ends", that is, it will
+    first wait until it's 10:00 PM, and then it will check which song is playing. Once the song is
+    over, music will be paused. Shown to user as tooltip only -->
+    <string name="timer_expiry_eos">睡眠計時器將在 %s 正在播放的歌曲結束後暫停音樂</string>
+    <!-- Shown to user in dialog and as tooltip -->
+    <string name="timer_expiry_end_of_this_song">睡眠計時器將在這首歌結束後暫停音樂</string>
+    <!-- Settings category label for appearance settings that apply to home screen with tabs -->
+    <string name="settings_preference_category_home">主畫面</string>
+    <!-- Choose order of tabs in appearance settings. Title -->
+    <string name="tab_order">設定分頁順序</string>
+    <!-- Choose order of tabs in appearance settings. Subtext -->
+    <string name="tab_order_summary">應用程式啟動時會顯示第一個分頁。分隔線之後的分頁將會隱藏。</string>
+    <!-- Accessibility label for seek bar in settings -->
+    <string name="seekbar">進度列</string>
+    <!-- Accessibility label for divider which is semantically important in tab order dialog -->
+    <string name="divider">分隔線</string>
+    <!-- Tooltip for back button -->
+    <string name="back">返回</string>
+    <!-- Tooltip for button which plays every song in the list -->
+    <string name="play_all">全部播放</string>
+    <!-- Tooltip for button which plays every song in the list in random order -->
+    <string name="shuffle_all">隨機播放全部</string>
+    <!-- Tooltip for sort option button in song list -->
+    <string name="sort">排序</string>
+    <!-- Tooltip for scroll button in artist page, which has both albums and songs -->
+    <string name="scroll_to_albums">捲動至專輯</string>
+    <!-- Tooltip for scroll button in artist page, which has both albums and songs -->
+    <string name="scroll_to_songs">捲動至歌曲</string>
+    <!-- Tooltip for play button in full player -->
+    <string name="play">播放</string>
+    <!-- Tooltip for three dots button opening context menu -->
+    <string name="more">更多</string>
+    <!-- Tooltip for x button removing song from queue/playlist -->
+    <string name="remove">移除</string>
+    <!-- Tooltip for skip to next button in full player -->
+    <string name="skip_next">下一首</string>
+    <!-- Tooltip for button to close full player and return to song list -->
+    <string name="expand_less">關閉</string>
+    <!-- Tooltip for skip to previous button in full player -->
+    <string name="skip_previous">上一首</string>
+    <!-- Accessibility label for seek bar to control song position -->
+    <string name="position_slider">播放進度滑桿</string>
+    <!-- Settings toggle to enable newer lyrics rendering code. Title -->
+    <string name="settings_lyrics_ui">啟用新版歌詞介面</string>
+    <!-- Settings toggle to enable newer lyrics rendering code. Subtext -->
+    <string name="settings_lyrics_ui_summary">逐字顯示歌詞的實驗性介面，具備進階功能</string>
+    <!-- Settings toggle to enable showing lyrics in status bar (requires meizu phone). Title -->
+    <string name="settings_status_bar_lyrics_title">狀態列歌詞</string>
+    <!-- Settings toggle to enable showing lyrics in status bar (requires meizu phone). Subtext -->
+    <string name="settings_status_bar_lyrics_summary">啟用魅族方式在狀態列顯示歌詞（僅部分裝置支援）</string>
+    <!-- Description shown about lyric widget in Android launcher / home screen's widget selector on Android 12+ -->
+    <string name="lyric_widget_description">顯示目前播放媒體歌詞的小工具</string>
+    <!-- Context menu item to delete song/album/playlist -->
+    <string name="delete">刪除</string>
+    <!-- Dialog text to confirm user wants to delete a specific song or playlist with user defined name -->
+    <string name="delete_really">確定要刪除\"%s\"嗎？此操作無法復原。</string>
+    <!-- Dialog text to confirm user wants to delete all songs by an artist -->
+    <string name="delete_really_artist">確定要刪除\"%s\"的所有歌曲嗎？此操作無法復原。</string>
+    <!-- Used in dialog as positive action -->
+    <string name="yes">是</string>
+    <!-- Used in dialog as negative action -->
+    <string name="no">否</string>
+    <!-- Sort songs/albums/etc by file path (used when user added numbering to file names) -->
+    <string name="sort_by_file_path">檔案路徑</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_mono">單聲道</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_stereo">立體聲</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_quad">四聲道</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_surround">環繞音效 (4.0)</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1_surround">Surround (7.1)</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1">5.1</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_6point1">6.1</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1point2">5.1.2</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1point4">5.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1point2">7.1.2</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1point4">7.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_9point1point4">9.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_9point1point6">9.1.6</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_left">前左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_right">前右</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_center">前中</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_low_frequency">低頻</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_left">後左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_right">後右</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_left_of_center">前中偏左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_right_of_center">前中偏右</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_center">後中</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_side_left">側左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_side_right">側右</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_center">頂中</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_left">頂前左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_center">頂前中</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_right">頂前右</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_invalid">無效</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_left">頂後左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_center">頂後中</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_right">頂後右</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_side_left">頂側左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_side_right">頂側右</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_left">底前左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_center">底前中</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_right">底前右</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_low_frequency_2">低頻 2</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_wide_left">前寬左</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_wide_right">前寬右</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_invalid">無效</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_8bit">8-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit">16-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit_big_endian">16-bit PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit">24-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit_big_endian">24-bit PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_32bit">32-bit (int) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_32bit_big_endian">32-bit (int) PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_float">32-bit (float) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mp3">MP3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_lc">AAC-LC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_he_v1">HE-AAC v1</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_he_v2">HE-AAC v2</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_xhe">xHE-AAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_eld">AAC-ELD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_er_bsac">AAC ER BSAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ac3">AC-3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_e_ac3">E-AC-3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_e_ac3_joc">E-AC-3-JOC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ac4">AC-4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts">DTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_hd">DTS-HD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dolby_truehd">Dolby TrueHD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_opus">Opus</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_uhd_p2">DTS-X</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_bluetooth_a2dp">Bluetooth A2DP</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_builtin_speaker">內建喇叭</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_wired_headset">有線耳機麥克風</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_wired_headphones">有線耳機</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi">HDMI</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_device">USB 裝置</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_accessory">USB 配件</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock">擴充座</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_headset">USB 耳機麥克風</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hearing_aid">助聽器</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_headset">藍牙 LE 耳機麥克風</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi_arc">HDMI 音訊回傳通道</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi_earc">HDMI 強化音訊回傳通道</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_unknown">不明</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock_digital">數位擴充座</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock_analog">類比擴充座</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_aux_line">AUX 線路</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_line_analog">類比線路</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_line_digital">數位線路</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_speaker">藍牙 LE 喇叭</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_broadcast">藍牙 LE 廣播</string>
+    <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
+    <string name="open_in_music_downloader">在 Music Downloader 中開啟</string>
+    <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
+    <string name="settings_trim_lyrics_summary">歌詞行首字母之前或行尾之後的空格可能具有藝術價值。如果你不認同，可以開啟這個選項自動移除這些空格。</string>
+    <!-- Error message if file can't be played for any reason -->
+    <string name="cannot_play_file">無法播放這個檔案</string>
+    <!-- Settings toggle in lyrics UI to disable animations in lyrics. Title -->
+    <string name="settings_lyrics_no_animation">停用動畫</string>
+    <!-- Settings toggle in lyrics UI to disable animations in lyrics. Subtext -->
+    <string name="settings_lyrics_no_animation_summary">停用所有歌詞換行動畫</string>
+    <!-- Shown next to song's bit rate (like "128 kbps") in detail UI -->
+    <string name="dialog_bitrate">位元率</string>
+    <!-- Showing the song's bit rate (like "128 kbps") in detail UI -->
+    <string name="bitrate_format">%1$d kbps</string>
+    <!-- Showing the song's bit rate in detail UI if it can't be determined -->
+    <string name="bitrate_unknown">位元率不明</string>
+
+    <!-- Title of crash report screen -->
+    <string name="oh_no">糟糕！</string>
+    <!-- Explainer of crash report screen -->
+    <string name="music_downloader_crashed_explainer2">Music Downloader 當機了 :(\n\n請寄給我錯誤報告，這樣導致這次當機的問題才能獲得修正！\n\n每一種情況都像音樂一樣獨特，沒有你的協助，這個錯誤很可能<b>不會</b>被修正！</string>
+    <!-- Positive action button in crash report screen -->
+    <string name="send_email">傳送電子郵件</string>
+    <!-- Error message if sending crash report failed -->
+    <string name="send_email_manually">請將記錄寄至 nift4dev@gmail.com — 找不到郵件應用程式</string>
+    <!-- Error message if lyrics were found but are corrupted or in unsupported format -->
+    <string name="failed_to_parse_lyric">歌詞解析失敗</string>
+    <!-- Title of dialog which shows playback path (formats, sample rates, devices, changes in those). -->
+    <string name="audio_signal_chain">音訊訊號鏈</string>
+    <!-- Error message of dialog which shows playback path if no data is available -->
+    <string name="audio_not_initialized">音訊播放系統尚未初始化。試著播放點什麼吧！</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_none">無</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_bit_perfect">Bit perfect</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_ultrasound">超音波</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_spatializer">Spatializer</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_gapless_offload">Gapless offload</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_incall_music">通話中音樂</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_voip_rx">VoIP RX</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_mmap_noirq">MMAP（無 IRQ）</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_direct_pcm">直通 PCM</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_iec958_nonaudio">IEC 958（非音訊）</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_sync">Sync</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_raw">Raw</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_tts">TTS</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_hw_av_sync">硬體影音同步</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_non_blocking">非阻塞</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_compress_offload">Compressed offload</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_deep_buffer">Deep buffer</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_fast">Fast</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_primary">主要輸出</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_direct">Direct</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_unknown">不明</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_8_24bit">24-bit (8.24) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_wb">AMR-WB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac">AAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_vorbis">Vorbis</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_iec61937">IEC 61937</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_wb_plus">AMR-WB+</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_nb">AMR-NB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrc">EVRC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcb">EVRC-B</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcwb">EVRC WB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcnw">EVRC NW</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adif">AAC ADIF</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_wma">WMA</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_wma_pro">WMA Pro</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mp2">MPEG-2</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_qcelp">QCELP</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dsd">Direct Stream Digital</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_flac">FLAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_alac">ALAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ape">Monkey\'s Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts">AAC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_sbc">SBC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx">aptX</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_hd">aptX HD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ldac">LDAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat">Dolby MAT</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm">AAC in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_celt">CELT</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive">aptX Adaptive</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lhdc">LHDC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lhdc_ll">LLAC (LHDC-LL)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_twsp">aptX TWS+</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lc3">LC3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh">MPEG-H</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_iec60958">IEC 60958</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_uhd">DTS-UHD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dra">DRA</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive_qlea">aptX Adaptive over LE Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive_r4">aptX Adaptive R4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_hd_ma">DTS-HD Master Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_main">AAC Main</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ssr">AAC-SSR</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ltp">AAC-LTP</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_scalable">AAC Scalable</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_erlc">AAC ERLC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ld">AAC-LD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_main">AAC Main in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_lc">AAC-LC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ssr">AAC-SSR in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ltp">AAC-LTP in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_he_v1">HE-AAC v1 in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_he_v2">HE-AAC v2 in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_xhe">xHE-AAC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ld">AAC-LD in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_scalable">AAC Scalable in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_erlc">AAC-ERLC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_eld">AAC-ELD in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_lc">AAC-LC in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_he_v1">HE-AAC v1 in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_he_v2">HE-AAC v2 in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_1_0">Dolby MAT 1.0</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_2_0">Dolby MAT 2.0</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_2_1">Dolby MAT 2.1</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_bl_l3">MPEG-H Baseline Profile L3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_bl_l4">MPEG-H Baseline Profile L4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_lc_l3">MPEG-H Low Complexity L3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_lc_l4">MPEG-H Low Complexity L4</string>
+    <!-- This is used if Android uses an audio format we don't know. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_unknown">不明的格式 %s</string>
+    <!-- This is used if Android uses an audio format we don't know. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_unknown_d">不明的格式 %d</string>
+    <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
+    <string name="crash_report">當機報告</string>
+    <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
+    <string name="what_were_you_doing">這次當機發生時，你在 Music Downloader 中做什麼？請盡量補充細節，以提高我修正問題的可能性。\n\n請注意，錯誤報告最好使用英文，但如果你以其他語言提交，我會嘗試使用機器翻譯。</string>
+    <!-- Used if no email program is installed -->
+    <string name="email_clipboard">已將電子郵件地址和文字複製到剪貼簿</string>
+    <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
+    <string name="settings_export_logs">匯出應用程式記錄</string>
+    <!-- Toggle in player UI settings to show sample rate, bit depth, etc in full player. Title -->
+    <string name="settings_audio_quality_info">音質資訊</string>
+    <!-- Toggle in player UI settings to show sample rate, bit depth, etc in full player. Subtext -->
+    <string name="settings_audio_quality_info_summary">在播放器畫面顯示音質/格式資訊</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit_offload">16-bit PCM Offload</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit_offload">24-bit (8.24) PCM offload</string>
+    <!-- Toggle in lyrics settings to draw gradient animation if parent foreign-language line has
+    gradient animation but we don't have timing data for the translated line. Title -->
+    <string name="settings_translation_auto_word">自動為譯文加上動畫</string>
+    <!-- Toggle in lyrics settings to draw gradient animation if parent foreign-language line has
+    gradient animation but we don't have timing data for the translated line. Subtext -->
+    <string name="settings_translation_auto_word_summary">在逐字同步歌詞播放時，若譯文沒有逐字同步中繼資料，則為譯文行套用線性漸層</string>
+    <!-- Error message when playing a file but it doesn't exist anymore -->
+    <string name="cannot_find_file">找不到這個檔案</string>
+    <!-- Used in crash report screen to explain what text field is about -->
+    <string name="enter_msg_for_dev_here">在這裡輸入給開發者的訊息</string>
+    <!-- Error text if user enters an email address into the field meant for message to developer in crash report screen -->
+    <string name="do_not_enter_email_enter_msg">請輸入訊息，而非電子郵件地址</string>
+    <!-- Error text if user enters app logs into the field meant for message to developer in crash report screen -->
+    <string name="log_will_auto_send">記錄會自動傳送，請改為說明問題</string>
+    <!-- Used in crash report screen to explain the user doesn't need to worry about sending logs -->
+    <string name="log_attachment">記錄將以附件形式自動傳送</string>
+    <!-- Tooltip of plus button in playlist list to create a new playlist. Also used in playlist
+     selection dialog after user pressed "Add to playlist" on a song. -->
+    <string name="create_playlist">建立播放清單…</string>
+    <!-- Context menu item to rename a playlist -->
+    <string name="rename">重新命名</string>
+    <!-- Loading message if user asked to refresh songs -->
+    <string name="refreshing_wait">正在重新整理，請稍候…</string>
+    <!-- Loading message if user asked to refresh songs and we can show a percentage.
+    Ex: "Refreshing, step 2/3: 80%" -->
+    <string name="still_refreshing">正在重新整理，第 %1$d/%2$d 步：%3$s</string>
+    <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
+    <string name="did_you_know">你知道嗎…</string>
+    <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
+    <string name="refresh_did_you_know">Music Downloader 每次啟動時都會要求最新的歌曲清單，而且在執行期間也會自動偵測新的媒體檔案。這個\"重新整理\"按鈕不會重新載入 Music Downloader 中的媒體，而是要求系統重新掃描所有已連接的固定儲存裝置上的全部檔案（因此需要一些時間）。也就是說，除非你的系統或其他應用程式出現異常，否則你永遠不需要使用這項功能。\n\n缺少某些歌曲嗎？請務必在"設定 > 行為"中檢查最短長度篩選和資料夾黑名單，並確認這些設定的值符合預期。更多可能的原因請參閱我們的常見問題。</string>
+    <!-- Error message when renaming playlist upon user request failed unexpectedly -->
+    <string name="rename_failed_playlist">重新命名播放清單失敗：%s</string>
+    <!-- Text field hint used for dialog where playlist is renamed or created -->
+    <string name="playlist_name">播放清單名稱</string>
+    <!-- Error message when creating playlist upon user request failed unexpectedly -->
+    <string name="create_failed_playlist">建立播放清單失敗：%s</string>
+    <!-- Dialog title for entering name when renaming playlist -->
+    <string name="rename_playlist">重新命名播放清單</string>
+    <!-- Error message when changing songs in the playlist upon user request failed unexpectedly -->
+    <string name="edit_playlist_failed">編輯播放清單失敗：%s</string>
+    <!-- Error message when changing songs in the special "Favourites" playlist upon user request
+    failed unexpectedly -->
+    <string name="edit_favorites_failed">編輯我的最愛失敗：%s</string>
+    <!-- Context menu item to add song to playlist -->
+    <string name="add_to_playlist">加入播放清單</string>
+    <!-- Error if no internet browser is installed but user clicks a link -->
+    <string name="no_app_found">找不到可執行這項操作的應用程式</string>
+    <!-- Shown below the lead developer's nickname in about screen -->
+    <!-- Shown below the lead designer's nickname in about screen -->
+    <!-- Shown below the original creator's nickname in about screen -->
+    <!-- Shown below other developer's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen. SongSync is an app name -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen. This is the feature they worked on -->
+    <!-- Shown below a contributor's nickname in about screen. This is the feature they worked on -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Home menu item to refresh song list quickly -->
+    <string name="home_menu_quick_refresh">快速重新整理</string>
+    <!-- Context menu item to add song to currently playing queue (as opposed to playlist which is
+    .m3u file) -->
+    <string name="add_to_queue">加入待播清單</string>
+    <!-- Three-state dialog toggle if a feature is disabled -->
+    <string name="disabled">已停用</string>
+    <!-- Three-state dialog toggle if a feature is enabled -->
+    <string name="offload_enabled_if_supported">一律啟用</string>
+    <!-- Three-state dialog toggle if a feature is conditionally enabled -->
+    <string name="offload_enabled_if_gapless">支援無間隙播放時啟用</string>
+    <!-- Dialog title for audio offload feature. Offload is a technical term -->
+    <string name="settings_audio_offload">音訊卸載（省電）</string>
+    <!-- Shown above the link to our group in about screen -->
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
+    <!-- Player UI toggle to enable animated shape similar to a cookie for album cover. Subtext -->
+    <string name="settings_cookie_summary">將專輯封面顯示為餅乾形狀</string>
+    <!-- Player UI toggle to enable animated shape similar to a cookie for album cover. Title -->
+    <string name="settings_cookie_info">餅乾封面</string>
+    <!-- Appearance toggle to replace gray color with black in app UI. Title -->
+    <string name="settings_pure_dark">純黑深色主題</string>
+    <!-- Appearance toggle to replace gray color with black in app UI. Subtext -->
+    <string name="settings_pure_dark_summary">應用程式中所有介面均為純黑的主題（在 OLED 螢幕上可能出現暗部細節流失）</string>
+    <!-- Behavior toggle to stop playing music when closing the app in "Recent apps" of Android system. Title -->
+    <string name="settings_stop_on_dismiss">關閉時停止</string>
+    <!-- Behavior toggle to stop playing music when closing the app in "Recent apps" of Android system. Subtext -->
+    <string name="settings_stop_on_dismiss_summary">從最近使用的應用程式中移除時停止播放</string>
+    <!-- Display style where songs/albums/etc are displayed as grid, but smaller -->
+    <string name="compact_grid">格狀（精簡）</string>
+    <!-- Sort songs/albums/etc by the album's release year -->
+    <string name="sort_by_album_year">專輯年份</string>
+    <!-- Sort songs by the album artist, and then the album's release year -->
+    <string name="sort_by_album_artist_year"><![CDATA[專輯演出者 -> 年份]]></string>
+    <!-- Error in renaming playlist dialog when an letter is used which isn't supported by FAT32 -->
+    <string name="forbidden_symbol_error">名稱中含有無效字元</string>
+    <!-- Used in about screen to credit every translator with their Weblate display name -->
+    <string name="translators">翻譯人員</string>
+    <!-- Used in audio settings, this is a technical/"brand" name for an interoperable audio
+    loudness normalization feature established since 2002 -->
+    <string name="settings_replaygain">ReplayGain</string>
+    <!-- Change the ReplayGain (this is a technical/"brand" name for an interoperable audio loudness
+    normalization feature established since 2002) mode between off, Preserve album dynamics, All
+    tracks equal loudness and Smart -->
+    <string name="settings_replaygain_mode">模式</string>
+    <!-- Change the pre-amplification (to amplify: to increase the strength of a sound; make louder)
+    of music which has ReplayGain tags. Title. Also explained more below -->
+    <string name="settings_replaygain_preamp">前級增益</string>
+    <!-- Change the pre-attenuation (to attenuate: to make something less or weaker) of music which
+    has no ReplayGain tags. Title. Also explained more below -->
+    <string name="settings_replaygain_no_rg_amp">衰減（無 RG）</string>
+    <!-- Title for Boost feature in Audio menu which is explained more below -->
+    <string name="settings_replaygain_boost">Boost</string>
+    <!-- Title for DRC feature in ReplayGain menu which is explained more below -->
+    <string name="settings_replaygain_drc">啟用 DRC</string>
+    <!-- Explanation for DRC feature in ReplayGain menu. DRC is a technical term -->
+    <string name="settings_replaygain_drc_desc">使用\"動態範圍壓縮\"作為削波保護（建議）。若停用，則會改為降低音量（音量將不再一致，因而破壞響度正規化的效果）。</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="track_gain">所有曲目響度一致</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="album_gain">保留專輯動態</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="smart">智慧</string>
+    <!-- Tooltip of button in queue menu which will automatically scroll to playing song -->
+    <string name="scroll_to_playing">捲動至正在播放的歌曲</string>
+    <!-- Text in queue which shows how much time is remaning. Ex "01:20:00 remaining, 02:00:00 total"
+    for a two-hour-long queue after 40 minutes already passed. -->
+    <string name="duration_queue">剩餘 %s，共 %s</string>
+    <!-- Unit decibels for loudness, used in audio and ReplayGain settings -->
+    <string name="d_db">%d dB</string>
+    <!-- Detailed explanation for Boost feature in Audio settings -->
+    <string name="settings_replaygain_boost_desc" formatted="false">"\"Boost\"會讓 ReplayGain 和其他音樂的輸出音量高於裝置設定的音量。（如果裝置音量接近 100%，Boost 不會再提高音量。）透過 Boost，你可以享受與遊戲等其他應用程式響度相近的音樂。請注意，這項功能為實驗性功能，可能與外部等化器應用程式衝突。Boost 不支援藍牙耳機。如果出現任何音量相關問題，請將 Boost 設為 0 dB 以將其關閉。 "</string>
+    <!-- Detailed explanation for "Attenuation (no RG)" feature in ReplayGain settings -->
+    <string name="settings_replaygain_no_rg_amp_desc">降低沒有 ReplayGain 標籤的大聲歌曲的音量</string>
+    <!-- Detailed explanation for "Pre amp" feature in ReplayGain settings -->
+    <string name="settings_replaygain_preamp_desc">提高或降低具有 ReplayGain 標籤的歌曲音量。數值過高可能因削波保護而損失動態。</string>
+    <!-- Detailed explanation for "Smart" mode in ReplayGain settings -->
+    <string name="settings_replaygain_mode_desc">\"智慧\"模式僅在連續播放同一張專輯的歌曲時才會自動保留專輯動態。</string>
+    <!-- Sort songs by the artist, and then the song's release year -->
+    <string name="sort_by_artist_year"><![CDATA[演出者 -> 年份]]></string>
+    <!-- Empty the queue and stop playing music. Next to trash can swipe icon -->
+    <string name="clear_queue">清空待播清單</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_shuffle_all_songs">隨機播放所有歌曲</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_shuffle_everything">隨機播放全部</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_random_songs">播放隨機歌曲</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_random_stuff">隨便播點什麼</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_randomly">隨機播放</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_start_random_music">開始隨機播放音樂</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_start_random_songs">開始隨機播放歌曲</string>
+    <!-- Google Assistant / voice assistant phrase with song name placeholder -->
+    <string name="actions_query_shuffle_specific">隨機播放 $item_name</string>
+    <!-- Tooltip for heart button -->
+    <string name="favorite">我的最愛</string>
+    <!-- Error notification when user tries to change favourite status of song while the app is in
+    background but we must ask for permission to write the special playlist file. Title -->
+    <string name="favorite_failed_title">無法變更歌曲的我的最愛狀態</string>
+    <!-- Error notification when user tries to change favourite status of song while the app is in
+    background but we must ask for permission to write the special playlist file. Subtext -->
+    <string name="favorite_failed_text">請輕觸這裡，授予我的最愛播放清單檔案的權限以套用變更</string>
+    <!-- Notification channel for errors while the app is closed -->
+    <string name="error_in_bg">在背景發生的錯誤</string>
+    <!-- Tab in blacklist menu in behavior settings for configuring whitelist -->
+    <string name="settings_whitelist">白名單</string>
+    <!-- Explaining how whitelist and blacklist interact as info box to the user -->
+    <string name="whitelist_and_blacklist">如果白名單中未選取任何資料夾，則允許所有資料夾。\n\n白名單與黑名單會同時生效，且黑名單優先。舉例來說，你可以在白名單中允許某個資料夾，同時在黑名單中排除它的某個子資料夾。</string>
+    <!-- Ask the user if they really want to delete the changes they made in the playlist editor and
+    restore playlist to state before they started editing. Dialog title -->
+    <string name="discard_changes_title">要捨棄變更嗎？</string>
+    <!-- Dialog action if changes are NOT discarded, but saved -->
+    <string name="save">儲存</string>
+    <!-- Dialog action if changes are discarded, and NOT saved -->
+    <string name="discard">捨棄</string>
+    <!-- Ask the user if they really want to delete the changes they made in the playlist editor and
+    restore playlist to state before they started editing. Dialog text -->
+    <string name="discard_changes_msg">確定要捨棄你對播放清單\"%s\"所做的變更嗎？</string>
+    <!-- Tooltip for apply/save button in playlist editor -->
+    <string name="apply">套用</string>
+    <!-- Ask the user if they want to restore the changes they made in the playlist editor but
+    didn't quit properly (maybe the app crashed, phone battery died, etc). If not restoring, the
+    editor will contain current state of playlist. Dialog title -->
+    <string name="restore_edits">要還原變更嗎？</string>
+    <!-- Ask the user if they want to restore the changes they made in the playlist editor but
+    didn't quit properly (maybe the app crashed, phone battery died, etc). If not restoring, the
+    editor will contain current state of playlist. Dialog text -->
+    <string name="restore_edits_msg">播放清單\"%s\"有未儲存的變更。你要還原這些變更，還是捨棄它們並以該播放清單的全新版本重新開始？</string>
+    <!-- Dialog action if changes are restored in playlist editor -->
+    <string name="restore">還原</string>
+    <!-- On old Android devices that don't have internal storage, it may happen that there is no
+    storage at all. Storage is required to edit playlists, so ask user to insert SD card. -->
+    <string name="mount_storage">請插入 SD 卡以使用這項功能</string>
+    <!-- Error message when changes unexpectedly failed to restore -->
+    <string name="failed_to_restore">還原變更失敗：%s</string>
+    <!-- Dialog title when user opens playlist editor but playlist is empty, because playlist editor
+    isn't used to add new songs but only to move or delete them. Hint user at proper way. -->
+    <string name="playlist_empty">播放清單是空的</string>
+    <!-- Dialog text when user opens playlist editor but playlist is empty, because playlist editor
+    isn't used to add new songs but only to move or delete them. Hint user at proper way. -->
+    <string name="playlist_empty_msg">輕觸某首歌曲三點選單中的\"加入播放清單\"即可加入歌曲。</string>
+    <!-- In system settings of old Android versions, you can check Music Downloader in the list of apps
+    supporting local search. This string explains what can be searched when doing so -->
+    <string name="search_desc">演出者、專輯和曲目</string>
+    <!-- In system settings of old Android versions, you can check Music Downloader in the list of apps
+supporting local search. This string is displayed in the search bar when using Music Downloader as search -->
+    <string name="search_hint">搜尋歌曲和演出者</string>
+    <!-- Shown in system's file upload dialog, used by browsers or similar, to allow user to choose
+     a song using the familiar Music Downloader user interface. App icon is next to it -->
+    <string name="picker_activity">選擇音樂曲目</string>
+    <!-- Shown in system's file upload dialog, used by browsers or similar, to allow user to choose
+     a playlist using the familiar Music Downloader user interface. App icon is next to it -->
+    <string name="playlist_picker_activity">選擇播放清單</string>
+    <!-- Settings category in appearance settings relating to specific tabs on home page -->
+    <string name="settings_preference_category_folders_filesystem"><![CDATA[資料夾和檔案系統分頁]]></string>
+    <!-- Toggle in the "folder & filesystem tabs" category in appearance settings. Title -->
+    <string name="show_file_names">顯示檔案名稱</string>
+    <!-- Toggle in the "folder & filesystem tabs" category in appearance settings. Subtext -->
+    <string name="show_file_names_summary">在資料夾和檔案系統分頁中以檔案名稱取代歌曲名稱</string>
+    <!-- Error if trying to rename/create playlist but the name is already used by some other playlist -->
+    <string name="another_with_name">這個名稱已被使用</string>
+    <!-- Slider in lyric settings to change font size for lyrics -->
+    <string name="settings_font_size">字型大小</string>
+    <!-- Positive dialog action in sleep timer dialog to store the settings -->
+    <string name="set">設定</string>
+    <!-- Check box in sleep timer dialog to only pause at end of song -->
+    <string name="timer_eos">等待歌曲播完</string>
+    <!-- Option in sleep timer dialog to pause music when current song ends -->
+    <string name="timer_end_of_this_song">這首歌結束時</string>
+    <!-- Option in sleep timer dialog to pause music after custom amount of minutes instead of one
+    of the presets -->
+    <string name="other">自訂</string>
+    <!-- Negative dialog action in sleep timer dialog if there's already a sleep timer set, and the
+    dialog shows the current settings. User can click OK to keep them or Unset to disable sleep timer. -->
+    <string name="unset">取消計時</string>
+    <!-- Hint in number input field when using custom minutes amount in sleep timer dialog -->
+    <string name="timer_hint">幾分鐘後暫停音樂…</string>
+
+    <!-- Settings toggle in experimental to enable advanced workflow across the app, allowing to
+    have multiple queues -->
+    <string name="settings_mq_enabled">多組待播清單</string>
+    <!-- Unpin this queue and allow it to be removed after some period of time -->
+    <string name="mq_unpin_queue">取消固定待播清單</string>
+    <!-- Pin this queue so it does not get automatically removed after some period of time -->
+    <string name="mq_pin_queue">固定待播清單</string>
+    <string name="shuffled">%s（隨機）</string>
+    <string name="loading_playlists">正在載入播放清單...</string>
+    <!-- Exit-app confirmation bottom sheet (shown on back press from the navigation root) -->
+    <string name="exit_app">結束應用程式</string>
+    <string name="are_you_sure_you_want_to_exit_app">確定要結束應用程式嗎？</string>
+    <string name="exit">結束</string>
+    <string name="action_cancel">取消</string>
+    <!-- Feedback screen (opened from Settings) -->
+    <string name="settings_feedback">意見回饋</string>
+    <string name="settings_feedback_summary">告訴我們你遇到的問題</string>
+    <string name="feedback_amp_help"><![CDATA[意見回饋與說明]]></string>
+    <string name="tell_us_the_problem_you_encountered">告訴我們你遇到的問題</string>
+    <string name="some_songs_are_not_displayed">部分歌曲未顯示</string>
+    <string name="bugs">程式錯誤</string>
+    <string name="too_many_ads">廣告太多</string>
+    <string name="music_stop_playing">音樂會停止播放</string>
+    <string name="suggestion">建議</string>
+    <string name="others">其他</string>
+    <string name="submit">提交</string>
+    <string name="please_tell_us_more_details">請提供更多細節，以便我們更快找出並解決你的問題（至少 6 個字元）</string>
+    <string name="you_have_not_filled_in_your_feedback_yet">你尚未填寫意見回饋</string>
+    <string name="thank_for_your_feedback">感謝你的意見回饋！</string>
+    <string name="we_will_try_our_best_to_improve_it">我們會盡力做得更好</string>
+    <string name="ok">確定</string>
+    <!-- Rate app bottom sheet flow -->
+    <string name="image">圖片</string>
+    <string name="satisfied">你對這個應用程式滿意嗎？</string>
+    <string name="good">滿意</string>
+    <string name="not_really">不太滿意</string>
+    <string name="rate">評分</string>
+    <string name="rate_app_title">我們正努力打造更好的使用體驗。\n如果你能為我們評分，我們將非常感謝。</string>
+    <string name="rate_app_title_1">糟糕！\n請給我們一些意見回饋。</string>
+    <string name="rate_app_title_4">我們也喜歡你！\n感謝你的意見回饋。</string>
+
+    <string name="privacy_policy">隱私權政策</string>
+    <string name="privacy_policy_summary">我們如何收集及使用你的資料</string>
+
+</resources>

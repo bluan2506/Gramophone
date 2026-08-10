@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
+    <string name="app_name">Music Downloader</string>
+    <string name="ads_loading">Memuat iklan…</string>
+    <string name="splash_tagline">Pemutar musik offline Anda</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_search">Cari</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_settings">Setelan</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_shuffle">Putar semua secara acak</string>
+    <!-- Menu item in home screen -->
+    <string name="home_menu_refresh">Segarkan</string>
+    <!-- Tab on home screen showing a list of songs -->
+    <string name="category_home">Beranda</string>
+    <string name="home_search_hint">Cari musik Anda</string>
+    <string name="home_online_search">Cari online</string>
+    <string name="home_online_search_subtitle">Temukan dan dengarkan jutaan lagu</string>
+    <string name="online_search_hint">Cari lagu secara online</string>
+    <string name="online_search_empty">Tidak ada hasil. Coba kata kunci lain.</string>
+    <string name="online_search_error">Terjadi kesalahan. Silakan coba lagi.</string>
+    <string name="turn_off_vpn_proxy">Anda harus menonaktifkan VPN atau Proxy agar aplikasi berfungsi dengan baik.</string>
+    <string name="online_download">Unduh</string>
+    <string name="online_download_started">Unduhan dimulai</string>
+    <string name="online_loading">Memuat…</string>
+    <!-- giga download engine -->
+    <string name="downloading">Mengunduh</string>
+    <string name="merging">Menggabungkan…</string>
+    <string name="download_successfully">Terunduh</string>
+    <string name="download_error">Unduhan gagal</string>
+    <string name="no_space_left_on_device">Ruang penyimpanan perangkat penuh</string>
+    <string name="no_internet">Tidak ada koneksi internet</string>
+    <string name="song_link_expired_download">Tautan kedaluwarsa, silakan coba unduh lagi</string>
+    <string name="song_link_expired_play">Tautan kedaluwarsa, silakan coba putar lagi</string>
+    <string name="downloads_title">Unduhan</string>
+    <string name="downloads_empty">Belum ada lagu yang diunduh</string>
+    <string name="copyright_restrictions_title">Dibatasi hak cipta</string>
+    <string name="copyright_restrictions_message">Lagu ini tidak dapat diunduh karena pembatasan hak cipta.</string>
+    <string name="home_songs_count">%1$d lagu</string>
+    <string name="home_downloaded">Terunduh</string>
+    <string name="home_sleep_timer">Timer tidur</string>
+    <string name="home_on">Aktif</string>
+    <string name="home_off">Nonaktif</string>
+    <string name="home_minutes">%1$d menit</string>
+    <string name="home_end_of_song">Akhir lagu saat ini</string>
+    <string name="home_rate_app">Beri rating aplikasi</string>
+    <string name="home_rate_app_subtitle">Suka aplikasi ini?</string>
+    <string name="home_settings">Setelan</string>
+    <string name="home_settings_subtitle">Dukung kami</string>
+    <string name="category_songs">Lagu</string>
+    <!-- Tab on home screen showing a list of albums -->
+    <string name="category_albums">Album</string>
+    <!-- Tab on home screen showing a list of artists -->
+    <string name="category_artists">Artis</string>
+    <!-- Tab on home screen showing a list of genres -->
+    <string name="category_genres">Genre</string>
+    <!-- Tab on home screen showing a list of playlists -->
+    <string name="category_playlists">Playlist</string>
+    <!-- Used in place of the artist name if the artist can't be found unexpectedly -->
+    <string name="unknown_artist">Artis tidak diketahui</string>
+    <!-- Tab on home screen showing a list of years (2002, 2003, etc.) -->
+    <string name="category_dates">Tahun</string>
+
+    <!-- Color theme option: use dark/light setting of system -->
+    <string name="follow_system">Ikuti sistem</string>
+    <!-- Color theme option: use dark colors -->
+    <string name="dark">Gelap</string>
+    <!-- Color theme option: use light colors -->
+    <string name="light">Terang</string>
+    <!-- Sort albums/playlists/etc by size (how many songs are in there) -->
+    <string name="sort_by_size">Ukuran</string>
+    <!-- Sort songs/albums/etc by name (A-Z) -->
+    <string name="sort_by_name">Nama</string>
+    <!-- Sort songs/albums/etc by artist (A-Z) -->
+    <string name="sort_by_artist">Artis</string>
+    <!-- Sort songs by album's name (A-Z) -->
+    <string name="sort_by_album">Album</string>
+    <!-- Sort songs by album artist's name (A-Z), then song's name (A-Z) -->
+    <string name="sort_by_album_artist">Artis album -> judul</string>
+    <!-- Make message (snackbar / dialog) go away -->
+    <string name="dismiss">Tutup</string>
+    <!-- Used in place of the genre name if the genre can't be found unexpectedly -->
+    <string name="unknown_genre">Genre tidak diketahui</string>
+    <!-- Used in place of the year if the year can't be found unexpectedly -->
+    <string name="unknown_year">Tahun tidak diketahui</string>
+    <!-- Used in snack bar after song list was reloaded on user request -->
+    <string name="refreshed_songs">%1$d lagu disegarkan</string>
+    <!-- Hint of text field for search -->
+    <string name="search">Cari</string>
+    <!-- Used to name the list of songs resulting from a search -->
+    <string name="search_query">Pencarian: %s</string>
+    <!-- Share a song's file with some other app -->
+    <string name="share">Bagikan</string>
+    <!-- Displayed above app name -->
+    <string name="settings_app_name">Nama aplikasi</string>
+    <!-- Clicking will open the credits screen -->
+    <!-- Play this song next, context menu item -->
+    <string name="play_next">Putar berikutnya</string>
+    <!-- Open the album this song is in, context menu item -->
+    <string name="go_to_album">Buka album</string>
+    <!-- Open the artist this song is in, context menu item -->
+    <string name="go_to_artist">Buka artis</string>
+    <!-- Open details of this song, context menu item -->
+    <string name="details">Detail</string>
+    <!-- Tooltip of shuffle clickable toggle button -->
+    <string name="shuffle">Acak</string>
+    <!-- Tooltip of repeat mode 3-state clickable toggle button -->
+    <string name="repeat_mode">Mode pengulangan</string>
+    <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
+    <string name="unknown_playlist">Playlist tidak diketahui</string>
+    <string name="music_downloader_crashed">Log kerusakan</string>
+    <string name="crash_music_downloader_version">Versi Music Downloader</string>
+    <string name="crash_phone_model">Model</string>
+    <string name="crash_phone_brand">Merek</string>
+    <string name="crash_sdk_level">Level SDK</string>
+    <string name="crash_time">Waktu</string>
+    <string name="crash_rtype">Tipe rilis</string>
+    <!-- Settings category about color scheme and other visual settings. Title -->
+    <string name="settings_category_appearance">Tampilan</string>
+    <!-- Used in multiple places such as sort context menu and details UI -->
+    <string name="album_artist">Artis album</string>
+    <!-- Fallback if app's version isn't known -->
+    <string name="unknown_version">Versi tidak diketahui</string>
+    <!-- Displayed above the app version in about screen -->
+    <string name="settings_version">Versi</string>
+    <!-- Shown next to song's name in detail UI -->
+    <string name="dialog_title">Judul</string>
+    <!-- Shown next to song's artist's name in detail UI -->
+    <string name="dialog_artist">Artis</string>
+    <!-- Settings category about song filter, playing and other app behavior settings. Title -->
+    <string name="settings_category_behavior">Perilaku</string>
+    <!-- Seconds slider in behavior settings to specify which length of songs is required to show up
+    in the app, intended to filter out ringtones and other short audio files that aren't music. -->
+    <string name="settings_mediastore_filter">Durasi minimum lagu (detik)</string>
+    <!-- Link to our GitHub repository -->
+    <!-- Shown next to song's album name in detail UI -->
+    <string name="dialog_album">Album</string>
+    <!-- Shown next to song's genre in detail UI -->
+    <string name="dialog_genre">Genre</string>
+    <!-- Shown next to song's album artist name in detail UI -->
+    <string name="dialog_album_artist">Artis album</string>
+    <!-- Shown next to song's track number in detail UI -->
+    <string name="dialog_track_number">Nomor trek</string>
+    <!-- Shown next to song's release year in detail UI -->
+    <string name="dialog_year">Tahun</string>
+    <!-- Shown next to song's file path in detail UI -->
+    <string name="dialog_path">Jalur</string>
+    <!-- Used in place of the album name if the album can't be found unexpectedly -->
+    <string name="unknown_album">Album tidak diketahui</string>
+    <!-- A playlist that has songs that were recently added to this device -->
+    <string name="recently_added">Baru ditambahkan</string>
+    <!-- Tab on home screen showing a flat folder list -->
+    <string name="folders">Folder</string>
+    <!-- Color theme in appearance settings: light/dark/follow system -->
+    <string name="settings_app_theme">Tema aplikasi</string>
+    <!-- The sort mode if something has inherent proper order (playlist order for playlist, CD order
+    for album, etc) -->
+    <string name="natural_order">Urutan alami</string>
+    <!-- Display style where songs/albums/etc are displayed as grid instead of list -->
+    <string name="grid">Kisi</string>
+    <!-- Display style where songs/albums/etc are displayed as list instead of grid -->
+    <string name="list">Daftar</string>
+    <!-- Context menu item submenu title for changing between list and grid display style -->
+    <string name="layout">Mode tampilan</string>
+    <!-- Menu item to open external equalizer app -->
+    <string name="home_menu_equalizer">Equalizer</string>
+    <!-- Error if the external equalizer app isn't installed -->
+    <string name="equalizer_not_found">Equalizer tidak ditemukan!</string>
+    <!-- Display style where songs/albums/etc are displayed as list, but smaller -->
+    <string name="compact_list">Daftar (ringkas)</string>
+    <!-- In about screen, link to our Telegram channel -->
+    <string name="check_for_updates">Cek saluran kami untuk pembaruan!</string>
+    <!-- In player UI settings, change between wavy(Music Downloader's default) and default/modern
+    (Google's default) slider. Title -->
+    <string name="settings_default_progress_bar">Bilah progres default</string>
+    <!-- In player UI settings, change between wavy(Music Downloader's default) and default/modern
+    (Google's default) slider. Subtext -->
+    <string name="settings_default_progress_bar_summary">Aktifkan bilah progres bergaya Material</string>
+
+    <!-- The name of the playlist used for showing every song where the heart was clicked -->
+    <string name="playlist_favourite">Favorit</string>
+    <!-- Shows a list of contributors' nicknames like "someDeveloperA, someDeveloperB,
+    someDeveloperC (click for more!)" and clicking opens credits screen -->
+    <!-- Accessibility name for bars animation on a song in a list, showing this is the playling song -->
+    <string name="now_playing">Sedang diputar</string>
+    <!-- In appearance settings, change between album based color and system wide color. Subtext -->
+    <string name="settings_content_based_color_summary">Aktifkan pembuatan warna berdasarkan album</string>
+    <!-- In appearance settings, change between album based color and system wide color. Title -->
+    <string name="settings_content_based_color">Warna berdasarkan konten</string>
+    <!-- In about screen, explain where the app APK is from (Google Play, GitHub, etc) -->
+    <string name="settings_package_type">Tipe paket</string>
+    <!-- Shown if user clicks on lyrics icon but the song doesn't contain any lyrics in metadata -->
+    <string name="no_lyric_found">Lirik tidak ditemukan</string>
+    <!-- Shown next to song's CD number in detail UI -->
+    <string name="dialog_disc_number">Nomor disk</string>
+    <!-- Used in place of the song name if the song name can't be found unexpectedly -->
+    <string name="unknown_title">Judul tidak diketahui</string>
+    <!-- Tab on home screen showing a hierarchical folder list -->
+    <string name="filesystem">Sistem berkas</string>
+    <!-- Shown next to song's MIME type (like "audio/mpeg") in detail UI -->
+    <string name="dialog_mime">Tipe MIME</string>
+    <!-- Shown next to song's duration (like "5:37") in detail UI -->
+    <string name="dialog_duration">Durasi</string>
+    <!-- In player UI settings, change between centered title and left-aligned title. Title -->
+    <string name="settings_title_center">Judul di tengah</string>
+    <!-- In player UI settings, change between centered title and left-aligned title. Subtext -->
+    <string name="settings_title_center_summary">Gunakan judul rata tengah untuk pemutar penuh</string>
+    <!-- Appearance settings for the full player which shows what's playing in fullscreen. Title -->
+    <string name="settings_player_ui">Antarmuka pemutar</string>
+    <!-- Appearance settings for the full player which shows what's playing in fullscreen. Subtext -->
+    <string name="settings_player_ui_summary">Antarmuka pemutar penuh, lirik</string>
+    <!-- Settings category about color scheme and other visual settings. Subtext -->
+    <string name="settings_appearance_summary">Tampilan aplikasi, mode tema</string>
+    <!-- Settings category for app credits and version. Title -->
+    <string name="settings_about_app">Tentang</string>
+    <!-- Settings category for app credits and version. Subtext -->
+    <string name="settings_about_music_downloader">Tentang aplikasi</string>
+    <!-- Settings category about song filter, playing and other app behavior settings. Subtext -->
+    <string name="settings_behavior_summary">Filter, perilaku saat dibuka</string>
+    <!-- Shown as category header in about app screen above GitHub and Telegram links -->
+    <string name="settings_category_links">Tautan</string>
+    <!-- Settings category about songs (currently disabled). Title -->
+    <string name="settings_library">Pustaka</string>
+    <!-- Settings category about songs (currently disabled). Subtext -->
+    <string name="settings_library_summary">Kelola pustaka media</string>
+    <!-- Settings category about audio playback. Title -->
+    <string name="settings_player_options">Audio</string>
+    <!-- Settings category about audio playback. Subtext -->
+    <string name="settings_player_options_summary">Kualitas keluaran, perilaku pemutaran</string>
+    <!-- Settings category about customizing UI (currently disabled). Title -->
+    <string name="settings_customization">Kustomisasi</string>
+    <!-- Settings category about customizing UI (currently disabled). Subtext -->
+    <string name="settings_customization_summary">Kelola opsi kustomisasi</string>
+    <!-- Pixel slider in behavior settings to specify how round album cover's corner should be. -->
+    <string name="settings_album_round_corner">Sudut membulat sampul album</string>
+    <!-- Toggle in player UI settings to make song name bold. Title -->
+    <string name="settings_title_bold">Judul tebal</string>
+    <!-- Toggle in player UI settings to make song name bold. Subtext -->
+    <string name="settings_title_bold_summary">Gunakan judul tebal untuk pemutar penuh</string>
+    <!-- Settings category about experimental features. Title -->
+    <string name="settings_experimental_settings">Eksperimental</string>
+    <!-- Settings category about experimental features. Subtext -->
+    <string name="settings_experimental_settings_summary">Fitur uji coba, lain-lain</string>
+    <!-- Toggle which makes color detection for album cover based color use more CPU to detect the
+    color, which improves accuracy but causes some lags on old devices. Subtext -->
+    <string name="settings_color_accuracy_summary">Buat pembuatan warna lebih akurat</string>
+    <!-- Toggle which makes color detection for album cover based color use more CPU to detect the
+    color, which improves accuracy but causes some lags on old devices. Title -->
+    <string name="settings_color_accuracy">Akurasi warna</string>
+    <!-- Sort songs by date created (of file) -->
+    <string name="sort_by_add_date">Tanggal ditambahkan</string>
+    <!-- Sort songs by date modified (of file) -->
+    <string name="sort_by_modified_date">Tanggal diubah</string>
+    <!-- Window title of settings subcategory in player UI settings about the lyrics feature -->
+    <string name="settings_lyric">Lirik</string>
+    <!-- Settings subcategory in player UI settings about the lyrics feature. Title -->
+    <string name="settings_lyrics_configuration">Konfigurasi lirik</string>
+    <!-- Settings subcategory in player UI settings about the lyrics feature. Subtext -->
+    <string name="settings_lyrics_configuration_summary">Atur tampilan lirik</string>
+    <!-- Toggle in lyrics settings to make all lyrics bold. Title -->
+    <string name="settings_lyrics_bold">Lirik tebal</string>
+    <!-- Toggle in lyrics settings to make all lyrics bold. Subtext -->
+    <string name="settings_lyrics_bold_summary">Gunakan ketebalan font yang lebih besar untuk lirik</string>
+    <!-- Toggle in lyrics settings to make all lyrics display in center instead of left. Title -->
+    <string name="settings_lyrics_center">Rata tengah</string>
+    <!-- Toggle in lyrics settings to make all lyrics display in center instead of left. Subtitle -->
+    <string name="settings_lyrics_center_summary">Gunakan perataan tengah untuk lirik</string>
+    <!-- Toggle in behavior settings to make app start playing music when opening it. Title -->
+    <string name="settings_play_on_launch">Putar saat dibuka</string>
+    <!-- Toggle in behavior settings to make app start playing music when opening it. Subtitle -->
+    <string name="settings_play_on_launch_summary">Putar musik saat aplikasi dibuka</string>
+    <!-- Window title of submenu in behavior settings to exclude songs that are in specific folders -->
+    <string name="settings_blacklist">Daftar hitam</string>
+    <!-- Toggle in behavior settings to exclude songs that are in specific folders. Subtext -->
+    <string name="settings_blacklist_folder_summary">Saring lagu dari folder tertentu</string>
+    <!-- Toggle in behavior settings to exclude songs that are in specific folders. Title -->
+    <string name="settings_blacklist_folder">Folder daftar hitam</string>
+    <!-- Used in about screen to show basic info about app (version, APK source, etc) -->
+    <string name="settings_category_basic_info">Info dasar</string>
+    <!-- Settings category label for misc -->
+    <string name="settings_category_misc">Lain-lain</string>
+    <!-- Settings category label for filtering songs (blacklist and minimum length) -->
+    <string name="settings_category_filters">Filter</string>
+    <!-- Settings category label for appearance settings that apply to whole app -->
+    <string name="settings_preference_category_application">Aplikasi</string>
+    <!-- Settings category label for player UI settings that apply to full player (display current song) -->
+    <string name="settings_category_full_player">Pemutar penuh</string>
+    <!-- Only used for debugging, not generally user visible -->
+    <string name="settings_crash_application">Buat aplikasi crash</string>
+    <!-- Only used for debugging, not generally user visible -->
+    <string name="settings_crash_application_summary">Crash-O-Matic 3000</string>
+    <!-- Shown next to song's album cover in detail UI -->
+    <string name="album_cover">Sampul album</string>
+    <!-- Context menu item to edit song metadata (currently disabled) -->
+    <string name="dialog_edit_metadata">Edit</string>
+    <!-- Accessibility tooltip for lyrics button in full player -->
+    <string name="dialog_lyrics">Lirik</string>
+    <!-- Error message when deleting song upon user request failed unexpectedly -->
+    <string name="delete_failed">Gagal menghapus lagu: %s</string>
+    <!-- Error message when deleting playlist upon user request failed unexpectedly -->
+    <string name="delete_failed_playlist">Gagal menghapus playlist: %s</string>
+    <!-- Settings toggle to use photos permission to read jpg files as album cover. Title -->
+    <string name="album_covers_enhance">Pemuatan sampul album yang ditingkatkan</string>
+    <!-- Settings toggle to use photos permission to read jpg files as album cover. Subtext -->
+    <string name="album_covers_enhance_desc">Tampilkan sampul lagu berkualitas tinggi dan izinkan sampul album dan lagu berbeda (memerlukan akses foto)</string>
+    <!-- Ask the user to deny this permission in system settings -->
+    <string name="deny_images"><![CDATA[Silakan tolak izin \"Foto dan video\"]]></string>
+    <!-- Ask the user to grant this permission in system settings -->
+    <string name="grant_images"><![CDATA[Silakan berikan izin \"Foto dan video\"]]></string>
+    <!-- Ask the user to grant this permission in system settings -->
+    <string name="grant_audio"><![CDATA[Silakan berikan izin \"Musik dan audio\"]]></string>
+    <!-- When app crashes, this is shown as toast to notify user that crash logs are copied -->
+    <string name="crash_clipboard">Log kerusakan disalin ke papan klip</string>
+    <string name="crash_thread">Thread</string>
+    <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Title -->
+    <string name="settings_trim_lyrics">Hapus spasi di sekitar lirik</string>
+    <!-- Tooltip and dialog title for sleep timer in full player -->
+    <string name="timer">Timer tidur</string>
+    <!-- Tooltip and dialog title for playback speed in full player -->
+    <string name="playback_speed">Kecepatan pemutaran</string>
+    <!-- Used in playback speed dialog to control speed / tempo, next to slider -->
+    <string name="tempo">Tempo</string>
+    <!-- Used in playback speed dialog to control pitch, next to slider -->
+    <string name="pitch">Nada</string>
+    <!-- Ex: "Tempo: 2.00" for double speed -->
+    <string name="tempo_pitch_value">%s: %.2fx</string>
+    <!-- Used in playback speed dialog to ensure tempo and pitch stay the same, check box label -->
+    <string name="lock_tempo_pitch">Kunci tempo dan nada</string>
+    <!-- Used in playback speed to restore default tempo and pitch -->
+    <string name="reset">Setel ulang</string>
+    <!-- Accessibility tooltip for queue button showing which songs are playing next and before -->
+    <string name="current_playlist">Daftar putar saat ini</string>
+    <!-- Error notification when app is closed but user wants to play music and system denied it. Title -->
+    <string name="fgs_failed_title">Gagal melanjutkan pemutaran musik</string>
+    <!-- Error notification when app is closed but user wants to play music and system denied it. Subtext -->
+    <string name="fgs_failed_text">Ketuk di sini untuk membuka aplikasi dan melanjutkan pemutaran</string>
+    <!-- Notification channel name for error notifications -->
+    <string name="fgs_failed_channel">Pemutaran gagal dilanjutkan</string>
+    <!-- Sort songs/albums/etc by release date -->
+    <string name="sort_by_release_date">Tanggal rilis</string>
+    <!-- Ex: "Sleep timer will pause music at 10:00 PM", shown to user in dialog and as tooltip -->
+    <string name="timer_expiry">Timer tidur akan menjeda musik pada %s</string>
+    <!-- Ex: "Sleep timer will pause music when song playing at 10:00 PM ends", that is, it will
+    first wait until it's 10:00 PM, and then it will check which song is playing. Once the song is
+    over, music will be paused. Shown to user as tooltip only -->
+    <string name="timer_expiry_eos">Timer tidur akan menjeda musik saat lagu yang diputar pada %s selesai</string>
+    <!-- Shown to user in dialog and as tooltip -->
+    <string name="timer_expiry_end_of_this_song">Timer tidur akan menjeda musik di akhir lagu ini</string>
+    <!-- Settings category label for appearance settings that apply to home screen with tabs -->
+    <string name="settings_preference_category_home">Layar beranda</string>
+    <!-- Choose order of tabs in appearance settings. Title -->
+    <string name="tab_order">Atur urutan tab</string>
+    <!-- Choose order of tabs in appearance settings. Subtext -->
+    <string name="tab_order_summary">Aplikasi akan menampilkan tab pertama saat dibuka. Tab setelah pembatas akan disembunyikan.</string>
+    <!-- Accessibility label for seek bar in settings -->
+    <string name="seekbar">Bilah geser</string>
+    <!-- Accessibility label for divider which is semantically important in tab order dialog -->
+    <string name="divider">Pembatas</string>
+    <!-- Tooltip for back button -->
+    <string name="back">Kembali</string>
+    <!-- Tooltip for button which plays every song in the list -->
+    <string name="play_all">Putar semua</string>
+    <!-- Tooltip for button which plays every song in the list in random order -->
+    <string name="shuffle_all">Putar semua secara acak</string>
+    <!-- Tooltip for sort option button in song list -->
+    <string name="sort">Urutkan</string>
+    <!-- Tooltip for scroll button in artist page, which has both albums and songs -->
+    <string name="scroll_to_albums">Gulir ke album</string>
+    <!-- Tooltip for scroll button in artist page, which has both albums and songs -->
+    <string name="scroll_to_songs">Gulir ke lagu</string>
+    <!-- Tooltip for play button in full player -->
+    <string name="play">Putar</string>
+    <!-- Tooltip for three dots button opening context menu -->
+    <string name="more">Lainnya</string>
+    <!-- Tooltip for x button removing song from queue/playlist -->
+    <string name="remove">Hapus</string>
+    <!-- Tooltip for skip to next button in full player -->
+    <string name="skip_next">Lagu berikutnya</string>
+    <!-- Tooltip for button to close full player and return to song list -->
+    <string name="expand_less">Tutup</string>
+    <!-- Tooltip for skip to previous button in full player -->
+    <string name="skip_previous">Lagu sebelumnya</string>
+    <!-- Accessibility label for seek bar to control song position -->
+    <string name="position_slider">Penggeser posisi</string>
+    <!-- Settings toggle to enable newer lyrics rendering code. Title -->
+    <string name="settings_lyrics_ui">Aktifkan antarmuka lirik baru</string>
+    <!-- Settings toggle to enable newer lyrics rendering code. Subtext -->
+    <string name="settings_lyrics_ui_summary">Antarmuka eksperimental untuk menampilkan lirik kata demi kata dengan fitur lanjutan</string>
+    <!-- Settings toggle to enable showing lyrics in status bar (requires meizu phone). Title -->
+    <string name="settings_status_bar_lyrics_title">Lirik di bilah status</string>
+    <!-- Settings toggle to enable showing lyrics in status bar (requires meizu phone). Subtext -->
+    <string name="settings_status_bar_lyrics_summary">Aktifkan metode MeiZu untuk menampilkan lirik di bilah status (hanya tersedia di beberapa perangkat)</string>
+    <!-- Description shown about lyric widget in Android launcher / home screen's widget selector on Android 12+ -->
+    <string name="lyric_widget_description">Widget yang menampilkan lirik media yang sedang diputar</string>
+    <!-- Context menu item to delete song/album/playlist -->
+    <string name="delete">Hapus</string>
+    <!-- Dialog text to confirm user wants to delete a specific song or playlist with user defined name -->
+    <string name="delete_really">Yakin ingin menghapus \"%s\"? Tindakan ini tidak dapat dibatalkan.</string>
+    <!-- Dialog text to confirm user wants to delete all songs by an artist -->
+    <string name="delete_really_artist">Yakin ingin menghapus semua lagu dari \"%s\"? Tindakan ini tidak dapat dibatalkan.</string>
+    <!-- Used in dialog as positive action -->
+    <string name="yes">Ya</string>
+    <!-- Used in dialog as negative action -->
+    <string name="no">Tidak</string>
+    <!-- Sort songs/albums/etc by file path (used when user added numbering to file names) -->
+    <string name="sort_by_file_path">Jalur berkas</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_mono">Mono</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_stereo">Stereo</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_quad">Quad</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_surround">Surround (4.0)</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1_surround">Surround (7.1)</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1">5.1</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_6point1">6.1</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1point2">5.1.2</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_5point1point4">5.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1point2">7.1.2</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_7point1point4">7.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_9point1point4">9.1.4</string>
+    <!-- This is one of the possible speaker layouts supported by Android. It's used to display
+    supported speaker layouts for USB DACs and active speaker layout for current playback. -->
+    <string name="spk_channel_out_9point1point6">9.1.6</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_left">Depan kiri</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_right">Depan kanan</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_center">Depan tengah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_low_frequency">Frekuensi rendah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_left">Belakang kiri</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_right">Belakang kanan</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_left_of_center">Depan kiri dari tengah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_right_of_center">Depan kanan dari tengah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_back_center">Belakang tengah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_side_left">Samping kiri</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_side_right">Samping kanan</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_center">Atas tengah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_left">Atas depan kiri</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_center">Atas depan tengah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_front_right">Atas depan kanan</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_invalid">Tidak valid</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_left">Atas belakang kiri</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_center">Atas belakang tengah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_back_right">Atas belakang kanan</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_side_left">Atas samping kiri</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_top_side_right">Atas samping kanan</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_left">Bawah depan kiri</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_center">Bawah depan tengah</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_bottom_front_right">Bawah depan kanan</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_low_frequency_2">Frekuensi rendah 2</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_wide_left">Depan lebar kiri</string>
+    <!-- This is one of the possible individual speakers supported by Android. It's used together
+     with other individual speakers in a list to display supported speaker layouts for USB DACs and
+     active speaker layout for current playback. -->
+    <string name="spk_channel_out_front_wide_right">Depan lebar kanan</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_invalid">Tidak valid</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_8bit">8-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit">16-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit_big_endian">16-bit PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit">24-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit_big_endian">24-bit PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_32bit">32-bit (int) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_32bit_big_endian">32-bit (int) PCM (big endian)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_float">32-bit (float) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mp3">MP3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_lc">AAC-LC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_he_v1">HE-AAC v1</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_he_v2">HE-AAC v2</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_xhe">xHE-AAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_eld">AAC-ELD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_er_bsac">AAC ER BSAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ac3">AC-3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_e_ac3">E-AC-3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_e_ac3_joc">E-AC-3-JOC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ac4">AC-4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts">DTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_hd">DTS-HD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dolby_truehd">Dolby TrueHD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_opus">Opus</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_uhd_p2">DTS-X</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_bluetooth_a2dp">Bluetooth A2DP</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_builtin_speaker">Speaker internal</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_wired_headset">Headset berkabel</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_wired_headphones">Headphone berkabel</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi">HDMI</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_device">Perangkat USB</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_accessory">Aksesori USB</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock">Dok</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_usb_headset">Headset USB</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hearing_aid">Alat bantu dengar</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_headset">Headset Bluetooth LE</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi_arc">HDMI Audio Return Channel</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_hdmi_earc">HDMI Enhanced Audio Return Channel</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_unknown">Tidak diketahui</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock_digital">Dok digital</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_dock_analog">Dok analog</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_aux_line">Jalur AUX</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_line_analog">Jalur analog</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_line_digital">Jalur digital</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_speaker">Speaker Bluetooth LE</string>
+    <!-- This is one of the possible audio device types supported by Android. It's used to display
+    playback path of active playback. -->
+    <string name="device_type_ble_broadcast">Siaran Bluetooth LE</string>
+    <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
+    <string name="open_in_music_downloader">Buka di Music Downloader</string>
+    <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
+    <string name="settings_trim_lyrics_summary">Spasi sebelum huruf pertama atau setelah akhir baris lirik bisa memiliki nilai artistik. Jika Anda tidak setuju, aktifkan opsi ini untuk menghapusnya secara otomatis.</string>
+    <!-- Error message if file can't be played for any reason -->
+    <string name="cannot_play_file">Tidak dapat memutar berkas ini</string>
+    <!-- Settings toggle in lyrics UI to disable animations in lyrics. Title -->
+    <string name="settings_lyrics_no_animation">Nonaktifkan animasi</string>
+    <!-- Settings toggle in lyrics UI to disable animations in lyrics. Subtext -->
+    <string name="settings_lyrics_no_animation_summary">Nonaktifkan semua animasi transisi baris lirik</string>
+    <!-- Shown next to song's bit rate (like "128 kbps") in detail UI -->
+    <string name="dialog_bitrate">Bitrate</string>
+    <!-- Showing the song's bit rate (like "128 kbps") in detail UI -->
+    <string name="bitrate_format">%1$d kbps</string>
+    <!-- Showing the song's bit rate in detail UI if it can't be determined -->
+    <string name="bitrate_unknown">Bitrate tidak diketahui</string>
+
+    <!-- Title of crash report screen -->
+    <string name="oh_no">Aduh!</string>
+    <!-- Explainer of crash report screen -->
+    <string name="music_downloader_crashed_explainer2">Music Downloader mengalami crash :(\n\nSilakan kirimkan laporan bug agar masalah seperti penyebab crash ini bisa diperbaiki!\n\nSetiap situasi seunik musik; tanpa bantuan Anda, bug ini kemungkinan besar <b>TIDAK</b> akan diperbaiki!</string>
+    <!-- Positive action button in crash report screen -->
+    <string name="send_email">Kirim email</string>
+    <!-- Error message if sending crash report failed -->
+    <string name="send_email_manually">Silakan kirim log ke nift4dev@gmail.com – aplikasi email tidak ditemukan</string>
+    <!-- Error message if lyrics were found but are corrupted or in unsupported format -->
+    <string name="failed_to_parse_lyric">Gagal mengurai lirik</string>
+    <!-- Title of dialog which shows playback path (formats, sample rates, devices, changes in those). -->
+    <string name="audio_signal_chain">Rantai sinyal audio</string>
+    <!-- Error message of dialog which shows playback path if no data is available -->
+    <string name="audio_not_initialized">Sistem pemutaran audio belum diinisialisasi. Coba putar sesuatu!</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_none">Tidak ada</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_bit_perfect">Bit perfect</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_ultrasound">Ultrasonik</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_spatializer">Spatializer</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_gapless_offload">Gapless offload</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_incall_music">Musik saat panggilan</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_voip_rx">VoIP RX</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_mmap_noirq">MMAP (tanpa IRQ)</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_direct_pcm">PCM langsung</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_iec958_nonaudio">IEC 958 (non-audio)</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_sync">Sync</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_raw">Raw</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_tts">TTS</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_hw_av_sync">Sinkronisasi A/V perangkat keras</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_non_blocking">Non-blocking</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_compress_offload">Compressed offload</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_deep_buffer">Deep buffer</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_fast">Fast</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_primary">Keluaran utama</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_direct">Direct</string>
+    <!-- This is one of the output settings supported by Android. It's used to display playback path
+    of active playback. These are technical terms so it may not be directly translatable. -->
+    <string name="mix_port_flag_unknown">Tidak diketahui</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_8_24bit">24-bit (8.24) PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_wb">AMR-WB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac">AAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_vorbis">Vorbis</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_iec61937">IEC 61937</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_wb_plus">AMR-WB+</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_amr_nb">AMR-NB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrc">EVRC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcb">EVRC-B</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcwb">EVRC WB</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_evrcnw">EVRC NW</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adif">AAC ADIF</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_wma">WMA</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_wma_pro">WMA Pro</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mp2">MPEG-2</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_qcelp">QCELP</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dsd">Direct Stream Digital</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_flac">FLAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_alac">ALAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ape">Monkey\'s Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts">AAC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_sbc">SBC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx">aptX</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_hd">aptX HD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_ldac">LDAC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat">Dolby MAT</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm">AAC in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_celt">CELT</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive">aptX Adaptive</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lhdc">LHDC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lhdc_ll">LLAC (LHDC-LL)</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_twsp">aptX TWS+</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_lc3">LC3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh">MPEG-H</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_iec60958">IEC 60958</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_uhd">DTS-UHD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dra">DRA</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive_qlea">aptX Adaptive over LE Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aptx_adaptive_r4">aptX Adaptive R4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_dts_hd_ma">DTS-HD Master Audio</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_main">AAC Main</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ssr">AAC-SSR</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ltp">AAC-LTP</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_scalable">AAC Scalable</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_erlc">AAC ERLC</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_ld">AAC-LD</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_main">AAC Main in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_lc">AAC-LC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ssr">AAC-SSR in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ltp">AAC-LTP in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_he_v1">HE-AAC v1 in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_he_v2">HE-AAC v2 in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_xhe">xHE-AAC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_ld">AAC-LD in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_scalable">AAC Scalable in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_erlc">AAC-ERLC in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_adts_eld">AAC-ELD in ADTS</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_lc">AAC-LC in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_he_v1">HE-AAC v1 in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_aac_latm_he_v2">HE-AAC v2 in LATM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_1_0">Dolby MAT 1.0</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_2_0">Dolby MAT 2.0</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mat_2_1">Dolby MAT 2.1</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_bl_l3">MPEG-H Baseline Profile L3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_bl_l4">MPEG-H Baseline Profile L4</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_lc_l3">MPEG-H Low Complexity L3</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_mpegh_sub_lc_l4">MPEG-H Low Complexity L4</string>
+    <!-- This is used if Android uses an audio format we don't know. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_unknown">Format tidak dikenal %s</string>
+    <!-- This is used if Android uses an audio format we don't know. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_unknown_d">Format tidak dikenal %d</string>
+    <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
+    <string name="crash_report">Laporan crash</string>
+    <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
+    <string name="what_were_you_doing">Apa yang sedang Anda lakukan di Music Downloader saat crash ini terjadi? Tambahkan detail sebanyak mungkin untuk memperbesar peluang saya memperbaiki masalah ini.\n\nPerlu diketahui bahwa bahasa Inggris lebih disukai untuk laporan bug, tetapi saya akan mencoba menggunakan terjemahan mesin jika Anda mengirim laporan dalam bahasa lain.</string>
+    <!-- Used if no email program is installed -->
+    <string name="email_clipboard">Alamat email dan teks disalin ke papan klip</string>
+    <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
+    <string name="settings_export_logs">Ekspor log aplikasi</string>
+    <!-- Toggle in player UI settings to show sample rate, bit depth, etc in full player. Title -->
+    <string name="settings_audio_quality_info">Info kualitas audio</string>
+    <!-- Toggle in player UI settings to show sample rate, bit depth, etc in full player. Subtext -->
+    <string name="settings_audio_quality_info_summary">Tampilkan informasi kualitas/format audio di layar pemutar</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_16bit_offload">16-bit PCM Offload</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_24bit_offload">24-bit (8.24) PCM offload</string>
+    <!-- Toggle in lyrics settings to draw gradient animation if parent foreign-language line has
+    gradient animation but we don't have timing data for the translated line. Title -->
+    <string name="settings_translation_auto_word">Animasikan terjemahan otomatis</string>
+    <!-- Toggle in lyrics settings to draw gradient animation if parent foreign-language line has
+    gradient animation but we don't have timing data for the translated line. Subtext -->
+    <string name="settings_translation_auto_word_summary">Terapkan gradien linear pada baris terjemahan saat pemutaran lirik tersinkron per kata jika terjemahan tidak memiliki metadata sinkronisasi per kata</string>
+    <!-- Error message when playing a file but it doesn't exist anymore -->
+    <string name="cannot_find_file">Berkas ini tidak ditemukan</string>
+    <!-- Used in crash report screen to explain what text field is about -->
+    <string name="enter_msg_for_dev_here">Tulis pesan untuk pengembang di sini</string>
+    <!-- Error text if user enters an email address into the field meant for message to developer in crash report screen -->
+    <string name="do_not_enter_email_enter_msg">Tulis pesan, bukan alamat email</string>
+    <!-- Error text if user enters app logs into the field meant for message to developer in crash report screen -->
+    <string name="log_will_auto_send">Log akan dikirim otomatis, jelaskan masalahnya saja</string>
+    <!-- Used in crash report screen to explain the user doesn't need to worry about sending logs -->
+    <string name="log_attachment">Log akan dikirim otomatis sebagai lampiran</string>
+    <!-- Tooltip of plus button in playlist list to create a new playlist. Also used in playlist
+     selection dialog after user pressed "Add to playlist" on a song. -->
+    <string name="create_playlist">Buat playlist…</string>
+    <!-- Context menu item to rename a playlist -->
+    <string name="rename">Ganti nama</string>
+    <!-- Loading message if user asked to refresh songs -->
+    <string name="refreshing_wait">Menyegarkan, mohon tunggu…</string>
+    <!-- Loading message if user asked to refresh songs and we can show a percentage.
+    Ex: "Refreshing, step 2/3: 80%" -->
+    <string name="still_refreshing">Menyegarkan, langkah %1$d/%2$d: %3$s</string>
+    <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
+    <string name="did_you_know">Tahukah Anda…</string>
+    <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
+    <string name="refresh_did_you_know">Music Downloader meminta daftar lagu terbaru setiap kali aplikasi dibuka, dan selama Music Downloader berjalan, media baru juga akan terdeteksi secara otomatis. Tombol \"Segarkan\" ini tidak memuat ulang media di Music Downloader, melainkan meminta sistem Anda memindai ulang semua berkas dari semua perangkat penyimpanan permanen yang terpasang (itulah sebabnya prosesnya memakan waktu). Artinya, kecuali sistem atau aplikasi lain bermasalah, Anda tidak akan pernah perlu menggunakan fitur ini.\n\nAda lagu yang hilang? Pastikan memeriksa "Setelan > Perilaku" untuk filter durasi minimum dan daftar hitam folder, lalu pastikan setelan tersebut bernilai sesuai harapan. Untuk kemungkinan penyebab lain, silakan lihat FAQ kami.</string>
+    <!-- Error message when renaming playlist upon user request failed unexpectedly -->
+    <string name="rename_failed_playlist">Gagal mengganti nama playlist: %s</string>
+    <!-- Text field hint used for dialog where playlist is renamed or created -->
+    <string name="playlist_name">Nama playlist</string>
+    <!-- Error message when creating playlist upon user request failed unexpectedly -->
+    <string name="create_failed_playlist">Gagal membuat playlist: %s</string>
+    <!-- Dialog title for entering name when renaming playlist -->
+    <string name="rename_playlist">Ganti nama playlist</string>
+    <!-- Error message when changing songs in the playlist upon user request failed unexpectedly -->
+    <string name="edit_playlist_failed">Gagal mengedit playlist: %s</string>
+    <!-- Error message when changing songs in the special "Favourites" playlist upon user request
+    failed unexpectedly -->
+    <string name="edit_favorites_failed">Gagal mengedit favorit: %s</string>
+    <!-- Context menu item to add song to playlist -->
+    <string name="add_to_playlist">Tambahkan ke playlist</string>
+    <!-- Error if no internet browser is installed but user clicks a link -->
+    <string name="no_app_found">Tidak ada aplikasi yang dapat melakukan ini</string>
+    <!-- Shown below the lead developer's nickname in about screen -->
+    <!-- Shown below the lead designer's nickname in about screen -->
+    <!-- Shown below the original creator's nickname in about screen -->
+    <!-- Shown below other developer's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen. SongSync is an app name -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Shown below a contributor's nickname in about screen. This is the feature they worked on -->
+    <!-- Shown below a contributor's nickname in about screen. This is the feature they worked on -->
+    <!-- Shown below a contributor's nickname in about screen -->
+    <!-- Home menu item to refresh song list quickly -->
+    <string name="home_menu_quick_refresh">Segarkan cepat</string>
+    <!-- Context menu item to add song to currently playing queue (as opposed to playlist which is
+    .m3u file) -->
+    <string name="add_to_queue">Tambahkan ke antrean</string>
+    <!-- Three-state dialog toggle if a feature is disabled -->
+    <string name="disabled">Nonaktif</string>
+    <!-- Three-state dialog toggle if a feature is enabled -->
+    <string name="offload_enabled_if_supported">Selalu aktif</string>
+    <!-- Three-state dialog toggle if a feature is conditionally enabled -->
+    <string name="offload_enabled_if_gapless">Aktif jika pemutaran tanpa jeda memungkinkan</string>
+    <!-- Dialog title for audio offload feature. Offload is a technical term -->
+    <string name="settings_audio_offload">Audio offload (hemat baterai)</string>
+    <!-- Shown above the link to our group in about screen -->
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_20bit">20-bit PCM</string>
+    <!-- This is one of the possible audio formats supported by Android. It's used to display
+    supported output formats by device and playback path of active playback. -->
+    <string name="spk_encoding_pcm_20bit_big_endian">20-bit PCM (big endian)</string>
+    <!-- Player UI toggle to enable animated shape similar to a cookie for album cover. Subtext -->
+    <string name="settings_cookie_summary">Buat sampul album berbentuk kue</string>
+    <!-- Player UI toggle to enable animated shape similar to a cookie for album cover. Title -->
+    <string name="settings_cookie_info">Sampul kue</string>
+    <!-- Appearance toggle to replace gray color with black in app UI. Title -->
+    <string name="settings_pure_dark">Tema gelap murni</string>
+    <!-- Appearance toggle to replace gray color with black in app UI. Subtext -->
+    <string name="settings_pure_dark_summary">Tema dengan semua permukaan aplikasi berwarna hitam pekat (dapat menyebabkan black crush pada layar OLED)</string>
+    <!-- Behavior toggle to stop playing music when closing the app in "Recent apps" of Android system. Title -->
+    <string name="settings_stop_on_dismiss">Hentikan saat ditutup</string>
+    <!-- Behavior toggle to stop playing music when closing the app in "Recent apps" of Android system. Subtext -->
+    <string name="settings_stop_on_dismiss_summary">Hentikan pemutaran saat aplikasi ditutup dari aplikasi terkini</string>
+    <!-- Display style where songs/albums/etc are displayed as grid, but smaller -->
+    <string name="compact_grid">Kisi (ringkas)</string>
+    <!-- Sort songs/albums/etc by the album's release year -->
+    <string name="sort_by_album_year">Tahun album</string>
+    <!-- Sort songs by the album artist, and then the album's release year -->
+    <string name="sort_by_album_artist_year"><![CDATA[Artis album -> tahun]]></string>
+    <!-- Error in renaming playlist dialog when an letter is used which isn't supported by FAT32 -->
+    <string name="forbidden_symbol_error">Karakter tidak valid pada nama</string>
+    <!-- Used in about screen to credit every translator with their Weblate display name -->
+    <string name="translators">Penerjemah</string>
+    <!-- Used in audio settings, this is a technical/"brand" name for an interoperable audio
+    loudness normalization feature established since 2002 -->
+    <string name="settings_replaygain">ReplayGain</string>
+    <!-- Change the ReplayGain (this is a technical/"brand" name for an interoperable audio loudness
+    normalization feature established since 2002) mode between off, Preserve album dynamics, All
+    tracks equal loudness and Smart -->
+    <string name="settings_replaygain_mode">Mode</string>
+    <!-- Change the pre-amplification (to amplify: to increase the strength of a sound; make louder)
+    of music which has ReplayGain tags. Title. Also explained more below -->
+    <string name="settings_replaygain_preamp">Pra-penguat</string>
+    <!-- Change the pre-attenuation (to attenuate: to make something less or weaker) of music which
+    has no ReplayGain tags. Title. Also explained more below -->
+    <string name="settings_replaygain_no_rg_amp">Peredaman (tanpa RG)</string>
+    <!-- Title for Boost feature in Audio menu which is explained more below -->
+    <string name="settings_replaygain_boost">Boost</string>
+    <!-- Title for DRC feature in ReplayGain menu which is explained more below -->
+    <string name="settings_replaygain_drc">Aktifkan DRC</string>
+    <!-- Explanation for DRC feature in ReplayGain menu. DRC is a technical term -->
+    <string name="settings_replaygain_drc_desc">Gunakan \"Dynamic Range Compression\" sebagai perlindungan clipping (disarankan). Jika dinonaktifkan, volume akan diturunkan (volume tidak akan berada pada level yang sama sehingga merusak efek normalisasi).</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="track_gain">Semua trek sama kerasnya</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="album_gain">Pertahankan dinamika album</string>
+    <!-- One of the possible ReplayGain modes -->
+    <string name="smart">Cerdas</string>
+    <!-- Tooltip of button in queue menu which will automatically scroll to playing song -->
+    <string name="scroll_to_playing">Gulir ke lagu yang diputar</string>
+    <!-- Text in queue which shows how much time is remaning. Ex "01:20:00 remaining, 02:00:00 total"
+    for a two-hour-long queue after 40 minutes already passed. -->
+    <string name="duration_queue">%s tersisa, %s total</string>
+    <!-- Unit decibels for loudness, used in audio and ReplayGain settings -->
+    <string name="d_db">%d dB</string>
+    <!-- Detailed explanation for Boost feature in Audio settings -->
+    <string name="settings_replaygain_boost_desc" formatted="false">"\"Boost\" akan mengeluarkan ReplayGain dan musik lain pada volume yang lebih tinggi dari setelan perangkat Anda. (Jika volume perangkat mendekati 100%, Boost tidak akan menaikkan volume.) Dengan Boost, Anda dapat menikmati musik dengan kekerasan suara yang mirip aplikasi lain, misalnya game. Perlu diketahui bahwa fitur ini eksperimental dan dapat mengganggu aplikasi equalizer eksternal. Boost tidak berfungsi dengan headphone Bluetooth. Jika ada masalah terkait volume, nonaktifkan Boost dengan menyetelnya ke 0 dB. "</string>
+    <!-- Detailed explanation for "Attenuation (no RG)" feature in ReplayGain settings -->
+    <string name="settings_replaygain_no_rg_amp_desc">Turunkan volume lagu keras yang tidak memiliki tag ReplayGain</string>
+    <!-- Detailed explanation for "Pre amp" feature in ReplayGain settings -->
+    <string name="settings_replaygain_preamp_desc">Naikkan atau turunkan volume lagu yang memiliki tag ReplayGain. Nilai lebih tinggi dapat menyebabkan hilangnya dinamika karena pencegahan clipping.</string>
+    <!-- Detailed explanation for "Smart" mode in ReplayGain settings -->
+    <string name="settings_replaygain_mode_desc">\"Cerdas\" secara otomatis mempertahankan dinamika album hanya saat lagu dari satu album diputar berurutan.</string>
+    <!-- Sort songs by the artist, and then the song's release year -->
+    <string name="sort_by_artist_year"><![CDATA[Artis -> tahun]]></string>
+    <!-- Empty the queue and stop playing music. Next to trash can swipe icon -->
+    <string name="clear_queue">Kosongkan antrean</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_shuffle_all_songs">acak semua lagu</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_shuffle_everything">acak semuanya</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_random_songs">putar lagu acak</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_random_stuff">putar apa saja secara acak</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_play_randomly">putar secara acak</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_start_random_music">mulai musik acak</string>
+    <!-- Google Assistant / voice assistant phrase. There are different ways to express actions,
+     and we want to catch all common ways, so there are different wordings for the same action. -->
+    <string name="actions_query_start_random_songs">mulai lagu acak</string>
+    <!-- Google Assistant / voice assistant phrase with song name placeholder -->
+    <string name="actions_query_shuffle_specific">acak $item_name</string>
+    <!-- Tooltip for heart button -->
+    <string name="favorite">Favorit</string>
+    <!-- Error notification when user tries to change favourite status of song while the app is in
+    background but we must ask for permission to write the special playlist file. Title -->
+    <string name="favorite_failed_title">Gagal mengubah status favorit lagu</string>
+    <!-- Error notification when user tries to change favourite status of song while the app is in
+    background but we must ask for permission to write the special playlist file. Subtext -->
+    <string name="favorite_failed_text">Ketuk di sini untuk menerapkan perubahan dengan memberikan izin ke berkas playlist favorit</string>
+    <!-- Notification channel for errors while the app is closed -->
+    <string name="error_in_bg">Kesalahan yang terjadi di latar belakang</string>
+    <!-- Tab in blacklist menu in behavior settings for configuring whitelist -->
+    <string name="settings_whitelist">Daftar putih</string>
+    <!-- Explaining how whitelist and blacklist interact as info box to the user -->
+    <string name="whitelist_and_blacklist">Jika tidak ada folder yang dipilih di Daftar putih, semua folder akan diizinkan.\n\nDaftar putih dan Daftar hitam diterapkan bersamaan, dengan Daftar hitam lebih diutamakan. Misalnya, Anda dapat mengizinkan sebuah folder di Daftar putih sambil mengecualikan salah satu subfoldernya di Daftar hitam.</string>
+    <!-- Ask the user if they really want to delete the changes they made in the playlist editor and
+    restore playlist to state before they started editing. Dialog title -->
+    <string name="discard_changes_title">Buang perubahan?</string>
+    <!-- Dialog action if changes are NOT discarded, but saved -->
+    <string name="save">Simpan</string>
+    <!-- Dialog action if changes are discarded, and NOT saved -->
+    <string name="discard">Buang</string>
+    <!-- Ask the user if they really want to delete the changes they made in the playlist editor and
+    restore playlist to state before they started editing. Dialog text -->
+    <string name="discard_changes_msg">Yakin ingin membuang perubahan Anda pada playlist \"%s\"?</string>
+    <!-- Tooltip for apply/save button in playlist editor -->
+    <string name="apply">Terapkan</string>
+    <!-- Ask the user if they want to restore the changes they made in the playlist editor but
+    didn't quit properly (maybe the app crashed, phone battery died, etc). If not restoring, the
+    editor will contain current state of playlist. Dialog title -->
+    <string name="restore_edits">Pulihkan perubahan?</string>
+    <!-- Ask the user if they want to restore the changes they made in the playlist editor but
+    didn't quit properly (maybe the app crashed, phone battery died, etc). If not restoring, the
+    editor will contain current state of playlist. Dialog text -->
+    <string name="restore_edits_msg">Ada perubahan yang belum disimpan untuk playlist \"%s\". Apakah Anda ingin memulihkan perubahan tersebut, atau membuangnya dan memulai lagi dengan versi playlist yang baru?</string>
+    <!-- Dialog action if changes are restored in playlist editor -->
+    <string name="restore">Pulihkan</string>
+    <!-- On old Android devices that don't have internal storage, it may happen that there is no
+    storage at all. Storage is required to edit playlists, so ask user to insert SD card. -->
+    <string name="mount_storage">Silakan masukkan kartu SD untuk menggunakan fitur ini</string>
+    <!-- Error message when changes unexpectedly failed to restore -->
+    <string name="failed_to_restore">Gagal memulihkan perubahan: %s</string>
+    <!-- Dialog title when user opens playlist editor but playlist is empty, because playlist editor
+    isn't used to add new songs but only to move or delete them. Hint user at proper way. -->
+    <string name="playlist_empty">Playlist kosong</string>
+    <!-- Dialog text when user opens playlist editor but playlist is empty, because playlist editor
+    isn't used to add new songs but only to move or delete them. Hint user at proper way. -->
+    <string name="playlist_empty_msg">Tambahkan lagu dengan mengetuk \"Tambahkan ke playlist\" di menu tiga titik pada sebuah lagu.</string>
+    <!-- In system settings of old Android versions, you can check Music Downloader in the list of apps
+    supporting local search. This string explains what can be searched when doing so -->
+    <string name="search_desc">Artis, album, dan trek</string>
+    <!-- In system settings of old Android versions, you can check Music Downloader in the list of apps
+supporting local search. This string is displayed in the search bar when using Music Downloader as search -->
+    <string name="search_hint">Cari lagu dan artis</string>
+    <!-- Shown in system's file upload dialog, used by browsers or similar, to allow user to choose
+     a song using the familiar Music Downloader user interface. App icon is next to it -->
+    <string name="picker_activity">Pilih trek musik</string>
+    <!-- Shown in system's file upload dialog, used by browsers or similar, to allow user to choose
+     a playlist using the familiar Music Downloader user interface. App icon is next to it -->
+    <string name="playlist_picker_activity">Pilih playlist</string>
+    <!-- Settings category in appearance settings relating to specific tabs on home page -->
+    <string name="settings_preference_category_folders_filesystem"><![CDATA[Tab Folder & Sistem berkas]]></string>
+    <!-- Toggle in the "folder & filesystem tabs" category in appearance settings. Title -->
+    <string name="show_file_names">Tampilkan nama berkas</string>
+    <!-- Toggle in the "folder & filesystem tabs" category in appearance settings. Subtext -->
+    <string name="show_file_names_summary">Tampilkan nama berkas sebagai pengganti nama lagu di tab Folder dan Sistem berkas</string>
+    <!-- Error if trying to rename/create playlist but the name is already used by some other playlist -->
+    <string name="another_with_name">Nama sudah digunakan</string>
+    <!-- Slider in lyric settings to change font size for lyrics -->
+    <string name="settings_font_size">Ukuran font</string>
+    <!-- Positive dialog action in sleep timer dialog to store the settings -->
+    <string name="set">Setel</string>
+    <!-- Check box in sleep timer dialog to only pause at end of song -->
+    <string name="timer_eos">Tunggu lagu selesai</string>
+    <!-- Option in sleep timer dialog to pause music when current song ends -->
+    <string name="timer_end_of_this_song">Akhir lagu ini</string>
+    <!-- Option in sleep timer dialog to pause music after custom amount of minutes instead of one
+    of the presets -->
+    <string name="other">Kustom</string>
+    <!-- Negative dialog action in sleep timer dialog if there's already a sleep timer set, and the
+    dialog shows the current settings. User can click OK to keep them or Unset to disable sleep timer. -->
+    <string name="unset">Nonaktifkan</string>
+    <!-- Hint in number input field when using custom minutes amount in sleep timer dialog -->
+    <string name="timer_hint">Menit sampai musik dijeda…</string>
+
+    <!-- Settings toggle in experimental to enable advanced workflow across the app, allowing to
+    have multiple queues -->
+    <string name="settings_mq_enabled">Banyak antrean</string>
+    <!-- Unpin this queue and allow it to be removed after some period of time -->
+    <string name="mq_unpin_queue">Lepas sematan antrean</string>
+    <!-- Pin this queue so it does not get automatically removed after some period of time -->
+    <string name="mq_pin_queue">Sematkan antrean</string>
+    <string name="shuffled">%s (diacak)</string>
+    <string name="loading_playlists">Memuat playlist...</string>
+    <!-- Exit-app confirmation bottom sheet (shown on back press from the navigation root) -->
+    <string name="exit_app">Keluar dari aplikasi</string>
+    <string name="are_you_sure_you_want_to_exit_app">Yakin ingin keluar dari aplikasi?</string>
+    <string name="exit">Keluar</string>
+    <string name="action_cancel">Batal</string>
+    <!-- Feedback screen (opened from Settings) -->
+    <string name="settings_feedback">Masukan</string>
+    <string name="settings_feedback_summary">Beri tahu kami masalah yang Anda alami</string>
+    <string name="feedback_amp_help"><![CDATA[Masukan & Bantuan]]></string>
+    <string name="tell_us_the_problem_you_encountered">Ceritakan masalah yang Anda alami</string>
+    <string name="some_songs_are_not_displayed">Beberapa lagu tidak ditampilkan</string>
+    <string name="bugs">Bug</string>
+    <string name="too_many_ads">Terlalu banyak iklan</string>
+    <string name="music_stop_playing">Musik berhenti diputar</string>
+    <string name="suggestion">Saran</string>
+    <string name="others">Lainnya</string>
+    <string name="submit">Kirim</string>
+    <string name="please_tell_us_more_details">Mohon beri detail lebih lengkap agar kami dapat menemukan dan menyelesaikan masalah Anda lebih cepat (minimal 6 karakter)</string>
+    <string name="you_have_not_filled_in_your_feedback_yet">Anda belum mengisi masukan</string>
+    <string name="thank_for_your_feedback">Terima kasih atas masukan Anda!</string>
+    <string name="we_will_try_our_best_to_improve_it">Kami akan berusaha sebaik mungkin untuk meningkatkannya</string>
+    <string name="ok">OK</string>
+    <!-- Rate app bottom sheet flow -->
+    <string name="image">Gambar</string>
+    <string name="satisfied">Apakah Anda puas dengan aplikasi ini?</string>
+    <string name="good">Bagus</string>
+    <string name="not_really">Tidak juga</string>
+    <string name="rate">Beri rating</string>
+    <string name="rate_app_title">Kami bekerja keras untuk pengalaman pengguna yang lebih baik.\nKami akan sangat menghargai jika Anda memberi rating.</string>
+    <string name="rate_app_title_1">Aduh!\nMohon berikan masukan untuk kami.</string>
+    <string name="rate_app_title_4">Kami juga menyukai Anda!\nTerima kasih atas masukan Anda.</string>
+
+    <string name="privacy_policy">Kebijakan privasi</string>
+    <string name="privacy_policy_summary">Cara kami mengumpulkan dan menggunakan data Anda</string>
+
+</resources>

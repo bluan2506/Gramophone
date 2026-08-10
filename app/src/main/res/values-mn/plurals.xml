@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Counting how many songs are in a song list -->
+    <plurals name="songs">
+        <item quantity="one">%d дуу</item>
+        <item quantity="other">%d дуу</item>
+    </plurals>
+
+    <!-- Counting how many albums are in an album list -->
+    <plurals name="albums">
+        <item quantity="one">%d цомог</item>
+        <item quantity="other">%d цомог</item>
+    </plurals>
+
+    <!-- Counting how many artists are in an artist list -->
+    <plurals name="artists">
+        <item quantity="one">%d дуучин</item>
+        <item quantity="other">%d дуучин</item>
+    </plurals>
+
+    <!-- Counting how many items are in an misc list (eg playlists, years, etc) -->
+    <plurals name="items">
+        <item quantity="one">%d зүйл</item>
+        <item quantity="other">%d зүйл</item>
+    </plurals>
+
+    <!-- Counting how many folders are in an folder list -->
+    <plurals name="folders_plural">
+        <item quantity="one">%d хавтас</item>
+        <item quantity="other">%d хавтас</item>
+    </plurals>
+
+    <!-- Used in sleep timer dialog to show list of 1/2/3/5/10/15/etc minutes for user to quickly pick from -->
+    <plurals name="minutes">
+        <item quantity="one">%d минут</item>
+        <item quantity="other">%d минут</item>
+    </plurals>
+
+</resources>

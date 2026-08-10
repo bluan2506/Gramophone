@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Counting how many songs are in a song list -->
+    <plurals name="songs">
+        <item quantity="zero">%d أغنية</item>
+        <item quantity="one">%d أغنية</item>
+        <item quantity="two">%d أغنيتان</item>
+        <item quantity="few">%d أغانٍ</item>
+        <item quantity="many">%d أغنية</item>
+        <item quantity="other">%d أغنية</item>
+    </plurals>
+
+    <!-- Counting how many albums are in an album list -->
+    <plurals name="albums">
+        <item quantity="zero">%d ألبوم</item>
+        <item quantity="one">%d ألبوم</item>
+        <item quantity="two">%d ألبومان</item>
+        <item quantity="few">%d ألبومات</item>
+        <item quantity="many">%d ألبومًا</item>
+        <item quantity="other">%d ألبوم</item>
+    </plurals>
+
+    <!-- Counting how many artists are in an artist list -->
+    <plurals name="artists">
+        <item quantity="zero">%d فنان</item>
+        <item quantity="one">%d فنان</item>
+        <item quantity="two">%d فنانان</item>
+        <item quantity="few">%d فنانين</item>
+        <item quantity="many">%d فنانًا</item>
+        <item quantity="other">%d فنان</item>
+    </plurals>
+
+    <!-- Counting how many items are in an misc list (eg playlists, years, etc) -->
+    <plurals name="items">
+        <item quantity="zero">%d عنصر</item>
+        <item quantity="one">%d عنصر</item>
+        <item quantity="two">%d عنصران</item>
+        <item quantity="few">%d عناصر</item>
+        <item quantity="many">%d عنصرًا</item>
+        <item quantity="other">%d عنصر</item>
+    </plurals>
+
+    <!-- Counting how many folders are in an folder list -->
+    <plurals name="folders_plural">
+        <item quantity="zero">%d مجلد</item>
+        <item quantity="one">%d مجلد</item>
+        <item quantity="two">%d مجلدان</item>
+        <item quantity="few">%d مجلدات</item>
+        <item quantity="many">%d مجلدًا</item>
+        <item quantity="other">%d مجلد</item>
+    </plurals>
+
+    <!-- Used in sleep timer dialog to show list of 1/2/3/5/10/15/etc minutes for user to quickly pick from -->
+    <plurals name="minutes">
+        <item quantity="zero">%d دقيقة</item>
+        <item quantity="one">%d دقيقة</item>
+        <item quantity="two">%d دقيقتان</item>
+        <item quantity="few">%d دقائق</item>
+        <item quantity="many">%d دقيقة</item>
+        <item quantity="other">%d دقيقة</item>
+    </plurals>
+
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Counting how many songs are in a song list -->
+    <plurals name="songs">
+        <item quantity="other">%d 首歌曲</item>
+    </plurals>
+
+    <!-- Counting how many albums are in an album list -->
+    <plurals name="albums">
+        <item quantity="other">%d 张专辑</item>
+    </plurals>
+
+    <!-- Counting how many artists are in an artist list -->
+    <plurals name="artists">
+        <item quantity="other">%d 位艺术家</item>
+    </plurals>
+
+    <!-- Counting how many items are in an misc list (eg playlists, years, etc) -->
+    <plurals name="items">
+        <item quantity="other">%d 个项目</item>
+    </plurals>
+
+    <!-- Counting how many folders are in an folder list -->
+    <plurals name="folders_plural">
+        <item quantity="other">%d 个文件夹</item>
+    </plurals>
+
+    <!-- Used in sleep timer dialog to show list of 1/2/3/5/10/15/etc minutes for user to quickly pick from -->
+    <plurals name="minutes">
+        <item quantity="other">%d 分钟</item>
+    </plurals>
+
+</resources>

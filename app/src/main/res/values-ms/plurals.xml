@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Counting how many songs are in a song list -->
+    <plurals name="songs">
+        <item quantity="other">%d lagu</item>
+    </plurals>
+
+    <!-- Counting how many albums are in an album list -->
+    <plurals name="albums">
+        <item quantity="other">%d album</item>
+    </plurals>
+
+    <!-- Counting how many artists are in an artist list -->
+    <plurals name="artists">
+        <item quantity="other">%d artis</item>
+    </plurals>
+
+    <!-- Counting how many items are in an misc list (eg playlists, years, etc) -->
+    <plurals name="items">
+        <item quantity="other">%d item</item>
+    </plurals>
+
+    <!-- Counting how many folders are in an folder list -->
+    <plurals name="folders_plural">
+        <item quantity="other">%d folder</item>
+    </plurals>
+
+    <!-- Used in sleep timer dialog to show list of 1/2/3/5/10/15/etc minutes for user to quickly pick from -->
+    <plurals name="minutes">
+        <item quantity="other">%d minit</item>
+    </plurals>
+
+</resources>
