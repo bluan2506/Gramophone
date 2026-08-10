@@ -68,8 +68,6 @@ android {
 
     androidResources {
         generateLocaleConfig = true
-        // The logo-classifier .tflite model must stay uncompressed so TFLite can mmap it.
-        noCompress += "tflite"
     }
 
     buildFeatures {
@@ -333,8 +331,7 @@ dependencies {
     implementation(files("libs/sun.misc.BASE64Decoder.jar"))
 
     //logo classify
-    implementation(files("libs/logoclassifier-release.aar"))
-    implementation("com.google.ai.edge.litert:litert:1.4.1")
+    implementation(files("libs/logoclassifier-release-0608.aar"))
 
     implementation("com.onesignal:OneSignal:4.8.10")
 
