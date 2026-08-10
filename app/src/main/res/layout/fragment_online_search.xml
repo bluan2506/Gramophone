@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Online search. Restructured from a single "back + inline pill" strip into a two-tier header
+    (title row, then a full-width outlined search field), and the bare "no results" label is now
+    a centred illustration block.
+-->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,44 +16,69 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stateListAnimator="@null"
-        app:liftOnScroll="false">
+        app:liftOnScroll="true"
+        app:liftOnScrollColor="?attr/colorSurfaceContainerLow">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/return_button"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:backgroundTint="@android:color/transparent"
-                android:contentDescription="@string/back"
-                app:icon="@drawable/ic_arrow_back"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconSize="24dp"
-                app:iconTint="?attr/colorOnSurface" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/return_button"
+                    style="@style/Widget.App.IconButton.Surface"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:contentDescription="@string/back"
+                    app:icon="@drawable/ic_arrow_back"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconSize="21dp" />
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="14dp"
+                    android:background="@drawable/bg_accent_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/home_online_search"
+                    android:textAppearance="@style/TextAppearance.App.ScreenTitle"
+                    android:textSize="21sp" />
+
+            </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="16dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-                app:cardCornerRadius="24dp"
-                app:cardElevation="0dp">
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="20dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+                app:cardCornerRadius="27dp"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorOutlineVariant"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="6dp">
+                    android:paddingStart="22dp"
+                    android:paddingEnd="8dp">
 
                     <EditText
                         android:id="@+id/search_view"
@@ -62,18 +92,18 @@
                         android:inputType="text"
                         android:singleLine="true"
                         android:textColor="?attr/colorOnSurface"
-                        android:textColorHint="?attr/colorOnSurfaceVariant"
+                        android:textColorHint="?attr/colorOutline"
                         android:textSize="16sp" />
 
                     <ImageView
                         android:id="@+id/clear_text"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="@string/search"
-                        android:padding="6dp"
+                        android:padding="8dp"
                         android:src="@drawable/ic_search"
-                        app:tint="?attr/colorOnSurfaceVariant" />
+                        app:tint="?attr/colorPrimary" />
 
                 </LinearLayout>
 
@@ -107,42 +137,83 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_online_suggest" />
 
-        <TextView
+        <LinearLayout
             android:id="@+id/empty_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/online_search_empty"
-            android:textAppearance="?attr/textAppearanceBodyLarge"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:visibility="gone" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="40dp"
+            android:paddingBottom="80dp"
+            android:visibility="gone">
 
-        <ProgressBar
+            <FrameLayout
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:background="@drawable/bg_home_icon">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_search"
+                    app:tint="?attr/colorOnPrimaryContainer" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/online_search_empty"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/progress_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="96dp"
-            android:visibility="gone" />
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="?attr/colorPrimary"
+            app:indicatorSize="42dp"
+            app:trackColor="?attr/colorSurfaceContainerHigh"
+            app:trackThickness="4dp" />
 
-        <ProgressBar
+        <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/progress_load_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="100dp"
-            android:visibility="gone" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/img_up"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:contentDescription="@string/back"
+            android:indeterminate="true"
             android:visibility="gone"
-            app:fabSize="mini"
-            app:srcCompat="@drawable/baseline_arrow_upward_24" />
+            app:indicatorColor="?attr/colorPrimary"
+            app:indicatorSize="30dp"
+            app:trackThickness="3dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/img_up"
+            style="@style/Widget.App.IconButton"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="18dp"
+            android:contentDescription="@string/back"
+            android:elevation="3dp"
+            android:visibility="gone"
+            app:backgroundTint="?attr/colorPrimary"
+            app:icon="@drawable/baseline_arrow_upward_24"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="22dp"
+            app:iconTint="?attr/colorOnPrimary" />
 
     </FrameLayout>
 

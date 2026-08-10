@@ -10,34 +10,57 @@
         android:id="@+id/appbarlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stateListAnimator="@null">
+        android:stateListAnimator="@null"
+        app:liftOnScroll="true"
+        app:liftOnScrollColor="?attr/colorSurfaceContainerLow">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsingtoolbar"
-            style="?attr/collapsingToolbarLayoutLargeStyle"
+        <!--
+            Plain header instead of a CollapsingToolbarLayout: with a pinned toolbar filling a
+            68dp bar the collapsing widget's expanded-title box is zero-height and the title is
+            never drawn. The MaterialToolbar stays (it owns the nav icon and the menu); the title
+            is a real TextView, set via R.id.header_title.
+        -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
-            app:collapsedTitleTextAppearance="?textAppearanceTitleLarge"
-            app:collapsedTitleTextColor="?attr/colorOnSurface"
-            app:expandedTitleMarginStart="24dp"
-            app:expandedTitleTextAppearance="?textAppearanceHeadlineLarge"
-            app:expandedTitleTextColor="?attr/colorOnSurface"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:title="@string/details">
+            android:layout_height="68dp">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="match_parent"
                 android:elevation="0dp"
-                android:paddingStart="4dp"
-                android:paddingEnd="8dp"
-                app:layout_collapseMode="pin"
+                app:contentInsetStartWithNavigation="6dp"
                 app:navigationContentDescription="@string/back"
                 app:navigationIcon="@drawable/ic_arrow_back"
-                app:navigationIconTint="?colorOnSurface" />
+                app:navigationIconTint="?attr/colorOnSurface" />
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="112dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/bg_accent_bar" />
+
+                <TextView
+                    android:id="@+id/header_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.App.ScreenTitle.Small"
+                    android:text="@string/details" />
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -58,30 +81,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
-                android:fontFamily="sans-serif"
                 android:text="@string/album_cover"
-                android:textColor="?colorPrimary"
-                android:textSize="17sp"
-                app:textFontWeight="500" />
+                android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
-            <ImageView
-                android:id="@+id/album_cover"
-                android:layout_width="184dp"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:adjustViewBounds="true"
-                android:importantForAccessibility="no"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_default_cover" />
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp">
 
-            <com.google.android.material.divider.MaterialDivider
+                <ImageView
+                    android:id="@+id/album_cover"
+                    android:layout_width="184dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_default_cover" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp" />
+                android:layout_height="26dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,11 +121,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_title"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/title"
@@ -113,8 +135,8 @@
                     android:text="@string/unknown_title"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
 
@@ -131,11 +153,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_artist"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/artist"
@@ -148,8 +167,8 @@
                     android:text="@string/unknown_artist"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
 
@@ -166,11 +185,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_album"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/album"
@@ -183,8 +199,8 @@
                     android:text="@string/unknown_album"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
 
@@ -201,11 +217,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_album_artist"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/album_artist"
@@ -218,8 +231,8 @@
                     android:text="@string/unknown_artist"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
 
@@ -236,11 +249,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_disc_number"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/disc_number"
@@ -271,11 +281,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_track_number"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/track_num"
@@ -307,11 +314,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_genre"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/genre"
@@ -324,8 +328,8 @@
                     android:text="@string/unknown_genre"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
 
@@ -342,11 +346,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_year"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/date"
@@ -359,8 +360,8 @@
                     android:text="@string/unknown_year"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
 
@@ -385,11 +386,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_duration"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/duration"
@@ -401,8 +399,8 @@
                     android:gravity="end"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
 
@@ -419,11 +417,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_bitrate"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/bit_rate"
@@ -454,11 +449,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_mime"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/mime"
@@ -470,8 +462,8 @@
                     android:gravity="end"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
 
@@ -488,11 +480,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
                     android:text="@string/dialog_path"
-                    android:textColor="?colorPrimary"
-                    android:textSize="17sp"
-                    app:textFontWeight="500" />
+                    android:textAppearance="@style/TextAppearance.App.Eyebrow" />
 
                 <TextView
                     android:id="@+id/path"
@@ -504,8 +493,8 @@
                     android:gravity="end"
                     android:textColor="?colorOnSurface"
                     android:textIsSelectable="true"
-                    android:textSize="16sp"
-                    app:textFontWeight="500" />
+                    android:textSize="15sp"
+                    app:textFontWeight="600" />
 
             </LinearLayout>
         </LinearLayout>

@@ -17,11 +17,11 @@
 
 package com.musicdownloader.musicfreeapp825v2.ui.fragments
 
+import android.widget.TextView
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.fragment.app.Fragment
 import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
 import com.musicdownloader.musicfreeapp825v2.R
 import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgePaddingListener
@@ -36,10 +36,10 @@ abstract class BaseSettingsActivity(
         enableEdgeToEdge()
         setContentView(R.layout.fragment_top_settings)
         val topAppBar = findViewById<MaterialToolbar>(R.id.topAppBar)
-        val collapsingToolbar = findViewById<CollapsingToolbarLayout>(R.id.collapsingtoolbar)
+        val headerTitle = findViewById<TextView>(R.id.header_title)
 
         findViewById<AppBarLayout>(R.id.appbarlayout).enableEdgeToEdgePaddingListener()
-        collapsingToolbar.title = getString(str)
+        headerTitle.text = getString(str)
 
         topAppBar.setNavigationOnClickListener {
             finish()

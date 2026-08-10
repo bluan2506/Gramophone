@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- "Are you enjoying the app?" sheet. The two choices are no longer two identical filled
+     buttons: the positive one is the primary pill, the other an outlined pill. -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,59 +14,56 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="28dp"
+        android:paddingBottom="24dp">
 
         <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
             android:contentDescription="@string/image"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="@string/satisfied"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/TextAppearance.App.ScreenTitle.Small"
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/tv_good"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/bg_button_primary"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
-            android:padding="12dp"
+            android:paddingVertical="15dp"
             android:text="@string/good"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            app:textFontWeight="700" />
 
         <TextView
             android:id="@+id/tv_not_really"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/bg_button_primary"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_button_secondary"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
-            android:padding="12dp"
+            android:paddingVertical="15dp"
             android:text="@string/not_really"
-            android:textColor="?attr/colorOnPrimary"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            app:textFontWeight="600" />
 
     </LinearLayout>
 

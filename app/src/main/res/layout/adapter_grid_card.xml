@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Grid tile. The now-playing equalizer is now a small primary badge pinned to the corner of
+    the artwork instead of a 48dp box competing with the labels, which lets the label block use
+    the full tile width.
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,12 +17,13 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cover_frame"
-        style="?materialCardViewFilledStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/grid_card_side_padding"
         android:layout_marginTop="@dimen/grid_card_margin_top"
+        app:cardBackgroundColor="?attr/colorSurfaceContainer"
         app:cardCornerRadius="@dimen/grid_round_corner_size"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,10 +34,21 @@
             android:id="@+id/cover"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/colorSurfaceContainer"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_default_cover" />
+
+        <ImageView
+            android:id="@+id/now_playing"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_now_playing_badge"
+            android:contentDescription="@string/now_playing"
+            android:padding="7dp"
+            android:visibility="gone"
+            app:tint="?attr/colorOnPrimary" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -39,62 +56,45 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="@dimen/grid_card_label_height"
+        android:layout_marginHorizontal="@dimen/grid_card_side_padding"
         android:layout_marginVertical="@dimen/grid_card_margin_label"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/now_playing"
+        app:layout_constraintEnd_toEndOf="@id/cover_frame"
         app:layout_constraintStart_toStartOf="@id/cover_frame"
-        app:layout_constraintTop_toBottomOf="@id/cover_frame"
-        tools:ignore="RtlSymmetry">
+        app:layout_constraintTop_toBottomOf="@id/cover_frame">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
             android:gravity="start"
             android:singleLine="true"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="15sp"
-            app:textFontWeight="500"
+            android:textAppearance="@style/TextAppearance.App.ItemTitle"
+            android:textSize="14.5sp"
             tools:text="Example Title" />
 
         <TextView
             android:id="@+id/artist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:layout_marginTop="2dp"
             android:gravity="start"
             android:singleLine="true"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="15sp"
-            app:textFontWeight="500"
+            android:textAppearance="@style/TextAppearance.App.ItemSubtitle"
+            android:textSize="12.5sp"
             tools:text="Example Artist" />
 
         <TextView
             android:id="@+id/track_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:layout_marginTop="3dp"
             android:gravity="start"
             android:singleLine="true"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="12sp"
-            app:textFontWeight="500"
+            android:textAppearance="@style/TextAppearance.App.Eyebrow"
             tools:text="Example Track count" />
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/now_playing"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/now_playing"
-        android:padding="12dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/linearLayout"
-        app:tint="?attr/colorOnSurface" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

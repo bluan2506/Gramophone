@@ -15,7 +15,10 @@
                     android:name="path"
                     android:fillColor="#000000"
                     android:pathData="M 8 5 L 8 19 L 19 12 Z"
-                    android:strokeWidth="1" />
+                    android:strokeColor="#000000"
+                    android:strokeWidth="1.7"
+                    android:strokeLineCap="round"
+                    android:strokeLineJoin="round" />
             </group>
         </vector>
     </aapt:attr>

@@ -1,6 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.MusicDownloader" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+
+    <!--
+        Base application theme.
+
+        Deliberately NOT Theme.Material3.DynamicColors.*: on Android 12+ that pulls the whole
+        colour scheme out of the user's wallpaper, which would override the brand palette in
+        values/colors.xml. The full player still opts into content-based colour separately
+        (see FullBottomSheet#addColorScheme), which keeps working with a static base theme.
+    -->
+    <style name="Base.Theme.MusicDownloader" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="viewInflaterClass">com.musicdownloader.musicfreeapp825v2.logic.ui.ViewCompatInflater</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.App.BodyLarge</item>
@@ -11,6 +19,21 @@
         <item name="system_app_widget_background_radius">28dp</item>
         <item name="system_app_widget_inner_radius">20dp</item>
         <item name="previewPlayerElevation">1dp</item>
+
+        <!-- Shape scale: the new design is squarer at the small end and much rounder at the
+             large end than the stock Material ramp, which is a big part of the new silhouette. -->
+        <item name="shapeAppearanceCornerExtraSmall">@style/ShapeAppearance.App.ExtraSmall</item>
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.App.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.App.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.App.Large</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.App.ExtraLarge</item>
+
+        <!-- Default component styling -->
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="borderlessButtonStyle">@style/Widget.App.Button.Text</item>
+        <item name="materialCardViewStyle">@style/Widget.App.Card</item>
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigation</item>
+        <item name="sliderStyle">@style/Widget.App.Slider</item>
     </style>
 
     <style name="PreV31.Theme.MusicDownloader" parent="Base.Theme.MusicDownloader">
@@ -89,9 +112,207 @@
         <item name="previewPlayerElevation">0dp</item>
     </style>
 
+    <!-- ====================================================================================
+         Shape scale
+         ==================================================================================== -->
+
+    <style name="ShapeAppearance.App.ExtraSmall" parent="ShapeAppearance.Material3.Corner.ExtraSmall">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.Small" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.Large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.ExtraLarge" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">32dp</item>
+    </style>
+
+    <!-- Fully rounded pill; used for every primary call to action. -->
+    <style name="ShapeAppearance.App.Pill" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Cover art: list rows, grid tiles and the full player each get their own radius. -->
+    <style name="ShapeAppearance.App.Cover.List" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.Cover.Grid" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">22dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.Cover.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Top-rounded sheet: modal bottom sheets get a deep 32dp scoop. -->
+    <style name="ShapeAppearance.App.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">32dp</item>
+        <item name="cornerSizeTopRight">32dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <!-- ====================================================================================
+         Typography
+         ==================================================================================== -->
+
     <style name="TextAppearance.App.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
+
+    <!-- Small all-caps eyebrow above section content, with wide tracking. -->
+    <style name="TextAppearance.App.Eyebrow" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.14</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="textFontWeight">700</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.App.ScreenTitle" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textSize">27sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="textFontWeight">700</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.015</item>
+    </style>
+
+    <!-- Sub-screen header title (back button + title on one line). -->
+    <style name="TextAppearance.App.ScreenTitle.Small" parent="TextAppearance.App.ScreenTitle">
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="TextAppearance.App.ItemTitle" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">15.5sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="textFontWeight">600</item>
+    </style>
+
+    <style name="TextAppearance.App.ItemSubtitle" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="textFontWeight">400</item>
+    </style>
+
+    <!-- Monospaced-feeling rank number in front of online results. -->
+    <style name="TextAppearance.App.Rank" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">?attr/colorOutline</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="textFontWeight">600</item>
+    </style>
+
+    <!-- ====================================================================================
+         Components
+         ==================================================================================== -->
+
+    <!-- Every filled button is a pill; this alone re-silhouettes most of the app. -->
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Pill</item>
+        <item name="android:textAppearance">?attr/textAppearanceLabelLarge</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="iconPadding">10dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Pill</item>
+    </style>
+
+    <!-- Tonal pill, for secondary actions. -->
+    <style name="Widget.App.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Pill</item>
+        <item name="android:minHeight">52dp</item>
+    </style>
+
+    <!-- Circular ghost icon button; replaces the old square-ish 48dp MaterialButtons. -->
+    <style name="Widget.App.IconButton" parent="Widget.Material3.Button.IconButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Pill</item>
+        <item name="iconTint">?attr/colorOnSurfaceVariant</item>
+        <item name="iconSize">22dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+
+    <!-- Icon button sitting inside a tinted circle, used across headers. -->
+    <style name="Widget.App.IconButton.Surface" parent="Widget.App.IconButton">
+        <item name="backgroundTint">?attr/colorSurfaceContainerHigh</item>
+        <item name="iconTint">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.App.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">?attr/colorSurfaceContainerLow</item>
+        <item name="cardElevation">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Large</item>
+    </style>
+
+    <!-- Outlined card: on a pure-white/pure-black background a hairline reads better than a
+         near-invisible tonal fill, so most containers in the new design are outlined. -->
+    <style name="Widget.App.Card.Outlined" parent="Widget.App.Card">
+        <item name="cardBackgroundColor">?attr/colorSurfaceContainerLowest</item>
+        <item name="strokeColor">?attr/colorOutlineVariant</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/Widget.App.BottomNavigation.Indicator</item>
+        <item name="itemIconSize">23dp</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.App.NavLabel.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.App.NavLabel</item>
+        <item name="itemPaddingTop">10dp</item>
+        <item name="itemPaddingBottom">10dp</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigation.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:width">54dp</item>
+        <item name="android:height">32dp</item>
+        <item name="android:color">?attr/colorPrimaryContainer</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Pill</item>
+    </style>
+
+    <style name="TextAppearance.App.NavLabel" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">11sp</item>
+        <item name="textFontWeight">500</item>
+    </style>
+
+    <style name="TextAppearance.App.NavLabel.Active" parent="TextAppearance.App.NavLabel">
+        <item name="textFontWeight">700</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.Slider" parent="Widget.Material3.Slider">
+        <item name="trackHeight">6dp</item>
+        <item name="thumbElevation">0dp</item>
+    </style>
+
+    <!-- ====================================================================================
+         Sheets, dialogs, misc (kept from the original where behaviour depends on them)
+         ==================================================================================== -->
 
     <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
@@ -101,7 +322,8 @@
     </style>
 
     <style name="ModalBottomSheetDialog" parent="Widget.Material3.BottomSheet.Modal">
-        <item name="shapeAppearance">@style/BottomPlayerCornerShape</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.BottomSheet</item>
+        <item name="backgroundTint">?attr/colorSurface</item>
         <item name="marginLeftSystemWindowInsets">false</item>
         <item name="marginRightSystemWindowInsets">false</item>
         <item name="paddingBottomSystemWindowInsets">false</item>
@@ -110,27 +332,28 @@
     <style name="Base.TabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">sans-serif</item>
-        <item name="textFontWeight">500</item>
+        <item name="textFontWeight">600</item>
     </style>
 
     <style name="TabTextAppearance" parent="Base.TabTextAppearance" />
 
+    <!-- The player sheet itself stays square: it slides up to fill the whole screen. -->
     <style name="BottomPlayerCornerShape">
         <item name="cornerSize">0dp</item>
     </style>
 
     <style name="CollapsingToolbarLarge" parent="Widget.Material3.CollapsingToolbar.Large">
         <item name="titleCollapseMode">scale</item>
-        <item name="contentScrim">?attr/colorSurfaceContainer</item>
+        <item name="contentScrim">?attr/colorSurface</item>
     </style>
 
     <style name="MediaPlayer.ProgressBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
         <item name="android:thumb">@drawable/media_seekbar_thumb</item>
-        <item name="android:thumbTint">?android:attr/textColorPrimary</item>
-        <item name="android:progressTint">?android:attr/textColorPrimary</item>
-        <item name="android:progressBackgroundTint">?android:attr/textColorTertiary</item>
+        <item name="android:thumbTint">?attr/colorPrimary</item>
+        <item name="android:progressTint">?attr/colorPrimary</item>
+        <item name="android:progressBackgroundTint">?attr/colorOutlineVariant</item>
         <item name="android:clickable">true</item>
         <item name="android:splitTrack">false</item>
     </style>
@@ -174,9 +397,12 @@
     </style>
 
     <style name="AppTheme.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
-        <item name="dialogCornerRadius">28dp</item>
+        <item name="dialogCornerRadius">32dp</item>
         <item name="cornerFamily">rounded</item>
-        <item name="android:colorBackground">?attr/colorSurface</item>
+        <item name="android:colorBackground">?attr/colorSurfaceContainerLow</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.App.Button.Text</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.App.Button.Text</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Widget.App.Button.Text</item>
         <item name="android:layout" tools:ignore="PrivateResource">@layout/m3_alert_dialog</item>
     </style>
 </resources>

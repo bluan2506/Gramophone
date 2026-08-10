@@ -5,11 +5,12 @@
     android:id="@+id/cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
     android:clickable="true"
     android:focusable="true"
     app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="20dp"
     app:cardElevation="0dp"
     app:strokeColor="@android:color/transparent">
 
@@ -17,12 +18,14 @@
         android:id="@+id/lyric"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="10dp"
-        android:paddingTop="18dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="18dp"
+        android:letterSpacing="-0.015"
+        android:paddingStart="12dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="16dp"
         android:textColor="?attr/colorPrimary"
         android:textSize="28sp"
+        app:textFontWeight="700"
         tools:text="轢き潰してきた その全てに 对着那被碾碎的 曾经的所有" />
 
 </com.google.android.material.card.MaterialCardView>

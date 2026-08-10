@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Mini player. Was a flush edge-to-edge strip sharing the sheet's surface; now an inset,
+    outlined card that visibly floats above the bottom bar, with a filled primary play button
+    instead of two identical ghost icons. The root keeps wrap_content because PlayerBottomSheet
+    uses its measured height as the sheet's peek height.
+-->
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,97 +15,103 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/preview_album_frame"
-        style="?materialCardViewFilledStyle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="?attr/colorSurfaceContainer"
-        app:cardCornerRadius="@dimen/list_round_corner_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/preview_album_cover"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="@string/dialog_album"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_default_cover" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- TODO remove useless LinearLayout -->
-    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginBottom="1dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/preview_control"
-        app:layout_constraintStart_toEndOf="@id/preview_album_frame"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.musicdownloader.musicfreeapp825v2.ui.components.MarqueeTextView
-            android:id="@+id/preview_song_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="17sp"
-            tools:text="Example title" />
-
-        <com.musicdownloader.musicfreeapp825v2.ui.components.MarqueeTextView
-            android:id="@+id/preview_artist_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            tools:text="Example Artist" />
-    </LinearLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/preview_control"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/rp_buttons"
-        android:contentDescription="@string/play"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        app:icon="@drawable/play_anim"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:iconSize="24dp"
-        app:iconTint="?attr/colorOnSurface"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/preview_next"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tooltipText="@string/play" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/preview_next"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/rp_buttons"
-        android:contentDescription="@string/skip_next"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        app:icon="@drawable/ic_skip_next"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:iconSize="24dp"
-        app:iconTint="?attr/colorOnSurface"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginVertical="8dp"
+        app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tooltipText="@string/skip_next" />
+        app:strokeColor="?attr/colorOutlineVariant"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingVertical="8dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/preview_album_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/dialog_album"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_default_cover" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.musicdownloader.musicfreeapp825v2.ui.components.MarqueeTextView
+                    android:id="@+id/preview_song_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="15sp"
+                    app:textFontWeight="600"
+                    tools:text="Example title" />
+
+                <com.musicdownloader.musicfreeapp825v2.ui.components.MarqueeTextView
+                    android:id="@+id/preview_artist_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="12.5sp"
+                    tools:text="Example Artist" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/preview_control"
+                style="@style/Widget.App.IconButton"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:contentDescription="@string/play"
+                app:backgroundTint="?attr/colorPrimary"
+                app:icon="@drawable/play_anim"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                app:iconTint="?attr/colorOnPrimary"
+                app:tooltipText="@string/play" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/preview_next"
+                style="@style/Widget.App.IconButton"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="2dp"
+                android:contentDescription="@string/skip_next"
+                app:icon="@drawable/ic_skip_next"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="22dp"
+                app:iconTint="?attr/colorOnSurface"
+                app:tooltipText="@string/skip_next" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </merge>

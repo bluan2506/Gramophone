@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Search suggestion: the leading glyph now sits in a tinted tile, matching every other
+     leading icon in the app. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,15 +12,22 @@
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingHorizontal="20dp"
-    android:paddingVertical="10dp">
+    android:paddingVertical="8dp">
 
-    <ImageView
-        android:id="@+id/img_search"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:contentDescription="@null"
-        android:src="@drawable/ic_search"
-        app:tint="?attr/colorOnSurfaceVariant" />
+    <FrameLayout
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_icon_tile">
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_search"
+            app:tint="?attr/colorOnSurfaceVariant" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/text_suggest"
@@ -29,19 +38,19 @@
         android:layout_weight="1"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textAppearance="?attr/textAppearanceBodyLarge"
-        android:textColor="?attr/colorOnSurface"
+        android:textAppearance="@style/TextAppearance.App.ItemTitle"
+        android:textSize="15sp"
         tools:text="Suggestion" />
 
     <ImageView
         android:id="@+id/img_up"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@null"
-        android:padding="6dp"
+        android:padding="8dp"
         android:rotation="45"
         android:src="@drawable/baseline_arrow_upward_24"
-        app:tint="?attr/colorOnSurfaceVariant" />
+        app:tint="?attr/colorOutline" />
 
 </LinearLayout>

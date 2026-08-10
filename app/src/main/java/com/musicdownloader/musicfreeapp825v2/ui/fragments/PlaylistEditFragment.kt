@@ -28,6 +28,7 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.activity.result.ActivityResultLauncher
@@ -40,7 +41,6 @@ import androidx.media3.common.MediaMetadata
 import androidx.media3.common.util.Log
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.CoroutineScope
@@ -101,8 +101,7 @@ class PlaylistEditFragment : BaseFragment(false) {
 
         val rootView = inflater.inflate(R.layout.fragment_edit_playlist, container, false)
         topAppBar = rootView.findViewById(R.id.topAppBar)
-        val collapsingToolbarLayout =
-            rootView.findViewById<CollapsingToolbarLayout>(R.id.collapsingtoolbar)
+        val headerTitle = rootView.findViewById<TextView>(R.id.header_title)
         recyclerView = rootView.findViewById(R.id.recyclerview)
         loadingCircle = rootView.findViewById(R.id.loadingCircle)
         val appBarLayout = rootView.findViewById<AppBarLayout>(R.id.appbarlayout)
@@ -145,9 +144,11 @@ class PlaylistEditFragment : BaseFragment(false) {
                 return@launch
             }
             theItem.emit(item)
-            collapsingToolbarLayout.title = if (item is Favorite)
+            val titleText = if (item is Favorite)
                 context?.getString(R.string.playlist_favourite) else item.title
                 ?: context?.getString(R.string.unknown_playlist)
+            // We're on Dispatchers.Default here; TextView.setText() must run on the main thread.
+            withContext(Dispatchers.Main) { headerTitle.text = titleText }
             // User can visit the folder in DocsUI to get old cached versions if needed
             tmpName = "${item.path.name}_${item.path.lastModified()}.xspf"
             val hasRestorablePlaylist = try {

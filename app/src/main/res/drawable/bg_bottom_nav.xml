@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Bottom navigation background with a hairline divider on top, so it reads as a distinct bar
-     separate from the mini player floating above it. -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="rectangle">
-            <solid android:color="?attr/colorSurfaceContainer" />
-        </shape>
-    </item>
-    <item
-        android:gravity="top"
-        android:height="1dp">
-        <shape android:shape="rectangle">
-            <solid android:color="?attr/colorOutlineVariant" />
-        </shape>
-    </item>
-</layer-list>
+<!--
+    Bottom bar background. The nav no longer sits on a full-bleed tinted bar with a hairline;
+    it is a top-rounded shelf lifted off the content, so the bar reads as a separate plate.
+    The banner ad below it inherits the same plate.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="?attr/colorSurfaceContainerLow" />
+    <corners
+        android:topLeftRadius="26dp"
+        android:topRightRadius="26dp" />
+    <stroke
+        android:width="1dp"
+        android:color="?attr/colorOutlineVariant" />
+</shape>

@@ -8,26 +8,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="8dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:labelFor="@id/editText"
-            android:paddingBottom="4dp"
-            android:text="@string/what_were_you_doing" />
+            android:paddingBottom="6dp"
+            android:text="@string/what_were_you_doing"
+            android:textAppearance="@style/TextAppearance.App.ItemTitle" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="4dp"
+            android:drawablePadding="8dp"
+            android:paddingBottom="10dp"
             android:text="@string/log_attachment"
+            android:textAppearance="@style/TextAppearance.App.ItemSubtitle"
+            app:drawableTint="?attr/colorPrimary"
             app:drawableStartCompat="@drawable/ic_info" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText

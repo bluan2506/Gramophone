@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circle behind the hero glyph. Painted in colorOnPrimary and knocked back with a view
+     alpha, so it works on both the dark-orange (light theme) and peach (dark theme) hero. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="?attr/colorOnPrimary" />
+</shape>

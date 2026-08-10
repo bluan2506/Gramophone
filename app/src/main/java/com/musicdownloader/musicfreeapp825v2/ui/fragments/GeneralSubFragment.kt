@@ -17,6 +17,7 @@
 
 package com.musicdownloader.musicfreeapp825v2.ui.fragments
 
+import android.widget.TextView
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +25,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.media3.common.MediaItem
 import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -68,8 +68,7 @@ class GeneralSubFragment : BaseFragment(true) {
 
         val rootView = inflater.inflate(R.layout.fragment_general_sub, container, false)
         val topAppBar = rootView.findViewById<MaterialToolbar>(R.id.topAppBar)
-        val collapsingToolbarLayout =
-            rootView.findViewById<CollapsingToolbarLayout>(R.id.collapsingtoolbar)
+        val headerTitle = rootView.findViewById<TextView>(R.id.header_title)
         val recyclerView = rootView.findViewById<MyRecyclerView>(R.id.recyclerview)
         val appBarLayout = rootView.findViewById<AppBarLayout>(R.id.appbarlayout)
         appBarLayout.enableEdgeToEdgePaddingListener()
@@ -166,7 +165,7 @@ class GeneralSubFragment : BaseFragment(true) {
             sharedTitle.collect {
                 withContext(Dispatchers.Main) {
                     // Show title text.
-                    collapsingToolbarLayout.title = it
+                    headerTitle.text = it
                 }
             }
         }

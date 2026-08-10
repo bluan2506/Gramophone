@@ -11,35 +11,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stateListAnimator="@null"
-        app:liftOnScroll="false">
+        app:liftOnScroll="true"
+        app:liftOnScrollColor="?attr/colorSurfaceContainerLow">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="68dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingStart="4dp"
-            android:paddingEnd="16dp">
+            android:paddingHorizontal="16dp">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/return_button"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:backgroundTint="@android:color/transparent"
+                style="@style/Widget.App.IconButton.Surface"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
                 android:contentDescription="@string/back"
                 app:icon="@drawable/ic_arrow_back"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconSize="24dp"
-                app:iconTint="?attr/colorOnSurface" />
+                app:iconSize="21dp" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="14dp"
+                android:background="@drawable/bg_accent_bar" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:text="@string/downloads_title"
-                android:textAppearance="?attr/textAppearanceTitleLarge"
-                android:textColor="?attr/colorOnSurface" />
+                android:textAppearance="@style/TextAppearance.App.ScreenTitle"
+                android:textSize="23sp" />
 
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -57,16 +65,42 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_download" />
 
-        <TextView
+        <LinearLayout
             android:id="@+id/empty_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/downloads_empty"
-            android:textAppearance="?attr/textAppearanceBodyLarge"
-            android:textColor="?attr/colorOnSurfaceVariant"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="40dp"
+            android:paddingBottom="80dp"
             android:visibility="gone"
-            tools:visibility="visible" />
+            tools:visibility="visible">
+
+            <FrameLayout
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:background="@drawable/bg_home_icon">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_download"
+                    app:tint="?attr/colorOnPrimaryContainer" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/downloads_empty"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+        </LinearLayout>
 
     </FrameLayout>
 

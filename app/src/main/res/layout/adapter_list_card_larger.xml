@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Roomier variant of adapter_list_card, same anatomy at a larger scale. -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,31 +7,37 @@
     android:layout_height="@dimen/larger_list_height"
     android:clickable="true"
     android:focusable="true"
-    android:orientation="horizontal"
-    android:paddingStart="6dp"
-    android:paddingEnd="6dp"
-    tools:ignore="RtlSymmetry">
+    android:paddingStart="20dp"
+    android:paddingEnd="10dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/coverCardView"
-        style="?materialCardViewFilledStyle"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="18dp"
-        app:cardCornerRadius="@dimen/list_round_corner_size"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="?attr/colorSurfaceContainer"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/cover"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
-            android:layout_gravity="center_vertical"
-            android:background="?attr/colorSurfaceContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_default_cover" />
+
+        <ImageView
+            android:id="@+id/now_playing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#73000000"
+            android:contentDescription="@string/now_playing"
+            android:padding="17dp"
+            android:visibility="gone"
+            app:tint="@android:color/white" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -39,17 +46,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="sans-serif"
         android:singleLine="true"
-        android:textColor="?attr/colorOnSurface"
-        android:textSize="17sp"
+        android:textAppearance="@style/TextAppearance.App.ItemTitle"
+        android:textSize="16.5sp"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@id/artist"
-        app:layout_constraintEnd_toStartOf="@id/now_playing"
+        app:layout_constraintEnd_toStartOf="@id/more"
         app:layout_constraintStart_toEndOf="@id/coverCardView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:textFontWeight="400"
         tools:text="Example Title" />
 
     <TextView
@@ -57,47 +62,28 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="sans-serif"
+        android:layout_marginTop="4dp"
         android:singleLine="true"
-        android:textColor="?attr/colorOnSurfaceVariant"
-        android:textSize="15sp"
+        android:textAppearance="@style/TextAppearance.App.ItemSubtitle"
+        android:textSize="13.5sp"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/now_playing"
+        app:layout_constraintEnd_toStartOf="@id/more"
         app:layout_constraintStart_toEndOf="@id/coverCardView"
         app:layout_constraintTop_toBottomOf="@id/title"
-        app:textFontWeight="400"
         tools:text="Example Artist" />
-
-    <ImageView
-        android:id="@+id/now_playing"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="end|center_vertical"
-        android:contentDescription="@string/now_playing"
-        android:padding="12dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/more"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="?attr/colorOnSurface" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/more"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="end|center_vertical"
-        android:background="@drawable/rp_buttons"
+        style="@style/Widget.App.IconButton"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:contentDescription="@string/more"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
         app:icon="@drawable/ic_more_vert_alt"
         app:iconGravity="textStart"
         app:iconPadding="0dp"
-        app:iconSize="24dp"
-        app:iconTint="?attr/colorOnSurface"
+        app:iconSize="20dp"
+        app:iconTint="?attr/colorOutline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -15,21 +15,23 @@
   ~     along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
+<!-- Preference icons now sit in the same tinted rounded-square tile used by the Home rows. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@id/icon_frame"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="42dp"
+    android:layout_height="42dp"
     android:layout_gravity="start|center_vertical"
-    android:layout_marginEnd="24dp">
+    android:background="@drawable/bg_icon_tile"
+    android:gravity="center">
 
     <ImageView
         android:id="@android:id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
         android:importantForAccessibility="no"
-        app:tint="?attr/colorOnSurface"
+        app:tint="?attr/colorPrimary"
         tools:src="@drawable/ic_info" />
 
 </LinearLayout>

@@ -1,49 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Brand palette: burnt orange (primary) + coral red (tertiary), on a warm neutral ramp.
+    Tones are Material-3 style (tone == CIELAB L*) generated from a single orange source,
+    so every role stays in one family. Backgrounds are deliberately pure #FFFFFF / #000000;
+    the surfaceContainer ramp carries all the elevation separation instead.
+-->
 <resources>
-    <color name="md_theme_primary">#38608F</color>
+    <color name="md_theme_primary">#A43D00</color>
     <color name="md_theme_onPrimary">#FFFFFF</color>
-    <color name="md_theme_primaryContainer">#D2E4FF</color>
-    <color name="md_theme_onPrimaryContainer">#001C37</color>
-    <color name="md_theme_secondary">#535F70</color>
+    <color name="md_theme_primaryContainer">#FFDBCA</color>
+    <color name="md_theme_onPrimaryContainer">#301400</color>
+    <color name="md_theme_secondary">#825340</color>
     <color name="md_theme_onSecondary">#FFFFFF</color>
-    <color name="md_theme_secondaryContainer">#D7E3F8</color>
-    <color name="md_theme_onSecondaryContainer">#101C2B</color>
-    <color name="md_theme_tertiary">#6C5778</color>
+    <color name="md_theme_secondaryContainer">#FFDBCD</color>
+    <color name="md_theme_onSecondaryContainer">#321300</color>
+    <color name="md_theme_tertiary">#A93346</color>
     <color name="md_theme_onTertiary">#FFFFFF</color>
-    <color name="md_theme_tertiaryContainer">#F4D9FF</color>
-    <color name="md_theme_onTertiaryContainer">#261431</color>
-    <color name="md_theme_error">#BA1A1A</color>
+    <color name="md_theme_tertiaryContainer">#FFDADA</color>
+    <color name="md_theme_onTertiaryContainer">#40000D</color>
+    <color name="md_theme_error">#C0001D</color>
     <color name="md_theme_onError">#FFFFFF</color>
-    <color name="md_theme_errorContainer">#FFDAD6</color>
-    <color name="md_theme_onErrorContainer">#410002</color>
-    <color name="md_theme_background">#F8F9FF</color>
-    <color name="md_theme_onBackground">#191C20</color>
-    <color name="md_theme_surface">#F8F9FF</color>
-    <color name="md_theme_onSurface">#191C20</color>
-    <color name="md_theme_surfaceVariant">#DFE2EB</color>
-    <color name="md_theme_onSurfaceVariant">#43474E</color>
-    <color name="md_theme_outline">#73777F</color>
-    <color name="md_theme_outlineVariant">#C3C6CF</color>
-    <color name="md_theme_inverseSurface">#2E3035</color>
-    <color name="md_theme_inverseOnSurface">#EFF0F7</color>
-    <color name="md_theme_inversePrimary">#A2C9FE</color>
-    <color name="md_theme_primaryFixed">#D2E4FF</color>
-    <color name="md_theme_onPrimaryFixed">#001C37</color>
-    <color name="md_theme_primaryFixedDim">#A2C9FE</color>
-    <color name="md_theme_onPrimaryFixedVariant">#1C4875</color>
-    <color name="md_theme_secondaryFixed">#D7E3F8</color>
-    <color name="md_theme_onSecondaryFixed">#101C2B</color>
-    <color name="md_theme_secondaryFixedDim">#BBC7DB</color>
-    <color name="md_theme_onSecondaryFixedVariant">#3C4858</color>
-    <color name="md_theme_tertiaryFixed">#F4D9FF</color>
-    <color name="md_theme_onTertiaryFixed">#261431</color>
-    <color name="md_theme_tertiaryFixedDim">#D8BDE4</color>
-    <color name="md_theme_onTertiaryFixedVariant">#533F5F</color>
-    <color name="md_theme_surfaceDim">#D8DAE0</color>
-    <color name="md_theme_surfaceBright">#F8F9FF</color>
+    <color name="md_theme_errorContainer">#FFDAD4</color>
+    <color name="md_theme_onErrorContainer">#3C0800</color>
+    <color name="md_theme_background">#FFFFFF</color>
+    <color name="md_theme_onBackground">#1E1B19</color>
+    <color name="md_theme_surface">#FFFFFF</color>
+    <color name="md_theme_onSurface">#1E1B19</color>
+    <color name="md_theme_surfaceVariant">#EDE0D9</color>
+    <color name="md_theme_onSurfaceVariant">#4F453F</color>
+    <color name="md_theme_outline">#81756F</color>
+    <color name="md_theme_outlineVariant">#D1C4BE</color>
+    <color name="md_theme_inverseSurface">#33302E</color>
+    <color name="md_theme_inverseOnSurface">#F4F0ED</color>
+    <color name="md_theme_inversePrimary">#FFB692</color>
+    <color name="md_theme_primaryFixed">#FFDBCA</color>
+    <color name="md_theme_onPrimaryFixed">#301400</color>
+    <color name="md_theme_primaryFixedDim">#FFB692</color>
+    <color name="md_theme_onPrimaryFixedVariant">#7D2D00</color>
+    <color name="md_theme_secondaryFixed">#FFDBCD</color>
+    <color name="md_theme_onSecondaryFixed">#321300</color>
+    <color name="md_theme_secondaryFixedDim">#F3BAA3</color>
+    <color name="md_theme_onSecondaryFixedVariant">#673B29</color>
+    <color name="md_theme_tertiaryFixed">#FFDADA</color>
+    <color name="md_theme_onTertiaryFixed">#40000D</color>
+    <color name="md_theme_tertiaryFixedDim">#FFB2B6</color>
+    <color name="md_theme_onTertiaryFixedVariant">#8C132F</color>
+    <color name="md_theme_surfaceDim">#DDD9D7</color>
+    <color name="md_theme_surfaceBright">#FFFFFF</color>
     <color name="md_theme_surfaceContainerLowest">#FFFFFF</color>
-    <color name="md_theme_surfaceContainerLow">#F2F3FA</color>
-    <color name="md_theme_surfaceContainer">#ECEEF4</color>
-    <color name="md_theme_surfaceContainerHigh">#E7E8EE</color>
-    <color name="md_theme_surfaceContainerHighest">#E1E2E8</color>
-    <color name="splash_foreground_color">#363644</color>
+    <color name="md_theme_surfaceContainerLow">#F7F3F0</color>
+    <color name="md_theme_surfaceContainer">#F1EDEB</color>
+    <color name="md_theme_surfaceContainerHigh">#E9E4E2</color>
+    <color name="md_theme_surfaceContainerHighest">#E0DCDA</color>
+
+    <!-- Splash icon tint, kept in step with the surface ramp. -->
+    <color name="splash_foreground_color">#A43D00</color>
 </resources>

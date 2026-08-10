@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     tools:context=".ui.MainActivity">
-    <!-- TODO do we even need animateLayoutChanges here? for what? -->
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container"
@@ -19,7 +18,7 @@
         android:id="@+id/player_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="?attr/colorSurfaceContainer"
+        android:backgroundTint="?attr/colorSurface"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:elevation="?attr/previewPlayerElevation"
@@ -33,10 +32,10 @@
         tools:behavior_peekHeight="1000dp" />
 
     <!-- Bottom bar = navigation on top + home banner ad below it (banner sits at the very bottom
-         of the screen, under the nav). The bar owns the surface background + top hairline so the
-         nav and the banner read as one bar; the system bottom inset is padded on the bar so the
-         banner floats above the gesture area. bottomNavHeight measures this whole bar, so content
-         and the mini player reserve space above the banner. -->
+         of the screen, under the nav). The bar is a top-rounded shelf that the content scrolls
+         behind, and it owns the system bottom inset so the banner floats above the gesture area.
+         bottomNavHeight measures this whole bar, so content and the mini player reserve space
+         above the banner. -->
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
@@ -44,8 +43,10 @@
         android:layout_gravity="bottom"
         android:background="@drawable/bg_bottom_nav"
         android:clipChildren="false"
-        android:elevation="3dp"
-        android:orientation="vertical">
+        android:clipToPadding="false"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"

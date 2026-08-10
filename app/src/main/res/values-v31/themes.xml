@@ -5,7 +5,12 @@
 
     <style name="Night.Theme.Splash" parent="Impl.Night.Theme.Splash" />
 
-    <style name="Theme.MusicDownloader" parent="Base.Theme.MusicDownloader">
+    <!--
+        Inherits V30 (and therefore the brand colour block + the cutout/forceDark window flags)
+        instead of jumping straight back to the base theme; on API 31+ this only swaps in the
+        platform widget corner radii.
+    -->
+    <style name="Theme.MusicDownloader" parent="V30.Theme.MusicDownloader">
         <item name="system_app_widget_background_radius">
             @android:dimen/system_app_widget_background_radius
         </item>

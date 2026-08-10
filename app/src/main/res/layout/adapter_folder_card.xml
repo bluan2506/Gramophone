@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Folder row: tinted rounded-square tile + a trailing chevron, matching the Home action rows. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,61 +7,60 @@
     android:layout_height="@dimen/folder_card_height"
     android:clickable="true"
     android:focusable="true"
+    android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingStart="24dp"
-    android:paddingEnd="54dp"
-    tools:ignore="RtlSymmetry">
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
 
-    <com.google.android.material.card.MaterialCardView
-        style="?materialCardViewFilledStyle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical"
-        app:cardBackgroundColor="@android:color/transparent"
-        app:cardCornerRadius="@dimen/list_round_corner_size">
+    <FrameLayout
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_icon_tile">
 
         <ImageView
             android:id="@+id/cover"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
             android:importantForAccessibility="no"
-            android:padding="10dp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_folder" />
+            app:srcCompat="@drawable/ic_folder"
+            app:tint="?attr/colorPrimary" />
 
-    </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="16dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
             android:singleLine="true"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="17sp"
-            app:textFontWeight="400"
+            android:textAppearance="@style/TextAppearance.App.ItemTitle"
             tools:text="Example Title" />
 
         <TextView
             android:id="@+id/subtitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:layout_marginTop="3dp"
             android:singleLine="true"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="14sp"
-            app:textFontWeight="400"
+            android:textAppearance="@style/TextAppearance.App.ItemSubtitle"
             tools:text="Example Artist" />
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@null"
+        android:rotation="270"
+        android:src="@drawable/ic_expand_more"
+        app:tint="?attr/colorOutline" />
 
 </LinearLayout>

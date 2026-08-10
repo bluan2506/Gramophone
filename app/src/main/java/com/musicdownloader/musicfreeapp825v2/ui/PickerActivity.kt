@@ -21,11 +21,11 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.Settings
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.net.toUri
 import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -51,14 +51,13 @@ abstract class PickerActivity<T : Any> : BaseActivity() {
         enableEdgeToEdgeProperly()
         setContentView(R.layout.fragment_general_sub)
         val topAppBar = findViewById<MaterialToolbar>(R.id.topAppBar)
-        val collapsingToolbarLayout =
-            findViewById<CollapsingToolbarLayout>(R.id.collapsingtoolbar)
+        val headerTitle = findViewById<TextView>(R.id.header_title)
         val recyclerView = findViewById<MyRecyclerView>(R.id.recyclerview)
         val appBarLayout = findViewById<AppBarLayout>(R.id.appbarlayout)
         appBarLayout.enableEdgeToEdgePaddingListener()
 
         // Show title text.
-        collapsingToolbarLayout.title = getTitleStr()
+        headerTitle.text = getTitleStr()
 
         val songAdapter = makeAdapter()
 

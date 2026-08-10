@@ -4,42 +4,49 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingHorizontal="20dp">
+    android:paddingHorizontal="24dp">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+    <FrameLayout
+        android:layout_width="82dp"
+        android:layout_height="82dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
-        android:contentDescription="@null"
-        android:src="@drawable/ic_check"
-        app:tint="?attr/colorPrimary" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_home_icon">
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_check"
+            app:tint="?attr/colorOnPrimaryContainer" />
+    </FrameLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
         android:text="@string/thank_for_your_feedback"
-        android:textAppearance="?attr/textAppearanceTitleLarge"
-        android:textColor="?attr/colorOnSurface" />
+        android:textAppearance="@style/TextAppearance.App.ScreenTitle.Small"
+        android:textSize="19sp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp"
+        android:gravity="center"
         android:text="@string/we_will_try_our_best_to_improve_it"
         android:textAppearance="?attr/textAppearanceBodyLarge"
-        android:textColor="?attr/colorOnSurfaceVariant" />
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="14.5sp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnOK"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"
-        android:paddingVertical="12dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="22dp"
         android:text="@string/ok"
         android:textAppearance="?attr/textAppearanceTitleMedium" />
 </LinearLayout>
