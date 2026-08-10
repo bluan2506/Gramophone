@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">Pengunduh Musik</string>
     <string name="ads_loading">Memuat iklan…</string>
     <string name="splash_tagline">Pemutar musik offline Anda</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">Playlist tidak diketahui</string>
     <string name="music_downloader_crashed">Log kerusakan</string>
-    <string name="crash_music_downloader_version">Versi Music Downloader</string>
+    <string name="crash_music_downloader_version">Versi Pengunduh Musik</string>
     <string name="crash_phone_model">Model</string>
     <string name="crash_phone_brand">Merek</string>
     <string name="crash_sdk_level">Level SDK</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">Siaran Bluetooth LE</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">Buka di Music Downloader</string>
+    <string name="open_in_music_downloader">Buka di Pengunduh Musik</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">Spasi sebelum huruf pertama atau setelah akhir baris lirik bisa memiliki nilai artistik. Jika Anda tidak setuju, aktifkan opsi ini untuk menghapusnya secara otomatis.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">Aduh!</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader mengalami crash :(\n\nSilakan kirimkan laporan bug agar masalah seperti penyebab crash ini bisa diperbaiki!\n\nSetiap situasi seunik musik; tanpa bantuan Anda, bug ini kemungkinan besar <b>TIDAK</b> akan diperbaiki!</string>
+    <string name="music_downloader_crashed_explainer2">Pengunduh Musik mengalami crash :(\n\nSilakan kirimkan laporan bug agar masalah seperti penyebab crash ini bisa diperbaiki!\n\nSetiap situasi seunik musik; tanpa bantuan Anda, bug ini kemungkinan besar <b>TIDAK</b> akan diperbaiki!</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">Kirim email</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">Laporan crash</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">Apa yang sedang Anda lakukan di Music Downloader saat crash ini terjadi? Tambahkan detail sebanyak mungkin untuk memperbesar peluang saya memperbaiki masalah ini.\n\nPerlu diketahui bahwa bahasa Inggris lebih disukai untuk laporan bug, tetapi saya akan mencoba menggunakan terjemahan mesin jika Anda mengirim laporan dalam bahasa lain.</string>
+    <string name="what_were_you_doing">Apa yang sedang Anda lakukan di Pengunduh Musik saat crash ini terjadi? Tambahkan detail sebanyak mungkin untuk memperbesar peluang saya memperbaiki masalah ini.\n\nPerlu diketahui bahwa bahasa Inggris lebih disukai untuk laporan bug, tetapi saya akan mencoba menggunakan terjemahan mesin jika Anda mengirim laporan dalam bahasa lain.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">Alamat email dan teks disalin ke papan klip</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">Tahukah Anda…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader meminta daftar lagu terbaru setiap kali aplikasi dibuka, dan selama Music Downloader berjalan, media baru juga akan terdeteksi secara otomatis. Tombol \"Segarkan\" ini tidak memuat ulang media di Music Downloader, melainkan meminta sistem Anda memindai ulang semua berkas dari semua perangkat penyimpanan permanen yang terpasang (itulah sebabnya prosesnya memakan waktu). Artinya, kecuali sistem atau aplikasi lain bermasalah, Anda tidak akan pernah perlu menggunakan fitur ini.\n\nAda lagu yang hilang? Pastikan memeriksa "Setelan > Perilaku" untuk filter durasi minimum dan daftar hitam folder, lalu pastikan setelan tersebut bernilai sesuai harapan. Untuk kemungkinan penyebab lain, silakan lihat FAQ kami.</string>
+    <string name="refresh_did_you_know">Pengunduh Musik meminta daftar lagu terbaru setiap kali aplikasi dibuka, dan selama Pengunduh Musik berjalan, media baru juga akan terdeteksi secara otomatis. Tombol \"Segarkan\" ini tidak memuat ulang media di Pengunduh Musik, melainkan meminta sistem Anda memindai ulang semua berkas dari semua perangkat penyimpanan permanen yang terpasang (itulah sebabnya prosesnya memakan waktu). Artinya, kecuali sistem atau aplikasi lain bermasalah, Anda tidak akan pernah perlu menggunakan fitur ini.\n\nAda lagu yang hilang? Pastikan memeriksa "Setelan > Perilaku" untuk filter durasi minimum dan daftar hitam folder, lalu pastikan setelan tersebut bernilai sesuai harapan. Untuk kemungkinan penyebab lain, silakan lihat FAQ kami.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">Gagal mengganti nama playlist: %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">Téléchargeur de Musique</string>
     <string name="ads_loading">Chargement des publicités…</string>
     <string name="splash_tagline">Votre lecteur de musique hors ligne</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">Liste de lecture inconnue</string>
     <string name="music_downloader_crashed">Journal de plantage</string>
-    <string name="crash_music_downloader_version">Version de Music Downloader</string>
+    <string name="crash_music_downloader_version">Version de Téléchargeur de Musique</string>
     <string name="crash_phone_model">Modèle</string>
     <string name="crash_phone_brand">Marque</string>
     <string name="crash_sdk_level">Niveau du SDK</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">Diffusion Bluetooth LE</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">Ouvrir dans Music Downloader</string>
+    <string name="open_in_music_downloader">Ouvrir dans Téléchargeur de Musique</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">Les espaces avant la première lettre ou après la fin d\'une ligne de paroles peuvent avoir une valeur artistique. Si vous n\'êtes pas d\'accord, activez cette option pour les supprimer automatiquement.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">Oh non!</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader a planté :(\n\nVeuillez m\'envoyer un rapport de bogue afin que les problèmes tels que celui qui a causé ce plantage puissent être corrigés!\n\nChaque situation est aussi unique que la musique ; sans votre aide, ce bogue ne sera probablement <b>PAS</b> corrigé!</string>
+    <string name="music_downloader_crashed_explainer2">Téléchargeur de Musique a planté :(\n\nVeuillez m\'envoyer un rapport de bogue afin que les problèmes tels que celui qui a causé ce plantage puissent être corrigés!\n\nChaque situation est aussi unique que la musique ; sans votre aide, ce bogue ne sera probablement <b>PAS</b> corrigé!</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">Envoyer un courriel</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">Rapport de plantage</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">Que faisiez-vous dans Music Downloader lorsque ce plantage s\'est produit? Ajoutez autant de détails que possible afin d\'augmenter les chances que je puisse corriger le problème.\n\nVeuillez noter que l\'anglais est préférable pour les rapports de bogue, mais j\'essaierai d\'utiliser la traduction automatique si vous envoyez votre rapport dans une autre langue.</string>
+    <string name="what_were_you_doing">Que faisiez-vous dans Téléchargeur de Musique lorsque ce plantage s\'est produit? Ajoutez autant de détails que possible afin d\'augmenter les chances que je puisse corriger le problème.\n\nVeuillez noter que l\'anglais est préférable pour les rapports de bogue, mais j\'essaierai d\'utiliser la traduction automatique si vous envoyez votre rapport dans une autre langue.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">Adresse courriel et texte copiés dans le presse-papiers</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">Le saviez-vous…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader demande une liste de titres à jour à chaque démarrage et, tant qu\'il fonctionne, détecte aussi automatiquement les nouveaux médias. Ce bouton \"Actualiser\" ne recharge pas les médias dans Music Downloader : il demande à votre système de réanalyser tous les fichiers de tous les périphériques de stockage permanents connectés (c\'est pourquoi cela prend un certain temps). Autrement dit, sauf dysfonctionnement de votre système ou d\'autres applications, vous n\'aurez jamais besoin de cette fonctionnalité.\n\nDes titres manquent? Vérifiez dans "Paramètres > Comportement" le filtre de durée minimale et la liste noire de dossiers, et confirmez que ces réglages ont la valeur attendue. Pour d\'autres raisons possibles, consultez notre FAQ.</string>
+    <string name="refresh_did_you_know">Téléchargeur de Musique demande une liste de titres à jour à chaque démarrage et, tant qu\'il fonctionne, détecte aussi automatiquement les nouveaux médias. Ce bouton \"Actualiser\" ne recharge pas les médias dans Téléchargeur de Musique : il demande à votre système de réanalyser tous les fichiers de tous les périphériques de stockage permanents connectés (c\'est pourquoi cela prend un certain temps). Autrement dit, sauf dysfonctionnement de votre système ou d\'autres applications, vous n\'aurez jamais besoin de cette fonctionnalité.\n\nDes titres manquent? Vérifiez dans "Paramètres > Comportement" le filtre de durée minimale et la liste noire de dossiers, et confirmez que ces réglages ont la valeur attendue. Pour d\'autres raisons possibles, consultez notre FAQ.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">Échec du renommage de la liste de lecture : %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

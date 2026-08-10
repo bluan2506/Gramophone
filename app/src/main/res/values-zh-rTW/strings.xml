@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">音樂下載器</string>
     <string name="ads_loading">正在載入廣告…</string>
     <string name="splash_tagline">你的離線音樂播放器</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">不明的播放清單</string>
     <string name="music_downloader_crashed">當機記錄</string>
-    <string name="crash_music_downloader_version">Music Downloader 版本</string>
+    <string name="crash_music_downloader_version">音樂下載器版本</string>
     <string name="crash_phone_model">型號</string>
     <string name="crash_phone_brand">品牌</string>
     <string name="crash_sdk_level">SDK 級別</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">藍牙 LE 廣播</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">在 Music Downloader 中開啟</string>
+    <string name="open_in_music_downloader">在音樂下載器中開啟</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">歌詞行首字母之前或行尾之後的空格可能具有藝術價值。如果你不認同，可以開啟這個選項自動移除這些空格。</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">糟糕！</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader 當機了 :(\n\n請寄給我錯誤報告，這樣導致這次當機的問題才能獲得修正！\n\n每一種情況都像音樂一樣獨特，沒有你的協助，這個錯誤很可能<b>不會</b>被修正！</string>
+    <string name="music_downloader_crashed_explainer2">音樂下載器當機了 :(\n\n請寄給我錯誤報告，這樣導致這次當機的問題才能獲得修正！\n\n每一種情況都像音樂一樣獨特，沒有你的協助，這個錯誤很可能<b>不會</b>被修正！</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">傳送電子郵件</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">當機報告</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">這次當機發生時，你在 Music Downloader 中做什麼？請盡量補充細節，以提高我修正問題的可能性。\n\n請注意，錯誤報告最好使用英文，但如果你以其他語言提交，我會嘗試使用機器翻譯。</string>
+    <string name="what_were_you_doing">這次當機發生時，你在音樂下載器中做什麼？請盡量補充細節，以提高我修正問題的可能性。\n\n請注意，錯誤報告最好使用英文，但如果你以其他語言提交，我會嘗試使用機器翻譯。</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">已將電子郵件地址和文字複製到剪貼簿</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">你知道嗎…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader 每次啟動時都會要求最新的歌曲清單，而且在執行期間也會自動偵測新的媒體檔案。這個\"重新整理\"按鈕不會重新載入 Music Downloader 中的媒體，而是要求系統重新掃描所有已連接的固定儲存裝置上的全部檔案（因此需要一些時間）。也就是說，除非你的系統或其他應用程式出現異常，否則你永遠不需要使用這項功能。\n\n缺少某些歌曲嗎？請務必在"設定 > 行為"中檢查最短長度篩選和資料夾黑名單，並確認這些設定的值符合預期。更多可能的原因請參閱我們的常見問題。</string>
+    <string name="refresh_did_you_know">音樂下載器每次啟動時都會要求最新的歌曲清單，而且在執行期間也會自動偵測新的媒體檔案。這個\"重新整理\"按鈕不會重新載入音樂下載器中的媒體，而是要求系統重新掃描所有已連接的固定儲存裝置上的全部檔案（因此需要一些時間）。也就是說，除非你的系統或其他應用程式出現異常，否則你永遠不需要使用這項功能。\n\n缺少某些歌曲嗎？請務必在"設定 > 行為"中檢查最短長度篩選和資料夾黑名單，並確認這些設定的值符合預期。更多可能的原因請參閱我們的常見問題。</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">重新命名播放清單失敗：%s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

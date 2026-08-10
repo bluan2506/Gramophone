@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">Загрузчик музыки</string>
     <string name="ads_loading">Загрузка рекламы…</string>
     <string name="splash_tagline">Ваш офлайн-плеер</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">Неизвестный плейлист</string>
     <string name="music_downloader_crashed">Журнал сбоя</string>
-    <string name="crash_music_downloader_version">Версия Music Downloader</string>
+    <string name="crash_music_downloader_version">Версия Загрузчик музыки</string>
     <string name="crash_phone_model">Модель</string>
     <string name="crash_phone_brand">Бренд</string>
     <string name="crash_sdk_level">Уровень SDK</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">Трансляция Bluetooth LE</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">Открыть в Music Downloader</string>
+    <string name="open_in_music_downloader">Открыть в Загрузчик музыки</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">Пробелы перед первой буквой или в конце строки текста песни могут иметь художественную ценность. Если вы не согласны, включите этот параметр, чтобы удалять их автоматически.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">О нет!</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader аварийно завершился :(\n\nПожалуйста, отправьте мне отчёт об ошибке, чтобы такие проблемы можно было исправить!\n\nКаждая ситуация уникальна, как и музыка, — без вашей помощи эта ошибка, скорее всего, <b>НЕ</b> будет исправлена!</string>
+    <string name="music_downloader_crashed_explainer2">Загрузчик музыки аварийно завершился :(\n\nПожалуйста, отправьте мне отчёт об ошибке, чтобы такие проблемы можно было исправить!\n\nКаждая ситуация уникальна, как и музыка, — без вашей помощи эта ошибка, скорее всего, <b>НЕ</b> будет исправлена!</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">Отправить письмо</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">Отчёт о сбое</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">Что вы делали в Music Downloader, когда произошёл сбой? Добавьте как можно больше подробностей, чтобы повысить шансы на исправление проблемы.\n\nОбратите внимание: для отчётов об ошибках предпочтителен английский, но я постараюсь воспользоваться машинным переводом, если вы отправите отчёт на другом языке.</string>
+    <string name="what_were_you_doing">Что вы делали в Загрузчик музыки, когда произошёл сбой? Добавьте как можно больше подробностей, чтобы повысить шансы на исправление проблемы.\n\nОбратите внимание: для отчётов об ошибках предпочтителен английский, но я постараюсь воспользоваться машинным переводом, если вы отправите отчёт на другом языке.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">Адрес эл. почты и текст скопированы в буфер обмена</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">А вы знали…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader запрашивает обновлённый список треков при каждом запуске, а во время работы также автоматически обнаруживает новые медиафайлы. Кнопка \"Обновить\" не перезагружает медиафайлы в Music Downloader, а просит систему заново просканировать все файлы на всех подключённых постоянных накопителях (поэтому это занимает некоторое время). Это значит, что, если система и другие приложения работают исправно, эта функция вам никогда не понадобится.\n\nНе хватает треков? Обязательно проверьте в разделе "Настройки > Поведение" фильтр минимальной длительности и чёрный список папок и убедитесь, что эти параметры имеют ожидаемые значения. О других возможных причинах читайте в нашем FAQ.</string>
+    <string name="refresh_did_you_know">Загрузчик музыки запрашивает обновлённый список треков при каждом запуске, а во время работы также автоматически обнаруживает новые медиафайлы. Кнопка \"Обновить\" не перезагружает медиафайлы в Загрузчик музыки, а просит систему заново просканировать все файлы на всех подключённых постоянных накопителях (поэтому это занимает некоторое время). Это значит, что, если система и другие приложения работают исправно, эта функция вам никогда не понадобится.\n\nНе хватает треков? Обязательно проверьте в разделе "Настройки > Поведение" фильтр минимальной длительности и чёрный список папок и убедитесь, что эти параметры имеют ожидаемые значения. О других возможных причинах читайте в нашем FAQ.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">Не удалось переименовать плейлист: %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

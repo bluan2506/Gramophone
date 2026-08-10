@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">म्यूज़िक डाउनलोडर</string>
     <string name="ads_loading">विज्ञापन लोड हो रहे हैं…</string>
     <string name="splash_tagline">आपका ऑफ़लाइन म्यूज़िक प्लेयर</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">अज्ञात प्लेलिस्ट</string>
     <string name="music_downloader_crashed">क्रैश लॉग</string>
-    <string name="crash_music_downloader_version">Music Downloader का वर्शन</string>
+    <string name="crash_music_downloader_version">म्यूज़िक डाउनलोडर का वर्शन</string>
     <string name="crash_phone_model">मॉडल</string>
     <string name="crash_phone_brand">ब्रैंड</string>
     <string name="crash_sdk_level">SDK लेवल</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">Bluetooth LE ब्रॉडकास्ट</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">Music Downloader में खोलें</string>
+    <string name="open_in_music_downloader">म्यूज़िक डाउनलोडर में खोलें</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">बोल की पंक्ति के पहले अक्षर से पहले या अंत के बाद की खाली जगह का कलात्मक महत्व हो सकता है. अगर आप सहमत नहीं हैं, तो इन्हें अपने-आप हटाने के लिए यह विकल्प चालू करें.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">अरे नहीं!</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader क्रैश हो गया :(\n\nकृपया मुझे बग रिपोर्ट भेजें, ताकि इस क्रैश जैसी समस्याएँ ठीक की जा सकें!\n\nहर स्थिति संगीत की तरह अनोखी होती है; आपकी मदद के बिना यह बग शायद <b>ठीक नहीं</b> हो पाएगा!</string>
+    <string name="music_downloader_crashed_explainer2">म्यूज़िक डाउनलोडर क्रैश हो गया :(\n\nकृपया मुझे बग रिपोर्ट भेजें, ताकि इस क्रैश जैसी समस्याएँ ठीक की जा सकें!\n\nहर स्थिति संगीत की तरह अनोखी होती है; आपकी मदद के बिना यह बग शायद <b>ठीक नहीं</b> हो पाएगा!</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">ईमेल भेजें</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">क्रैश रिपोर्ट</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">यह क्रैश होने के समय आप Music Downloader में क्या कर रहे थे? कृपया ज़्यादा से ज़्यादा जानकारी जोड़ें, ताकि समस्या ठीक होने की संभावना बढ़ जाए.\n\nध्यान दें कि बग रिपोर्ट के लिए अंग्रेज़ी बेहतर है, लेकिन अगर आप किसी दूसरी भाषा में रिपोर्ट भेजते हैं, तो मैं मशीन अनुवाद का इस्तेमाल करने की कोशिश करूँगा.</string>
+    <string name="what_were_you_doing">यह क्रैश होने के समय आप म्यूज़िक डाउनलोडर में क्या कर रहे थे? कृपया ज़्यादा से ज़्यादा जानकारी जोड़ें, ताकि समस्या ठीक होने की संभावना बढ़ जाए.\n\nध्यान दें कि बग रिपोर्ट के लिए अंग्रेज़ी बेहतर है, लेकिन अगर आप किसी दूसरी भाषा में रिपोर्ट भेजते हैं, तो मैं मशीन अनुवाद का इस्तेमाल करने की कोशिश करूँगा.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">ईमेल पता और टेक्स्ट क्लिपबोर्ड पर कॉपी किया गया</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">क्या आप जानते हैं…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader हर बार ऐप्लिकेशन खुलने पर गानों की अपडेट की गई सूची मांगता है, और Music Downloader चलते समय नया मीडिया अपने-आप भी पहचान लेता है. यह \"रीफ़्रेश करें\" बटन Music Downloader में मीडिया दोबारा लोड नहीं करेगा, बल्कि आपके सिस्टम से जुड़े सभी स्थायी स्टोरेज डिवाइस की सभी फ़ाइलें दोबारा स्कैन करने के लिए कहेगा (इसीलिए इसमें कुछ समय लगता है). इसका मतलब है कि जब तक आपका सिस्टम या दूसरे ऐप्लिकेशन ठीक से काम कर रहे हैं, आपको यह सुविधा कभी इस्तेमाल नहीं करनी पड़ेगी.\n\nकुछ गाने नहीं दिख रहे? "सेटिंग > व्यवहार" में कम से कम अवधि वाला फ़िल्टर और फ़ोल्डर ब्लैकलिस्ट ज़रूर देखें, और पक्का करें कि ये सेटिंग उम्मीद के मुताबिक हैं. दूसरी संभावित वजहों के लिए, कृपया हमारा FAQ देखें.</string>
+    <string name="refresh_did_you_know">म्यूज़िक डाउनलोडर हर बार ऐप्लिकेशन खुलने पर गानों की अपडेट की गई सूची मांगता है, और म्यूज़िक डाउनलोडर चलते समय नया मीडिया अपने-आप भी पहचान लेता है. यह \"रीफ़्रेश करें\" बटन म्यूज़िक डाउनलोडर में मीडिया दोबारा लोड नहीं करेगा, बल्कि आपके सिस्टम से जुड़े सभी स्थायी स्टोरेज डिवाइस की सभी फ़ाइलें दोबारा स्कैन करने के लिए कहेगा (इसीलिए इसमें कुछ समय लगता है). इसका मतलब है कि जब तक आपका सिस्टम या दूसरे ऐप्लिकेशन ठीक से काम कर रहे हैं, आपको यह सुविधा कभी इस्तेमाल नहीं करनी पड़ेगी.\n\nकुछ गाने नहीं दिख रहे? "सेटिंग > व्यवहार" में कम से कम अवधि वाला फ़िल्टर और फ़ोल्डर ब्लैकलिस्ट ज़रूर देखें, और पक्का करें कि ये सेटिंग उम्मीद के मुताबिक हैं. दूसरी संभावित वजहों के लिए, कृपया हमारा FAQ देखें.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">प्लेलिस्ट का नाम नहीं बदला जा सका: %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

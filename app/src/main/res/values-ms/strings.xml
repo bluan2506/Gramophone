@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">Pemuat Turun Muzik</string>
     <string name="ads_loading">Memuatkan iklan…</string>
     <string name="splash_tagline">Pemain muzik luar talian anda</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">Senarai main tidak diketahui</string>
     <string name="music_downloader_crashed">Log ranap</string>
-    <string name="crash_music_downloader_version">Versi Music Downloader</string>
+    <string name="crash_music_downloader_version">Versi Pemuat Turun Muzik</string>
     <string name="crash_phone_model">Model</string>
     <string name="crash_phone_brand">Jenama</string>
     <string name="crash_sdk_level">Tahap SDK</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">Siaran Bluetooth LE</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">Buka dalam Music Downloader</string>
+    <string name="open_in_music_downloader">Buka dalam Pemuat Turun Muzik</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">Ruang sebelum huruf pertama atau selepas penghujung baris lirik mungkin mempunyai nilai seni. Jika anda tidak bersetuju, hidupkan pilihan ini untuk membuangnya secara automatik.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">Alamak!</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader telah ranap :(\n\nSila hantarkan saya laporan pepijat supaya masalah seperti punca ranap ini dapat dibaiki!\n\nSetiap keadaan adalah seunik muzik; tanpa bantuan anda, pepijat ini berkemungkinan besar <b>TIDAK</b> akan dibaiki!</string>
+    <string name="music_downloader_crashed_explainer2">Pemuat Turun Muzik telah ranap :(\n\nSila hantarkan saya laporan pepijat supaya masalah seperti punca ranap ini dapat dibaiki!\n\nSetiap keadaan adalah seunik muzik; tanpa bantuan anda, pepijat ini berkemungkinan besar <b>TIDAK</b> akan dibaiki!</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">Hantar e-mel</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">Laporan ranap</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">Apakah yang anda lakukan dalam Music Downloader semasa ranap ini berlaku? Sila tambah seberapa banyak butiran yang boleh untuk meningkatkan peluang saya membaiki masalah ini.\n\nSila ambil perhatian bahawa bahasa Inggeris lebih diutamakan untuk laporan pepijat, tetapi saya akan cuba menggunakan terjemahan mesin jika anda menghantar laporan dalam bahasa lain.</string>
+    <string name="what_were_you_doing">Apakah yang anda lakukan dalam Pemuat Turun Muzik semasa ranap ini berlaku? Sila tambah seberapa banyak butiran yang boleh untuk meningkatkan peluang saya membaiki masalah ini.\n\nSila ambil perhatian bahawa bahasa Inggeris lebih diutamakan untuk laporan pepijat, tetapi saya akan cuba menggunakan terjemahan mesin jika anda menghantar laporan dalam bahasa lain.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">Alamat e-mel dan teks disalin ke papan keratan</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">Tahukah anda…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader meminta senarai lagu yang dikemas kini setiap kali aplikasi dibuka, dan semasa Music Downloader berjalan, media baharu turut dikesan secara automatik. Butang \"Muat semula\" ini tidak memuatkan semula media dalam Music Downloader, sebaliknya ia meminta sistem anda mengimbas semula semua fail daripada semua peranti storan kekal yang disambungkan (sebab itulah ia mengambil sedikit masa). Ini bermakna, melainkan sistem anda atau aplikasi lain tidak berfungsi dengan betul, anda tidak akan perlu menggunakan ciri ini.\n\nAda lagu yang hilang? Pastikan anda menyemak "Tetapan > Kelakuan" untuk penapis tempoh minimum dan senarai hitam folder, dan sahkan tetapan tersebut mempunyai nilai yang dijangka. Untuk sebab lain yang mungkin, sila semak Soalan Lazim kami.</string>
+    <string name="refresh_did_you_know">Pemuat Turun Muzik meminta senarai lagu yang dikemas kini setiap kali aplikasi dibuka, dan semasa Pemuat Turun Muzik berjalan, media baharu turut dikesan secara automatik. Butang \"Muat semula\" ini tidak memuatkan semula media dalam Pemuat Turun Muzik, sebaliknya ia meminta sistem anda mengimbas semula semua fail daripada semua peranti storan kekal yang disambungkan (sebab itulah ia mengambil sedikit masa). Ini bermakna, melainkan sistem anda atau aplikasi lain tidak berfungsi dengan betul, anda tidak akan perlu menggunakan ciri ini.\n\nAda lagu yang hilang? Pastikan anda menyemak "Tetapan > Kelakuan" untuk penapis tempoh minimum dan senarai hitam folder, dan sahkan tetapan tersebut mempunyai nilai yang dijangka. Untuk sebab lain yang mungkin, sila semak Soalan Lazim kami.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">Gagal menamakan semula senarai main: %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

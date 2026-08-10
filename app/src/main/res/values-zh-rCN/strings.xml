@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">音乐下载器</string>
     <string name="ads_loading">正在加载广告…</string>
     <string name="splash_tagline">你的离线音乐播放器</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">未知播放列表</string>
     <string name="music_downloader_crashed">崩溃日志</string>
-    <string name="crash_music_downloader_version">Music Downloader 版本</string>
+    <string name="crash_music_downloader_version">音乐下载器版本</string>
     <string name="crash_phone_model">型号</string>
     <string name="crash_phone_brand">品牌</string>
     <string name="crash_sdk_level">SDK 级别</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">蓝牙 LE 广播</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">在 Music Downloader 中打开</string>
+    <string name="open_in_music_downloader">在音乐下载器中打开</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">歌词行首字母之前或行尾之后的空格可能具有艺术价值。如果你不认同，可以开启此选项自动删除这些空格。</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">哎呀！</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader 崩溃了 :(\n\n请给我发送错误报告，这样导致此次崩溃的问题才能得到修复！\n\n每一种情况都像音乐一样独特，没有你的帮助，这个错误很可能<b>不会</b>被修复！</string>
+    <string name="music_downloader_crashed_explainer2">音乐下载器崩溃了 :(\n\n请给我发送错误报告，这样导致此次崩溃的问题才能得到修复！\n\n每一种情况都像音乐一样独特，没有你的帮助，这个错误很可能<b>不会</b>被修复！</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">发送邮件</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">崩溃报告</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">这次崩溃发生时，你在 Music Downloader 中做什么？请尽可能多地补充细节，以提高我修复问题的可能性。\n\n请注意，错误报告最好使用英文，但如果你用其他语言提交，我会尝试使用机器翻译。</string>
+    <string name="what_were_you_doing">这次崩溃发生时，你在音乐下载器中做什么？请尽可能多地补充细节，以提高我修复问题的可能性。\n\n请注意，错误报告最好使用英文，但如果你用其他语言提交，我会尝试使用机器翻译。</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">已将邮箱地址和文本复制到剪贴板</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">你知道吗…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader 每次启动时都会请求最新的歌曲列表，并且在运行期间也会自动检测新的媒体文件。此\"刷新\"按钮不会重新加载 Music Downloader 中的媒体，而是请求系统重新扫描所有已连接的固定存储设备上的全部文件（因此需要一些时间）。也就是说，除非你的系统或其他应用出现异常，否则你永远不需要使用此功能。\n\n缺少某些歌曲？请务必在"设置 > 行为"中检查最短时长筛选和文件夹黑名单，并确认这些设置的值符合预期。更多可能的原因请查看我们的常见问题解答。</string>
+    <string name="refresh_did_you_know">音乐下载器每次启动时都会请求最新的歌曲列表，并且在运行期间也会自动检测新的媒体文件。此\"刷新\"按钮不会重新加载音乐下载器中的媒体，而是请求系统重新扫描所有已连接的固定存储设备上的全部文件（因此需要一些时间）。也就是说，除非你的系统或其他应用出现异常，否则你永远不需要使用此功能。\n\n缺少某些歌曲？请务必在"设置 > 行为"中检查最短时长筛选和文件夹黑名单，并确认这些设置的值符合预期。更多可能的原因请查看我们的常见问题解答。</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">重命名播放列表失败：%s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">Хөгжим татагч</string>
     <string name="ads_loading">Сурталчилгаа ачаалж байна…</string>
     <string name="splash_tagline">Таны офлайн хөгжим тоглуулагч</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">Тодорхойгүй тоглуулах жагсаалт</string>
     <string name="music_downloader_crashed">Гэмтлийн бүртгэл</string>
-    <string name="crash_music_downloader_version">Music Downloader-ийн хувилбар</string>
+    <string name="crash_music_downloader_version">Хөгжим татагчийн хувилбар</string>
     <string name="crash_phone_model">Загвар</string>
     <string name="crash_phone_brand">Брэнд</string>
     <string name="crash_sdk_level">SDK түвшин</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">Bluetooth LE нэвтрүүлэг</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">Music Downloader-д нээх</string>
+    <string name="open_in_music_downloader">Хөгжим татагч дээр нээх</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">Дууны үгийн мөрийн эхний үсгийн өмнөх эсвэл төгсгөлийн хоосон зай урлагийн үнэ цэнэтэй байж болно. Хэрэв та санал нийлэхгүй бол энэ тохиргоог асааж тэдгээрийг автоматаар арилгаж болно.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">Өө, үгүй!</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader гэмтлээ :(\n\nИйм гэмтэлд хүргэсэн асуудлыг засахын тулд надад алдааны мэдээлэл илгээнэ үү!\n\nНөхцөл бүр хөгжим шиг өвөрмөц; таны тусламжгүйгээр энэ алдаа <b>ЗАСАГДАХГҮЙ</b> байх магадлалтай!</string>
+    <string name="music_downloader_crashed_explainer2">Хөгжим татагч гэмтлээ :(\n\nИйм гэмтэлд хүргэсэн асуудлыг засахын тулд надад алдааны мэдээлэл илгээнэ үү!\n\nНөхцөл бүр хөгжим шиг өвөрмөц; таны тусламжгүйгээр энэ алдаа <b>ЗАСАГДАХГҮЙ</b> байх магадлалтай!</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">Имэйл илгээх</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">Гэмтлийн тайлан</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">Энэ гэмтэл гарах үед та Music Downloader дээр юу хийж байсан бэ? Асуудлыг засах боломжийг нэмэгдүүлэхийн тулд аль болох дэлгэрэнгүй бичнэ үү.\n\nАлдааны мэдээлэлд англи хэл илүү тохиромжтой боловч та өөр хэлээр илгээвэл би машин орчуулга ашиглахыг хичээнэ.</string>
+    <string name="what_were_you_doing">Энэ гэмтэл гарах үед та Хөгжим татагч дээр юу хийж байсан бэ? Асуудлыг засах боломжийг нэмэгдүүлэхийн тулд аль болох дэлгэрэнгүй бичнэ үү.\n\nАлдааны мэдээлэлд англи хэл илүү тохиромжтой боловч та өөр хэлээр илгээвэл би машин орчуулга ашиглахыг хичээнэ.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">Имэйл хаяг болон текстийг санах ойд хууллаа</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">Та мэдэх үү…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader апп нээгдэх бүрд шинэчилсэн дууны жагсаалт хүсдэг бөгөөд ажиллаж байх хугацаанд шинэ медиаг автоматаар илрүүлдэг. Энэхүү \"Сэргээх\" товч нь Music Downloader дахь медиаг дахин ачаалахгүй, харин холбогдсон бүх байнгын хадгалах төхөөрөмжийн бүх файлыг дахин сканнердахыг таны системээс хүснэ (тиймээс жаахан удна). Өөрөөр хэлбэл, таны систем эсвэл бусад апп эвдрээгүй л бол та энэ боломжийг хэзээ ч ашиглах шаардлагагүй.\n\nЗарим дуу дутуу байна уу? "Тохиргоо > Үйлдэл" хэсгээс хамгийн богино үргэлжлэх хугацааны шүүлтүүр болон хавтасны хар жагсаалтыг шалгаж, эдгээр тохиргоо хүлээгдэж буй утгатай эсэхийг баталгаажуулна уу. Бусад боломжит шалтгааны талаар манай FAQ-г үзнэ үү.</string>
+    <string name="refresh_did_you_know">Хөгжим татагч апп нээгдэх бүрд шинэчилсэн дууны жагсаалт хүсдэг бөгөөд ажиллаж байх хугацаанд шинэ медиаг автоматаар илрүүлдэг. Энэхүү \"Сэргээх\" товч нь Хөгжим татагч дахь медиаг дахин ачаалахгүй, харин холбогдсон бүх байнгын хадгалах төхөөрөмжийн бүх файлыг дахин сканнердахыг таны системээс хүснэ (тиймээс жаахан удна). Өөрөөр хэлбэл, таны систем эсвэл бусад апп эвдрээгүй л бол та энэ боломжийг хэзээ ч ашиглах шаардлагагүй.\n\nЗарим дуу дутуу байна уу? "Тохиргоо > Үйлдэл" хэсгээс хамгийн богино үргэлжлэх хугацааны шүүлтүүр болон хавтасны хар жагсаалтыг шалгаж, эдгээр тохиргоо хүлээгдэж буй утгатай эсэхийг баталгаажуулна уу. Бусад боломжит шалтгааны талаар манай FAQ-г үзнэ үү.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">Тоглуулах жагсаалтын нэрийг сольж чадсангүй: %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

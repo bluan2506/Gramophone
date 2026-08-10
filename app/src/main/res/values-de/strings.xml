@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">Musik-Downloader</string>
     <string name="ads_loading">Werbung wird geladen…</string>
     <string name="splash_tagline">Dein Offline-Musikplayer</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">Unbekannte Playlist</string>
     <string name="music_downloader_crashed">Absturzprotokoll</string>
-    <string name="crash_music_downloader_version">Music Downloader-Version</string>
+    <string name="crash_music_downloader_version">Musik-Downloader-Version</string>
     <string name="crash_phone_model">Modell</string>
     <string name="crash_phone_brand">Marke</string>
     <string name="crash_sdk_level">SDK-Level</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">Bluetooth LE Broadcast</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">In Music Downloader öffnen</string>
+    <string name="open_in_music_downloader">In Musik-Downloader öffnen</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">Leerzeichen vor dem ersten Buchstaben oder nach dem Ende einer Liedtextzeile können künstlerischen Wert haben. Falls du das anders siehst, kannst du diese Option aktivieren, um solche Leerzeichen automatisch zu entfernen.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">Oh nein!</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">Music Downloader ist abgestürzt :(\n\nBitte sende mir einen Fehlerbericht, damit Probleme wie das, was zu diesem Absturz geführt hat, behoben werden können!\n\nJede Situation ist so einzigartig wie Musik – ohne deine Hilfe wird dieser Fehler wahrscheinlich <b>NICHT</b> behoben!</string>
+    <string name="music_downloader_crashed_explainer2">Musik-Downloader ist abgestürzt :(\n\nBitte sende mir einen Fehlerbericht, damit Probleme wie das, was zu diesem Absturz geführt hat, behoben werden können!\n\nJede Situation ist so einzigartig wie Musik – ohne deine Hilfe wird dieser Fehler wahrscheinlich <b>NICHT</b> behoben!</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">E-Mail senden</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">Absturzbericht</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">Was hast du in Music Downloader gemacht, als dieser Absturz passiert ist? Bitte füge so viele Details wie möglich hinzu, um die Chancen zu erhöhen, dass ich das Problem beheben kann.\n\nBitte beachte, dass Englisch für Fehlerberichte bevorzugt wird. Ich werde aber versuchen, maschinelle Übersetzung zu nutzen, wenn du den Bericht in einer anderen Sprache sendest.</string>
+    <string name="what_were_you_doing">Was hast du in Musik-Downloader gemacht, als dieser Absturz passiert ist? Bitte füge so viele Details wie möglich hinzu, um die Chancen zu erhöhen, dass ich das Problem beheben kann.\n\nBitte beachte, dass Englisch für Fehlerberichte bevorzugt wird. Ich werde aber versuchen, maschinelle Übersetzung zu nutzen, wenn du den Bericht in einer anderen Sprache sendest.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">E-Mail-Adresse und Text in die Zwischenablage kopiert</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">Wusstest du schon…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">Music Downloader fordert bei jedem App-Start eine aktualisierte Songliste an, und während Music Downloader läuft, werden neue Medien ebenfalls automatisch erkannt. Diese Schaltfläche \"Aktualisieren\" lädt die Medien nicht in Music Downloader neu, sondern fordert dein System auf, alle Dateien auf allen angeschlossenen permanenten Speichergeräten neu zu scannen (deshalb dauert es etwas). Das heißt: Solange dein System oder andere Apps nicht fehlerhaft arbeiten, wirst du diese Funktion nie brauchen.\n\nEs fehlen Songs? Sieh unbedingt unter "Einstellungen > Verhalten" nach dem Mindestlängen-Filter und der Ordner-Blacklist und prüfe, ob diese Einstellungen den erwarteten Wert haben. Weitere mögliche Gründe findest du in unseren FAQ.</string>
+    <string name="refresh_did_you_know">Musik-Downloader fordert bei jedem App-Start eine aktualisierte Songliste an, und während Musik-Downloader läuft, werden neue Medien ebenfalls automatisch erkannt. Diese Schaltfläche \"Aktualisieren\" lädt die Medien nicht in Musik-Downloader neu, sondern fordert dein System auf, alle Dateien auf allen angeschlossenen permanenten Speichergeräten neu zu scannen (deshalb dauert es etwas). Das heißt: Solange dein System oder andere Apps nicht fehlerhaft arbeiten, wirst du diese Funktion nie brauchen.\n\nEs fehlen Songs? Sieh unbedingt unter "Einstellungen > Verhalten" nach dem Mindestlängen-Filter und der Ordner-Blacklist und prüfe, ob diese Einstellungen den erwarteten Wert haben. Weitere mögliche Gründe findest du in unseren FAQ.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">Umbenennen der Playlist fehlgeschlagen: %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->

@@ -2,7 +2,7 @@
 <resources>
 
     <!-- If your language uses a latin script: use "Music Downloader", please do not translate. If your language uses a different script: translate "Music Downloader" into your language. -->
-    <string name="app_name">Music Downloader</string>
+    <string name="app_name">تنزيل الموسيقى</string>
     <string name="ads_loading">جارٍ تحميل الإعلانات…</string>
     <string name="splash_tagline">مشغّل الموسيقى دون اتصال</string>
     <!-- Menu item in home screen -->
@@ -111,7 +111,7 @@
     <!-- Used in place of the playlist if the playlist can't be found unexpectedly -->
     <string name="unknown_playlist">قائمة تشغيل غير معروفة</string>
     <string name="music_downloader_crashed">سجل الأعطال</string>
-    <string name="crash_music_downloader_version">إصدار Music Downloader</string>
+    <string name="crash_music_downloader_version">إصدار تنزيل الموسيقى</string>
     <string name="crash_phone_model">الطراز</string>
     <string name="crash_phone_brand">العلامة التجارية</string>
     <string name="crash_sdk_level">مستوى SDK</string>
@@ -692,7 +692,7 @@
     playback path of active playback. -->
     <string name="device_type_ble_broadcast">بث Bluetooth LE</string>
     <!-- Shown in audio file preview to move from preview which is a simple dialog, to full app -->
-    <string name="open_in_music_downloader">فتح في Music Downloader</string>
+    <string name="open_in_music_downloader">فتح في تنزيل الموسيقى</string>
     <!-- Settings toggle in lyrics UI to remove spaces at start and end of text. Subtext -->
     <string name="settings_trim_lyrics_summary">قد يكون للمسافات قبل أول حرف أو بعد نهاية سطر الكلمات قيمة فنية. إذا لم توافق على ذلك، يمكنك تفعيل هذا الخيار لإزالتها تلقائيًا.</string>
     <!-- Error message if file can't be played for any reason -->
@@ -711,7 +711,7 @@
     <!-- Title of crash report screen -->
     <string name="oh_no">يا للأسف!</string>
     <!-- Explainer of crash report screen -->
-    <string name="music_downloader_crashed_explainer2">تعطّل Music Downloader :(\n\nيُرجى إرسال تقرير خطأ إليّ حتى يمكن إصلاح المشكلات مثل التي أدت إلى هذا العطل!\n\nكل حالة فريدة كالموسيقى؛ فبدون مساعدتك من المرجّح أن <b>لا</b> يتم إصلاح هذا الخطأ!</string>
+    <string name="music_downloader_crashed_explainer2">تعطّل تنزيل الموسيقى :(\n\nيُرجى إرسال تقرير خطأ إليّ حتى يمكن إصلاح المشكلات مثل التي أدت إلى هذا العطل!\n\nكل حالة فريدة كالموسيقى؛ فبدون مساعدتك من المرجّح أن <b>لا</b> يتم إصلاح هذا الخطأ!</string>
     <!-- Positive action button in crash report screen -->
     <string name="send_email">إرسال بريد إلكتروني</string>
     <!-- Error message if sending crash report failed -->
@@ -995,7 +995,7 @@
     <!-- Dialog title in crash reporter screen when user pressed "Send email" and we're asking for details -->
     <string name="crash_report">تقرير العطل</string>
     <!-- Dialog explainer in crash reporter screen when user pressed "Send email" and we're asking for details -->
-    <string name="what_were_you_doing">ماذا كنت تفعل في Music Downloader عندما حدث هذا العطل؟ يُرجى إضافة أكبر قدر ممكن من التفاصيل لزيادة فرص تمكّني من إصلاح المشكلة.\n\nيُرجى ملاحظة أن الإنجليزية مفضّلة لتقارير الأخطاء، لكنني سأحاول استخدام الترجمة الآلية إذا أرسلت التقرير بلغة أخرى.</string>
+    <string name="what_were_you_doing">ماذا كنت تفعل في تنزيل الموسيقى عندما حدث هذا العطل؟ يُرجى إضافة أكبر قدر ممكن من التفاصيل لزيادة فرص تمكّني من إصلاح المشكلة.\n\nيُرجى ملاحظة أن الإنجليزية مفضّلة لتقارير الأخطاء، لكنني سأحاول استخدام الترجمة الآلية إذا أرسلت التقرير بلغة أخرى.</string>
     <!-- Used if no email program is installed -->
     <string name="email_clipboard">تم نسخ عنوان البريد الإلكتروني والنص إلى الحافظة</string>
     <!-- Settings item to create .txt file with app logs, used for diagnosing issues -->
@@ -1039,7 +1039,7 @@
     <!-- Title used for dialog explaining when to use refresh feature and when to use quick refresh -->
     <string name="did_you_know">هل تعلم…</string>
     <!-- Explainer used for dialog explaining when to use refresh feature and when to use quick refresh -->
-    <string name="refresh_did_you_know">يطلب Music Downloader قائمة أغانٍ محدّثة عند كل تشغيل للتطبيق، وأثناء عمل Music Downloader يكتشف الوسائط الجديدة تلقائيًا أيضًا. لن يعيد زر \"تحديث\" هذا تحميل الوسائط في Music Downloader، بل سيطلب من نظامك إعادة فحص جميع الملفات في جميع أجهزة التخزين الدائمة المتصلة (ولهذا يستغرق بعض الوقت). أي أنه، ما لم يكن نظامك أو تطبيقات أخرى تعمل بشكل خاطئ، فلن تحتاج إلى هذه الميزة أبدًا.\n\nهل تنقص بعض الأغاني؟ تأكد من مراجعة "الإعدادات > السلوك" للاطلاع على فلتر أقل مدة والقائمة السوداء للمجلدات، وتأكد من ضبط هذه الإعدادات على القيمة المتوقعة. لمعرفة أسباب أخرى محتملة، يُرجى مراجعة الأسئلة الشائعة.</string>
+    <string name="refresh_did_you_know">يطلب تنزيل الموسيقى قائمة أغانٍ محدّثة عند كل تشغيل للتطبيق، وأثناء عمل تنزيل الموسيقى يكتشف الوسائط الجديدة تلقائيًا أيضًا. لن يعيد زر \"تحديث\" هذا تحميل الوسائط في تنزيل الموسيقى، بل سيطلب من نظامك إعادة فحص جميع الملفات في جميع أجهزة التخزين الدائمة المتصلة (ولهذا يستغرق بعض الوقت). أي أنه، ما لم يكن نظامك أو تطبيقات أخرى تعمل بشكل خاطئ، فلن تحتاج إلى هذه الميزة أبدًا.\n\nهل تنقص بعض الأغاني؟ تأكد من مراجعة "الإعدادات > السلوك" للاطلاع على فلتر أقل مدة والقائمة السوداء للمجلدات، وتأكد من ضبط هذه الإعدادات على القيمة المتوقعة. لمعرفة أسباب أخرى محتملة، يُرجى مراجعة الأسئلة الشائعة.</string>
     <!-- Error message when renaming playlist upon user request failed unexpectedly -->
     <string name="rename_failed_playlist">فشلت إعادة تسمية قائمة التشغيل: %s</string>
     <!-- Text field hint used for dialog where playlist is renamed or created -->
