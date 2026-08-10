@@ -26,6 +26,21 @@
             android:contentDescription="@null"
             android:src="@drawable/ic_nav_songs"
             app:tint="?attr/colorOnPrimaryContainer" />
+
+        <!-- Now-playing equalizer over the tile behind a scrim, as in adapter_list_card.xml and
+             item_online_song.xml. The tile is a background shape, not a clipping card, so the
+             scrim carries the rounding itself (@drawable/bg_now_playing_scrim). -->
+        <ImageView
+            android:id="@+id/now_playing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_now_playing_scrim"
+            android:contentDescription="@string/now_playing"
+            android:padding="14dp"
+            android:visibility="gone"
+            app:tint="@android:color/white"
+            tools:src="@drawable/ic_play_arrow_filled"
+            tools:visibility="visible" />
     </FrameLayout>
 
     <LinearLayout
