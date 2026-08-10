@@ -47,24 +47,24 @@ android {
         }
     }
 
-    signingConfigs {
-        create("release") {
-            if (resolveProperties("AKANE_RELEASE_KEY_ALIAS") != null) {
-                storeFile = file(resolveProperties("AKANE_RELEASE_STORE_FILE")!!)
-                storePassword = resolveProperties("AKANE_RELEASE_STORE_PASSWORD")
-                keyAlias = resolveProperties("AKANE_RELEASE_KEY_ALIAS")
-                keyPassword = resolveProperties("AKANE_RELEASE_KEY_PASSWORD")
-            }
-        }
-        create("release2") {
-            if (resolveProperties("AKANE2_RELEASE_KEY_ALIAS")!= null) {
-                storeFile = file(resolveProperties("AKANE2_RELEASE_STORE_FILE")!!)
-                storePassword = resolveProperties("AKANE2_RELEASE_STORE_PASSWORD")
-                keyAlias = resolveProperties("AKANE2_RELEASE_KEY_ALIAS")
-                keyPassword = resolveProperties("AKANE2_RELEASE_KEY_PASSWORD")
-            }
-        }
-    }
+//    signingConfigs {
+//        create("release") {
+//            if (resolveProperties("AKANE_RELEASE_KEY_ALIAS") != null) {
+//                storeFile = file(resolveProperties("AKANE_RELEASE_STORE_FILE")!!)
+//                storePassword = resolveProperties("AKANE_RELEASE_STORE_PASSWORD")
+//                keyAlias = resolveProperties("AKANE_RELEASE_KEY_ALIAS")
+//                keyPassword = resolveProperties("AKANE_RELEASE_KEY_PASSWORD")
+//            }
+//        }
+//        create("release2") {
+//            if (resolveProperties("AKANE2_RELEASE_KEY_ALIAS")!= null) {
+//                storeFile = file(resolveProperties("AKANE2_RELEASE_STORE_FILE")!!)
+//                storePassword = resolveProperties("AKANE2_RELEASE_STORE_PASSWORD")
+//                keyAlias = resolveProperties("AKANE2_RELEASE_KEY_ALIAS")
+//                keyPassword = resolveProperties("AKANE2_RELEASE_KEY_PASSWORD")
+//            }
+//        }
+//    }
 
     androidResources {
         generateLocaleConfig = true
@@ -160,77 +160,77 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
-            signingConfig = signingConfigs.getByName("release")
+//            signingConfig = signingConfigs.getByName("release")
         }
-        create("googlePlayRelease") {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
-            signingConfig = signingConfigs.getByName("release2")
-            buildConfigField(
-                "boolean",
-                "IS_GOOGLEPLAY",
-                "true"
-            )
-            buildConfigField(
-                "String",
-                "RELEASE_TYPE",
-                "\"$releaseType-play\""
-            )
-            matchingFallbacks += "release"
-        }
-        create("benchmarkRelease") {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
-            buildConfigField(
-                "boolean",
-                "DISABLE_MEDIA_STORE_FILTER",
-                "true"
-            )
-            signingConfig = signingConfigs.getByName("release")
-            matchingFallbacks += "release"
-        }
-        create("nonMinifiedRelease") {
-            isMinifyEnabled = false
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
-            buildConfigField(
-                "boolean",
-                "DISABLE_MEDIA_STORE_FILTER",
-                "true"
-            )
-            signingConfig = signingConfigs.getByName("release")
-            matchingFallbacks += "release"
-        }
-        create("profiling") {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
-            isProfileable = true
-            signingConfig = signingConfigs.getByName("release")
-            matchingFallbacks += "release"
-        }
-        create("userdebug") {
-            isMinifyEnabled = false
-            isProfileable = true
-            isJniDebuggable = true
-            isPseudoLocalesEnabled = true
-            signingConfig = signingConfigs.getByName("release")
-            matchingFallbacks += "release"
-        }
+//        create("googlePlayRelease") {
+//            isMinifyEnabled = true
+//            isShrinkResources = true
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro",
+//            )
+//            signingConfig = signingConfigs.getByName("release2")
+//            buildConfigField(
+//                "boolean",
+//                "IS_GOOGLEPLAY",
+//                "true"
+//            )
+//            buildConfigField(
+//                "String",
+//                "RELEASE_TYPE",
+//                "\"$releaseType-play\""
+//            )
+//            matchingFallbacks += "release"
+//        }
+//        create("benchmarkRelease") {
+//            isMinifyEnabled = true
+//            isShrinkResources = true
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro",
+//            )
+//            buildConfigField(
+//                "boolean",
+//                "DISABLE_MEDIA_STORE_FILTER",
+//                "true"
+//            )
+//            signingConfig = signingConfigs.getByName("release")
+//            matchingFallbacks += "release"
+//        }
+//        create("nonMinifiedRelease") {
+//            isMinifyEnabled = false
+//            isShrinkResources = true
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro",
+//            )
+//            buildConfigField(
+//                "boolean",
+//                "DISABLE_MEDIA_STORE_FILTER",
+//                "true"
+//            )
+//            signingConfig = signingConfigs.getByName("release")
+//            matchingFallbacks += "release"
+//        }
+//        create("profiling") {
+//            isMinifyEnabled = true
+//            isShrinkResources = true
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro",
+//            )
+//            isProfileable = true
+//            signingConfig = signingConfigs.getByName("release")
+//            matchingFallbacks += "release"
+//        }
+//        create("userdebug") {
+//            isMinifyEnabled = false
+//            isProfileable = true
+//            isJniDebuggable = true
+//            isPseudoLocalesEnabled = true
+//            signingConfig = signingConfigs.getByName("release")
+//            matchingFallbacks += "release"
+//        }
         debug {
             isPseudoLocalesEnabled = true
         }
@@ -406,7 +406,7 @@ dependencies {
     // --- below does not apply to release builds ---
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.robolectric:robolectric:4.17-beta-2")
-    "userdebugImplementation"(kotlin("reflect", kotlinVersion)) // who thought String.invoke() is a good idea?????
+//    "userdebugImplementation"(kotlin("reflect", kotlinVersion)) // who thought String.invoke() is a good idea?????
     debugImplementation(kotlin("reflect", kotlinVersion))
 }
 
