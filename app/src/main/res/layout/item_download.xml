@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Downloaded file row: primary-tinted tile, then title/size, then a play chevron. -->
+<!--
+    Downloaded file row: artwork card, then title/size, then a play chevron. The card mirrors the
+    library list row (adapter_list_card.xml) — same size, corner radius, surface colour and
+    @drawable/ic_default_cover placeholder — so downloads read like the Songs list. Downloads have
+    no artwork source yet, so the placeholder is what is actually shown.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,34 +19,35 @@
     android:paddingHorizontal="20dp"
     android:paddingVertical="11dp">
 
-    <FrameLayout
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:background="@drawable/bg_home_icon">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        app:cardBackgroundColor="?attr/colorSurfaceContainer"
+        app:cardCornerRadius="@dimen/list_round_corner_size"
+        app:cardElevation="0dp">
 
         <ImageView
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:layout_gravity="center"
-            android:contentDescription="@null"
-            android:src="@drawable/ic_nav_songs"
-            app:tint="?attr/colorOnPrimaryContainer" />
+            android:id="@+id/cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_default_cover" />
 
-        <!-- Now-playing equalizer over the tile behind a scrim, as in adapter_list_card.xml and
-             item_online_song.xml. The tile is a background shape, not a clipping card, so the
-             scrim carries the rounding itself (@drawable/bg_now_playing_scrim). -->
+        <!-- Now-playing equalizer over the artwork behind a scrim, as in adapter_list_card.xml and
+             item_online_song.xml. The card clips its children, so a plain scrim colour is enough. -->
         <ImageView
             android:id="@+id/now_playing"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_now_playing_scrim"
+            android:background="#73000000"
             android:contentDescription="@string/now_playing"
-            android:padding="14dp"
+            android:padding="15dp"
             android:visibility="gone"
             app:tint="@android:color/white"
             tools:src="@drawable/ic_play_arrow_filled"
             tools:visibility="visible" />
-    </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="0dp"
