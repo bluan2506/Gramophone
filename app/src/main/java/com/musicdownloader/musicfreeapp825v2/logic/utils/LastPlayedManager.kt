@@ -40,6 +40,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.musicdownloader.musicfreeapp825v2.BuildConfig
 import com.musicdownloader.musicfreeapp825v2.logic.getFile
+import com.musicdownloader.musicfreeapp825v2.logic.isOnlineStream
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.EndedWorkaroundPlayer
 import uk.akane.libphonograph.items.EXTRA_ADD_DATE
 import uk.akane.libphonograph.items.EXTRA_ALBUM_ID
@@ -75,11 +76,23 @@ class LastPlayedManager(
 
     private fun dumpPlaylist(): MediaItemsWithStartPosition {
         val items = mutableListOf<MediaItem>()
+        val currentIndex = controller.currentMediaItemIndex
+        var startIndex = 0
+        var startPositionMs = controller.currentPosition
         for (i in 0 until controller.mediaItemCount) {
-            items.add(controller.getMediaItemAt(i))
+            val item = controller.getMediaItemAt(i)
+            if (i == currentIndex) {
+                // Point at whatever ends up in this slot after filtering.
+                startIndex = items.size
+                if (item.isOnlineStream()) startPositionMs = 0
+            }
+            // Online items stream from a link that expires, and resuming one the user closed the
+            // app on is exactly what we don't want, so they never make it into the saved queue.
+            if (item.isOnlineStream()) continue
+            items.add(item)
         }
         return MediaItemsWithStartPosition(
-            items, controller.currentMediaItemIndex, controller.currentPosition
+            items, startIndex.coerceAtMost((items.size - 1).coerceAtLeast(0)), startPositionMs
         )
     }
 
@@ -150,9 +163,13 @@ class LastPlayedManager(
                     b.writeStringSafe(it.getFile()?.path)
                     b.toString()
                 })
+            // An empty queue here means there is nothing worth restoring - typically the player
+            // only held an online stream. Clear the saved queue rather than leaving the previous
+            // one behind, which the player no longer holds either.
+            val hasItems = data.mediaItems.isNotEmpty()
             prefs.edit {
-                putStringSet("last_played_lst", lastPlayed.first)
-                putString("last_played_grp", lastPlayed.second)
+                putStringSet("last_played_lst", lastPlayed.first.takeIf { hasItems })
+                putString("last_played_grp", lastPlayed.second.takeIf { hasItems })
                 putInt("last_played_idx", data.startIndex)
                 putLong("last_played_pos", data.startPositionMs)
                 putInt("repeat_mode", repeatMode)
@@ -317,10 +334,17 @@ class LastPlayedManager(
                                         .build()
                                 )
                                 .build()
-                        },
+                        }
+                        // Queues saved by older versions can still contain online items, which
+                        // dumpPlaylist() no longer persists. Drop them here too.
+                        .filterNot { it.isOnlineStream() },
                     lastPlayedIdx,
                     lastPlayedPos,
                 )
+                if (data.mediaItems.isEmpty()) {
+                    callback(null)
+                    return@withContext
+                }
                 if (BuildConfig.DEBUG) {
                     Log.d(
                         TAG,
