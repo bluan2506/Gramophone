@@ -279,6 +279,28 @@
         <item name="strokeWidth">1dp</item>
     </style>
 
+    <!-- Home "hot song" keyword pill. Tonal rather than fully saturated: the cloud is a dozen-odd
+         chips, so at full primary it would out-shout the single Search call to action. Sized so
+         the whole cloud fits in four rows without pushing the tiles below it off-screen. -->
+    <style name="Widget.App.Chip.Hot" parent="Widget.Material3.Chip.Assist">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Pill</item>
+        <item name="chipBackgroundColor">?attr/colorPrimaryContainer</item>
+        <item name="android:textColor">?attr/colorOnPrimaryContainer</item>
+        <item name="rippleColor">?attr/colorOnPrimaryContainer</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipMinHeight">32dp</item>
+        <item name="chipStartPadding">12dp</item>
+        <item name="chipEndPadding">12dp</item>
+        <item name="ensureMinTouchTargetSize">false</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.Chip</item>
+        <item name="android:checkable">false</item>
+    </style>
+
+    <style name="TextAppearance.App.Chip" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textSize">13sp</item>
+        <item name="textFontWeight">600</item>
+    </style>
+
     <style name="Widget.App.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
         <item name="itemActiveIndicatorStyle">@style/Widget.App.BottomNavigation.Indicator</item>
         <item name="itemIconSize">23dp</item>

@@ -5,4 +5,25 @@
     <string name="upper_folder" translatable="false">..</string>
     <string name="artist_time" translatable="false">%s • %s</string>
 
+    <!-- Keyword cloud under "Hot songs" on Home; each entry opens the online search pre-filled
+         with it. Song titles, so never translated.
+
+         Kept to twelve short titles on purpose: Home has to fit one screen above the mini player
+         and the bottom navigation, and that is four chip rows. Adding entries (or long ones) pushes
+         the Downloaded/Settings tiles off-screen. -->
+    <string-array name="home_hot_songs" translatable="false">
+        <item>Get Even</item>
+        <item>Steppers</item>
+        <item>Sleazy Flow</item>
+        <item>In A Minute</item>
+        <item>Feel Good</item>
+        <item>Enemy</item>
+        <item>Left and Right</item>
+        <item>You</item>
+        <item>Heat Waves</item>
+        <item>Wait For U</item>
+        <item>About Damn Time</item>
+        <item>Glimpse of Us</item>
+    </string-array>
+
 </resources>

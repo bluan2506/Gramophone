@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    One "hot song" keyword on Home. Inflated per entry of R.array.home_hot_songs so the chips pick
+    up the app style (a themed context is required for Chip styling, hence a layout rather than
+    `Chip(context)`).
+-->
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.App.Chip.Hot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="Heat Waves" />

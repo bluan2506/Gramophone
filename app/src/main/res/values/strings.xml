@@ -16,6 +16,12 @@
     <!-- Tab on home screen showing a list of songs -->
     <string name="category_home">Home</string>
     <string name="home_search_hint">Search your music</string>
+    <!-- Hint inside the search bar on the home screen -->
+    <string name="home_search_free_hint">Search free music…</string>
+    <!-- Label of the button that starts an online search -->
+    <string name="home_search_action">Search</string>
+    <!-- Header above the list of trending song keywords on the home screen -->
+    <string name="home_hot_songs">Hot songs</string>
     <string name="home_online_search">Search online</string>
     <string name="home_online_search_subtitle">Find and stream songs</string>
     <string name="online_search_hint">Search songs online</string>

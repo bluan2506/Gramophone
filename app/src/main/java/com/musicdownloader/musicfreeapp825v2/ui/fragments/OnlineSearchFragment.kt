@@ -71,6 +71,12 @@ class OnlineSearchFragment : BaseFragment(true) {
         const val ACTION_LINK_EXPIRED = "com.musicdownloader.musicfreeapp825v2.action.ONLINE_LINK_EXPIRED"
         const val KEY_VIDEO_ID = "video_id"
 
+        /**
+         * Optional argument: open the screen already searching this keyword instead of an empty,
+         * focused search box. Set by the Home "hot song" chips.
+         */
+        const val KEY_QUERY = "query"
+
         private const val FORBIDDEN_CHECK_TIMEOUT_MS = 2_000
 
         // How many matching past searches to surface at the top of the online suggestion list.
@@ -153,8 +159,18 @@ class OnlineSearchFragment : BaseFragment(true) {
         }
         binding.clearText.setOnClickListener {
             binding.searchView.setText("")
+            armSearchBox()
             binding.searchView.requestFocus()
             showKeyboard()
+        }
+        binding.searchView.setOnClickListener {
+            // No-op unless the screen was opened pre-searched (see [armSearchBox]): the first tap
+            // hands the box back to the keyboard.
+            if (!binding.searchView.isFocusable) {
+                armSearchBox()
+                binding.searchView.requestFocus()
+                showKeyboard()
+            }
         }
 
         binding.searchView.addTextChangedListener { raw ->
@@ -185,9 +201,22 @@ class OnlineSearchFragment : BaseFragment(true) {
             binding.recyclerViewResult.smoothScrollToPosition(0)
         }
 
-        // Auto-open the keyboard on entering the search screen, focused on the search box.
-        binding.searchView.requestFocus()
-        showKeyboard()
+        // Opened from a Home "hot song" chip: run that search straight away. Consumed once, so a
+        // re-created view (rotation) shows the results instead of searching again.
+        val initialQuery = arguments?.getString(KEY_QUERY)?.trim().orEmpty()
+        arguments?.remove(KEY_QUERY)
+
+        if (initialQuery.isEmpty()) {
+            // Auto-open the keyboard on entering the search screen, focused on the search box.
+            binding.searchView.requestFocus()
+            showKeyboard()
+        } else {
+            // Pre-searched: land on the results with the keyboard down. The box is the only
+            // focusable view here, so leaving it focusable means the window hands it focus on
+            // attach and (on some ROMs) raises the IME over the results.
+            binding.searchView.isFocusable = false
+            binding.searchView.isFocusableInTouchMode = false
+        }
 
         // Drive the "now playing" equalizer from the media3 controller, like the offline song lists.
         controllerViewModel.addRecreationalPlayerListener(
@@ -206,7 +235,12 @@ class OnlineSearchFragment : BaseFragment(true) {
         // switch back into results mode so the retained list shows again instead of the empty
         // default. The results collector re-emits the retained list and repopulates the adapter.
         // Otherwise (fresh screen) show the recent-search history under the empty query box.
-        if (viewModel.searched.value) {
+        if (initialQuery.isNotEmpty()) {
+            onClickSuggest(initialQuery)
+            // onClickSuggest' own closeKeyboard() is a no-op this early (no window token yet), so
+            // repeat it once the view is attached.
+            binding.root.post { if (isAdded) closeKeyboard() }
+        } else if (viewModel.searched.value) {
             showSuggestions(false)
         } else {
             showHistoryOrResults()
@@ -665,6 +699,12 @@ class OnlineSearchFragment : BaseFragment(true) {
 
     private fun countryCode(): String =
         resources.configuration.locales[0].country
+
+    /** Undoes the "opened pre-searched" state so the box can take focus and be typed in again. */
+    private fun armSearchBox() {
+        binding.searchView.isFocusable = true
+        binding.searchView.isFocusableInTouchMode = true
+    }
 
     private fun showKeyboard() {
         val editText = _binding?.searchView ?: return

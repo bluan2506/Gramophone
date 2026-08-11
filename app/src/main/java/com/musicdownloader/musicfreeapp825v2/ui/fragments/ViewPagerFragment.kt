@@ -29,6 +29,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.pm.ShortcutManagerCompat
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +40,7 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.play.core.review.ReviewManagerFactory
 import androidx.fragment.app.FragmentManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -52,6 +54,7 @@ import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgePaddingListen
 import com.musicdownloader.musicfreeapp825v2.logic.needsManualSnackBarInset
 import com.musicdownloader.musicfreeapp825v2.logic.updateMargin
 import com.musicdownloader.musicfreeapp825v2.logic.utils.SdScanner
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
 import com.musicdownloader.musicfreeapp825v2.logic.setMediaItemsWithTitle
 import com.musicdownloader.musicfreeapp825v2.ui.MainActivity
 import com.musicdownloader.musicfreeapp825v2.ui.adapters.MainPagerAdapter
@@ -205,6 +208,10 @@ class ViewPagerFragment : BaseFragment(true) {
                         } ?: controller?.setMediaItems(listOf())
                 }
 
+                R.id.rate_app -> {
+                    rateApp()
+                }
+
                 else -> throw IllegalStateException()
             }
             true
@@ -259,6 +266,39 @@ class ViewPagerFragment : BaseFragment(true) {
             it.setOnItemReselectedListener(null)
         }
         super.onDestroyView()
+    }
+
+    // Rate app via the Google Play In-App Review flow, ported from the sample's Utils.rateApp:
+    // request + launch the review flow, then open the Play Store listing; if the flow can't be
+    // requested, fall back straight to the store.
+    private fun rateApp() {
+        val activity = mainActivity
+        FirebaseEventUtils.getInstances().logEventUserClickRateApp(activity)
+        val manager = ReviewManagerFactory.create(activity)
+        manager.requestReviewFlow().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                manager.launchReviewFlow(activity, task.result).addOnCompleteListener {
+                    openPlayStore()
+                }
+            } else {
+                openPlayStore()
+            }
+        }
+    }
+
+    private fun openPlayStore() {
+        if (!isAdded) return
+        val pkg = mainActivity.packageName
+        try {
+            startActivity(Intent(Intent.ACTION_VIEW, "market://details?id=$pkg".toUri()))
+        } catch (_: ActivityNotFoundException) {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    "https://play.google.com/store/apps/details?id=$pkg".toUri()
+                )
+            )
+        }
     }
 
     fun maybeReportFullyDrawn(itemId: Int) {

@@ -31,4 +31,9 @@
         android:icon="@drawable/ic_settings"
         android:title="@string/home_menu_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/rate_app"
+        android:icon="@drawable/ic_star"
+        android:title="@string/home_rate_app"
+        app:showAsAction="never" />
 </menu>

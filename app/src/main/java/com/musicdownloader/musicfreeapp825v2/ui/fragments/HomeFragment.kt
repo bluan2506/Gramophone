@@ -17,7 +17,6 @@
 
 package com.musicdownloader.musicfreeapp825v2.ui.fragments
 
-import android.content.ActivityNotFoundException
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -27,10 +26,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.play.core.review.ReviewManagerFactory
+import com.google.android.material.chip.Chip
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -38,18 +35,16 @@ import com.musicdownloader.musicfreeapp825v2.R
 import com.musicdownloader.musicfreeapp825v2.databinding.FragmentHomeBinding
 import com.musicdownloader.musicfreeapp825v2.logic.MusicDownloaderApplication
 import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgePaddingListener
-import com.musicdownloader.musicfreeapp825v2.logic.getTimer
-import com.musicdownloader.musicfreeapp825v2.logic.setTimer
 import com.musicdownloader.musicfreeapp825v2.logic.utils.UpdateUtils
-import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.InterstitialAdsUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.DownloadStorage
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.settings.MainSettingsActivity
 
 /**
  * HomeFragment:
- *   The landing page of the bottom navigation, modelled after the MSDownloader home: a search bar
- * on top and a 2x2 grid of quick actions (Downloaded, Sleep timer, Rate app, Settings).
+ *   The landing page of the bottom navigation, modelled after the MSDownloader home: the app mark
+ * and name, a search bar that hands off to the online search screen, a cloud of "hot song"
+ * keywords that open that screen pre-searched, and two tiles for Downloaded and Settings.
  */
 class HomeFragment : BaseFragment(null) {
 
@@ -76,22 +71,22 @@ class HomeFragment : BaseFragment(null) {
         // Preload the "go to search" interstitial so it is ready when the search bar is tapped.
         InterstitialAdsUtils.loadAdsGoToSearchScreen(mainActivity, appConfig)
 
-        // The search bar opens the online search screen (gated by the interstitial).
+        // The search bar opens the online search screen (gated by the interstitial); the button
+        // inside it is only a visual affordance, so it does the same thing.
         binding.homeSearch.setOnClickListener {
+            openOnlineSearch()
+        }
+        binding.homeSearchButton.setOnClickListener {
             openOnlineSearch()
         }
         binding.cardDownloaded.setOnClickListener {
             openDownloaded()
         }
-        binding.cardSleepTimer.setOnClickListener {
-            openSleepTimer()
-        }
-        binding.cardRateApp.setOnClickListener {
-            rateApp()
-        }
         binding.cardSettings.setOnClickListener {
             openSettings()
         }
+
+        populateHotSongs()
 
         // Show how many songs are in the download folder (not the whole music library).
         updateDownloadedCount()
@@ -109,7 +104,6 @@ class HomeFragment : BaseFragment(null) {
 
     override fun onResume() {
         super.onResume()
-        updateSleepTimerSubtitle()
         updateDownloadedCount()
     }
 
@@ -153,23 +147,40 @@ class HomeFragment : BaseFragment(null) {
         }
     }
 
-    private fun openOnlineSearch() {
+    /** Fills the "Hot songs" cloud; tapping a keyword opens the search screen already searching it. */
+    private fun populateHotSongs() {
+        val group = binding.hotSongs
+        val inflater = LayoutInflater.from(group.context)
+        resources.getStringArray(R.array.home_hot_songs).forEach { title ->
+            val chip = inflater.inflate(R.layout.item_hot_song_chip, group, false) as Chip
+            chip.text = title
+            chip.setOnClickListener { openOnlineSearch(title) }
+            group.addView(chip)
+        }
+    }
+
+    /** @param query when set, the search screen opens with this keyword already searched. */
+    private fun openOnlineSearch(query: String? = null) {
+        val args: (Bundle.() -> Unit)? = if (query.isNullOrBlank()) null else {
+            { putString(OnlineSearchFragment.KEY_QUERY, query) }
+        }
+        val open = { mainActivity.startFragment(OnlineSearchFragment(), args) }
         // Show the "go to search" interstitial (if enabled by remote config), then navigate.
         if (appConfig.isAds_gotoSearchScreen) {
             InterstitialAdsUtils.showAdsGoToSearchScreen(
                 mainActivity, appConfig,
                 object : InterstitialAdsUtils.Listener {
                     override fun onNotShowAds() {
-                        mainActivity.startFragment(OnlineSearchFragment())
+                        open()
                     }
 
                     override fun onAdDismissedFullScreenContent() {
-                        mainActivity.startFragment(OnlineSearchFragment())
+                        open()
                     }
                 }
             )
         } else {
-            mainActivity.startFragment(OnlineSearchFragment())
+            open()
         }
     }
 
@@ -213,62 +224,4 @@ class HomeFragment : BaseFragment(null) {
         }
     }
 
-    private fun updateSleepTimerSubtitle() {
-        val timer = mainActivity.getPlayer()?.getTimer()
-        val active = timer != null && ((timer.first ?: 0) > 0 || timer.second)
-        _binding?.cardSleepTimerSubtitle?.setText(if (active) R.string.home_on else R.string.home_off)
-    }
-
-    private fun openSleepTimer() {
-        val controller = mainActivity.getPlayer() ?: return
-        val options = listOf(
-            getString(R.string.home_off) to { controller.setTimer(0, false) },
-            getString(R.string.home_minutes, 15) to { controller.setTimer(15 * 60 * 1000, false) },
-            getString(R.string.home_minutes, 30) to { controller.setTimer(30 * 60 * 1000, false) },
-            getString(R.string.home_minutes, 45) to { controller.setTimer(45 * 60 * 1000, false) },
-            getString(R.string.home_minutes, 60) to { controller.setTimer(60 * 60 * 1000, false) },
-            getString(R.string.home_end_of_song) to { controller.setTimer(0, true) },
-        )
-        MaterialAlertDialogBuilder(mainActivity)
-            .setTitle(R.string.home_sleep_timer)
-            .setItems(options.map { it.first }.toTypedArray()) { _, which ->
-                options[which].second()
-                updateSleepTimerSubtitle()
-            }
-            .setNegativeButton(android.R.string.cancel, null)
-            .show()
-    }
-
-    // Rate app via the Google Play In-App Review flow, ported from the sample's Utils.rateApp:
-    // request + launch the review flow, then open the Play Store listing; if the flow can't be
-    // requested, fall back straight to the store.
-    private fun rateApp() {
-        val activity = mainActivity
-        FirebaseEventUtils.getInstances().logEventUserClickRateApp(activity)
-        val manager = ReviewManagerFactory.create(activity)
-        manager.requestReviewFlow().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                manager.launchReviewFlow(activity, task.result).addOnCompleteListener {
-                    openPlayStore()
-                }
-            } else {
-                openPlayStore()
-            }
-        }
-    }
-
-    private fun openPlayStore() {
-        if (!isAdded) return
-        val pkg = mainActivity.packageName
-        try {
-            startActivity(Intent(Intent.ACTION_VIEW, "market://details?id=$pkg".toUri()))
-        } catch (_: ActivityNotFoundException) {
-            startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    "https://play.google.com/store/apps/details?id=$pkg".toUri()
-                )
-            )
-        }
-    }
 }
