@@ -76,13 +76,13 @@ class SplashActivity : BaseActivity() {
                     }
 
                     override fun onFinished_InitLibSearch() {
-                        val serverUrlCodeLua = ConfigUtils.SERVER_URL_CODE_LUA
+                        val serverUrlCodeJs = ConfigUtils.SERVER_URL_CODE_JS
                         val serverUrlLogError = ConfigUtils.SERVER_URL_LOG_ERROR
                         val serverUrlFileBlacklist = ConfigUtils.SERVER_URL_FILE_BLACKLIST
 
                         ApiServices.init(
                             this@SplashActivity,
-                            serverUrlCodeLua,
+                            serverUrlCodeJs,
                             serverUrlLogError,
                             serverUrlFileBlacklist,
                             object : InitCallback {

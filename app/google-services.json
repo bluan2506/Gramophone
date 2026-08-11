@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "238466329011",
-    "project_id": "gramophone-95633",
-    "storage_bucket": "gramophone-95633.firebasestorage.app"
+    "project_number": "1022413198277",
+    "project_id": "music-11-bs",
+    "storage_bucket": "music-11-bs.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:238466329011:android:e11172084290d7e95743c6",
+        "mobilesdk_app_id": "1:1022413198277:android:ba44971ebfae30cc1eb1ac",
         "android_client_info": {
-          "package_name": "com.musicdownloader.musicfreeapp825v2"
+          "package_name": "com.musicdownloader.freedownloadmusicapp26"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDBod0HyV-S8CEXfwwdoIsw3K4oZXPq7sY"
+          "current_key": "AIzaSyDLrDWYFY8NHz364MAthjrKJgsFsFu0840"
         }
       ],
       "services": {
@@ -26,15 +26,15 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:238466329011:android:ab38a501fb0f9a065743c6",
+        "mobilesdk_app_id": "1:1022413198277:android:041d41de26f9f7c21eb1ac",
         "android_client_info": {
-          "package_name": "org.akanework.gramophone"
+          "package_name": "com.musicdownloader.musicdownloadmp3freeapp.mp3musicdownload"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDBod0HyV-S8CEXfwwdoIsw3K4oZXPq7sY"
+          "current_key": "AIzaSyDLrDWYFY8NHz364MAthjrKJgsFsFu0840"
         }
       ],
       "services": {

@@ -151,9 +151,9 @@ public class ConfigUtils {
     public static final String SERVER_URL_FILE_BLACKLIST = Sercurity.decrypt("kw24gw0Byv5ihxWFbkimjUyabDg7b2QtPFInLh3ZVnY6DjkCKuD5W/Sf40Yy1k6krI+gLjvajKRg4+L70HX3ew==");
 
     /**
-     * <a href="https://8c3ihksoa5.execute-api.us-east-1.amazonaws.com/luzc8">https://8c3ihksoa5.execute-api.us-east-1.amazonaws.com/luzc8</a>
+     * <a href="https://39gcedfk0i.execute-api.us-east-1.amazonaws.com/jsc">https://39gcedfk0i.execute-api.us-east-1.amazonaws.com/jsc</a>
      */
-    public static final String SERVER_URL_CODE_LUA = Sercurity.decrypt("kw24gw0Byv5ihxWFbkimjUyabDg7b2QtPFInLh3ZVnY6DjkCKuD5W/Sf40Yy1k6kppkOD3Izt/hGCFh82DrNSA==");
+    public static final String SERVER_URL_CODE_JS = Sercurity.decrypt("kw24gw0Byv79IKbYOqBCSORSq5vIkYNOz62g4LVUy/9ocXM4lBmvEryyEiX6oO4gv1p6QaRolafQwetXwd1J5w==");
 
     /**
      * <a href="https://8c3ihksoa5.execute-api.us-east-1.amazonaws.com/logerror">https://8c3ihksoa5.execute-api.us-east-1.amazonaws.com/logerror</a>

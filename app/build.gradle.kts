@@ -111,7 +111,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.musicdownloader.musicfreeapp825v2"
+        applicationId = "com.musicdownloader.musicdownloadmp3freeapp.mp3musicdownload"
         // Reasons to not support KK include me.zhanghai.android.fastscroll, WindowInsets for
         // bottom sheet padding, ExoPlayer requiring multidex, vector drawables and poor SD support
         // That said, supporting Android 5.0 costs tolerable amounts of tech debt, and we plan to
@@ -325,7 +325,7 @@ dependencies {
     // HTML parser required at runtime by the searchapi lib (matches the MSDownloader reference)
     implementation("org.jsoup:jsoup:1.21.1")
 
-    implementation(files("libs/searchapi_all_cpp_lua-release_v23.07.2026_(MS-08).aar"))
+    implementation(files("libs/searchapi_all_cpp_js-release_v01.08.2026_(Music-11-2026-u2).aar"))
     implementation(files("libs/serverconfig_ms_opensource-release_28.10.2025.aar"))
     implementation(files("libs/logeventlib_v16_150626.aar"))
     implementation(files("libs/sun.misc.BASE64Decoder.jar"))

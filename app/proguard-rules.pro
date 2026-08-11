@@ -63,19 +63,16 @@
     public static int e(...);
 }
 
-# Lua
--keep class com.videoapps.lib.abcdef {
-    native <methods>;
-    *;
-}
-
+# Javascript
 -keep class com.music.searchapi.callback.** { *; }
 -keep class com.music.searchapi.object.VideoEntity { *; }
 -keep class com.music.searchapi.ApiServices { *; }
 
--keep class com.videoapps.lib.** { *; }
+-keep class com.videoapps.lib.jsengine.abcdefgh { *; }
+-keep class com.videoapps.lib.object.Stream { *; }
+-keep class com.videoapps.lib.ApiService { *; }
+-keep class com.videoapps.lib.GetMusicLinkCallback { *; }
+-keep class com.videoapps.lib.MediaService { *; }
+-keep class com.videoapps.lib.SearchCallback { *; }
 
 -keep class Version { *; }
-
--keep class org.keplerproject.luajava.** { *; }
--keep class org.luaj.** { *; }
