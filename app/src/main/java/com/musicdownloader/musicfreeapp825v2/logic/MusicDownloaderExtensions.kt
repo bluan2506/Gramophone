@@ -126,6 +126,16 @@ fun MediaItem.getFile(): File? {
     return mediaMetadata.extras?.getString(EXTRA_FILE)?.let { File(it) }
 }
 
+/**
+ * Whether this item is played straight off the internet instead of from a file on disk. Such items
+ * are backed by a temporary stream link that goes stale, so they are not worth persisting across
+ * app runs - see LastPlayedManager.
+ */
+fun MediaItem.isOnlineStream(): Boolean {
+    if (mediaId.startsWith("online:")) return true
+    return localConfiguration?.uri?.scheme?.lowercase() in setOf("http", "https")
+}
+
 fun String.toMediaStoreId(): Long? {
     return if (startsWith("MediaStore:"))
         substring("MediaStore:".length).toLongOrNull()
