@@ -17,7 +17,7 @@
     <string name="category_home">होम</string>
     <string name="home_search_hint">अपने संगीत में खोजें</string>
     <string name="home_online_search">ऑनलाइन खोजें</string>
-    <string name="home_online_search_subtitle">लाखों गाने खोजें और सुनें</string>
+    <string name="home_online_search_subtitle">गाने खोजें और सुनें</string>
     <string name="online_search_hint">ऑनलाइन गाने खोजें</string>
     <string name="online_search_empty">कोई नतीजा नहीं मिला. कोई दूसरा कीवर्ड आज़माएँ.</string>
     <string name="online_search_error">कुछ गड़बड़ हो गई. कृपया फिर से कोशिश करें.</string>

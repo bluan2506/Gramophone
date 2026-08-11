@@ -17,7 +17,7 @@
     <string name="category_home">Главная</string>
     <string name="home_search_hint">Поиск по вашей музыке</string>
     <string name="home_online_search">Поиск в интернете</string>
-    <string name="home_online_search_subtitle">Найдите и слушайте миллионы треков</string>
+    <string name="home_online_search_subtitle">Находите и слушайте треки</string>
     <string name="online_search_hint">Искать треки в интернете</string>
     <string name="online_search_empty">Ничего не найдено. Попробуйте другой запрос.</string>
     <string name="online_search_error">Что-то пошло не так. Попробуйте ещё раз.</string>

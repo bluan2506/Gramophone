@@ -17,7 +17,7 @@
     <string name="category_home">হোম</string>
     <string name="home_search_hint">আপনার গানে খুঁজুন</string>
     <string name="home_online_search">অনলাইনে খুঁজুন</string>
-    <string name="home_online_search_subtitle">লক্ষ লক্ষ গান খুঁজুন ও শুনুন</string>
+    <string name="home_online_search_subtitle">গান খুঁজুন ও শুনুন</string>
     <string name="online_search_hint">অনলাইনে গান খুঁজুন</string>
     <string name="online_search_empty">কোনও ফলাফল পাওয়া যায়নি। অন্য কীওয়ার্ড দিয়ে চেষ্টা করুন।</string>
     <string name="online_search_error">কিছু ভুল হয়েছে। আবার চেষ্টা করুন।</string>

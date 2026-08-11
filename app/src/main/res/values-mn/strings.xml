@@ -17,7 +17,7 @@
     <string name="category_home">Нүүр</string>
     <string name="home_search_hint">Хөгжмөө хайх</string>
     <string name="home_online_search">Онлайн хайх</string>
-    <string name="home_online_search_subtitle">Сая сая дуу олж сонсоорой</string>
+    <string name="home_online_search_subtitle">Дуу олж сонсоорой</string>
     <string name="online_search_hint">Онлайнаар дуу хайх</string>
     <string name="online_search_empty">Илэрц олдсонгүй. Өөр түлхүүр үг оруулна уу.</string>
     <string name="online_search_error">Алдаа гарлаа. Дахин оролдоно уу.</string>

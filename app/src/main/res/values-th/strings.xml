@@ -17,7 +17,7 @@
     <string name="category_home">หน้าแรก</string>
     <string name="home_search_hint">ค้นหาในเพลงของคุณ</string>
     <string name="home_online_search">ค้นหาออนไลน์</string>
-    <string name="home_online_search_subtitle">ค้นหาและฟังเพลงนับล้าน</string>
+    <string name="home_online_search_subtitle">ค้นหาและฟังเพลง</string>
     <string name="online_search_hint">ค้นหาเพลงออนไลน์</string>
     <string name="online_search_empty">ไม่พบผลลัพธ์ ลองใช้คำค้นหาอื่น</string>
     <string name="online_search_error">เกิดข้อผิดพลาด โปรดลองอีกครั้ง</string>

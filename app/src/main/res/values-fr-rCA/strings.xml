@@ -17,7 +17,7 @@
     <string name="category_home">Accueil</string>
     <string name="home_search_hint">Rechercher dans votre musique</string>
     <string name="home_online_search">Rechercher en ligne</string>
-    <string name="home_online_search_subtitle">Trouvez et écoutez des millions de titres</string>
+    <string name="home_online_search_subtitle">Trouvez et écoutez des chansons</string>
     <string name="online_search_hint">Rechercher des titres en ligne</string>
     <string name="online_search_empty">Aucun résultat. Essayez un autre mot-clé.</string>
     <string name="online_search_error">Une erreur s\'est produite. Veuillez réessayer.</string>

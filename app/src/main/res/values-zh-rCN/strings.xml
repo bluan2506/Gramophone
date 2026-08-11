@@ -17,7 +17,7 @@
     <string name="category_home">首页</string>
     <string name="home_search_hint">搜索你的音乐</string>
     <string name="home_online_search">在线搜索</string>
-    <string name="home_online_search_subtitle">查找并畅听数百万首歌曲</string>
+    <string name="home_online_search_subtitle">查找并畅听歌曲</string>
     <string name="online_search_hint">在线搜索歌曲</string>
     <string name="online_search_empty">未找到结果。请换个关键词试试。</string>
     <string name="online_search_error">出错了，请重试。</string>

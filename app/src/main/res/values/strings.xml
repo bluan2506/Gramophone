@@ -17,7 +17,7 @@
     <string name="category_home">Home</string>
     <string name="home_search_hint">Search your music</string>
     <string name="home_online_search">Search online</string>
-    <string name="home_online_search_subtitle">Find and stream millions of songs</string>
+    <string name="home_online_search_subtitle">Find and stream songs</string>
     <string name="online_search_hint">Search songs online</string>
     <string name="online_search_empty">No results found. Try a different keyword.</string>
     <string name="online_search_error">Something went wrong. Please try again.</string>

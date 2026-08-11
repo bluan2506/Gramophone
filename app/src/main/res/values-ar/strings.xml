@@ -17,7 +17,7 @@
     <string name="category_home">الرئيسية</string>
     <string name="home_search_hint">ابحث في موسيقاك</string>
     <string name="home_online_search">البحث عبر الإنترنت</string>
-    <string name="home_online_search_subtitle">اعثر على ملايين الأغاني واستمع إليها</string>
+    <string name="home_online_search_subtitle">ابحث عن الأغاني واستمع إليها</string>
     <string name="online_search_hint">ابحث عن أغانٍ عبر الإنترنت</string>
     <string name="online_search_empty">لا توجد نتائج. جرّب كلمة مفتاحية أخرى.</string>
     <string name="online_search_error">حدث خطأ ما. يُرجى المحاولة مرة أخرى.</string>

@@ -17,7 +17,7 @@
     <string name="category_home">Home</string>
     <string name="home_search_hint">Hanapin ang iyong musika</string>
     <string name="home_online_search">Maghanap online</string>
-    <string name="home_online_search_subtitle">Maghanap at mag-stream ng milyon-milyong kanta</string>
+    <string name="home_online_search_subtitle">Maghanap at mag-stream ng mga kanta</string>
     <string name="online_search_hint">Maghanap ng mga kanta online</string>
     <string name="online_search_empty">Walang nakitang resulta. Sumubok ng ibang keyword.</string>
     <string name="online_search_error">May naganap na error. Pakisubukan ulit.</string>

@@ -17,7 +17,7 @@
     <string name="category_home">Laman utama</string>
     <string name="home_search_hint">Cari dalam muzik anda</string>
     <string name="home_online_search">Cari dalam talian</string>
-    <string name="home_online_search_subtitle">Cari dan dengar jutaan lagu</string>
+    <string name="home_online_search_subtitle">Cari dan dengar lagu</string>
     <string name="online_search_hint">Cari lagu dalam talian</string>
     <string name="online_search_empty">Tiada hasil ditemui. Cuba kata kunci lain.</string>
     <string name="online_search_error">Sesuatu tidak kena. Sila cuba lagi.</string>
