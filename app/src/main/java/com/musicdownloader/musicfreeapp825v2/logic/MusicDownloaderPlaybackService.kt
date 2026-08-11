@@ -82,6 +82,7 @@ import androidx.media3.exoplayer.util.EventLogger
 import androidx.media3.extractor.mp3.Mp3Extractor
 import androidx.media3.session.CacheBitmapLoader
 import androidx.media3.session.CommandButton
+import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaBrowser
 import androidx.media3.session.MediaConstants
 import androidx.media3.session.MediaLibraryService
@@ -787,6 +788,11 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
         mediaSession!!.release()
         endedWorkaroundPlayer!!.release()
         mediaSession = null
+        // For a non-playing player media3 calls stopForeground(STOP_FOREGROUND_DETACH), which
+        // leaves the media notification on screen after the service is gone. Nothing can control
+        // that notification anymore at this point, so take it down.
+        stopForeground(STOP_FOREGROUND_REMOVE)
+        nm.cancel(DefaultMediaNotificationProvider.DEFAULT_NOTIFICATION_ID)
         broadcastAudioSessionClose()
         LyricWidgetProvider.update(this)
         internalPlaybackThread.quitSafely()
@@ -1466,9 +1472,12 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
     }
 
     override fun onTaskRemoved(rootIntent: Intent?) {
-        if (prefs.getBooleanStrict("stopPlayingWhenDismissTask", false) &&
-            rootIntent?.component != ComponentName(this, AudioPreviewActivity::class.java)
-        ) {
+        if (rootIntent?.component != ComponentName(this, AudioPreviewActivity::class.java)) {
+            // Dismissing the app kills playback and the service. Media3 would otherwise keep a
+            // dismissible notification around for the stopped/empty player so playback can be
+            // resumed from it - drop it, as the service it controls is going away.
+            setShowNotificationForIdlePlayer(SHOW_NOTIFICATION_FOR_IDLE_PLAYER_NEVER)
+            setShowNotificationForEmptyPlayer(SHOW_NOTIFICATION_FOR_EMPTY_PLAYER_NEVER)
             pauseAllPlayersAndStopSelf()
         } else {
             super.onTaskRemoved(rootIntent)
