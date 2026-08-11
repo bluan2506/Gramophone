@@ -54,15 +54,6 @@
             app:iconSpaceReserved="false" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="false"
-            android:key="stopPlayingWhenDismissTask"
-            android:layout="@layout/preference_switch"
-            android:summary="@string/settings_stop_on_dismiss_summary"
-            android:title="@string/settings_stop_on_dismiss"
-            android:widgetLayout="@layout/preference_switch_widget"
-            app:iconSpaceReserved="false" />
-
-        <SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="album_covers"
             android:layout="@layout/preference_switch"
