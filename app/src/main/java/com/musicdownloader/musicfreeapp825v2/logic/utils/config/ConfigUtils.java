@@ -1,13 +1,8 @@
 package com.musicdownloader.musicfreeapp825v2.logic.utils.config;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
-
-import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils;
-
-import org.json.JSONObject;
 
 /**
  * Created by Quang Phúc on 15/10/24.
