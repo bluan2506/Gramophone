@@ -1,3 +1,7 @@
+<!--
+    Bottom navigation: Artists. Same person glyph, scaled up to the shared optical box so it
+    stops looking smaller and flatter than the icons either side of it.
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
@@ -5,13 +9,13 @@
     android:viewportHeight="24"
     android:tint="?attr/colorOnSurface">
     <path
-        android:pathData="M8.6,8.2 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z"
+        android:pathData="M8.5,8.2 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0 Z"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
-        android:pathData="M5.2,20.4C5.2,16.5 8.2,14.2 12,14.2 C15.8,14.2 18.8,16.5 18.8,20.4"
+        android:pathData="M5.4,20.4C5.4,16.6 8.3,14.5 12,14.5C15.7,14.5 18.6,16.6 18.6,20.4"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"

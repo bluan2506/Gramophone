@@ -1,3 +1,10 @@
+<!--
+    Bottom navigation: Home. Outline house on the shared icon grid (24 viewport, glyph inside
+    3.4..20.6, stroke 1.8, round caps/joins).
+
+    The two bottom corners are arcs with sweep-flag 0: the corner has to bulge away from the
+    centre. With sweep-flag 1 they curve inwards and pinch the base of the house.
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
@@ -5,19 +12,19 @@
     android:viewportHeight="24"
     android:tint="?attr/colorOnSurface">
     <path
-        android:pathData="M3.1,11.2L12,3.6L20.9,11.2"
+        android:pathData="M3.7,10.9L12,4.3L20.3,10.9"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
-        android:pathData="M5.3,9.4L5.3,19.2A1.7,1.7 0 0,1 7,20.9L17,20.9A1.7,1.7 0 0,1 18.7,19.2L18.7,9.4"
+        android:pathData="M5.9,9.2L5.9,19.1A1.7,1.7 0 0,0 7.6,20.8L16.4,20.8A1.7,1.7 0 0,0 18.1,19.1L18.1,9.2"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
-        android:pathData="M9.6,20.9L9.6,15.7A2.4,2.4 0 0,1 14.4,15.7L14.4,20.9"
+        android:pathData="M9.7,20.8L9.7,16.2A2.3,2.3 0 0,1 14.3,16.2L14.3,20.8"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"

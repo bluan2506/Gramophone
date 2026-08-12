@@ -1,3 +1,8 @@
+<!--
+    Bottom navigation: Playlists. List lines plus a single quaver. The old version drew a beamed
+    pair of notes over the lines — six strokes inside 23dp, which merged into a blob; one note
+    head and one flag stay legible at nav size.
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
@@ -6,37 +11,31 @@
     android:autoMirrored="true"
     android:tint="?attr/colorOnSurface">
     <path
-        android:pathData="M3.4,6.2L15.4,6.2"
+        android:pathData="M3.6,7L14.2,7"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
-        android:pathData="M3.4,11L15.4,11"
+        android:pathData="M3.6,11.4L14.2,11.4"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
-        android:pathData="M3.4,15.8L10.6,15.8"
+        android:pathData="M3.6,15.8L10.4,15.8"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
-        android:pathData="M17.3,19.4L17.3,9.2L21.1,8.2L21.1,17.6"
+        android:pathData="M17,18.3L17,8.3L20.6,7.2"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
-        android:pathData="M14.3,19.4 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 Z"
-        android:strokeColor="@android:color/white"
-        android:strokeWidth="1.8"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round" />
-    <path
-        android:pathData="M18.1,17.6 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 Z"
+        android:pathData="M13.2,18.3 a1.9,1.9 0 1,0 3.8,0 a1.9,1.9 0 1,0 -3.8,0 Z"
         android:strokeColor="@android:color/white"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
