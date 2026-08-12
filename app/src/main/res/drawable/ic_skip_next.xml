@@ -3,9 +3,18 @@
     android:height="24dp"
     android:autoMirrored="true"
     android:tint="?attr/colorOnSurface"
-    android:viewportWidth="960"
-    android:viewportHeight="960">
+    android:viewportWidth="24"
+    android:viewportHeight="24">
     <path
         android:fillColor="@android:color/white"
-        android:pathData="M660,720L660,240L740,240L740,720L660,720ZM220,720L220,240L580,480L220,720ZM300,480L300,480L300,480L300,480ZM300,570L436,480L300,390L300,570Z" />
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="1.6"
+        android:strokeLineJoin="round"
+        android:pathData="M6.5,6.5 L15.5,12 L6.5,17.5 Z" />
+    <path
+        android:fillColor="@android:color/white"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="1.6"
+        android:strokeLineJoin="round"
+        android:pathData="M16.8,6.9 L18.8,6.9 L18.8,17.1 L16.8,17.1 Z" />
 </vector>

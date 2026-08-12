@@ -49,6 +49,7 @@
             android:layout_height="wrap_content"
             android:textColor="?attr/colorOnSurface"
             android:textSize="17sp"
+            app:textFontWeight="500"
             tools:text="Example title" />
 
         <com.musicdownloader.musicfreeapp825v2.ui.components.MarqueeTextView
@@ -61,10 +62,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/preview_control"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
         android:layout_marginStart="16dp"
-        android:background="@drawable/rp_buttons"
+        android:background="@drawable/bg_mini_play"
         android:contentDescription="@string/play"
         android:insetLeft="0dp"
         android:insetTop="0dp"
@@ -74,7 +75,7 @@
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:iconSize="24dp"
-        app:iconTint="?attr/colorOnSurface"
+        app:iconTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/preview_next"
         app:layout_constraintTop_toTopOf="parent"
@@ -101,5 +102,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tooltipText="@string/skip_next" />
+
+    <!-- Thin playback progress bar along the bottom of the mini player -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/preview_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:max="1000"
+        app:indicatorColor="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:trackColor="?attr/colorSurfaceContainerHighest"
+        app:trackCornerRadius="2dp"
+        app:trackStopIndicatorSize="0dp"
+        app:trackThickness="3dp" />
 
 </merge>

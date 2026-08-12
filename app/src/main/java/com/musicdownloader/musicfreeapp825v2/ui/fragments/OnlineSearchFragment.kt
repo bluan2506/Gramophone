@@ -15,6 +15,9 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
@@ -55,6 +58,7 @@ import org.json.JSONObject
 import us.shandian.giga.util.Utility
 import java.net.HttpURLConnection
 import java.net.URL
+import kotlin.math.max
 
 /**
  * OnlineSearchFragment:
@@ -147,6 +151,22 @@ class OnlineSearchFragment : BaseFragment(true) {
             layoutManager = LinearLayoutManager(activity)
             adapter = suggestAdapter
         }
+
+        // Keep the scroll-to-top button above the mini player (and the system nav) so it isn't
+        // hidden when something is playing. Re-runs whenever the mini player shows/hides, because
+        // the player bottom sheet re-dispatches window insets on height changes.
+        val fabBaseMargin = (16 * resources.displayMetrics.density).toInt()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.imgUp) { v, insets ->
+            val bars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+            )
+            val playerBottom = mainActivity.playerBottomSheet.getBottomPadding()
+            v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = fabBaseMargin + max(playerBottom, bars.bottom)
+            }
+            insets
+        }
+        ViewCompat.requestApplyInsets(binding.imgUp)
 
         binding.returnButton.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()

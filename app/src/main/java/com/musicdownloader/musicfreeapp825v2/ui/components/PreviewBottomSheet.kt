@@ -37,6 +37,7 @@ import coil3.request.allowHardware
 import coil3.request.error
 import coil3.size.Scale
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.musicdownloader.musicfreeapp825v2.R
 import com.musicdownloader.musicfreeapp825v2.logic.playOrPause
 import com.musicdownloader.musicfreeapp825v2.logic.startAnimation
@@ -58,6 +59,17 @@ class PreviewBottomSheet(
     private val bottomSheetPreviewSubtitle: TextView
     private val bottomSheetPreviewControllerButton: MaterialButton
     private val bottomSheetPreviewNextButton: MaterialButton
+    private val bottomSheetPreviewProgress: LinearProgressIndicator
+
+    // Lightweight ticker that advances the thin mini-player progress bar while playing.
+    private val progressRunnable = object : Runnable {
+        override fun run() {
+            updateProgress()
+            if (instance?.isPlaying == true) {
+                postDelayed(this, 500)
+            }
+        }
+    }
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
             this(context, attrs, defStyleAttr, 0)
@@ -71,6 +83,7 @@ class PreviewBottomSheet(
         bottomSheetPreviewCover = findViewById(R.id.preview_album_cover)
         bottomSheetPreviewControllerButton = findViewById(R.id.preview_control)
         bottomSheetPreviewNextButton = findViewById(R.id.preview_next)
+        bottomSheetPreviewProgress = findViewById(R.id.preview_progress)
 
         bottomSheetPreviewControllerButton.setOnClickListener {
             ViewCompat.performHapticFeedback(it, HapticFeedbackConstantsCompat.CONTEXT_CLICK)
@@ -109,6 +122,28 @@ class PreviewBottomSheet(
             bottomSheetPreviewControllerButton.icon.startAnimation()
             bottomSheetPreviewControllerButton.setTag(R.id.play_next, 2)
         }
+        startProgressUpdates()
+    }
+
+    private fun startProgressUpdates() {
+        removeCallbacks(progressRunnable)
+        post(progressRunnable)
+    }
+
+    private fun updateProgress() {
+        val ctrl = instance
+        val duration = ctrl?.duration ?: 0
+        if (ctrl != null && duration > 0) {
+            val pos = ctrl.currentPosition.coerceIn(0, duration)
+            bottomSheetPreviewProgress.setProgressCompat((pos * 1000 / duration).toInt(), true)
+        } else {
+            bottomSheetPreviewProgress.setProgressCompat(0, false)
+        }
+    }
+
+    override fun onDetachedFromWindow() {
+        removeCallbacks(progressRunnable)
+        super.onDetachedFromWindow()
     }
 
     override fun onMediaItemTransition(
@@ -128,5 +163,7 @@ class PreviewBottomSheet(
         } else {
             bottomSheetPreviewCover.dispose()
         }
+        updateProgress()
+        startProgressUpdates()
     }
 }

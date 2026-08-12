@@ -19,7 +19,7 @@
         android:id="@+id/player_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="?attr/colorSurfaceContainer"
+        android:backgroundTint="?attr/colorSurfaceContainerHigh"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:elevation="?attr/previewPlayerElevation"
@@ -54,6 +54,10 @@
             android:background="@android:color/transparent"
             android:fitsSystemWindows="false"
             app:elevation="0dp"
+            app:itemActiveIndicatorStyle="@style/App.BottomNav.ActiveIndicator"
+            app:itemIconTint="@color/sl_bottom_nav_item"
+            app:itemTextAppearanceActive="@style/TextAppearance.App.BottomNav.Active"
+            app:itemTextColor="@color/sl_bottom_nav_item"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_nav_menu" />
 

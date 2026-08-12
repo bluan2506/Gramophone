@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MusicDownloader" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+    <style name="Base.Theme.MusicDownloader" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="viewInflaterClass">com.musicdownloader.musicfreeapp825v2.logic.ui.ViewCompatInflater</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.App.BodyLarge</item>
@@ -11,6 +11,8 @@
         <item name="system_app_widget_background_radius">28dp</item>
         <item name="system_app_widget_inner_radius">20dp</item>
         <item name="previewPlayerElevation">1dp</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.App.Corner.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.App.Corner.Large</item>
     </style>
 
     <style name="PreV31.Theme.MusicDownloader" parent="Base.Theme.MusicDownloader">
@@ -93,6 +95,11 @@
         <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
 
+    <!-- Bold, expressive large title for the collapsing toolbar hero on every main screen. -->
+    <style name="TextAppearance.App.ExpandedTitle" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
         <item name="enableEdgeToEdge">true</item>
@@ -117,8 +124,41 @@
 
     <style name="TabTextAppearance" parent="Base.TabTextAppearance" />
 
+    <!-- Mini/full player sheet and modal bottom sheets float as rounded cards. -->
     <style name="BottomPlayerCornerShape">
-        <item name="cornerSize">0dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">28dp</item>
+        <item name="cornerSizeTopRight">28dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <!-- Rounder, softer global shape system (M3 expressive). -->
+    <style name="ShapeAppearance.App.Corner.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.Corner.Large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <!-- Fully-rounded accent pill behind the active bottom-navigation item. -->
+    <style name="ShapeAppearance.App.BottomNav.Indicator" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="App.BottomNav.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:width">64dp</item>
+        <item name="android:height">36dp</item>
+        <item name="android:color">?attr/colorSecondaryContainer</item>
+        <item name="marginHorizontal">10dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.BottomNav.Indicator</item>
+    </style>
+
+    <!-- Bolder label for the selected bottom-navigation item. -->
+    <style name="TextAppearance.App.BottomNav.Active" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="CollapsingToolbarLarge" parent="Widget.Material3.CollapsingToolbar.Large">
