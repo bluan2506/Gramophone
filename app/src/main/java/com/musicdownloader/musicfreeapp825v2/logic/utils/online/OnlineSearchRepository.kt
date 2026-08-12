@@ -115,6 +115,57 @@ object OnlineSearchRepository {
         })
     }
 
+    /**
+     * Same contract as [getResultFMA], but the results come from ccMixter (its public JSON query
+     * API, via [CcMixterApi]). The `nextPage` handed back is the offset of the next page — feed it
+     * to [getMoreResultCcMixter], not to [getMoreResultFMA].
+     */
+    fun getResultCcMixter(
+        key: String,
+        activity: Activity,
+        onResult: (videoEntities: List<VideoEntity>?, nextPage: Any?) -> Unit,
+    ) {
+        CcMixterApi.search(activity, key, object : SearchCallback {
+            override fun onSuccess(videoEntities: ArrayList<VideoEntity?>, nextPage: Any?) {
+                onResult(videoEntities.filterNotNull(), nextPage)
+            }
+
+            override fun onError(e: Exception?) {
+                FirebaseEventUtils.getInstances().recordException(e)
+                onResult(null, null)
+            }
+
+            override fun onRecordException(e: Exception) {
+                FirebaseEventUtils.getInstances().recordException(e)
+                onResult(null, null)
+            }
+        })
+    }
+
+    /** Load-more counterpart of [getResultCcMixter]; [nextPage] is the token it returned. */
+    fun getMoreResultCcMixter(
+        key: String,
+        activity: Activity,
+        nextPage: Any,
+        onResult: (videoEntities: List<VideoEntity>, nextPage: Any?) -> Unit,
+    ) {
+        CcMixterApi.searchMore(activity, key, nextPage, object : SearchCallback {
+            override fun onSuccess(videoEntities: ArrayList<VideoEntity?>, nextPage: Any?) {
+                onResult(videoEntities.filterNotNull(), nextPage)
+            }
+
+            override fun onError(e: Exception?) {
+                FirebaseEventUtils.getInstances().recordException(e)
+                onResult(emptyList(), null)
+            }
+
+            override fun onRecordException(e: Exception) {
+                FirebaseEventUtils.getInstances().recordException(e)
+                onResult(emptyList(), null)
+            }
+        })
+    }
+
 //    fun getMoreResult(
 //        key: String,
 //        activity: Activity,
