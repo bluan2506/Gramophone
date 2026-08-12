@@ -17,15 +17,12 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.applogevent.logeventlib.LogEventLibs;
-import com.music.searchapi.ApiServices;
-
 import com.musicdownloader.musicfreeapp825v2.BuildConfig;
 import com.musicdownloader.musicfreeapp825v2.R;
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils;
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.Keys;
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.AudioMuxer;
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.DownloadStorage;
-import com.musicdownloader.musicfreeapp825v2.logic.utils.online.SearchApiExecutor;
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.ToastUtils;
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.DownloadsFragment;
 import com.musicdownloader.musicfreeapp825v2.ui.fragments.OnlineSearchFragment;
@@ -245,9 +242,9 @@ public class DownloadManagerService extends Service implements DownloadMission.M
             resId = R.string.song_link_expired_download;
             String videoId = downloadMission.id;
             if (videoId != null && !videoId.isEmpty()) {
-                SearchApiExecutor.execute(
-                    () -> ApiServices.getBodDataAgain(this, videoId)
-                );
+//                SearchApiExecutor.execute(
+//                    () -> ApiServices.getBodDataAgain(this, videoId)
+//                );
                 Intent expiredIntent = new Intent(OnlineSearchFragment.ACTION_LINK_EXPIRED);
                 expiredIntent.putExtra(OnlineSearchFragment.KEY_VIDEO_ID, videoId);
                 expiredIntent.setPackage(getPackageName());

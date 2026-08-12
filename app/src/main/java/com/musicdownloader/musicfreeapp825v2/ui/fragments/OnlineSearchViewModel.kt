@@ -4,14 +4,14 @@ import android.app.Activity
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.music.searchapi.`object`.VideoEntity
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.OnlineSearchRepository
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.SearchHistoryManager
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.VideoEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import com.musicdownloader.musicfreeapp825v2.logic.utils.online.OnlineSearchRepository
-import com.musicdownloader.musicfreeapp825v2.logic.utils.online.SearchHistoryManager
 
 /**
  * Drives online search state, ported from the MSDownloader `LibraryViewModel` search methods:
@@ -89,7 +89,7 @@ class OnlineSearchViewModel : ViewModel() {
         // Run the lib call off the main thread (it reads cached config from disk); mirrors the
         // reference LibraryViewModel which searches on Dispatchers.IO.
         viewModelScope.launch(Dispatchers.IO) {
-            OnlineSearchRepository.getResult(query, activity) { list, next ->
+            OnlineSearchRepository.getResultFMA(query, activity) { list, next ->
                 viewModelScope.launch {
                     nextPage = next
                     _loading.value = false
@@ -111,7 +111,7 @@ class OnlineSearchViewModel : ViewModel() {
         _loadingMore.value = true
 
         viewModelScope.launch(Dispatchers.IO) {
-          OnlineSearchRepository.getMoreResult(query, activity, token) { list, next ->
+          OnlineSearchRepository.getMoreResultFMA(query, activity, token) { list, next ->
             viewModelScope.launch {
                 nextPage = next
                 val existing = current.mapNotNull { it.videoId }.toHashSet()
