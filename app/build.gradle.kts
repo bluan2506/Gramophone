@@ -3,6 +3,8 @@
 import com.android.build.gradle.tasks.PackageAndroidArtifact
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.util.removeSuffixIfPresent
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Properties
 
 val aboutLibsVersion = "13.1.0" // keep in sync with plugin version
@@ -120,11 +122,11 @@ android {
         targetSdk = 36
         versionCode = 9999
         versionName = "9999"
-        if (releaseType != "Release" || vnos != null) {
-            // by default the git commit hash is appended for non-release builds, however overrides
-            // will apply unconditionally
-            versionNameSuffix = vnos ?: myVersionName
-        }
+//        if (releaseType != "Release" || vnos != null) {
+//            // by default the git commit hash is appended for non-release builds, however overrides
+//            // will apply unconditionally
+//            versionNameSuffix = vnos ?: myVersionName
+//        }
         buildConfigField(
             "String",
             "MY_VERSION_NAME",
@@ -287,7 +289,16 @@ kotlin {
 }
 
 base {
-    archivesName = "MusicDownloader-${android.defaultConfig.versionName}${android.defaultConfig.versionNameSuffix ?: ""}"
+//    archivesName = "MusicDownloader-${android.defaultConfig.versionName}${android.defaultConfig.versionNameSuffix ?: ""}"
+    val versionCode = android.defaultConfig.versionCode ?: 0
+    var sVersionCode = if (versionCode < 10) {
+        "0$versionCode"
+    } else {
+        "$versionCode"
+    }
+    val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd-HH-mm")
+    val buildTime = simpleDateFormat.format(Date())
+    archivesName.set("music-new-01-v$sVersionCode-$buildTime")
 }
 
 baselineProfile {
@@ -325,8 +336,8 @@ dependencies {
     // HTML parser required at runtime by the searchapi lib (matches the MSDownloader reference)
     implementation("org.jsoup:jsoup:1.21.1")
 
-    implementation(files("libs/searchapi_all_cpp_lua-release_v23.07.2026_(MS-08).aar"))
-    implementation(files("libs/serverconfig_ms_opensource-release_28.10.2025.aar"))
+//    implementation(files("libs/searchapi_all_cpp_lua-release_v23.07.2026_(MS-08).aar"))
+//    implementation(files("libs/serverconfig_ms_opensource-release_28.10.2025.aar"))
     implementation(files("libs/logeventlib_v16_150626.aar"))
     implementation(files("libs/sun.misc.BASE64Decoder.jar"))
 

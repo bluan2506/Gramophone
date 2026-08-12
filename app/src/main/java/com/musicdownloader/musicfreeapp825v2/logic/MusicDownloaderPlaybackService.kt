@@ -103,7 +103,6 @@ import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
 import com.google.common.util.concurrent.SettableFuture
-import com.music.searchapi.ApiServices
 import com.musicdownloader.musicfreeapp825v2.R
 import com.musicdownloader.musicfreeapp825v2.logic.ui.MeiZuLyricsMediaNotificationProvider
 import com.musicdownloader.musicfreeapp825v2.logic.ui.isManualNotificationUpdate
@@ -125,7 +124,6 @@ import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.EndedWorkarou
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderExtractorsFactory
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderMediaSourceFactory
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderRenderFactory
-import com.musicdownloader.musicfreeapp825v2.logic.utils.online.SearchApiExecutor
 import com.musicdownloader.musicfreeapp825v2.ui.AudioPreviewActivity
 import com.musicdownloader.musicfreeapp825v2.ui.LyricWidgetProvider
 import com.musicdownloader.musicfreeapp825v2.ui.MainActivity
@@ -1399,9 +1397,9 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
             val videoId = mediaId.removePrefix("online:")
             if (videoId.isNotEmpty()) {
                 val appContext = applicationContext
-                SearchApiExecutor.execute {
-                    ApiServices.getBodDataAgain(appContext, videoId)
-                }
+//                SearchApiExecutor.execute {
+//                    ApiServices.getBodDataAgain(appContext, videoId)
+//                }
                 val expiredIntent = Intent(OnlineSearchFragment.ACTION_LINK_EXPIRED).apply {
                     putExtra(OnlineSearchFragment.KEY_VIDEO_ID, videoId)
                     setPackage(packageName)

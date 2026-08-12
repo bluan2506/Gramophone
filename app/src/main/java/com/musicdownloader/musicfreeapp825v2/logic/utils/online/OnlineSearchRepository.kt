@@ -1,10 +1,9 @@
 package com.musicdownloader.musicfreeapp825v2.logic.utils.online
 
 import android.app.Activity
-import com.music.searchapi.ApiServices
-import com.music.searchapi.`object`.VideoEntity
-import com.videoapps.lib.SearchCallback
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.OnlineSearchRepository.getMoreResultFMA
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.OnlineSearchRepository.getResultFMA
 import org.json.JSONArray
 import java.net.HttpURLConnection
 import java.net.URL
@@ -43,12 +42,39 @@ object OnlineSearchRepository {
         }
     }
 
-    fun getResult(
+//    fun getResult(
+//        key: String,
+//        activity: Activity,
+//        onResult: (videoEntities: List<VideoEntity>?, nextPage: Any?) -> Unit,
+//    ) {
+//        ApiServices.search(activity, key, object : SearchCallback {
+//            override fun onSuccess(videoEntities: ArrayList<VideoEntity?>, nextPage: Any?) {
+//                onResult(videoEntities.filterNotNull(), nextPage)
+//            }
+//
+//            override fun onError(e: Exception?) {
+//                FirebaseEventUtils.getInstances().recordException(e)
+//                onResult(null, null)
+//            }
+//
+//            override fun onRecordException(e: Exception) {
+//                FirebaseEventUtils.getInstances().recordException(e)
+//                onResult(null, null)
+//            }
+//        })
+//    }
+
+    /**
+     * Same contract as [getResult], but the results come from Free Music Archive (scraped with
+     * jsoup by [FreeMusicArchiveApi]) instead of the searchapi lib. The `nextPage` handed back is
+     * the next FMA results-page URL — feed it to [getMoreResultFMA], not to [getMoreResult].
+     */
+    fun getResultFMA(
         key: String,
         activity: Activity,
         onResult: (videoEntities: List<VideoEntity>?, nextPage: Any?) -> Unit,
     ) {
-        ApiServices.search(activity, key, object : SearchCallback {
+        FreeMusicArchiveApi.search(activity, key, object : SearchCallback {
             override fun onSuccess(videoEntities: ArrayList<VideoEntity?>, nextPage: Any?) {
                 onResult(videoEntities.filterNotNull(), nextPage)
             }
@@ -65,13 +91,14 @@ object OnlineSearchRepository {
         })
     }
 
-    fun getMoreResult(
+    /** Load-more counterpart of [getResultFMA]; [nextPage] is the token it returned. */
+    fun getMoreResultFMA(
         key: String,
         activity: Activity,
         nextPage: Any,
         onResult: (videoEntities: List<VideoEntity>, nextPage: Any?) -> Unit,
     ) {
-        ApiServices.searchMore(activity, key, nextPage, object : SearchCallback {
+        FreeMusicArchiveApi.searchMore(activity, key, nextPage, object : SearchCallback {
             override fun onSuccess(videoEntities: ArrayList<VideoEntity?>, nextPage: Any?) {
                 onResult(videoEntities.filterNotNull(), nextPage)
             }
@@ -87,4 +114,27 @@ object OnlineSearchRepository {
             }
         })
     }
+
+//    fun getMoreResult(
+//        key: String,
+//        activity: Activity,
+//        nextPage: Any,
+//        onResult: (videoEntities: List<VideoEntity>, nextPage: Any?) -> Unit,
+//    ) {
+//        ApiServices.searchMore(activity, key, nextPage, object : SearchCallback {
+//            override fun onSuccess(videoEntities: ArrayList<VideoEntity?>, nextPage: Any?) {
+//                onResult(videoEntities.filterNotNull(), nextPage)
+//            }
+//
+//            override fun onError(e: Exception?) {
+//                FirebaseEventUtils.getInstances().recordException(e)
+//                onResult(emptyList(), null)
+//            }
+//
+//            override fun onRecordException(e: Exception) {
+//                FirebaseEventUtils.getInstances().recordException(e)
+//                onResult(emptyList(), null)
+//            }
+//        })
+//    }
 }
