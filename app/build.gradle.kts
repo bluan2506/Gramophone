@@ -3,6 +3,8 @@
 import com.android.build.gradle.tasks.PackageAndroidArtifact
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.util.removeSuffixIfPresent
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Properties
 
 val aboutLibsVersion = "13.1.0" // keep in sync with plugin version
@@ -120,11 +122,11 @@ android {
         targetSdk = 36
         versionCode = 9999
         versionName = "9999"
-        if (releaseType != "Release" || vnos != null) {
-            // by default the git commit hash is appended for non-release builds, however overrides
-            // will apply unconditionally
-            versionNameSuffix = vnos ?: myVersionName
-        }
+//        if (releaseType != "Release" || vnos != null) {
+//            // by default the git commit hash is appended for non-release builds, however overrides
+//            // will apply unconditionally
+//            versionNameSuffix = vnos ?: myVersionName
+//        }
         buildConfigField(
             "String",
             "MY_VERSION_NAME",
@@ -287,7 +289,16 @@ kotlin {
 }
 
 base {
-    archivesName = "MusicDownloader-${android.defaultConfig.versionName}${android.defaultConfig.versionNameSuffix ?: ""}"
+//    archivesName = "MusicDownloader-${android.defaultConfig.versionName}${android.defaultConfig.versionNameSuffix ?: ""}"
+    val versionCode = android.defaultConfig.versionCode ?: 0
+    var sVersionCode = if (versionCode < 10) {
+        "0$versionCode"
+    } else {
+        "$versionCode"
+    }
+    val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd-HH-mm")
+    val buildTime = simpleDateFormat.format(Date())
+    archivesName.set("music-new-02-v$sVersionCode-$buildTime")
 }
 
 baselineProfile {
