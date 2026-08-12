@@ -9,8 +9,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import android.view.WindowManager
+import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -28,29 +28,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.applogevent.logeventlib.LogEventLibs
 import com.google.android.gms.ads.nativead.NativeAdView
 import com.google.android.material.appbar.AppBarLayout
-import com.music.searchapi.ApiServices
-import com.music.searchapi.`object`.VideoEntity
-import com.thinkup.nativead.api.TUNativeAdView
-import com.videoapps.lib.GetMusicLinkCallback
-import com.videoapps.lib.`object`.Stream
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.logic.MusicDownloaderApplication
 import com.musicdownloader.musicfreeapp825v2.databinding.DialogOnlineLoadingBinding
 import com.musicdownloader.musicfreeapp825v2.databinding.FragmentOnlineSearchBinding
+import com.musicdownloader.musicfreeapp825v2.logic.MusicDownloaderApplication
 import com.musicdownloader.musicfreeapp825v2.logic.enableEdgeToEdgePaddingListener
 import com.musicdownloader.musicfreeapp825v2.logic.utils.NetworkUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.Keys
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.CopyrightRestrictionsDialog
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.DownloadController
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.VideoEntity
 import com.musicdownloader.musicfreeapp825v2.logic.utils.online.VpnProxyDialog
 import com.musicdownloader.musicfreeapp825v2.ui.MediaControllerViewModel
 import com.musicdownloader.musicfreeapp825v2.ui.adapters.OnlineSongAdapter
 import com.musicdownloader.musicfreeapp825v2.ui.adapters.SuggestAdapter
+import com.thinkup.nativead.api.TUNativeAdView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import us.shandian.giga.util.Utility
 import java.net.HttpURLConnection
@@ -549,62 +546,69 @@ class OnlineSearchFragment : BaseFragment(true) {
         forDownload: Boolean,
         onResolved: suspend (String) -> Unit,
     ) {
-        val request = VideoEntity().apply {
-            videoId = id
-            videoType = source
-        }
-        CoroutineScope(Dispatchers.Main).launch {
-            ApiServices.getLink(requireActivity(), request, object : GetMusicLinkCallback {
-                override fun onSuccess(
-                    link: String?,
-                    stream: Stream?,
-                    allowDownload: Boolean,
-                    notAllowDownloadReason: String?,
-                ) {
-                    if (link == null || source == "un") return
-                    logGetLinkSuccess(id, source)
-                    CoroutineScope(Dispatchers.IO).launch {
-                        val finalLink = finalizeLink(link, stream, id, source)
-                        entity.stream_link = finalLink
-                        entity.allow_download = allowDownload
-                        entity.not_allow_download_reason = notAllowDownloadReason
-                        if (!forDownload) logPlayOnline(id, source, entity.videoTile)
-                        withContext(Dispatchers.Main) { onResolved(finalLink) }
-                    }
-                }
+//        val request = VideoEntity().apply {
+//            videoId = id
+//            videoType = source
+//        }
+//        CoroutineScope(Dispatchers.Main).launch {
+//            ApiServices.getLink(requireActivity(), request, object : GetMusicLinkCallback {
+//                override fun onSuccess(
+//                    link: String?,
+//                    stream: Stream?,
+//                    allowDownload: Boolean,
+//                    notAllowDownloadReason: String?,
+//                ) {
+//                    if (link == null || source == "un") return
+//                    logGetLinkSuccess(id, source)
+//                    CoroutineScope(Dispatchers.IO).launch {
+//                        val finalLink = finalizeLink(link, stream, id, source)
+//                        entity.stream_link = finalLink
+//                        entity.allow_download = allowDownload
+//                        entity.not_allow_download_reason = notAllowDownloadReason
+//                        if (!forDownload) logPlayOnline(id, source, entity.videoTile)
+//                        withContext(Dispatchers.Main) { onResolved(finalLink) }
+//                    }
+//                }
+//
+//                override fun onSuccess_V2(
+//                    jsonData: String?,
+//                    stream: Stream?,
+//                    allowDownload: Boolean,
+//                    notAllowDownloadReason: String?,
+//                ) {
+//                    if (jsonData == null || source == "ccmixter") return
+//                    logGetLinkSuccess(id, source)
+//                    CoroutineScope(Dispatchers.IO).launch {
+//                        val finalLink = finalizeLink(getBestLink(jsonData), stream, id, source)
+//                        entity.stream_link = finalLink
+//                        entity.allow_download = allowDownload
+//                        entity.not_allow_download_reason = notAllowDownloadReason
+//                        if (!forDownload) logPlayOnline(id, source, entity.videoTile)
+//                        withContext(Dispatchers.Main) { onResolved(finalLink) }
+//                    }
+//                }
+//
+//                override fun onError(e: Exception?) = onGetLinkFailed(e, id, source, loadingDialog)
+//                override fun onRecordException(e: Exception) = onGetLinkFailed(e, id, source, loadingDialog)
+//            })
+//        }
 
-                override fun onSuccess_V2(
-                    jsonData: String?,
-                    stream: Stream?,
-                    allowDownload: Boolean,
-                    notAllowDownloadReason: String?,
-                ) {
-                    if (jsonData == null || source == "ccmixter") return
-                    logGetLinkSuccess(id, source)
-                    CoroutineScope(Dispatchers.IO).launch {
-                        val finalLink = finalizeLink(getBestLink(jsonData), stream, id, source)
-                        entity.stream_link = finalLink
-                        entity.allow_download = allowDownload
-                        entity.not_allow_download_reason = notAllowDownloadReason
-                        if (!forDownload) logPlayOnline(id, source, entity.videoTile)
-                        withContext(Dispatchers.Main) { onResolved(finalLink) }
-                    }
-                }
-
-                override fun onError(e: Exception?) = onGetLinkFailed(e, id, source, loadingDialog)
-                override fun onRecordException(e: Exception) = onGetLinkFailed(e, id, source, loadingDialog)
-            })
+        lifecycleScope.launch(Dispatchers.IO) {
+            logPlayOnline(id, source, entity.videoTile)
+            withContext(Dispatchers.Main) {
+                onResolved(entity.stream_link)
+            }
         }
     }
 
-    private fun finalizeLink(link: String, stream: Stream?, id: String?, source: String?): String {
-        val is403 = isLink403(link)
-        val finalLink = if (is403) (stream?.url ?: link) else link
-        if (is403) {
-            context?.let { FirebaseEventUtils.getInstances().logEvent(it, Keys.GET_LINK_SUCCESS_VIDEO_360) }
-        }
-        return finalLink
-    }
+//    private fun finalizeLink(link: String, stream: Stream?, id: String?, source: String?): String {
+//        val is403 = isLink403(link)
+//        val finalLink = if (is403) (stream?.url ?: link) else link
+//        if (is403) {
+//            context?.let { FirebaseEventUtils.getInstances().logEvent(it, Keys.GET_LINK_SUCCESS_VIDEO_360) }
+//        }
+//        return finalLink
+//    }
 
     private fun logGetLinkSuccess(id: String?, source: String?) {
         LogEventLibs.logGetLinkSuccess(id, source)

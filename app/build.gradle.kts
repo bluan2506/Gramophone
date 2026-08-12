@@ -325,8 +325,8 @@ dependencies {
     // HTML parser required at runtime by the searchapi lib (matches the MSDownloader reference)
     implementation("org.jsoup:jsoup:1.21.1")
 
-    implementation(files("libs/searchapi_all_cpp_lua-release_v23.07.2026_(MS-08).aar"))
-    implementation(files("libs/serverconfig_ms_opensource-release_28.10.2025.aar"))
+//    implementation(files("libs/searchapi_all_cpp_lua-release_v23.07.2026_(MS-08).aar"))
+//    implementation(files("libs/serverconfig_ms_opensource-release_28.10.2025.aar"))
     implementation(files("libs/logeventlib_v16_150626.aar"))
     implementation(files("libs/sun.misc.BASE64Decoder.jar"))
 

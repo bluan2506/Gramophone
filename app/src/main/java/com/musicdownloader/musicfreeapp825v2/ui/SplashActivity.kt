@@ -3,25 +3,18 @@ package com.musicdownloader.musicfreeapp825v2.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.lifecycle.lifecycleScope
-import com.aws.config.msserverconfig.Config_V1
-import com.aws.config.msserverconfig.GetConfigCallback
 import com.google.android.gms.ads.MobileAds
-import com.music.searchapi.ApiServices
-import com.music.searchapi.callback.ExceptionCallback
-import com.music.searchapi.callback.InitCallback
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import com.musicdownloader.musicfreeapp825v2.databinding.ActivitySplashBinding
 import com.musicdownloader.musicfreeapp825v2.logic.ui.BaseActivity
 import com.musicdownloader.musicfreeapp825v2.logic.utils.NetworkUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.InterstitialAdsUtils
 import com.musicdownloader.musicfreeapp825v2.logic.utils.config.ConfigUtils
-import com.musicdownloader.musicfreeapp825v2.logic.utils.config.Sercurity
 import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SplashActivity : BaseActivity() {
 
@@ -59,58 +52,62 @@ class SplashActivity : BaseActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val callback = object : GetConfigCallback {
+//                val callback = object : GetConfigCallback {
+//
+//                    override fun onFinished() {
+//                        // dùng cho thư viện cũ.
+//
+//                        // nếu dùng kiểu thư viện mới thì không cần xử lý hàm này.
+//                    }
+//
+//                    override fun onNoInternet_UsingCacheConfig() {
+//                        // khi mở app lên mà không có internet thì vẫn có config cũ đã lưu trong cache
+//                        // thư viện trả ra config cũ để phía App xử dụng nếu cần.
+//                        InterstitialAdsUtils.getAdsWelcome(this@SplashActivity, configEntity) {
+//                            startMainActivity()
+//                        }
+//                    }
+//
+//                    override fun onFinished_InitLibSearch() {
+//                        val serverUrlCodeLua = ConfigUtils.SERVER_URL_CODE_LUA
+//                        val serverUrlLogError = ConfigUtils.SERVER_URL_LOG_ERROR
+//                        val serverUrlFileBlacklist = ConfigUtils.SERVER_URL_FILE_BLACKLIST
+//
+//                        ApiServices.init(
+//                            this@SplashActivity,
+//                            serverUrlCodeLua,
+//                            serverUrlLogError,
+//                            serverUrlFileBlacklist,
+//                            object : InitCallback {
+//
+//                                override fun onFinished(isFinished: Boolean, message: String?) {
+//                                    Log.i(
+//                                        TAG,
+//                                        "onFinished, isFinished = $isFinished, message = $message"
+//                                    )
+//                                }
+//                            },
+//                            object : ExceptionCallback {
+//
+//                                override fun onException(e: Exception) {
+//                                    FirebaseEventUtils.getInstances().recordException(e)
+//                                }
+//                            }
+//                        )
+//                        InterstitialAdsUtils.getAdsWelcome(this@SplashActivity, configEntity) {
+//                            startMainActivity()
+//                        }
+//                    }
+//                }
+//
+//                val serverUrl = ConfigUtils.SERVER_URL
+//                Config_V1.setServerUrl(serverUrl)
+//                Config_V1.init(application, callback) { e ->
+//                    FirebaseEventUtils.getInstances().recordException(e)
+//                }
 
-                    override fun onFinished() {
-                        // dùng cho thư viện cũ.
-
-                        // nếu dùng kiểu thư viện mới thì không cần xử lý hàm này.
-                    }
-
-                    override fun onNoInternet_UsingCacheConfig() {
-                        // khi mở app lên mà không có internet thì vẫn có config cũ đã lưu trong cache
-                        // thư viện trả ra config cũ để phía App xử dụng nếu cần.
-                        InterstitialAdsUtils.getAdsWelcome(this@SplashActivity, configEntity) {
-                            startMainActivity()
-                        }
-                    }
-
-                    override fun onFinished_InitLibSearch() {
-                        val serverUrlCodeLua = ConfigUtils.SERVER_URL_CODE_LUA
-                        val serverUrlLogError = ConfigUtils.SERVER_URL_LOG_ERROR
-                        val serverUrlFileBlacklist = ConfigUtils.SERVER_URL_FILE_BLACKLIST
-
-                        ApiServices.init(
-                            this@SplashActivity,
-                            serverUrlCodeLua,
-                            serverUrlLogError,
-                            serverUrlFileBlacklist,
-                            object : InitCallback {
-
-                                override fun onFinished(isFinished: Boolean, message: String?) {
-                                    Log.i(
-                                        TAG,
-                                        "onFinished, isFinished = $isFinished, message = $message"
-                                    )
-                                }
-                            },
-                            object : ExceptionCallback {
-
-                                override fun onException(e: Exception) {
-                                    FirebaseEventUtils.getInstances().recordException(e)
-                                }
-                            }
-                        )
-                        InterstitialAdsUtils.getAdsWelcome(this@SplashActivity, configEntity) {
-                            startMainActivity()
-                        }
-                    }
-                }
-
-                val serverUrl = ConfigUtils.SERVER_URL
-                Config_V1.setServerUrl(serverUrl)
-                Config_V1.init(application, callback) { e ->
-                    FirebaseEventUtils.getInstances().recordException(e)
+                InterstitialAdsUtils.getAdsWelcome(this@SplashActivity, configEntity) {
+                    startMainActivity()
                 }
             } catch (e: Exception) {
                 FirebaseEventUtils.getInstances().recordException(e)

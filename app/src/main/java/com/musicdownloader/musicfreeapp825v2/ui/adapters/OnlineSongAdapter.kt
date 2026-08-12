@@ -21,7 +21,15 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdOptions
 import com.google.android.gms.ads.nativead.NativeAdView
-import com.music.searchapi.`object`.VideoEntity
+import com.musicdownloader.musicfreeapp825v2.R
+import com.musicdownloader.musicfreeapp825v2.databinding.ItemNativeAdsSearchBinding
+import com.musicdownloader.musicfreeapp825v2.databinding.ItemNativeSeftTopOnBinding
+import com.musicdownloader.musicfreeapp825v2.databinding.ItemOnlineSongBinding
+import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyAdMob
+import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyTopOn
+import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.SelfRenderViewUtil
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.VideoEntity
+import com.musicdownloader.musicfreeapp825v2.ui.components.NowPlayingDrawable
 import com.thinkup.core.api.TUAdConst
 import com.thinkup.core.api.TUAdInfo
 import com.thinkup.nativead.api.TUNative
@@ -30,14 +38,6 @@ import com.thinkup.nativead.api.TUNativeDislikeListener
 import com.thinkup.nativead.api.TUNativeEventListener
 import com.thinkup.nativead.api.TUNativeNetworkListener
 import com.thinkup.nativead.api.TUNativePrepareInfo
-import com.musicdownloader.musicfreeapp825v2.R
-import com.musicdownloader.musicfreeapp825v2.databinding.ItemNativeAdsSearchBinding
-import com.musicdownloader.musicfreeapp825v2.databinding.ItemNativeSeftTopOnBinding
-import com.musicdownloader.musicfreeapp825v2.databinding.ItemOnlineSongBinding
-import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyAdMob
-import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.KeyTopOn
-import com.musicdownloader.musicfreeapp825v2.logic.utils.ads.SelfRenderViewUtil
-import com.musicdownloader.musicfreeapp825v2.ui.components.NowPlayingDrawable
 
 /**
  * List adapter for online search results ([VideoEntity]), ported from the MSDownloader

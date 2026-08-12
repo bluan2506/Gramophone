@@ -8,13 +8,12 @@ import android.os.IBinder
 import com.ailib.classifier.LogoCheckResult
 import com.ailib.classifier.LogoClassifier
 import com.applogevent.logeventlib.LogEventLibs
-import com.aws.config.msserverconfig.Config_V1
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
+import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.Keys
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.FirebaseEventUtils
-import com.musicdownloader.musicfreeapp825v2.logic.utils.firebase.Keys
 import us.shandian.giga.get.DownloadManager
 import us.shandian.giga.service.DownloadManagerService
 
@@ -106,13 +105,14 @@ object DownloadController {
         if (source != "un") return LogoCheckResult.NOT_FOUND
         if (videoId.isNullOrEmpty()) return LogoCheckResult.NOT_FOUND
         val c = classifier() ?: return LogoCheckResult.NOT_FOUND
-        return try {
-            withContext(Dispatchers.IO) {
-                val configJson = Config_V1.getServerConfig(context).toString()
-                c.check(videoId, configJson)
-            }
-        } catch (e: Exception) {
-            LogoCheckResult.NOT_FOUND // fail-open
-        }
+//        return try {
+//            withContext(Dispatchers.IO) {
+//                val configJson = Config_V1.getServerConfig(context).toString()
+//                c.check(videoId, configJson)
+//            }
+//        } catch (e: Exception) {
+//            LogoCheckResult.NOT_FOUND // fail-open
+//        }
+        return LogoCheckResult.NOT_FOUND
     }
 }
