@@ -298,7 +298,7 @@ base {
     }
     val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd-HH-mm")
     val buildTime = simpleDateFormat.format(Date())
-    archivesName.set("music-new-02-v$sVersionCode-$buildTime")
+    archivesName.set("music-new-03-v$sVersionCode-$buildTime")
 }
 
 baselineProfile {

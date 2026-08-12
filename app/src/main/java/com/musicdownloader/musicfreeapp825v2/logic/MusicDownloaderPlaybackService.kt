@@ -71,6 +71,7 @@ import androidx.media3.common.util.Util
 import androidx.media3.common.util.Util.isBitmapFactorySupportedMimeType
 import androidx.media3.datasource.DefaultDataSource
 import androidx.media3.datasource.HttpDataSource
+import androidx.media3.datasource.ResolvingDataSource
 import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.analytics.AnalyticsListener
@@ -124,6 +125,7 @@ import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.EndedWorkarou
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderExtractorsFactory
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderMediaSourceFactory
 import com.musicdownloader.musicfreeapp825v2.logic.utils.exoplayer.MusicDownloaderRenderFactory
+import com.musicdownloader.musicfreeapp825v2.logic.utils.online.CcMixterApi
 import com.musicdownloader.musicfreeapp825v2.ui.AudioPreviewActivity
 import com.musicdownloader.musicfreeapp825v2.ui.LyricWidgetProvider
 import com.musicdownloader.musicfreeapp825v2.ui.MainActivity
@@ -389,7 +391,16 @@ class MusicDownloaderPlaybackService : MediaLibraryService(), MediaSessionServic
                     .setEnableAudioTrackPlaybackParams(true)
                     .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_ON),
                 MusicDownloaderMediaSourceFactory(
-                    DefaultDataSource.Factory(this),
+                    // ccMixter hot-link-protects its mp3s: the stream 403s unless the request
+                    // carries a Referer from the site. Resolved per DataSpec so only its own hosts
+                    // ever see the header - local files and every other source stay untouched.
+                    ResolvingDataSource.Factory(DefaultDataSource.Factory(this)) { dataSpec ->
+                        if (CcMixterApi.needsStreamReferer(dataSpec.uri))
+                            dataSpec.withRequestHeaders(
+                                mapOf("Referer" to CcMixterApi.STREAM_REFERER)
+                            )
+                        else dataSpec
+                    },
                     MusicDownloaderExtractorsFactory().also {
                         it.setConstantBitrateSeekingEnabled(true)
                         it.setMp3ExtractorFlags(Mp3Extractor.FLAG_ENABLE_INDEX_SEEKING)
