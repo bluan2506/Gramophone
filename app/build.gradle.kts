@@ -80,9 +80,6 @@ android {
     }
 
     packaging {
-        dex {
-            useLegacyPackaging = false
-        }
         jniLibs {
             useLegacyPackaging = false
             // https://issuetracker.google.com/issues/168777344#comment11
